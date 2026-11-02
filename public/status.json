@@ -1,11 +1,18 @@
 {
-  "checked_at": "2026-11-02T08:46:56.031333+00:00",
+  "checked_at": "2026-11-02T11:20:40.717255+00:00",
   "candidates": 350,
-  "alive": 14,
-  "published": 14,
+  "alive": 34,
+  "published": 2,
+  "latency_passed": 11,
+  "speed_tested": 11,
+  "speed_passed": 2,
+  "min_speed_mbps": 1.0,
+  "max_latency_ms": 1500,
+  "speed_test_bytes": 262144,
+  "fastest_speed_mbps": 2.15,
   "successful_sources": 2,
   "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
-  "fastest_ms": 402,
+  "fastest_ms": 1306,
   "sources": [
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
