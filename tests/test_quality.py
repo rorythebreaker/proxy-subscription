@@ -1,4 +1,4 @@
-"""Soft quality filtering: transient failures must not become confirmed slowness."""
+"""Measured speed qualification with retries for transient slowness."""
 import subprocess
 import tempfile
 import time
@@ -14,17 +14,18 @@ from test_subscription import BASE
 
 class Quality(unittest.TestCase):
     def test_two_slow_samples_reject_but_one_recovers(self):
-        for samples, expected in [([0.03, 0.04], 'speed_rejected'),
-                                  ([0.03, 0.2], 'passed'),
-                                  ([0.03, None], 'passed'), ([None], 'passed')]:
+        for samples, expected in [([common.MIN_SPEED_MBPS * 0.3, common.MIN_SPEED_MBPS * 0.4], 'speed_rejected'),
+                                  ([common.MIN_SPEED_MBPS * 0.3, common.MIN_SPEED_MBPS * 2], 'passed'),
+                                  ([0.03, None], 'quality_inconclusive'), ([None], 'quality_inconclusive'),
+                                  ([common.MIN_SPEED_MBPS], 'passed')]:
             with self.subTest(samples=samples), patch.object(common, 'measure_speed', side_effect=samples):
                 self.assertEqual(common.filter_quality('proxy', common.TARGETS, 1000, True)[0], expected)
 
     def test_unhealthy_baseline_never_rejects_speed(self):
         with patch.object(common, 'measure_speed') as speed:
-            self.assertEqual(common.filter_quality('proxy', common.TARGETS, 1000, False)[0], 'passed')
+            self.assertEqual(common.filter_quality('proxy', common.TARGETS, 1000, False)[0], 'quality_inconclusive')
             speed.assert_not_called()
-        for rate, expected in [(None, False), (0.1, False), (1, True)]:
+        for rate, expected in [(None, False), (common.MIN_SPEED_MBPS, False), (common.MIN_SPEED_MBPS * 4, True)]:
             with patch.object(common, 'measure_speed', return_value=rate):
                 self.assertEqual(common.speed_baseline(), expected)
 
@@ -32,12 +33,12 @@ class Quality(unittest.TestCase):
         for retry, expected in [(('passed', 6500), 'latency_rejected'),
                                 (('passed', 1000), 'passed'),
                                 (('unreachable', None), 'quality_inconclusive')]:
-            with patch.object(common, 'connectivity', return_value=retry):
-                self.assertEqual(common.filter_quality('proxy', common.TARGETS, 6500, False)[0], expected)
+            with patch.object(common, 'connectivity', return_value=retry), patch.object(common, 'measure_speed', return_value=common.MIN_SPEED_MBPS):
+                self.assertEqual(common.filter_quality('proxy', common.TARGETS, 6500, True)[0], expected)
 
     def test_speed_blocks_and_partial_timeout(self):
         for code, stdout, expected in [(22, b'403 100 3 1', None),
-                                       (0, b'200 131072 3 1', 0.524288),
+                                       (0, f'200 {common.SPEED_TEST_BYTES} 3 1'.encode(), common.SPEED_TEST_BYTES * 8 / 2 / 1000000),
                                        (28, b'200 32768 14 2', 32768 * 8 / 12 / 1000000),
                                        (28, b'000 0 14 0', None),
                                        (0, b'200 120 3 1', None)]:
@@ -49,6 +50,11 @@ class Quality(unittest.TestCase):
     def test_deadline_does_not_accept_unconfirmed_slow_sample(self):
         with patch.object(common, 'measure_speed', return_value=0.02), patch.object(common.time, 'monotonic', side_effect=[0, 10]):
             self.assertEqual(common.filter_quality('proxy', common.TARGETS, 1000, True, 20)[0], 'quality_inconclusive')
+
+    def test_no_budget_cannot_bypass_speed_check(self):
+        with patch.object(common.time, 'monotonic', return_value=10), patch.object(common, 'measure_speed') as speed:
+            self.assertEqual(common.filter_quality('proxy', common.TARGETS, 1000, True, 20)[0], 'quality_inconclusive')
+            speed.assert_not_called()
 
     def test_socks_uses_same_tunnel_quality_filter(self):
         with patch.object(socks, 'connectivity', return_value=('passed', 1000)), patch.object(socks, 'filter_quality', return_value=('speed_rejected', 1000)) as quality:

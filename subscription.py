@@ -14,10 +14,10 @@ from urllib.parse import quote, urlsplit
 OUT = Path(os.getenv("OUTPUT_DIR", "public"))
 TTL = int(os.getenv("STALE_TTL_SECONDS", "600"))
 MAX_LATENCY_MS = float(os.getenv("MAX_LATENCY_MS", "6000"))
-MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "0.10"))
-SPEED_TEST_BYTES = 131072
+MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "10"))
+SPEED_TEST_BYTES = 2 * 1024 * 1024
 SPEED_TEST_SECONDS = 14
-QUALITY_POLICY = f"gentle-v1:{MAX_LATENCY_MS}:{MIN_SPEED_MBPS}"
+QUALITY_POLICY = f"verified-speed-v2:{MAX_LATENCY_MS}:{MIN_SPEED_MBPS}:{SPEED_TEST_BYTES}"
 TARGETS = ("https://www.gstatic.com/generate_204", "https://cp.cloudflare.com/generate_204")
 GEOIP_URL = "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
 
@@ -158,7 +158,7 @@ def speed_baseline():
 
 
 def filter_quality(proxy, targets, latency, baseline_ok, deadline=None):
-    """Reject only two measured slow results; preserve a proven working tunnel on ambiguity."""
+    """Require measured throughput; repeat slowness before confirming rejection."""
     def budget(seconds):
         return deadline is None or time.monotonic() + seconds < deadline
 
@@ -171,14 +171,19 @@ def filter_quality(proxy, targets, latency, baseline_ok, deadline=None):
         if outcome != "passed":
             return "quality_inconclusive", latency
         latency = retry_latency
-    if baseline_ok and budget(SPEED_TEST_SECONDS + 1):
-        first = measure_speed(proxy)
-        if first is not None and first < MIN_SPEED_MBPS:
-            if not budget(SPEED_TEST_SECONDS + 1):
-                return "quality_inconclusive", latency
-            second = measure_speed(proxy)
-            if second is not None and second < MIN_SPEED_MBPS:
-                return "speed_rejected", latency
+    if not baseline_ok or not budget(SPEED_TEST_SECONDS + 1):
+        return "quality_inconclusive", latency
+    first = measure_speed(proxy)
+    if first is None:
+        return "quality_inconclusive", latency
+    if first < MIN_SPEED_MBPS:
+        if not budget(SPEED_TEST_SECONDS + 1):
+            return "quality_inconclusive", latency
+        second = measure_speed(proxy)
+        if second is None:
+            return "quality_inconclusive", latency
+        if second < MIN_SPEED_MBPS:
+            return "speed_rejected", latency
     return "passed", latency
 
 
