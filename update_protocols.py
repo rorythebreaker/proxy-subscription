@@ -25,11 +25,14 @@ SOURCES = {
         "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
         "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
         "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/vless.txt",
+        "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/reality.txt",
+        "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
+        "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
     ],
 }
 OUT = Path("public")
-MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "150"))
-MAX_SOURCE_BYTES = 8_000_000
+MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "1000"))
+MAX_SOURCE_BYTES = 25_000_000
 MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "40"))
 MAX_LATENCY_MS = 3500
 MIN_MBPS = 0.25
@@ -229,20 +232,17 @@ def country_labels(uris):
 def main():
     OUT.mkdir(exist_ok=True)
     stats = {"checked_at": datetime.now(timezone.utc).isoformat(),
-             "verification": "sing-box HTTPS 204 and throughput"}
+             "verification": "disabled; syntax-only VLESS+REALITY collection"}
     names = {"vless_reality": "vless.txt"}
     for kind, filename in names.items():
         uris, success = collect(kind)
-        checked = uris[:MAX_CHECKS]
-        verified = []
-        for uri in checked:
-            speed = verify(uri)
-            if speed is not None:
-                verified.append((uri, speed))
-        verified.sort(key=lambda item: -item[1])
+        # Temporary unfiltered mode: publish all syntactically valid REALITY URIs.
+        # No sing-box, latency, throughput, or reachability checks.
+        checked = []
+        verified = [(uri, None) for uri in uris]
         stats[kind] = {"sources_reached": success, "candidates": len(uris),
                        "tested": len(checked), "published": len(verified),
-                       "min_mbps": MIN_MBPS, "max_latency_ms": MAX_LATENCY_MS}
+                       "min_mbps": None, "max_latency_ms": None}
         if success:
             labels = country_labels([uri for uri, _ in verified])
             lines = [f"{uri}#{quote(' '.join(labels[uri]), safe='')}"
