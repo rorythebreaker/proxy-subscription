@@ -251,11 +251,11 @@ def publish(kind, filename, outcomes, old_nodes, source_success, old_state, deta
 
 
 def merge():
-    from update_protocols import canonical_reality
+    from update_protocols import canonical_vless
     combined = {}
     counts = {}
     for kind, filename, validator in (("socks", "proxies.txt", canonical_socks),
-                                      ("vless", "vless.txt", canonical_reality)):
+                                      ("vless", "vless.txt", canonical_vless)):
         _, fresh = previous(kind, validator)
         kept = []
         for line in lines(OUT / filename):
