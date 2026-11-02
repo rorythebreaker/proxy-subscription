@@ -6,11 +6,42 @@ schedule `2-59/5 * * * *`. GitHub Actions may delay scheduled runs.
 - `public/all.txt`: deduplicated union of the current protocol lists.
 - `public/proxies.txt`: SOCKS5 share URIs (`socks://host:port#CC%20host`).
 - `public/vless.txt`: VLESS + REALITY share URIs, with the same country/host labels.
+- `public/incy.json`: full Xray profiles for INCY, with DNS 8.8.8.8 / 1.1.1.1.
 - `public/status.json`, `public/protocol_status.json`, `public/combined_status.json`:
   attempt time, source success time, actual publication counts and check outcomes.
 - `public/socks_state.json`, `public/vless_state.json`: per-node verification times.
 
 ## Filtering
+
+### INCY with bundled DNS
+
+Add this URL as a **new subscription** in INCY (rather than importing the GitHub
+HTML page or appending DNS parameters to a VLESS URI):
+
+```
+https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/incy.json
+```
+
+The JSON array contains one independent full Xray configuration per compatible
+verified SOCKS5 or VLESS node. Each includes `dns.servers` with `8.8.8.8` and
+`1.1.1.1`, `queryStrategy: UseIPv4`, a local SOCKS inbound on 127.0.0.1:10808,
+and HTTP on 127.0.0.1:10809. Names include protocol and the original country/host
+label. INCY may patch inbound authentication according to its own settings.
+
+FakeDNS is not configured. DNS queries from the core use ordinary UDP directly
+to those two resolvers; port-53 traffic entering the local proxy is intercepted
+by Xray's DNS outbound. Other application traffic uses the selected proxy by
+default. This is not encrypted DNS, and the setting does not alter the OS-wide
+resolver outside INCY. Reconnect after selecting a profile from the new
+subscription. A DNS change does not guarantee that an unrelated TLS failure is fixed.
+
+Xray REALITY supports TCP/raw and gRPC here. WebSocket/HTTP/H2/HTTPUpgrade with
+REALITY are not exported because they cannot be reproduced by Xray; neither are
+explicit ALPN overrides, which Xray REALITY derives from the TLS fingerprint.
+These omissions affect only `incy.json`, not the existing text subscriptions.
+`combined_status.json.incy` reports exported count, skipped reasons and DNS settings.
+The exporter runs after freshness checks on every refresh, including fallback;
+expired records cannot persist in the JSON file independently of `all.txt`.
 
 SOCKS5 retains the existing policy: HTTPS reachability, latency <= 3500 ms and
 payload throughput >= 0.25 Mbps. Transfers have total time and size limits.

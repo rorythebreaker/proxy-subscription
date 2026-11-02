@@ -217,5 +217,9 @@ def merge():
     atomic_write(OUT / "alive.txt", "\n".join(urlsplit(line).netloc for line in lines(OUT / "proxies.txt"))
                  + ("\n" if counts.get("socks") else ""))
     (OUT / "shadowsocks.txt").unlink(missing_ok=True)
+    from incy import build_subscription
+    profiles, incy_status = build_subscription(combined.values())
+    write_json(OUT / "incy.json", profiles)
     write_json(OUT / "combined_status.json", {"published_at": timestamp(), "counts": counts,
-                                              "published": len(combined), "stale_ttl_seconds": TTL})
+                                              "published": len(combined), "stale_ttl_seconds": TTL,
+                                              "incy": incy_status})
