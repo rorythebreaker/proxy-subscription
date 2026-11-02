@@ -202,15 +202,24 @@ def verify(uri):
 def main():
     OUT.mkdir(exist_ok=True)
     stats = {"checked_at": datetime.now(timezone.utc).isoformat(),
-             "verification": "URI syntax only; upstream claims are not independently verified"}
+             "verification": "sing-box HTTPS 204 and throughput"}
     names = {"shadowsocks": "shadowsocks.txt", "vless_reality": "vless.txt"}
     for kind, filename in names.items():
         uris, success = collect(kind)
-        stats[kind] = {"sources_reached": success, "published": len(uris)}
+        checked = uris[:MAX_CHECKS]
+        verified = []
+        for uri in checked:
+            speed = verify(uri)
+            if speed is not None:
+                verified.append((uri, speed))
+        verified.sort(key=lambda item: -item[1])
+        stats[kind] = {"sources_reached": success, "candidates": len(uris),
+                       "tested": len(checked), "published": len(verified),
+                       "min_mbps": MIN_MBPS, "max_latency_ms": MAX_LATENCY_MS}
         if success:
             # Do not mislabel nodes by country: endpoint hostname can differ from exit IP.
             lines = [f"{uri}#{quote(('SS' if kind == 'shadowsocks' else 'VLESS-REALITY') + ' ' + str(i), safe='')}"
-                     for i, uri in enumerate(uris, 1)]
+                     for i, (uri, speed) in enumerate(verified, 1)]
             (OUT / filename).write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
         else:
             print(f"{kind}: keeping last published file")
