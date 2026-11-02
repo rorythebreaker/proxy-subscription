@@ -1,16 +1,15 @@
 {
-  "published_at": "2026-11-02T19:34:45.989064+00:00",
+  "published_at": "2026-11-02T23:52:19.629232+00:00",
   "counts": {
-    "socks": 1,
-    "vless": 15
+    "socks": 7,
+    "vless": 35
   },
-  "published": 16,
+  "published": 42,
   "stale_ttl_seconds": 600,
   "incy": {
-    "published": 14,
+    "published": 35,
     "skipped": {
-      "xray_reality_alpn": 1,
-      "xray_reality_transport": 1
+      "xray_reality_alpn": 7
     },
     "dns_servers": [
       "8.8.8.8",
@@ -21,12 +20,11 @@
   },
   "xray_auto": {
     "nodes": {
-      "vless": 11,
-      "socks": 1
+      "vless": 19,
+      "socks": 7
     },
     "skipped": {
-      "xray_reality_alpn": 1,
-      "xray_reality_transport": 1
+      "xray_reality_alpn": 7
     },
     "limits": {
       "vless": 24,
