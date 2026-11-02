@@ -99,7 +99,14 @@ Import this URL as a separate subscription:
 
 https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/xray-auto.json
 
-One full configuration groups up to 24 distinct VLESS endpoints and 8 SOCKS5
+The subscription is a JSON array: AUTO followed by all compatible individual
+servers named with their protocol, country and address. Refresh the existing
+subscription in the client to see the manual choices. Individual choices retain
+the DNS, routing and fragmentation settings, but connect only to the selected
+server without balancing or a probe startup delay. The AUTO-only object remains
+available separately at `public/xray-auto-only.json`.
+
+The AUTO configuration groups up to 24 distinct VLESS endpoints and 8 SOCKS5
 endpoints from the freshness-filtered publication. `leastLoad` and
 `burstObservatory` test HTTPS from the client (30s average interval, 5s timeout,
 two samples). VLESS is preferred, with a loopback fallback to the observed SOCKS

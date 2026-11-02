@@ -83,7 +83,15 @@ jobs:
           fi
           export PATH="${GITHUB_WORKSPACE}/.tools:$PATH"
           python -m unittest discover -s tests -p 'test_xray_auto.py' -v
-          xray run -test -config public/xray-auto.json
+          python - <<'PY'
+          import json, subprocess, tempfile
+          from pathlib import Path
+          for config in json.loads(Path('public/xray-auto.json').read_text()):
+              with tempfile.TemporaryDirectory() as folder:
+                  path = Path(folder) / 'profile.json'
+                  path.write_text(json.dumps(config))
+                  subprocess.run(['xray', 'run', '-test', '-config', str(path)], check=True)
+          PY
       - name: Commit consistent subscription
         run: |
           set -euo pipefail

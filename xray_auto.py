@@ -107,3 +107,41 @@ def build_auto(uris):
                            'connectivity': '', 'interval': '30s', 'sampling': 2, 'timeout': '5s'}}
     return result, {'nodes': {p: len(g) for p, g in groups.items()},
                     'skipped': diagnostics['skipped'], 'limits': dict(LIMITS)}
+
+
+def build_choices(uris):
+    """Expose AUTO and every compatible node as independently selectable profiles."""
+    uris = list(uris)
+    auto, _ = build_auto(uris)
+    profiles, _ = build_subscription(uris)
+    choices = [auto]
+    # build_subscription preserves input order but may omit incompatible/duplicate URIs.
+    # Use each already validated outbound so manual choices are never capped by AUTO.
+    for profile in profiles:
+        outbound = deepcopy(profile['outbounds'][0])
+        config = deepcopy(auto)
+        config['remarks'] = profile['remarks']
+        outbound['tag'] = 'selected-proxy'
+        if outbound['protocol'] == 'vless':
+            outbound['streamSettings']['sockopt']['dialerProxy'] = 'fragment'
+        config['outbounds'] = [outbound] + [deepcopy(o) for o in auto['outbounds']
+            if o['tag'] in ('block', 'direct', 'dns-out', 'fragment')]
+        config.pop('burstObservatory', None)
+        config['routing']['balancers'] = []
+        rules = []
+        for rule in config['routing']['rules']:
+            if rule.get('inboundTag') == ['socks-fallback-in']:
+                continue
+            if 'balancerTag' in rule:
+                rule.pop('balancerTag')
+                rule['outboundTag'] = 'selected-proxy'
+            rules.append(rule)
+        config['routing']['rules'] = rules
+        # Bootstrap every manually selectable hostname, including those beyond AUTO's cap.
+        server = outbound['settings']['vnext' if outbound['protocol'] == 'vless' else 'servers'][0]
+        try:
+            ip_address(server['address'])
+        except ValueError:
+            config['dns']['servers'][0]['domains'].append('full:' + server['address'])
+        choices.append(config)
+    return choices

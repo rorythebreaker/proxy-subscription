@@ -7,10 +7,23 @@ import unittest
 from pathlib import Path
 
 from test_incy import BASE
-from xray_auto import build_auto
+from xray_auto import build_auto, build_choices
 
 
 class AutoProfile(unittest.TestCase):
+    def test_manual_choices_keep_endpoint_and_do_not_use_balancers(self):
+        configs = build_choices([BASE + '#DE%208.8.4.4', 'socks://1.0.0.1:10800#AU%201.0.0.1'])
+        self.assertEqual(len(configs), 3)
+        self.assertEqual(configs[0]['remarks'], 'AUTO VLESS + SOCKS5')
+        self.assertEqual(configs[1]['remarks'], 'VLESS DE 8.8.4.4')
+        self.assertEqual(configs[2]['outbounds'][0]['settings']['servers'],
+                         [{'address': '1.0.0.1', 'port': 10800}])
+        for config in configs[1:]:
+            self.assertNotIn('burstObservatory', config)
+            self.assertEqual(config['routing']['balancers'], [])
+            self.assertEqual(config['routing']['rules'][-1]['outboundTag'], 'selected-proxy')
+            self.assertFalse(any('balancerTag' in r for r in config['routing']['rules']))
+
     def test_failover_and_dns_do_not_leak_general_traffic_to_direct(self):
         config, status = build_auto([BASE, 'socks://1.0.0.1:10800'])
         self.assertEqual(status['nodes'], {'vless': 1, 'socks': 1})
@@ -51,10 +64,13 @@ class AutoProfile(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which('xray'), 'xray is not installed')
     def test_real_xray_accepts_all_failover_shapes_without_geodata(self):
-        for uris in [[], [BASE], ['socks://1.0.0.1:10800'], [BASE, 'socks://1.0.0.1:10800']]:
+        configs = [build_auto(uris)[0] for uris in
+                   [[], [BASE], ['socks://1.0.0.1:10800'], [BASE, 'socks://1.0.0.1:10800']]]
+        configs += build_choices([BASE, 'socks://1.0.0.1:10800'])
+        for config in configs:
             with tempfile.TemporaryDirectory() as folder:
                 path = Path(folder) / 'auto.json'
-                path.write_text(json.dumps(build_auto(uris)[0]))
+                path.write_text(json.dumps(config))
                 result = subprocess.run(['xray', 'run', '-test', '-config', str(path)],
                                         capture_output=True, text=True, timeout=10)
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
