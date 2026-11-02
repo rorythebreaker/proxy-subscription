@@ -11,6 +11,8 @@ from pathlib import Path
 from urllib.parse import quote
 
 import requests
+import geoip2.database
+import tempfile
 
 SOURCES = [
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
@@ -21,6 +23,33 @@ LIMIT = int(os.getenv("MAX_PROXIES", "100"))
 CANDIDATES = int(os.getenv("MAX_CANDIDATES", "350"))
 WORKERS = int(os.getenv("CHECK_WORKERS", "48"))
 CHECK_URL = "https://www.gstatic.com/generate_204"
+GEOIP_URL = "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
+
+
+def country_codes(proxies):
+    """Resolve country from a local MMDB snapshot; fail open with ZZ."""
+    if not proxies:
+        return {}
+    try:
+        response = requests.get(GEOIP_URL, timeout=(10, 30))
+        response.raise_for_status()
+        with tempfile.TemporaryDirectory() as directory:
+            db_path = Path(directory) / "Country.mmdb"
+            db_path.write_bytes(response.content)
+            with geoip2.database.Reader(str(db_path)) as reader:
+                result = {}
+                for proxy, _ in proxies:
+                    ip = proxy.rsplit(":", 1)[0]
+                    try:
+                        # Country.mmdb uses country ISO codes for IP prefixes.
+                        result[proxy] = reader.country(ip).country.iso_code or "ZZ"
+                    except (geoip2.errors.AddressNotFoundError, ValueError):
+                        result[proxy] = "ZZ"
+                return result
+    except (requests.RequestException, OSError, ValueError) as exc:
+        print(f"GeoIP unavailable: {exc}; using ZZ")
+        return {proxy: "ZZ" for proxy, _ in proxies}
+
 
 
 def collect():
@@ -74,6 +103,7 @@ def main():
     # Rank by end-to-end HTTPS latency, not ICMP ping or bandwidth.
     results.sort(key=lambda item: (item[1], item[0]))
     good = results[:LIMIT]
+    countries = country_codes(good)
     OUT.mkdir(exist_ok=True)
     now = datetime.now(timezone.utc).isoformat()
     status = {
@@ -85,6 +115,8 @@ def main():
         "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
         "fastest_ms": good[0][1] if good else None,
         "sources": SOURCES,
+        "geoip_database": GEOIP_URL,
+        "country_unknown": sum(countries.get(proxy, "ZZ") == "ZZ" for proxy, _ in good),
     }
     (OUT / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
 
@@ -95,8 +127,8 @@ def main():
 
     # Empty output deliberately removes previously working proxies that no longer pass.
     lines = [
-        f"socks://{proxy}#{quote(f'SOCKS5-{index:03d}-{proxy}-{latency}ms', safe='')}"
-        for index, (proxy, latency) in enumerate(good, 1)
+        f"socks://{proxy}#{quote(f'{countries.get(proxy, 'ZZ')} {proxy.rsplit(':', 1)[0]}', safe='')}"
+        for proxy, _ in good
     ]
     (OUT / "proxies.txt").write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
     (OUT / "alive.txt").write_text(
