@@ -12,7 +12,12 @@ from pathlib import Path
 from urllib.parse import quote, urlsplit
 
 OUT = Path(os.getenv("OUTPUT_DIR", "public"))
-TTL = int(os.getenv("STALE_TTL_SECONDS", "1800"))
+TTL = int(os.getenv("STALE_TTL_SECONDS", "600"))
+MAX_LATENCY_MS = float(os.getenv("MAX_LATENCY_MS", "6000"))
+MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "0.10"))
+SPEED_TEST_BYTES = 131072
+SPEED_TEST_SECONDS = 14
+QUALITY_POLICY = f"gentle-v1:{MAX_LATENCY_MS}:{MIN_SPEED_MBPS}"
 TARGETS = ("https://www.gstatic.com/generate_204", "https://cp.cloudflare.com/generate_204")
 GEOIP_URL = "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
 
@@ -126,6 +131,57 @@ def connectivity(proxy, targets):
     return ("unreachable" if all(s == "network_error" for s in results) else "inconclusive"), None
 
 
+def measure_speed(proxy=None):
+    """Small bounded HTTPS payload; errors/blocks are unknown, never zero speed."""
+    try:
+        result = curl(["--proxy", proxy or "", "--noproxy", "" if proxy else "*",
+                       "--output", os.devnull, "--max-filesize", str(SPEED_TEST_BYTES),
+                       "--write-out", "%{http_code} %{size_download} %{time_total} %{time_starttransfer}",
+                       f"https://speed.cloudflare.com/__down?bytes={SPEED_TEST_BYTES}"], SPEED_TEST_SECONDS)
+        code, size, total, first = result.stdout.decode().split()
+        seconds = float(total) - float(first)
+        if code != "200" or seconds <= 0:
+            return None
+        # A partial timeout after HTTP 200 gives an observed payload transfer rate.
+        if result.returncode not in (0, 28) or (result.returncode == 0 and int(size) != SPEED_TEST_BYTES):
+            return None
+        if int(size) <= 0:
+            return None
+        return int(size) * 8 / seconds / 1_000_000
+    except (OSError, ValueError, subprocess.TimeoutExpired):
+        return None
+
+
+def speed_baseline():
+    speed = measure_speed()
+    return speed is not None and speed >= MIN_SPEED_MBPS * 4
+
+
+def filter_quality(proxy, targets, latency, baseline_ok, deadline=None):
+    """Reject only two measured slow results; preserve a proven working tunnel on ambiguity."""
+    def budget(seconds):
+        return deadline is None or time.monotonic() + seconds < deadline
+
+    if latency is not None and latency > MAX_LATENCY_MS:
+        if not budget(16):
+            return "quality_inconclusive", latency
+        outcome, retry_latency = connectivity(proxy, list(reversed(targets)))
+        if outcome == "passed" and retry_latency > MAX_LATENCY_MS:
+            return "latency_rejected", retry_latency
+        if outcome != "passed":
+            return "quality_inconclusive", latency
+        latency = retry_latency
+    if baseline_ok and budget(SPEED_TEST_SECONDS + 1):
+        first = measure_speed(proxy)
+        if first is not None and first < MIN_SPEED_MBPS:
+            if not budget(SPEED_TEST_SECONDS + 1):
+                return "quality_inconclusive", latency
+            second = measure_speed(proxy)
+            if second is not None and second < MIN_SPEED_MBPS:
+                return "speed_rejected", latency
+    return "passed", latency
+
+
 def country_labels(uris):
     result = {uri: ("ZZ", urlsplit(uri).hostname) for uri in uris}
     if not uris:
@@ -157,7 +213,7 @@ def previous(kind, validator):
     for uri, data in state.get("nodes", {}).items():
         try:
             core = validator(uri)
-            if age(data.get("last_verified_at")) <= TTL:
+            if data.get("quality_policy") == QUALITY_POLICY and age(data.get("last_verified_at")) <= TTL:
                 nodes[core] = data
         except (ValueError, TypeError, AttributeError):
             pass
@@ -172,8 +228,8 @@ def publish(kind, filename, outcomes, old_nodes, source_success, old_state, deta
     for uri, outcome, _ in outcomes:
         counts[outcome] = counts.get(outcome, 0) + 1
         if outcome == "passed":
-            nodes[uri] = {"last_verified_at": now}
-        elif outcome not in ("unreachable", "invalid", "latency_rejected", "speed_rejected") and uri in old_nodes and age(old_nodes[uri].get("last_verified_at")) <= TTL:
+            nodes[uri] = {"last_verified_at": now, "quality_policy": QUALITY_POLICY}
+        elif outcome not in ("unreachable", "invalid", "latency_rejected", "speed_rejected") and uri in old_nodes and old_nodes[uri].get("quality_policy") == QUALITY_POLICY and age(old_nodes[uri].get("last_verified_at")) <= TTL:
             nodes[uri] = old_nodes[uri]
     # Only records still inside the verification TTL can survive an interrupted batch.
     labels = country_labels(list(nodes))
@@ -184,7 +240,7 @@ def publish(kind, filename, outcomes, old_nodes, source_success, old_state, deta
     stale = not source_success or any(data["last_verified_at"] != now for data in nodes.values())
     status = {**details, "attempted_at": now, "checked_at": now, "last_success_at": last_success,
               "published": len(nodes), "published_count": len(nodes), "new_count": counts.get("passed", 0),
-              "stale": stale, "stale_ttl_seconds": TTL, "results": counts,
+              "stale": stale, "stale_ttl_seconds": TTL, "results": counts, "quality_policy": QUALITY_POLICY,
               "fallback_reason": details.get("fallback_reason") if stale else None}
     return status, nodes
 

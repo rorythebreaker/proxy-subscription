@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Refresh SOCKS5, retaining the existing latency and throughput policy."""
+"""Refresh SOCKS5 with repeated gentle latency and throughput checks."""
 import concurrent.futures
 import os
 import subprocess
 import time
 
-from subscription import (OUT, GEOIP_URL, canonical_socks, connectivity, curl, fetch_bytes,
-                          healthy_targets, previous, publish, write_json)
+from subscription import (OUT, canonical_socks, connectivity, fetch_bytes,
+                          healthy_targets, previous, publish, write_json, filter_quality, speed_baseline,
+                          MIN_SPEED_MBPS, MAX_LATENCY_MS)
 
 SOURCES = [
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
@@ -15,10 +16,6 @@ SOURCES = [
 LIMIT = int(os.getenv("MAX_PROXIES", "100"))
 CANDIDATES = int(os.getenv("MAX_CANDIDATES", "600"))
 WORKERS = int(os.getenv("CHECK_WORKERS", "48"))
-MAX_LATENCY_MS = int(os.getenv("MAX_LATENCY_MS", "3500"))
-MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "0.25"))
-SPEED_TEST_LIMIT = int(os.getenv("SPEED_TEST_LIMIT", "80"))
-SPEED_TEST_BYTES = int(os.getenv("SPEED_TEST_BYTES", "262144"))
 
 
 def collect():
@@ -42,52 +39,31 @@ def collect():
     return list(found)[:CANDIDATES], sum(ok for _, ok in fetched)
 
 
-def check(uri, targets, deadline=None):
-    if deadline is not None and time.monotonic() + 16 > deadline:
+def check(uri, targets, deadline=None, baseline_ok=False):
+    if deadline is not None and time.monotonic() + 35 > deadline:
         return uri, "not_tested", None
-    outcome, latency = connectivity(uri.replace("socks://", "socks5h://", 1), targets)
-    if outcome == "passed" and latency > MAX_LATENCY_MS:
-        outcome = "latency_rejected"
+    proxy = uri.replace("socks://", "socks5h://", 1)
+    outcome, latency = connectivity(proxy, targets)
+    if outcome == "passed":
+        outcome, latency = filter_quality(proxy, targets, latency, baseline_ok, deadline)
     return uri, outcome, latency
-
-
-def speed_test(item):
-    uri, _, latency = item
-    try:
-        result = curl(["--proxy", uri.replace("socks://", "socks5h://", 1), "--noproxy", "",
-                       "--output", os.devnull, "--max-filesize", str(SPEED_TEST_BYTES),
-                       "--write-out", "%{http_code} %{size_download} %{time_total} %{time_starttransfer}",
-                       f"https://speed.cloudflare.com/__down?bytes={SPEED_TEST_BYTES}"], 10)
-        code, size, total, first = result.stdout.decode().split()
-        seconds = float(total) - float(first)
-        if result.returncode or code != "200" or int(size) != SPEED_TEST_BYTES or seconds <= 0:
-            return uri, "inconclusive", None
-        speed = int(size) * 8 / seconds / 1_000_000
-        return uri, "passed" if speed >= MIN_SPEED_MBPS else "speed_rejected", speed
-    except (OSError, ValueError, subprocess.TimeoutExpired):
-        return uri, "inconclusive", None
 
 
 def main():
     deadline = time.monotonic() + 100
     old_state, old_nodes = previous("socks", canonical_socks)
     candidates, success = collect()
-    candidates = list(dict.fromkeys([*candidates, *old_nodes]))
+    candidates = list(dict.fromkeys([*old_nodes, *candidates]))
     targets = healthy_targets()
+    baseline_ok = speed_baseline() if len(targets) == 2 else False
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        initial = list(pool.map(lambda uri: check(uri, targets, deadline - 40), candidates))
-    eligible = sorted((item for item in initial if item[1] == "passed"), key=lambda item: item[2])
-    chosen = eligible[:SPEED_TEST_LIMIT]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
-        measured = list(pool.map(lambda item: speed_test(item) if time.monotonic() + 11 < deadline
-                                 else (item[0], "inconclusive", None), chosen))
-    passed = sorted((item for item in measured if item[1] == "passed"), key=lambda item: -item[2])[:LIMIT]
+        initial = list(pool.map(lambda uri: check(uri, targets, deadline, baseline_ok), candidates))
+    passed = sorted((item for item in initial if item[1] == "passed"), key=lambda item: item[2])[:LIMIT]
     outcomes = passed + [item for item in initial if item[1] != "passed"]
-    outcomes += [item for item in measured if item[1] != "passed"]
     status, nodes = publish("socks", "proxies.txt", outcomes, old_nodes, success, old_state,
                             {"candidates": len(candidates), "successful_sources": success,
-                             "alive": sum(item[1] in ("passed", "latency_rejected") for item in initial),
-                             "speed_tested": len(chosen), "min_speed_mbps": MIN_SPEED_MBPS,
+                             "alive": sum(item[1] in ("passed", "latency_rejected", "speed_rejected", "quality_inconclusive") for item in initial),
+                             "speed_baseline_ok": baseline_ok, "min_speed_mbps": MIN_SPEED_MBPS,
                              "max_latency_ms": MAX_LATENCY_MS, "healthy_test_targets": len(targets),
                              "fallback_reason": "upstream/check incomplete; recent verified cache only"})
     if len(nodes) > LIMIT:

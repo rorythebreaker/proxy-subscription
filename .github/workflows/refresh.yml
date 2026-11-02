@@ -25,7 +25,9 @@ jobs:
       XRAY_VERSION: '26.10.31'
       MAX_PROTOCOL_CHECKS: '240'
       PROTOCOL_WORKERS: '24'
-      STALE_TTL_SECONDS: '1800'
+      STALE_TTL_SECONDS: '600'
+      MAX_LATENCY_MS: '6000'
+      MIN_SPEED_MBPS: '0.10'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,6 +66,19 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_singbox_config.py' -v
       - name: Refresh and assemble subscriptions
         run: python refresh.py
+      - name: Report publication freshness and filtering
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          combined = json.loads(Path('public/combined_status.json').read_text())
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write('## Subscription refresh\n\n')
+              summary.write(f"Published at: {combined['published_at']}\n\n")
+              summary.write(f"Protocol counts: {combined['counts']}\n\n")
+              for name in ('status.json', 'protocol_status.json'):
+                  summary.write(f'### {name}\n\n```json\n{Path("public", name).read_text()}\n```\n\n')
+          PY
       - name: Cache pinned Xray
         uses: actions/cache@v4
         with:

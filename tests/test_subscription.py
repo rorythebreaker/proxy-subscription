@@ -107,7 +107,7 @@ class Connectivity(unittest.TestCase):
             self.assertEqual(vless.verify(BASE, common.TARGETS)[1], 'inconclusive')
         self.assertEqual(vless.verify(BASE, common.TARGETS, time.monotonic() - 1)[1], 'not_tested')
 
-    def test_vless_has_no_latency_or_bandwidth_gate_and_reaps_process(self):
+    def test_vless_runs_quality_gate_inside_tunnel_and_reaps_process(self):
         process = Mock()
         process.poll.return_value = None
         sock = Mock()
@@ -115,8 +115,10 @@ class Connectivity(unittest.TestCase):
         sock.__exit__ = Mock(return_value=None)
         sock.getsockname.return_value = ('127.0.0.1', 12345)
         sock.connect_ex.return_value = 0
-        with patch.object(vless.socket, 'socket', return_value=sock), patch.object(vless.subprocess, 'run', return_value=Mock(returncode=0)), patch.object(vless.subprocess, 'Popen', return_value=process), patch.object(vless, 'connectivity', return_value=('passed', 12000)):
-            self.assertEqual(vless.verify(BASE, common.TARGETS)[1:], ('passed', 12000))
+        with patch.object(vless.socket, 'socket', return_value=sock), patch.object(vless.subprocess, 'run', return_value=Mock(returncode=0)), patch.object(vless.subprocess, 'Popen', return_value=process), patch.object(vless, 'connectivity', return_value=('passed', 12000)), patch.object(vless, 'filter_quality', return_value=('latency_rejected', 12000)) as quality:
+            self.assertEqual(vless.verify(BASE, common.TARGETS, baseline_ok=True)[1:], ('latency_rejected', 12000))
+            self.assertEqual(quality.call_args.args[0], 'socks5h://127.0.0.1:12345')
+            self.assertTrue(quality.call_args.args[3])
         process.terminate.assert_called_once()
         process.wait.assert_called_once()
 
@@ -138,7 +140,7 @@ class Publication(unittest.TestCase):
     def test_recent_fallback_not_renewed_and_dead_removed(self):
         now = common.timestamp()
         core = vless.canonical_reality(BASE)
-        old = {core: {'last_verified_at': now}}
+        old = {core: {'last_verified_at': now, 'quality_policy': common.QUALITY_POLICY}}
         status, nodes = common.publish('vless', 'vless.txt', [(core, 'inconclusive', None)], old, 0, {'last_success_at': now}, {'fallback_reason': 'source outage'})
         self.assertEqual(status['published'], 1)
         self.assertEqual(status['new_count'], 0)

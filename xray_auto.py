@@ -104,7 +104,7 @@ def build_auto(uris):
         result['burstObservatory'] = {
             'subjectSelector': selectors,
             'pingConfig': {'destination': 'https://www.gstatic.com/generate_204',
-                           'connectivity': '', 'interval': '30s', 'sampling': 2, 'timeout': '5s'}}
+                           'connectivity': '', 'interval': '30s', 'sampling': 2, 'timeout': '8s'}}
     return result, {'nodes': {p: len(g) for p, g in groups.items()},
                     'skipped': diagnostics['skipped'], 'limits': dict(LIMITS)}
 

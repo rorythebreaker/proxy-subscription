@@ -44,7 +44,7 @@ def run_stage(script, seconds):
 
 def main():
     run_stage("update.py", int(os.getenv("SOCKS_STAGE_SECONDS", "120")))
-    run_stage("update_protocols.py", int(os.getenv("VLESS_STAGE_SECONDS", "145")))
+    run_stage("update_protocols.py", int(os.getenv("VLESS_STAGE_SECONDS", "200")))
     merge()
 
 

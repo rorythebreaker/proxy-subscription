@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect VLESS+REALITY and verify HTTPS, without speed/latency gates."""
+"""Collect VLESS+REALITY and verify full HTTPS tunnels with gentle quality gates."""
 import base64
 import concurrent.futures
 import ipaddress
@@ -16,7 +16,8 @@ from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urlsplit
 
 from subscription import (OUT, connectivity, decode_lines, fetch_bytes, healthy_targets,
-                          previous, publish, timestamp, write_json)
+                          previous, publish, timestamp, write_json, filter_quality,
+                          speed_baseline, MIN_SPEED_MBPS, MAX_LATENCY_MS)
 
 SOURCES = {"vless_reality": [
     "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
@@ -200,8 +201,8 @@ def diagnostic(stderr):
     return "other"
 
 
-def verify(uri, targets, deadline=None):
-    if deadline is not None and time.monotonic() + 20 > deadline:
+def verify(uri, targets, deadline=None, baseline_ok=False):
+    if deadline is not None and time.monotonic() + 35 > deadline:
         return uri, "not_tested", None
     try:
         remote = as_outbound(uri)
@@ -236,7 +237,10 @@ def verify(uri, targets, deadline=None):
                     time.sleep(0.05)
                 else:
                     return uri, "runtime_error", None
-                outcome, latency = connectivity(f"socks5h://127.0.0.1:{port}", targets)
+                proxy = f"socks5h://127.0.0.1:{port}"
+                outcome, latency = connectivity(proxy, targets)
+                if outcome == "passed":
+                    outcome, latency = filter_quality(proxy, targets, latency, baseline_ok, deadline)
                 return uri, outcome, latency
         except (OSError, subprocess.TimeoutExpired):
             return uri, "inconclusive", None
@@ -251,26 +255,31 @@ def verify(uri, targets, deadline=None):
 
 
 def main():
-    deadline = time.monotonic() + 125
+    deadline = time.monotonic() + 180
     old_state, old_nodes = previous("vless", canonical_reality)
     uris, success = collect()
     targets = healthy_targets() if shutil.which("sing-box") else []
-    candidates = list(dict.fromkeys([*uris, *old_nodes]))
+    baseline_ok = speed_baseline() if len(targets) == 2 else False
+    candidates = [uri for uri in uris if uri not in old_nodes]
     offset = (int(time.time() // 300) * MAX_CHECKS) % len(candidates) if candidates else 0
     candidates = candidates[offset:] + candidates[:offset]
-    chosen = candidates[:MAX_CHECKS]
+    # Recheck published nodes before rotating new candidates, rather than carrying
+    # old nodes through several batches without attempting a connection.
+    chosen = list(old_nodes)[:MAX_CHECKS]
+    chosen += candidates[:max(0, MAX_CHECKS - len(chosen))]
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        outcomes = list(pool.map(lambda uri: verify(uri, targets, deadline), chosen))
+        outcomes = list(pool.map(lambda uri: verify(uri, targets, deadline, baseline_ok), chosen))
     chosen_set = set(chosen)
     outcomes.extend((uri, "inconclusive", None) for uri in old_nodes if uri not in chosen_set)
-    tested = sum(item[1] in ("passed", "unreachable", "inconclusive") for item in outcomes[:len(chosen)]) if len(targets) == 2 else 0
+    tested = sum(item[1] in ("passed", "unreachable", "inconclusive", "latency_rejected", "speed_rejected", "quality_inconclusive") for item in outcomes[:len(chosen)]) if len(targets) == 2 else 0
     details = {"sources_reached": success, "candidates": len(uris), "tested": tested,
-               "unexamined": max(0, len(candidates) - len(chosen)), "max_checks": MAX_CHECKS,
-               "healthy_test_targets": len(targets), "min_mbps": None, "max_latency_ms": None,
+               "unexamined": max(0, len(candidates) + len(old_nodes) - len(chosen)), "max_checks": MAX_CHECKS,
+               "healthy_test_targets": len(targets), "min_mbps": MIN_SPEED_MBPS,
+               "max_latency_ms": MAX_LATENCY_MS, "speed_baseline_ok": baseline_ok,
                "fallback_reason": "upstream/check incomplete; recent verified cache only"}
     status, _ = publish("vless", "vless.txt", outcomes, old_nodes, success, old_state, details)
     write_json(OUT / "protocol_status.json", {"checked_at": timestamp(),
-               "verification": "sing-box HTTPS connectivity; two targets on failure; no speed or latency threshold",
+               "verification": "sing-box HTTPS; two targets on failure; two slow samples before quality rejection",
                "vless_reality": status})
     print("VLESS:", {k: status[k] for k in ("candidates", "tested", "published", "results")})
 
