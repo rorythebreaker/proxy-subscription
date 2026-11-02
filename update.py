@@ -20,12 +20,12 @@ SOURCES = [
 ]
 OUT = Path("public")
 LIMIT = int(os.getenv("MAX_PROXIES", "100"))
-CANDIDATES = int(os.getenv("MAX_CANDIDATES", "350"))
+CANDIDATES = int(os.getenv("MAX_CANDIDATES", "600"))
 WORKERS = int(os.getenv("CHECK_WORKERS", "48"))
 CHECK_URL = "https://www.gstatic.com/generate_204"
-MAX_LATENCY_MS = int(os.getenv("MAX_LATENCY_MS", "1500"))
-MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "1.0"))
-SPEED_TEST_LIMIT = int(os.getenv("SPEED_TEST_LIMIT", "50"))
+MAX_LATENCY_MS = int(os.getenv("MAX_LATENCY_MS", "3500"))
+MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "0.25"))
+SPEED_TEST_LIMIT = int(os.getenv("SPEED_TEST_LIMIT", "80"))
 SPEED_TEST_BYTES = int(os.getenv("SPEED_TEST_BYTES", "262144"))
 SPEED_URL = "https://speed.cloudflare.com/__down?bytes="
 GEOIP_URL = "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
@@ -80,7 +80,7 @@ def collect():
             print(f"Fetched {url}: {len(found)} unique candidates")
         except requests.RequestException as exc:
             print(f"Source failed: {url}: {exc}")
-    return sorted(found)[:CANDIDATES], successful_sources
+    return list(sorted(found))[:CANDIDATES], successful_sources
 
 
 def check(proxy):
