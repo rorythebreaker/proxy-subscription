@@ -14,10 +14,13 @@ from urllib.parse import urlsplit, parse_qs, quote, unquote
 
 import requests
 
-BASE = "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/"
 SOURCES = {
-    "shadowsocks": [BASE + "shadowsocks.txt"],
-    "vless_reality": [BASE + "reality.txt"],
+    "shadowsocks": [
+        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
+    ],
+    "vless_reality": [
+        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
+    ],
 }
 OUT = Path("public")
 MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "150"))
