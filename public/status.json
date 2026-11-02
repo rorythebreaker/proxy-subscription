@@ -1,9 +1,15 @@
 {
-  "checked_at": "2026-11-02T07:02:00.691597+00:00",
+  "checked_at": "2026-11-02T08:46:56.031333+00:00",
   "candidates": 350,
-  "alive": 17,
+  "alive": 14,
+  "published": 14,
+  "successful_sources": 2,
+  "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
+  "fastest_ms": 402,
   "sources": [
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
-  ]
+  ],
+  "geoip_database": "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb",
+  "country_unknown": 0
 }
