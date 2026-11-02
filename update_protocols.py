@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect public SS and VLESS+REALITY URI subscriptions.
+"""Collect public VLESS+REALITY URI subscriptions.
 
 These are format-validated upstream configurations, NOT locally speed-tested.
 """
@@ -21,9 +21,6 @@ import time
 import uuid
 
 SOURCES = {
-    "shadowsocks": [
-        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
-    ],
     "vless_reality": [
         "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
     ],
@@ -231,7 +228,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     stats = {"checked_at": datetime.now(timezone.utc).isoformat(),
              "verification": "sing-box HTTPS 204 and throughput"}
-    names = {"shadowsocks": "shadowsocks.txt", "vless_reality": "vless.txt"}
+    names = {"vless_reality": "vless.txt"}
     for kind, filename in names.items():
         uris, success = collect(kind)
         checked = uris[:MAX_CHECKS]
@@ -253,7 +250,7 @@ def main():
             print(f"{kind}: keeping last published file")
     # Combined file uses the latest published protocol lists, even if one upstream failed.
     combined = []
-    for filename in ("proxies.txt", "shadowsocks.txt", "vless.txt"):
+    for filename in ("proxies.txt", "vless.txt"):
         path = OUT / filename
         if path.exists():
             combined.extend(line for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
