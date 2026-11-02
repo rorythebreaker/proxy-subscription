@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, parse_qs, quote, unquote
 
 import requests
+import geoip2.database
 import subprocess
 import socket
 import tempfile
@@ -199,6 +200,33 @@ def verify(uri):
                 process.wait()
 
 
+def country_labels(uris):
+    """GeoIP for endpoint IPv4; hostname or lookup failure uses ZZ."""
+    result = {}
+    try:
+        from update import GEOIP_URL
+        response = requests.get(GEOIP_URL, timeout=(8, 20))
+        response.raise_for_status()
+        with tempfile.TemporaryDirectory() as folder:
+            db = Path(folder) / "Country.mmdb"
+            db.write_bytes(response.content)
+            with geoip2.database.Reader(str(db)) as reader:
+                for uri in uris:
+                    host = urlsplit(uri).hostname
+                    code = "ZZ"
+                    if host:
+                        try:
+                            code = reader.country(host).country.iso_code or "ZZ"
+                        except (geoip2.errors.AddressNotFoundError, ValueError):
+                            pass
+                    result[uri] = (code.upper(), host or "unknown")
+    except (requests.RequestException, OSError, ValueError, geoip2.errors.GeoIP2Error) as exc:
+        print("GeoIP unavailable:", type(exc).__name__)
+    for uri in uris:
+        result.setdefault(uri, ("ZZ", urlsplit(uri).hostname or "unknown"))
+    return result
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     stats = {"checked_at": datetime.now(timezone.utc).isoformat(),
@@ -217,9 +245,9 @@ def main():
                        "tested": len(checked), "published": len(verified),
                        "min_mbps": MIN_MBPS, "max_latency_ms": MAX_LATENCY_MS}
         if success:
-            # Do not mislabel nodes by country: endpoint hostname can differ from exit IP.
-            lines = [f"{uri}#{quote(('SS' if kind == 'shadowsocks' else 'VLESS-REALITY') + ' ' + str(i), safe='')}"
-                     for i, (uri, speed) in enumerate(verified, 1)]
+            labels = country_labels([uri for uri, _ in verified])
+            lines = [f"{uri}#{quote(' '.join(labels[uri]), safe='')}"
+                     for uri, speed in verified]
             (OUT / filename).write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
         else:
             print(f"{kind}: keeping last published file")
