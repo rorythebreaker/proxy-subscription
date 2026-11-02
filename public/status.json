@@ -1,25 +1,25 @@
 {
   "candidates": 600,
   "successful_sources": 2,
-  "alive": 22,
-  "speed_tested": 16,
+  "alive": 34,
+  "speed_tested": 25,
   "min_speed_mbps": 0.25,
   "max_latency_ms": 3500,
   "healthy_test_targets": 2,
   "fallback_reason": null,
-  "attempted_at": "2026-11-02T14:13:02.044349+00:00",
-  "checked_at": "2026-11-02T14:13:02.044349+00:00",
-  "last_success_at": "2026-11-02T14:13:02.044349+00:00",
-  "published": 1,
-  "published_count": 1,
-  "new_count": 1,
+  "attempted_at": "2026-11-02T15:31:07.578250+00:00",
+  "checked_at": "2026-11-02T15:31:07.578250+00:00",
+  "last_success_at": "2026-11-02T15:31:07.578250+00:00",
+  "published": 8,
+  "published_count": 8,
+  "new_count": 8,
   "stale": false,
   "stale_ttl_seconds": 1800,
   "results": {
-    "passed": 1,
-    "unreachable": 382,
-    "latency_rejected": 6,
-    "not_tested": 196,
-    "inconclusive": 15
+    "passed": 8,
+    "unreachable": 372,
+    "latency_rejected": 9,
+    "not_tested": 194,
+    "inconclusive": 17
   }
 }
