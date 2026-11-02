@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect and verify public SOCKS5 proxies; publish URI subscription."""
+"""Refresh a SOCKS5 URI subscription with measured HTTPS latency."""
 import concurrent.futures
 import ipaddress
 import json
@@ -9,6 +9,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
+
 import requests
 
 SOURCES = [
@@ -18,14 +19,18 @@ SOURCES = [
 OUT = Path("public")
 LIMIT = int(os.getenv("MAX_PROXIES", "100"))
 CANDIDATES = int(os.getenv("MAX_CANDIDATES", "350"))
+WORKERS = int(os.getenv("CHECK_WORKERS", "48"))
 CHECK_URL = "https://www.gstatic.com/generate_204"
+
 
 def collect():
     found = set()
+    successful_sources = 0
     for url in SOURCES:
         try:
             response = requests.get(url, timeout=20)
             response.raise_for_status()
+            successful_sources += 1
             for raw in response.text.splitlines():
                 raw = raw.strip().removeprefix("socks5://").removeprefix("socks://")
                 match = re.fullmatch(r"([\d.]+):(\d{1,5})", raw)
@@ -33,47 +38,73 @@ def collect():
                     continue
                 host, port = match.groups()
                 try:
-                    ip = ipaddress.ip_address(host)
-                    if not ip.is_global or not 0 < int(port) < 65536:
+                    if not ipaddress.ip_address(host).is_global or not 0 < int(port) < 65536:
                         continue
                 except ValueError:
                     continue
                 found.add(f"{host}:{port}")
-            print(f"Fetched {url}: total unique {len(found)}")
+            print(f"Fetched {url}: {len(found)} unique candidates")
         except requests.RequestException as exc:
             print(f"Source failed: {url}: {exc}")
-    return sorted(found)[:CANDIDATES]
+    return sorted(found)[:CANDIDATES], successful_sources
+
 
 def check(proxy):
+    start = time.monotonic()
     try:
-        resp = requests.get(CHECK_URL, proxies={
-            "http": f"socks5h://{proxy}", "https": f"socks5h://{proxy}"
-        }, timeout=(3, 6), allow_redirects=False)
-        return proxy if resp.status_code == 204 else None
+        response = requests.get(
+            CHECK_URL,
+            proxies={"http": f"socks5h://{proxy}", "https": f"socks5h://{proxy}"},
+            timeout=(3, 6),
+            allow_redirects=False,
+        )
+        if response.status_code == 204:
+            return proxy, round((time.monotonic() - start) * 1000)
     except requests.RequestException:
-        return None
+        pass
+    return None
+
 
 def main():
-    candidates = collect()
+    candidates, successful_sources = collect()
     print(f"Checking {len(candidates)} candidates")
-    good = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=48) as pool:
-        for result in pool.map(check, candidates):
-            if result:
-                good.append(result)
-                if len(good) >= LIMIT:
-                    break
+    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        results = [result for result in pool.map(check, candidates) if result is not None]
+
+    # Rank by end-to-end HTTPS latency, not ICMP ping or bandwidth.
+    results.sort(key=lambda item: (item[1], item[0]))
+    good = results[:LIMIT]
     OUT.mkdir(exist_ok=True)
     now = datetime.now(timezone.utc).isoformat()
-    status = {"checked_at": now, "candidates": len(candidates), "alive": len(good), "sources": SOURCES}
-    (OUT / "status.json").write_text(json.dumps(status, indent=2) + "\n")
-    if not good:
-        print("No live proxies. Keeping previous subscription.")
+    status = {
+        "checked_at": now,
+        "candidates": len(candidates),
+        "alive": len(results),
+        "published": len(good),
+        "successful_sources": successful_sources,
+        "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
+        "fastest_ms": good[0][1] if good else None,
+        "sources": SOURCES,
+    }
+    (OUT / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
+
+    if successful_sources == 0:
+        # A source outage is not evidence that previously published proxies failed.
+        print("All sources failed; leaving existing subscription unchanged.")
         return
-    lines = [f"socks://{proxy}#{quote('SOCKS5-' + str(i).zfill(3) + '-' + proxy, safe='')}" for i, proxy in enumerate(good, 1)]
-    (OUT / "proxies.txt").write_text("\n".join(lines) + "\n")
-    (OUT / "alive.txt").write_text("\n".join(good) + "\n")
-    print(f"Published {len(good)} proxies")
+
+    # Empty output deliberately removes previously working proxies that no longer pass.
+    lines = [
+        f"socks://{proxy}#{quote(f'SOCKS5-{index:03d}-{proxy}-{latency}ms', safe='')}"
+        for index, (proxy, latency) in enumerate(good, 1)
+    ]
+    (OUT / "proxies.txt").write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
+    (OUT / "alive.txt").write_text(
+        "\n".join(proxy for proxy, _ in good) + ("\n" if good else ""),
+        encoding="utf-8",
+    )
+    print(f"Published {len(good)} of {len(results)} live proxies")
+
 
 if __name__ == "__main__":
     main()
