@@ -28,16 +28,16 @@ SOURCES = {
 OUT = Path("public")
 MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "150"))
 MAX_SOURCE_BYTES = 8_000_000
-MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "24"))
-MAX_LATENCY_MS = 1500
-MIN_MBPS = 1.0
+MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "40"))
+MAX_LATENCY_MS = 3500
+MIN_MBPS = 0.25
 
 
 def decode_lines(body):
     text = body.decode("utf-8-sig", errors="replace").strip()
     if "://" not in text[:2048]:
         try:
-            raw = base64.b64decode(re.sub(r"\\s+", "", text) + "==", validate=False)
+            raw = base64.b64decode(re.sub(r"\s+", "", text) + "==", validate=False)
             text = raw.decode("utf-8")
         except (ValueError, UnicodeError):
             return []
