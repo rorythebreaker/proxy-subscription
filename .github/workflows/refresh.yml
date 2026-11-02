@@ -3,6 +3,13 @@ on:
   schedule:
     - cron: '2-59/5 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '*.py'
+      - 'tests/**'
+      - requirements.txt
+      - .github/workflows/refresh.yml
 permissions:
   contents: write
 concurrency:
@@ -10,40 +17,78 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 6
+    env:
+      SING_BOX_VERSION: '1.14.4'
+      MAX_PROTOCOL_CHECKS: '240'
+      PROTOCOL_WORKERS: '24'
+      STALE_TTL_SECONDS: '1800'
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
       - run: pip install -r requirements.txt
-      - run: python update.py
-      - name: Install sing-box
+      - run: python -m unittest discover -s tests -v
+      - name: Cache pinned sing-box
+        id: singbox-cache
+        uses: actions/cache@v4
+        with:
+          path: .tools/sing-box
+          key: sing-box-${{ runner.os }}-${{ runner.arch }}-${{ env.SING_BOX_VERSION }}
+      - name: Install pinned sing-box
+        id: singbox
+        continue-on-error: true
         run: |
-          curl -fsSL https://sing-box.app/install.sh | sudo sh
-          sing-box version
-      - run: python update_protocols.py
-      - name: Commit subscription
+          set -euo pipefail
+          mkdir -p .tools
+          if [ ! -x .tools/sing-box ]; then
+            archive="sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
+            curl --fail --silent --show-error --location --max-time 40 \
+              "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/${archive}" \
+              --output "${RUNNER_TEMP}/${archive}"
+            echo "699a1b510aa4396b2176d32d1181920399ebf1e267835da6f3b598d0f7c24968  ${RUNNER_TEMP}/${archive}" | sha256sum --check
+            tar --no-same-owner -xzf "${RUNNER_TEMP}/${archive}" -C "${RUNNER_TEMP}"
+            install -m 755 "${RUNNER_TEMP}/sing-box-${SING_BOX_VERSION}-linux-amd64/sing-box" .tools/sing-box
+          fi
+          .tools/sing-box version
+          echo "${GITHUB_WORKSPACE}/.tools" >> "$GITHUB_PATH"
+      - name: Validate real sing-box configurations
+        if: steps.singbox.outcome == 'success'
+        run: python -m unittest discover -s tests -p 'test_singbox_config.py' -v
+      - name: Refresh and assemble subscriptions
+        run: python refresh.py
+      - name: Commit consistent subscription
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/
-          if ! git diff --cached --quiet; then
-            git commit -m "Refresh proxy subscription"
-            for attempt in 1 2 3 4 5; do
-              git fetch origin main
-              if ! git rebase origin/main; then
-                git rebase --abort || true
-                echo "Rebase conflict: refusing to overwrite remote changes"
-                exit 1
-              fi
-              if git push origin HEAD:main; then
-                exit 0
-              fi
-              echo "Push race on attempt $attempt; retrying"
-              sleep 3
-            done
-            echo "Unable to push after five attempts"
-            exit 1
+          if git diff --cached --quiet; then
+            exit 0
           fi
+          calculated_from="$(git rev-parse HEAD)"
+          git commit -m "Refresh proxy subscription"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            if ! git diff --quiet "$calculated_from" origin/main -- \
+              '*.py' tests/ requirements.txt .github/workflows/refresh.yml; then
+              echo "Collector code changed during refresh; refusing stale results. New code triggers its own run."
+              exit 1
+            fi
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "Published files changed concurrently; refusing to overwrite them"
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 2
+          done
+          exit 1

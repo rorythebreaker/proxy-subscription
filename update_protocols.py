@@ -1,264 +1,278 @@
 #!/usr/bin/env python3
-"""Collect public VLESS+REALITY URI subscriptions.
-
-These are format-validated upstream configurations, NOT locally speed-tested.
-"""
+"""Collect VLESS+REALITY and verify HTTPS, without speed/latency gates."""
 import base64
+import concurrent.futures
 import ipaddress
 import json
 import os
 import re
-from datetime import datetime, timezone
-from pathlib import Path
-from urllib.parse import urlsplit, parse_qs, quote, unquote
-
-import requests
-import geoip2.database
-import subprocess
+import shutil
 import socket
+import subprocess
 import tempfile
 import time
 import uuid
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urlsplit
 
-SOURCES = {
-    "vless_reality": [
-        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
-        "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
-        "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/vless.txt",
-        "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/reality.txt",
-        "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
-        "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
-    ],
-}
-OUT = Path("public")
+from subscription import (OUT, connectivity, decode_lines, fetch_bytes, healthy_targets,
+                          previous, publish, timestamp, write_json)
+
+SOURCES = {"vless_reality": [
+    "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
+    "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
+    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/vless.txt",
+    "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/reality.txt",
+    "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
+    "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
+]}
 MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "1000"))
-MAX_SOURCE_BYTES = 25_000_000
-MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "40"))
-MAX_LATENCY_MS = 3500
-MIN_MBPS = 0.25
+MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "240"))
+WORKERS = int(os.getenv("PROTOCOL_WORKERS", "24"))
 
 
-def decode_lines(body):
-    text = body.decode("utf-8-sig", errors="replace").strip()
-    if "://" not in text[:2048]:
-        try:
-            raw = base64.b64decode(re.sub(r"\s+", "", text) + "==", validate=False)
-            text = raw.decode("utf-8")
-        except (ValueError, UnicodeError):
-            return []
-    return text.splitlines()
+class Unsupported(ValueError):
+    """URI whose semantics this verifier cannot reproduce."""
 
 
-def valid_ss(uri):
+def parse_reality(uri):
+    p = urlsplit(uri.strip())
+    if p.scheme != "vless" or not p.hostname or not p.port or p.password is not None or p.path not in ("", "/"):
+        raise ValueError("invalid VLESS authority")
+    user = str(uuid.UUID(p.username))
     try:
-        parts = urlsplit(uri)
-        if parts.scheme != "ss" or not parts.hostname or not parts.port:
-            return False
-        # SS SIP002 permits base64 userinfo or method:password userinfo.
-        credentials = parts.netloc.rsplit("@", 1)
-        if len(credentials) != 2 or not credentials[0]:
-            return False
-        userinfo = unquote(credentials[0])
-        if ":" not in userinfo:
-            userinfo = base64.urlsafe_b64decode(userinfo + "=" * (-len(userinfo) % 4)).decode()
-        method, sep, password = userinfo.partition(":")
-        return bool(sep and method and password)
-    except (ValueError, UnicodeError):
-        return False
+        address = ipaddress.ip_address(p.hostname)
+    except ValueError:
+        if not re.fullmatch(r"(?=.{1,253}$)[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?", p.hostname):
+            raise ValueError("invalid hostname")
+        if p.hostname.lower() == "localhost" or p.hostname.lower().endswith((".localhost", ".local")):
+            raise ValueError("local endpoint")
+    else:
+        if not address.is_global:
+            raise ValueError("non-public endpoint")
+    pairs = parse_qsl(p.query, keep_blank_values=True, strict_parsing=True)
+    q = dict(pairs)
+    if len(q) != len(pairs):
+        raise ValueError("duplicate query parameters")
+    if q.get("security", "").lower() != "reality" or not q.get("sni"):
+        raise ValueError("missing REALITY settings")
+    key = q.get("pbk", "")
+    if not re.fullmatch(r"[A-Za-z0-9_-]{43}", key) or len(base64.b64decode(key + "=", altchars=b"-_", validate=True)) != 32:
+        raise ValueError("invalid REALITY public key")
+    if not re.fullmatch(r"(?:[0-9a-fA-F]{2}){0,8}", q.get("sid", "")):
+        raise ValueError("invalid short ID")
+    if any(c.isspace() for c in q["sni"]) or any(c in q["sni"] for c in "/?#@"):
+        raise ValueError("invalid SNI")
+    q["security"] = "reality"
+    if not q.get("fp"):
+        q["fp"] = "chrome"
+    host = f"[{p.hostname}]" if ":" in p.hostname else p.hostname.lower()
+    core = f"vless://{user}@{host}:{p.port}?{urlencode(sorted(q.items()))}"
+    return core, p, q
+
+
+def canonical_reality(uri):
+    try:
+        return parse_reality(uri)[0]
+    except (TypeError, AttributeError) as exc:
+        raise ValueError("invalid VLESS URI") from exc
 
 
 def valid_reality(uri):
     try:
-        parts = urlsplit(uri)
-        if parts.scheme != "vless" or not parts.hostname or not parts.port or not parts.username:
-            return False
-        params = parse_qs(parts.query)
-        return (
-            params.get("security", [""])[0].lower() == "reality"
-            and bool(params.get("pbk", [""])[0])
-            and bool(params.get("sni", [""])[0])
-        )
+        canonical_reality(uri)
+        return True
     except ValueError:
         return False
 
 
-def collect(kind):
-    found = {}
-    succeeded = 0
-    for url in SOURCES[kind]:
-        try:
-            response = requests.get(url, timeout=(8, 22))
-            response.raise_for_status()
-            if len(response.content) > MAX_SOURCE_BYTES:
-                raise ValueError("source too large")
-            succeeded += 1
-            for line in decode_lines(response.content):
-                uri = line.strip()
-                if kind == "shadowsocks" and not valid_ss(uri):
-                    continue
-                if kind == "vless_reality" and not valid_reality(uri):
-                    continue
-                # Preserve credentials and all transport parameters; normalize only label.
-                core = uri.split("#", 1)[0]
-                found.setdefault(core, core)
-                if len(found) >= MAX_ITEMS:
-                    break
-        except (requests.RequestException, ValueError) as exc:
-            print(f"{kind}: upstream unavailable ({type(exc).__name__})")
-    return list(found.values()), succeeded
-
-
 def as_outbound(uri):
+    _, p, q = parse_reality(uri)
+    known = {"security", "pbk", "sni", "sid", "fp", "flow", "type", "encryption", "alpn",
+             "headerType", "host", "path", "serviceName", "mode", "ed", "eh", "spx"}
+    if set(q) - known:
+        raise Unsupported("unknown connection parameters")
+    if q.get("encryption", "none") not in ("", "none"):
+        raise Unsupported("VLESS encryption unsupported by sing-box")
+    if q.get("headerType", "none") not in ("", "none"):
+        raise Unsupported("TCP header obfuscation unsupported")
+    flow = q.get("flow", "")
+    if flow not in ("", "xtls-rprx-vision"):
+        raise Unsupported("unsupported flow")
+    transport = q.get("type", "tcp") or "tcp"
+    if transport == "raw":
+        transport = "tcp"
+    if transport not in ("tcp", "ws", "grpc", "http", "h2", "httpupgrade"):
+        raise Unsupported("unsupported transport")
+    if flow and transport != "tcp":
+        raise Unsupported("Vision requires TCP")
+    if q["fp"] not in ("chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"):
+        raise Unsupported("unsupported TLS fingerprint")
+    outbound = {"type": "vless", "tag": "remote", "server": p.hostname,
+                "server_port": p.port, "uuid": str(uuid.UUID(p.username)),
+                "tls": {"enabled": True, "server_name": q["sni"],
+                        "utls": {"enabled": True, "fingerprint": q["fp"]},
+                        "reality": {"enabled": True, "public_key": q["pbk"], "short_id": q.get("sid", "")}}}
+    if flow:
+        outbound["flow"] = flow
+    if q.get("alpn"):
+        outbound["tls"]["alpn"] = q["alpn"].split(",")
+    host, path = q.get("host", ""), q.get("path", "/") or "/"
+    if transport == "ws":
+        options = {"type": "ws", "path": path}
+        if host:
+            options["headers"] = {"Host": host}
+        if q.get("ed"):
+            if not q["ed"].isdigit():
+                raise ValueError("invalid early data size")
+            options["max_early_data"] = int(q["ed"])
+            options["early_data_header_name"] = q.get("eh", "Sec-WebSocket-Protocol")
+        outbound["transport"] = options
+    elif transport == "grpc":
+        if q.get("mode", "gun") not in ("", "gun"):
+            raise Unsupported("unsupported gRPC mode")
+        outbound["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
+    elif transport in ("http", "h2"):
+        outbound["transport"] = {"type": "http", "host": host.split(",") if host else [], "path": path}
+    elif transport == "httpupgrade":
+        outbound["transport"] = {"type": "httpupgrade", "host": host, "path": path}
+    allowed = {"tcp": set(), "ws": {"host", "path", "ed", "eh"},
+               "grpc": {"serviceName", "mode"}, "http": {"host", "path"},
+               "h2": {"host", "path"}, "httpupgrade": {"host", "path"}}[transport]
+    if any(q.get(k) for k in {"host", "path", "serviceName", "mode", "ed", "eh"} - allowed):
+        raise Unsupported("transport parameters cannot be reproduced")
+    return outbound
+
+
+def collect(kind="vless_reality"):
+    def source(url):
+        try:
+            body = fetch_bytes(url)
+            decoded = decode_lines(body)
+            meaningful = [line.strip() for line in decoded if line.strip() and not line.lstrip().startswith("#")]
+            if meaningful and not any(re.match(r"^[a-zA-Z][\w+.-]*://", line) for line in meaningful):
+                raise ValueError("unrecognized subscription")
+            if body.strip() and not meaningful:
+                raise ValueError("no recognizable subscription records")
+            valid = []
+            for line in meaningful:
+                try:
+                    valid.append(canonical_reality(line))
+                except ValueError:
+                    continue
+            return valid, True
+        except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
+            return [], False
+    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+        fetched = list(pool.map(source, SOURCES[kind]))
+    found = {}
+    lists = [iter(items) for items, _ in fetched]
+    while lists and len(found) < MAX_ITEMS:
+        remaining = []
+        for iterator in lists:
+            try:
+                uri = next(iterator)
+            except StopIteration:
+                continue
+            found.setdefault(uri, uri)
+            remaining.append(iterator)
+            if len(found) >= MAX_ITEMS:
+                break
+        lists = remaining
+    return list(found), sum(success for _, success in fetched)
+
+
+def config_for(remote, port):
+    return {"log": {"level": "error"},
+            "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
+            "outbounds": [remote]}
+
+
+def diagnostic(stderr):
+    """Return a safe category rather than logging credentials/configuration text."""
+    text = stderr.decode("utf-8", errors="replace").lower()
+    for marker, category in (("public_key", "public_key"), ("short_id", "short_id"),
+                             ("utls", "utls"), ("fingerprint", "fingerprint"),
+                             ("address already in use", "port_busy"),
+                             ("transport", "transport"), ("flow", "flow")):
+        if marker in text:
+            return category
+    return "other"
+
+
+def verify(uri, targets, deadline=None):
+    if deadline is not None and time.monotonic() + 20 > deadline:
+        return uri, "not_tested", None
     try:
-        p = urlsplit(uri)
-        if not p.hostname or not p.port:
-            return None
-        if p.scheme == "ss":
-            user = unquote(p.netloc.rsplit("@", 1)[0])
-            if ":" not in user:
-                user = base64.urlsafe_b64decode(user + "=" * (-len(user) % 4)).decode()
-            method, password = user.split(":", 1)
-            if not method or not password:
-                return None
-            return {"type": "shadowsocks", "tag": "remote", "server": p.hostname,
-                    "server_port": p.port, "method": method, "password": password}
-        if p.scheme == "vless":
-            q = parse_qs(p.query)
-            get = lambda key, default="": q.get(key, [default])[0]
-            if get("security").lower() != "reality" or not get("pbk") or not get("sni"):
-                return None
-            if get("type", "tcp") != "tcp":
-                return None
-            uuid.UUID(p.username)
-            outbound = {"type": "vless", "tag": "remote", "server": p.hostname,
-                        "server_port": p.port, "uuid": p.username,
-                        "tls": {"enabled": True, "server_name": get("sni"),
-                                "reality": {"enabled": True, "public_key": get("pbk"),
-                                            "short_id": get("sid")}}}
-            if get("fp"):
-                outbound["tls"]["utls"] = {"enabled": True, "fingerprint": get("fp")}
-            if get("flow"):
-                outbound["flow"] = get("flow")
-            return outbound
-    except (ValueError, UnicodeError, IndexError):
-        return None
-    return None
-
-
-def verify(uri):
-    remote = as_outbound(uri)
-    if remote is None:
-        return None
-    with socket.socket() as sock:
-        sock.bind(("127.0.0.1", 0))
-        port = sock.getsockname()[1]
-    config = {"log": {"level": "error"},
-              "inbounds": [{"type": "socks", "tag": "local", "listen": "127.0.0.1",
-                            "listen_port": port}],
-              "outbounds": [remote]}
+        remote = as_outbound(uri)
+    except Unsupported:
+        return uri, "unsupported", None
+    except (ValueError, TypeError):
+        return uri, "invalid", None
+    if len(targets) != 2:
+        return uri, "inconclusive", None
+    process = None
     with tempfile.TemporaryDirectory() as folder:
         path = Path(folder) / "config.json"
-        path.write_text(json.dumps(config))
-        process = subprocess.Popen(["sing-box", "run", "-c", str(path)],
-                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        with socket.socket() as sock:
+            sock.bind(("127.0.0.1", 0))
+            port = sock.getsockname()[1]
+        path.write_text(json.dumps(config_for(remote, port)), encoding="utf-8")
         try:
-            for _ in range(20):
-                if process.poll() is not None:
-                    return None
-                with socket.socket() as sock:
-                    if sock.connect_ex(("127.0.0.1", port)) == 0:
-                        break
-                time.sleep(0.1)
-            else:
-                return None
-            session = requests.Session()
-            session.trust_env = False
-            proxy = f"socks5h://127.0.0.1:{port}"
-            session.proxies = {"http": proxy, "https": proxy}
-            start = time.monotonic()
-            response = session.get("https://www.gstatic.com/generate_204", timeout=(3, 5))
-            latency = (time.monotonic() - start) * 1000
-            if response.status_code != 204 or latency > MAX_LATENCY_MS:
-                return None
-            with session.get("https://speed.cloudflare.com/__down?bytes=262144",
-                             timeout=(3, 8), stream=True) as response:
-                if response.status_code != 200:
-                    return None
-                start = time.monotonic()
-                count = sum(len(chunk) for chunk in response.iter_content(32768))
-                seconds = time.monotonic() - start
-            if count != 262144 or seconds <= 0:
-                return None
-            mbps = count * 8 / seconds / 1_000_000
-            return round(mbps, 2) if mbps >= MIN_MBPS else None
-        except (requests.RequestException, OSError):
-            return None
+            checked = subprocess.run(["sing-box", "check", "-c", str(path)], capture_output=True, timeout=3)
+            if checked.returncode:
+                return uri, "config_error:" + diagnostic(checked.stderr[:4096]), None
+            with (Path(folder) / "stderr.log").open("wb") as stderr:
+                process = subprocess.Popen(["sing-box", "run", "-c", str(path)],
+                                           stdout=subprocess.DEVNULL, stderr=stderr)
+                for _ in range(20):
+                    if process.poll() is not None:
+                        stderr.flush()
+                        return uri, "runtime_error:" + diagnostic((Path(folder) / "stderr.log").read_bytes()[:4096]), None
+                    with socket.socket() as sock:
+                        sock.settimeout(0.1)
+                        if sock.connect_ex(("127.0.0.1", port)) == 0:
+                            break
+                    time.sleep(0.05)
+                else:
+                    return uri, "runtime_error", None
+                outcome, latency = connectivity(f"socks5h://127.0.0.1:{port}", targets)
+                return uri, outcome, latency
+        except (OSError, subprocess.TimeoutExpired):
+            return uri, "inconclusive", None
         finally:
-            process.terminate()
-            try:
-                process.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                process.kill()
-                process.wait()
-
-
-def country_labels(uris):
-    """GeoIP for endpoint IPv4; hostname or lookup failure uses ZZ."""
-    result = {}
-    try:
-        from update import GEOIP_URL
-        response = requests.get(GEOIP_URL, timeout=(8, 20))
-        response.raise_for_status()
-        with tempfile.TemporaryDirectory() as folder:
-            db = Path(folder) / "Country.mmdb"
-            db.write_bytes(response.content)
-            with geoip2.database.Reader(str(db)) as reader:
-                for uri in uris:
-                    host = urlsplit(uri).hostname
-                    code = "ZZ"
-                    if host:
-                        try:
-                            code = reader.country(host).country.iso_code or "ZZ"
-                        except (geoip2.errors.AddressNotFoundError, ValueError):
-                            pass
-                    result[uri] = (code.upper(), host or "unknown")
-    except (requests.RequestException, OSError, ValueError, geoip2.errors.GeoIP2Error) as exc:
-        print("GeoIP unavailable:", type(exc).__name__)
-    for uri in uris:
-        result.setdefault(uri, ("ZZ", urlsplit(uri).hostname or "unknown"))
-    return result
+            if process is not None:
+                process.terminate()
+                try:
+                    process.wait(timeout=1)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait()
 
 
 def main():
-    OUT.mkdir(exist_ok=True)
-    stats = {"checked_at": datetime.now(timezone.utc).isoformat(),
-             "verification": "disabled; syntax-only VLESS+REALITY collection"}
-    names = {"vless_reality": "vless.txt"}
-    for kind, filename in names.items():
-        uris, success = collect(kind)
-        # Temporary unfiltered mode: publish all syntactically valid REALITY URIs.
-        # No sing-box, latency, throughput, or reachability checks.
-        checked = []
-        verified = [(uri, None) for uri in uris]
-        stats[kind] = {"sources_reached": success, "candidates": len(uris),
-                       "tested": len(checked), "published": len(verified),
-                       "min_mbps": None, "max_latency_ms": None}
-        if success:
-            labels = country_labels([uri for uri, _ in verified])
-            lines = [f"{uri}#{quote(' '.join(labels[uri]), safe='')}"
-                     for uri, speed in verified]
-            (OUT / filename).write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
-        else:
-            print(f"{kind}: keeping last published file")
-    # Combined file uses the latest published protocol lists, even if one upstream failed.
-    combined = []
-    for filename in ("proxies.txt", "vless.txt"):
-        path = OUT / filename
-        if path.exists():
-            combined.extend(line for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
-    (OUT / "all.txt").write_text("\n".join(combined) + ("\n" if combined else ""), encoding="utf-8")
-    (OUT / "protocol_status.json").write_text(json.dumps(stats, indent=2) + "\n", encoding="utf-8")
-    print("Protocol collection:", {k: stats[k]["published"] for k in names})
+    deadline = time.monotonic() + 125
+    old_state, old_nodes = previous("vless", canonical_reality)
+    uris, success = collect()
+    targets = healthy_targets() if shutil.which("sing-box") else []
+    candidates = list(dict.fromkeys([*uris, *old_nodes]))
+    offset = (int(time.time() // 300) * MAX_CHECKS) % len(candidates) if candidates else 0
+    candidates = candidates[offset:] + candidates[:offset]
+    chosen = candidates[:MAX_CHECKS]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        outcomes = list(pool.map(lambda uri: verify(uri, targets, deadline), chosen))
+    chosen_set = set(chosen)
+    outcomes.extend((uri, "inconclusive", None) for uri in old_nodes if uri not in chosen_set)
+    tested = sum(item[1] in ("passed", "unreachable", "inconclusive") for item in outcomes[:len(chosen)]) if len(targets) == 2 else 0
+    details = {"sources_reached": success, "candidates": len(uris), "tested": tested,
+               "unexamined": max(0, len(candidates) - len(chosen)), "max_checks": MAX_CHECKS,
+               "healthy_test_targets": len(targets), "min_mbps": None, "max_latency_ms": None,
+               "fallback_reason": "upstream/check incomplete; recent verified cache only"}
+    status, _ = publish("vless", "vless.txt", outcomes, old_nodes, success, old_state, details)
+    write_json(OUT / "protocol_status.json", {"checked_at": timestamp(),
+               "verification": "sing-box HTTPS connectivity; two targets on failure; no speed or latency threshold",
+               "vless_reality": status})
+    print("VLESS:", {k: status[k] for k in ("candidates", "tested", "published", "results")})
 
 
 if __name__ == "__main__":

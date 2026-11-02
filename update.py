@@ -1,195 +1,104 @@
 #!/usr/bin/env python3
-"""Refresh a SOCKS5 URI subscription with measured HTTPS latency."""
+"""Refresh SOCKS5, retaining the existing latency and throughput policy."""
 import concurrent.futures
-import ipaddress
-import json
 import os
-import re
+import subprocess
 import time
-from datetime import datetime, timezone
-from pathlib import Path
-from urllib.parse import quote
 
-import requests
-import geoip2.database
-import tempfile
+from subscription import (OUT, GEOIP_URL, canonical_socks, connectivity, curl, fetch_bytes,
+                          healthy_targets, previous, publish, write_json)
 
 SOURCES = [
     "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
     "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt",
 ]
-OUT = Path("public")
 LIMIT = int(os.getenv("MAX_PROXIES", "100"))
 CANDIDATES = int(os.getenv("MAX_CANDIDATES", "600"))
 WORKERS = int(os.getenv("CHECK_WORKERS", "48"))
-CHECK_URL = "https://www.gstatic.com/generate_204"
 MAX_LATENCY_MS = int(os.getenv("MAX_LATENCY_MS", "3500"))
 MIN_SPEED_MBPS = float(os.getenv("MIN_SPEED_MBPS", "0.25"))
 SPEED_TEST_LIMIT = int(os.getenv("SPEED_TEST_LIMIT", "80"))
 SPEED_TEST_BYTES = int(os.getenv("SPEED_TEST_BYTES", "262144"))
-SPEED_URL = "https://speed.cloudflare.com/__down?bytes="
-GEOIP_URL = "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
-
-
-def country_codes(proxies):
-    """Resolve country from a local MMDB snapshot; fail open with ZZ."""
-    if not proxies:
-        return {}
-    try:
-        response = requests.get(GEOIP_URL, timeout=(10, 30))
-        response.raise_for_status()
-        with tempfile.TemporaryDirectory() as directory:
-            db_path = Path(directory) / "Country.mmdb"
-            db_path.write_bytes(response.content)
-            with geoip2.database.Reader(str(db_path)) as reader:
-                result = {}
-                for proxy, _ in proxies:
-                    ip = proxy.rsplit(":", 1)[0]
-                    try:
-                        # Country.mmdb uses country ISO codes for IP prefixes.
-                        result[proxy] = reader.country(ip).country.iso_code or "ZZ"
-                    except (geoip2.errors.AddressNotFoundError, ValueError):
-                        result[proxy] = "ZZ"
-                return result
-    except (requests.RequestException, OSError, ValueError) as exc:
-        print(f"GeoIP unavailable: {exc}; using ZZ")
-        return {proxy: "ZZ" for proxy, _ in proxies}
-
 
 
 def collect():
-    found = set()
-    successful_sources = 0
-    for url in SOURCES:
+    def source(url):
         try:
-            response = requests.get(url, timeout=20)
-            response.raise_for_status()
-            successful_sources += 1
-            for raw in response.text.splitlines():
-                raw = raw.strip().removeprefix("socks5://").removeprefix("socks://")
-                match = re.fullmatch(r"([\d.]+):(\d{1,5})", raw)
-                if not match:
-                    continue
-                host, port = match.groups()
+            body = fetch_bytes(url)
+            found = set()
+            for line in body.decode("utf-8-sig").splitlines():
                 try:
-                    if not ipaddress.ip_address(host).is_global or not 0 < int(port) < 65536:
-                        continue
-                except ValueError:
+                    found.add(canonical_socks(line))
+                except (ValueError, TypeError):
                     continue
-                found.add(f"{host}:{port}")
-            print(f"Fetched {url}: {len(found)} unique candidates")
-        except requests.RequestException as exc:
-            print(f"Source failed: {url}: {exc}")
-    return list(sorted(found))[:CANDIDATES], successful_sources
+            if body.strip() and not found:
+                raise ValueError("unrecognized SOCKS source")
+            return found, True
+        except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
+            return set(), False
+    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+        fetched = list(pool.map(source, SOURCES))
+    found = dict.fromkeys(uri for items, _ in fetched for uri in sorted(items))
+    return list(found)[:CANDIDATES], sum(ok for _, ok in fetched)
 
 
-def check(proxy):
-    start = time.monotonic()
-    try:
-        response = requests.get(
-            CHECK_URL,
-            proxies={"http": f"socks5h://{proxy}", "https": f"socks5h://{proxy}"},
-            timeout=(3, 6),
-            allow_redirects=False,
-        )
-        if response.status_code == 204:
-            return proxy, round((time.monotonic() - start) * 1000)
-    except requests.RequestException:
-        pass
-    return None
+def check(uri, targets, deadline=None):
+    if deadline is not None and time.monotonic() + 16 > deadline:
+        return uri, "not_tested", None
+    outcome, latency = connectivity(uri.replace("socks://", "socks5h://", 1), targets)
+    if outcome == "passed" and latency > MAX_LATENCY_MS:
+        outcome = "latency_rejected"
+    return uri, outcome, latency
 
 
 def speed_test(item):
-    """Measure payload throughput through the SOCKS5 proxy, excluding setup time."""
-    proxy, latency = item
-    if latency > MAX_LATENCY_MS:
-        return None
+    uri, _, latency = item
     try:
-        with requests.get(
-            f"{SPEED_URL}{SPEED_TEST_BYTES}",
-            proxies={"http": f"socks5h://{proxy}", "https": f"socks5h://{proxy}"},
-            timeout=(3, 8),
-            stream=True,
-            allow_redirects=False,
-        ) as response:
-            response.raise_for_status()
-            if response.status_code != 200:
-                return None
-            total = 0
-            started = time.monotonic()
-            for chunk in response.iter_content(chunk_size=32768):
-                if not chunk:
-                    continue
-                total += len(chunk)
-                if total > SPEED_TEST_BYTES:
-                    return None
-            elapsed = time.monotonic() - started
-            if total != SPEED_TEST_BYTES or elapsed <= 0:
-                return None
-            mbps = round(total * 8 / elapsed / 1_000_000, 2)
-            if mbps >= MIN_SPEED_MBPS:
-                return proxy, latency, mbps
-    except (requests.RequestException, OSError, ValueError):
-        pass
-    return None
+        result = curl(["--proxy", uri.replace("socks://", "socks5h://", 1), "--noproxy", "",
+                       "--output", os.devnull, "--max-filesize", str(SPEED_TEST_BYTES),
+                       "--write-out", "%{http_code} %{size_download} %{time_total} %{time_starttransfer}",
+                       f"https://speed.cloudflare.com/__down?bytes={SPEED_TEST_BYTES}"], 10)
+        code, size, total, first = result.stdout.decode().split()
+        seconds = float(total) - float(first)
+        if result.returncode or code != "200" or int(size) != SPEED_TEST_BYTES or seconds <= 0:
+            return uri, "inconclusive", None
+        speed = int(size) * 8 / seconds / 1_000_000
+        return uri, "passed" if speed >= MIN_SPEED_MBPS else "speed_rejected", speed
+    except (OSError, ValueError, subprocess.TimeoutExpired):
+        return uri, "inconclusive", None
 
 
 def main():
-    candidates, successful_sources = collect()
-    print(f"Checking {len(candidates)} candidates")
+    deadline = time.monotonic() + 100
+    old_state, old_nodes = previous("socks", canonical_socks)
+    candidates, success = collect()
+    candidates = list(dict.fromkeys([*candidates, *old_nodes]))
+    targets = healthy_targets()
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        results = [result for result in pool.map(check, candidates) if result is not None]
-
-    # Rank by end-to-end HTTPS latency, not ICMP ping or bandwidth.
-    results.sort(key=lambda item: (item[1], item[0]))
-    eligible = [item for item in results if item[1] <= MAX_LATENCY_MS]
-    tested = eligible[:SPEED_TEST_LIMIT]
-    print(f"Speed testing {len(tested)} proxies (min {MIN_SPEED_MBPS} Mbps)")
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(WORKERS, 16)) as pool:
-        speed_results = [result for result in pool.map(speed_test, tested) if result]
-    speed_results.sort(key=lambda item: (-item[2], item[1], item[0]))
-    good = speed_results[:LIMIT]
-    countries = country_codes([(proxy, latency) for proxy, latency, _ in good])
-    OUT.mkdir(exist_ok=True)
-    now = datetime.now(timezone.utc).isoformat()
-    status = {
-        "checked_at": now,
-        "candidates": len(candidates),
-        "alive": len(results),
-        "published": len(good),
-        "latency_passed": len(eligible),
-        "speed_tested": len(tested),
-        "speed_passed": len(speed_results),
-        "min_speed_mbps": MIN_SPEED_MBPS,
-        "max_latency_ms": MAX_LATENCY_MS,
-        "speed_test_bytes": SPEED_TEST_BYTES,
-        "fastest_speed_mbps": good[0][2] if good else None,
-        "successful_sources": successful_sources,
-        "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
-        "fastest_ms": min((item[1] for item in good), default=None),
-        "sources": SOURCES,
-        "geoip_database": GEOIP_URL,
-        "country_unknown": sum(countries.get(proxy, "ZZ") == "ZZ" for proxy, _, _ in good),
-    }
-    (OUT / "status.json").write_text(json.dumps(status, indent=2) + "\n", encoding="utf-8")
-
-    if successful_sources == 0:
-        # A source outage is not evidence that previously published proxies failed.
-        print("All sources failed; leaving existing subscription unchanged.")
-        return
-
-    # Empty output deliberately removes previously working proxies that no longer pass.
-    lines = []
-    for proxy, _, _ in good:
-        ip = proxy.rsplit(':', 1)[0]
-        label = f"{countries.get(proxy, 'ZZ')} {ip}"
-        lines.append(f"socks://{proxy}#{quote(label, safe='')}")
-    (OUT / "proxies.txt").write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
-    (OUT / "alive.txt").write_text(
-        "\n".join(proxy for proxy, _, _ in good) + ("\n" if good else ""),
-        encoding="utf-8",
-    )
-    print(f"Published {len(good)} of {len(results)} live proxies")
+        initial = list(pool.map(lambda uri: check(uri, targets, deadline - 40), candidates))
+    eligible = sorted((item for item in initial if item[1] == "passed"), key=lambda item: item[2])
+    chosen = eligible[:SPEED_TEST_LIMIT]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=16) as pool:
+        measured = list(pool.map(lambda item: speed_test(item) if time.monotonic() + 11 < deadline
+                                 else (item[0], "inconclusive", None), chosen))
+    passed = sorted((item for item in measured if item[1] == "passed"), key=lambda item: -item[2])[:LIMIT]
+    outcomes = passed + [item for item in initial if item[1] != "passed"]
+    outcomes += [item for item in measured if item[1] != "passed"]
+    status, nodes = publish("socks", "proxies.txt", outcomes, old_nodes, success, old_state,
+                            {"candidates": len(candidates), "successful_sources": success,
+                             "alive": sum(item[1] in ("passed", "latency_rejected") for item in initial),
+                             "speed_tested": len(chosen), "min_speed_mbps": MIN_SPEED_MBPS,
+                             "max_latency_ms": MAX_LATENCY_MS, "healthy_test_targets": len(targets),
+                             "fallback_reason": "upstream/check incomplete; recent verified cache only"})
+    if len(nodes) > LIMIT:
+        selected = dict(list(nodes.items())[:LIMIT])
+        from subscription import atomic_write, lines
+        kept = [line for line in lines(OUT / "proxies.txt") if canonical_socks(line) in selected]
+        atomic_write(OUT / "proxies.txt", "\n".join(kept) + ("\n" if kept else ""))
+        write_json(OUT / "socks_state.json", {"last_success_at": status["last_success_at"], "nodes": selected})
+        status["published"] = status["published_count"] = len(selected)
+    write_json(OUT / "status.json", status)
+    print("SOCKS:", {k: status[k] for k in ("candidates", "published", "results")})
 
 
 if __name__ == "__main__":
