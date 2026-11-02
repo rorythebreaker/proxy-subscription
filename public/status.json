@@ -1,26 +1,25 @@
 {
   "candidates": 600,
   "successful_sources": 2,
-  "alive": 45,
-  "speed_tested": 30,
-  "min_speed_mbps": 0.25,
-  "max_latency_ms": 3500,
+  "alive": 32,
+  "speed_baseline_ok": true,
+  "min_speed_mbps": 0.1,
+  "max_latency_ms": 6000.0,
   "healthy_test_targets": 2,
   "fallback_reason": null,
-  "attempted_at": "2026-11-02T16:59:39.274840+00:00",
-  "checked_at": "2026-11-02T16:59:39.274840+00:00",
-  "last_success_at": "2026-11-02T16:59:39.274840+00:00",
-  "published": 7,
-  "published_count": 7,
-  "new_count": 7,
+  "attempted_at": "2026-11-02T18:55:23.597892+00:00",
+  "checked_at": "2026-11-02T18:55:23.597892+00:00",
+  "last_success_at": "2026-11-02T18:55:23.597892+00:00",
+  "published": 31,
+  "published_count": 31,
+  "new_count": 31,
   "stale": false,
-  "stale_ttl_seconds": 1800,
+  "stale_ttl_seconds": 600,
   "results": {
-    "passed": 7,
-    "unreachable": 362,
-    "latency_rejected": 15,
-    "not_tested": 193,
+    "passed": 31,
+    "unreachable": 491,
     "speed_rejected": 1,
-    "inconclusive": 22
-  }
+    "not_tested": 77
+  },
+  "quality_policy": "gentle-v1:6000.0:0.1"
 }
