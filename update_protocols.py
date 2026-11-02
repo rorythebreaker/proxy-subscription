@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect VLESS+REALITY and verify full HTTPS tunnels with gentle quality gates."""
+"""Collect VLESS REALITY and XHTTP/TLS; verify complete tunnels and throughput."""
 import base64
 import concurrent.futures
 import ipaddress
@@ -36,7 +36,7 @@ class Unsupported(ValueError):
     """URI whose semantics this verifier cannot reproduce."""
 
 
-def parse_reality(uri):
+def parse_vless(uri):
     p = urlsplit(uri.strip())
     if p.scheme != "vless" or not p.hostname or not p.port or p.password is not None or p.path not in ("", "/"):
         raise ValueError("invalid VLESS authority")
@@ -55,21 +55,41 @@ def parse_reality(uri):
     q = dict(pairs)
     if len(q) != len(pairs):
         raise ValueError("duplicate query parameters")
-    if q.get("security", "").lower() != "reality" or not q.get("sni"):
-        raise ValueError("missing REALITY settings")
-    key = q.get("pbk", "")
-    if not re.fullmatch(r"[A-Za-z0-9_-]{43}", key) or len(base64.b64decode(key + "=", altchars=b"-_", validate=True)) != 32:
-        raise ValueError("invalid REALITY public key")
-    if not re.fullmatch(r"(?:[0-9a-fA-F]{2}){0,8}", q.get("sid", "")):
-        raise ValueError("invalid short ID")
+    security = q.get("security", "").lower()
+    if security == "tls" and q.get("type") == "xhttp":
+        q["sni"] = q.get("sni") or q.get("host") or p.hostname
+    elif security == "reality":
+        if not q.get("sni"):
+            raise ValueError("missing REALITY SNI")
+        key = q.get("pbk", "")
+        if not re.fullmatch(r"[A-Za-z0-9_-]{43}", key) or len(base64.b64decode(key + "=", altchars=b"-_", validate=True)) != 32:
+            raise ValueError("invalid REALITY public key")
+        if not re.fullmatch(r"(?:[0-9a-fA-F]{2}){0,8}", q.get("sid", "")):
+            raise ValueError("invalid short ID")
+    else:
+        raise ValueError("unsupported VLESS security/transport combination")
     if any(c.isspace() for c in q["sni"]) or any(c in q["sni"] for c in "/?#@"):
         raise ValueError("invalid SNI")
-    q["security"] = "reality"
+    q["security"] = security
     if not q.get("fp"):
         q["fp"] = "chrome"
     host = f"[{p.hostname}]" if ":" in p.hostname else p.hostname.lower()
     core = f"vless://{user}@{host}:{p.port}?{urlencode(sorted(q.items()))}"
     return core, p, q
+
+
+def parse_reality(uri):
+    parsed = parse_vless(uri)
+    if parsed[2]["security"] != "reality":
+        raise ValueError("not REALITY")
+    return parsed
+
+
+def canonical_vless(uri):
+    try:
+        return parse_vless(uri)[0]
+    except (TypeError, AttributeError) as exc:
+        raise ValueError("invalid VLESS URI") from exc
 
 
 def canonical_reality(uri):
@@ -158,10 +178,13 @@ def collect(kind="vless_reality"):
             valid = []
             for line in meaningful:
                 try:
-                    valid.append(canonical_reality(line))
+                    valid.append(canonical_vless(line))
                 except ValueError:
                     continue
-            return valid, True
+            from itertools import zip_longest
+            xhttp = [u for u in valid if parse_vless(u)[2].get("type") == "xhttp"]
+            other = [u for u in valid if parse_vless(u)[2].get("type") != "xhttp"]
+            return [u for pair in zip_longest(xhttp, other) for u in pair if u], True
         except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
             return [], False
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
@@ -205,26 +228,43 @@ def verify(uri, targets, deadline=None, baseline_ok=False):
     if deadline is not None and time.monotonic() + 35 > deadline:
         return uri, "not_tested", None
     try:
-        remote = as_outbound(uri)
+        is_xhttp = parse_vless(uri)[2].get("security") == "tls"
+        if is_xhttp:
+            from xhttp import proxy_outbound
+            remote = proxy_outbound(uri, "remote")
+        else:
+            remote = as_outbound(uri)
     except Unsupported:
         return uri, "unsupported", None
     except (ValueError, TypeError):
         return uri, "invalid", None
     if len(targets) != 2:
         return uri, "inconclusive", None
+    engine = "xray" if is_xhttp else "sing-box"
     process = None
     with tempfile.TemporaryDirectory() as folder:
         path = Path(folder) / "config.json"
         with socket.socket() as sock:
             sock.bind(("127.0.0.1", 0))
             port = sock.getsockname()[1]
-        path.write_text(json.dumps(config_for(remote, port)), encoding="utf-8")
+        if is_xhttp:
+            config = {"log": {"loglevel": "error"},
+                      "inbounds": [{"listen": "127.0.0.1", "port": port,
+                                    "protocol": "socks", "settings": {"auth": "noauth"}}],
+                      "outbounds": [remote]}
+            check_cmd = [engine, "run", "-test", "-config", str(path)]
+            run_cmd = [engine, "run", "-config", str(path)]
+        else:
+            config = config_for(remote, port)
+            check_cmd = [engine, "check", "-c", str(path)]
+            run_cmd = [engine, "run", "-c", str(path)]
+        path.write_text(json.dumps(config), encoding="utf-8")
         try:
-            checked = subprocess.run(["sing-box", "check", "-c", str(path)], capture_output=True, timeout=3)
+            checked = subprocess.run(check_cmd, capture_output=True, timeout=3)
             if checked.returncode:
                 return uri, "config_error:" + diagnostic(checked.stderr[:4096]), None
             with (Path(folder) / "stderr.log").open("wb") as stderr:
-                process = subprocess.Popen(["sing-box", "run", "-c", str(path)],
+                process = subprocess.Popen(run_cmd,
                                            stdout=subprocess.DEVNULL, stderr=stderr)
                 for _ in range(20):
                     if process.poll() is not None:
@@ -256,13 +296,17 @@ def verify(uri, targets, deadline=None, baseline_ok=False):
 
 def main():
     deadline = time.monotonic() + 180
-    old_state, old_nodes = previous("vless", canonical_reality)
+    old_state, old_nodes = previous("vless", canonical_vless)
     uris, success = collect()
-    targets = healthy_targets() if shutil.which("sing-box") else []
+    targets = healthy_targets() if (shutil.which("sing-box") or shutil.which("xray")) else []
     baseline_ok = speed_baseline() if len(targets) == 2 else False
     candidates = [uri for uri in uris if uri not in old_nodes]
     offset = (int(time.time() // 300) * MAX_CHECKS) % len(candidates) if candidates else 0
     candidates = candidates[offset:] + candidates[:offset]
+    from itertools import zip_longest
+    xhttp = [u for u in candidates if parse_vless(u)[2].get("type") == "xhttp"]
+    other = [u for u in candidates if parse_vless(u)[2].get("type") != "xhttp"]
+    candidates = [u for pair in zip_longest(xhttp, other) for u in pair if u]
     # Recheck published nodes before rotating new candidates, rather than carrying
     # old nodes through several batches without attempting a connection.
     chosen = list(old_nodes)[:MAX_CHECKS]
@@ -275,11 +319,13 @@ def main():
     details = {"sources_reached": success, "candidates": len(uris), "tested": tested,
                "unexamined": max(0, len(candidates) + len(old_nodes) - len(chosen)), "max_checks": MAX_CHECKS,
                "healthy_test_targets": len(targets), "min_mbps": MIN_SPEED_MBPS,
+               "xhttp_tls_candidates": sum(parse_vless(u)[2]["security"] == "tls" for u in uris),
+               "xhttp_tls_passed": sum(o == "passed" and parse_vless(u)[2]["security"] == "tls" for u, o, _ in outcomes),
                "max_latency_ms": MAX_LATENCY_MS, "speed_baseline_ok": baseline_ok,
                "fallback_reason": "upstream/check incomplete; recent verified cache only"}
     status, _ = publish("vless", "vless.txt", outcomes, old_nodes, success, old_state, details)
     write_json(OUT / "protocol_status.json", {"checked_at": timestamp(),
-               "verification": "sing-box HTTPS; two targets on failure; two slow samples before quality rejection",
+               "verification": "sing-box REALITY / Xray XHTTP+TLS HTTPS; two targets on failure; two slow samples before quality rejection",
                "vless_reality": status})
     print("VLESS:", {k: status[k] for k in ("candidates", "tested", "published", "results")})
 

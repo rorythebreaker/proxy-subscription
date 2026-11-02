@@ -1,11 +1,11 @@
 # Proxy subscription
 
-Public SOCKS5 and VLESS + REALITY subscriptions, refreshed on the five-minute
+Public SOCKS5, VLESS + REALITY and VLESS + XHTTP + TLS subscriptions, refreshed on the five-minute
 schedule `2-59/5 * * * *`. GitHub Actions may delay scheduled runs.
 
 - `public/all.txt`: deduplicated union of the current protocol lists.
 - `public/proxies.txt`: SOCKS5 share URIs (`socks://host:port#CC%20host`).
-- `public/vless.txt`: VLESS + REALITY share URIs, with the same country/host labels.
+- `public/vless.txt`: VLESS + REALITY / XHTTP + TLS share URIs, with the same country/host labels.
 - `public/incy.json`: full Xray profiles for INCY, with DNS 8.8.8.8 / 1.1.1.1.
 - `public/status.json`, `public/protocol_status.json`, `public/combined_status.json`:
   attempt time, source success time, actual publication counts and check outcomes.
@@ -38,7 +38,7 @@ subscription. A DNS change does not guarantee that an unrelated TLS failure is f
 Xray REALITY supports TCP/raw and gRPC here. WebSocket/HTTP/H2/HTTPUpgrade with
 REALITY are not exported because they cannot be reproduced by Xray; neither are
 explicit ALPN overrides, which Xray REALITY derives from the TLS fingerprint.
-These omissions affect only `incy.json`, not the existing text subscriptions.
+These omissions affect Xray JSON exports, not the existing text subscriptions.
 `combined_status.json.incy` reports exported count, skipped reasons and DNS settings.
 The exporter runs after freshness checks on every refresh, including fallback;
 expired records cannot persist in the JSON file independently of `all.txt`.
@@ -76,7 +76,7 @@ new candidates. These checks measure the GitHub runner's network, not the user's
 - `not_tested`: the bounded checking window ended. New untested nodes are not published.
 
 TCP/raw, WebSocket, gRPC (gun), HTTP/H2 and HTTPUpgrade are mapped explicitly.
-XHTTP, TCP header obfuscation and non-`none` VLESS encryption are unsupported by
+TCP header obfuscation and non-`none` VLESS encryption are unsupported by
 this verifier. Unknown connection parameters are not silently discarded.
 Missing TLS fingerprints default to `chrome` in both the checked and published URI.
 Shadowsocks collection/code and its obsolete published file are removed.
@@ -86,6 +86,31 @@ six sources. Up to 240 candidates are selected per run with a rotating starting
 point. Work stops scheduling checks near the stage deadline, so the actual count
 can be smaller. Recent cached nodes can accumulate across batches. Counts in the
 status files distinguish candidates, network tests, outcomes and published nodes.
+
+### VLESS + XHTTP + TLS
+
+Existing public URI sources are also searched for `security=tls&type=xhttp`.
+These nodes are checked by pinned Xray (REALITY continues to use sing-box),
+through a local SOCKS listener: HTTPS reachability and the same **10 Mbps**
+payload speed minimum. Xray is installed before collection in the workflow.
+Candidate selection interleaves XHTTP and other VLESS links so rare transports
+can enter the bounded checking batch. AUTO also reserves an opportunity for
+XHTTP before reaching its 24-VLESS cap.
+
+Verified XHTTP nodes enter `vless.txt`, `all.txt`, `incy.json`, the individual
+choices in `xray-auto.json`, and AUTO. Their labels include `VLESS XHTTP TLS`.
+`host`, `path`, `mode`, SNI, TLS fingerprint, ALPN and URL-encoded JSON `extra`
+are preserved. Modes: `auto`, `packet-up`, `stream-up`, `stream-one`.
+TLS certificate verification remains enabled; links requiring insecure TLS,
+Vision flow or unknown parameters are not silently converted to another mode.
+XHTTP does not receive the REALITY fragmentation dialer: verification and export
+use the same transport settings. Remote endpoints must already support XHTTP;
+changing a TCP/REALITY link into XHTTP/TLS cannot configure its server.
+
+`protocol_status.json.vless_reality` retains its legacy key for compatibility
+but now covers both groups, with `xhttp_tls_candidates` and `xhttp_tls_passed`
+counts. Availability depends on current sources and checks; an empty XHTTP set
+is valid, and never causes unverified nodes to be published.
 
 ## Freshness and failures
 
@@ -104,8 +129,7 @@ of a mixed protocol subscription does not require it to contain VLESS records.
 Each collector writes to a temporary staging directory. The wrapper kills an
 entire process group when a stage exceeds its deadline (120 s SOCKS, 200 s VLESS),
 keeps only unexpired previous results and assembles the final output after both
-attempts. Publication is one Git commit. An engine installation failure cannot
-block the SOCKS update. Concurrent changes to collector code prevent old calculated
+attempts. Publication is one Git commit. Engine installation/validation failures are visible in the workflow logs. Concurrent changes to collector code prevent old calculated
 results from being rebased and published over new settings.
 
 ## Automatic Xray profile (Happ / INCY)
@@ -137,7 +161,7 @@ or geosite database. No geodata download is required. DNS is IPv4 only; FakeDNS 
 not configured. SOCKS5 UDP support depends on each public server and is not
 verified by the HTTPS check.
 
-VLESS uses a freedom dialer with TLS ClientHello fragmentation (100–200 byte
+VLESS REALITY uses a freedom dialer with TLS ClientHello fragmentation (100–200 byte
 pieces, 0–1ms interval); original SNI, key, fingerprint, UUID, flow and transport
 remain unchanged. Fragmentation cannot repair an unreachable TCP port.
 The application owns TUN setup and protection of core sockets from routing loops;

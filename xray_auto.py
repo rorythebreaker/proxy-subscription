@@ -18,6 +18,10 @@ PRIVATE_IPS = ['127.0.0.0/8', '10.0.0.0/8', '172.16.0.0/12',
 
 def build_auto(uris):
     profiles, diagnostics = build_subscription(uris)
+    from itertools import zip_longest
+    xhttp = [p for p in profiles if p['outbounds'][0].get('streamSettings', {}).get('network') == 'xhttp']
+    other = [p for p in profiles if p not in xhttp]
+    profiles = [p for pair in zip_longest(xhttp, other) for p in pair if p]
     groups = {'vless': [], 'socks': []}
     seen = set()
     bootstrap = []
@@ -35,7 +39,7 @@ def build_auto(uris):
             bootstrap.append('full:' + server['address'])
         prefix = 'VLESS_' if protocol == 'vless' else 'SOCKS_'
         outbound['tag'] = prefix + str(len(groups[protocol]) + 1).zfill(3)
-        if protocol == 'vless':
+        if protocol == 'vless' and outbound['streamSettings']['security'] == 'reality':
             outbound['streamSettings']['sockopt']['dialerProxy'] = 'fragment'
         groups[protocol].append(outbound)
 
@@ -122,7 +126,7 @@ def build_choices(uris):
         config = deepcopy(auto)
         config['remarks'] = profile['remarks']
         outbound['tag'] = 'selected-proxy'
-        if outbound['protocol'] == 'vless':
+        if outbound['protocol'] == 'vless' and outbound['streamSettings']['security'] == 'reality':
             outbound['streamSettings']['sockopt']['dialerProxy'] = 'fragment'
         config['outbounds'] = [outbound] + [deepcopy(o) for o in auto['outbounds']
             if o['tag'] in ('block', 'direct', 'dns-out', 'fragment')]

@@ -64,6 +64,26 @@ jobs:
       - name: Validate real sing-box configurations
         if: steps.singbox.outcome == 'success'
         run: python -m unittest discover -s tests -p 'test_singbox_config.py' -v
+      - name: Cache pinned Xray
+        uses: actions/cache@v4
+        with:
+          path: .tools/xray
+          key: xray-${{ runner.os }}-${{ runner.arch }}-${{ env.XRAY_VERSION }}
+      - name: Install pinned Xray
+        run: |
+          set -euo pipefail
+          mkdir -p .tools
+          if [ ! -x .tools/xray ]; then
+            curl --fail --silent --show-error --location --max-time 45 \
+              "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" \
+              --output "${RUNNER_TEMP}/xray.zip"
+            echo "e4bd9119f50ae7c41658b1abd0679ae06f98bd864a2907ff33f2f2cf7081b214  ${RUNNER_TEMP}/xray.zip" | sha256sum --check
+            unzip -p "${RUNNER_TEMP}/xray.zip" xray > .tools/xray
+            chmod +x .tools/xray
+          fi
+          echo "${GITHUB_WORKSPACE}/.tools" >> "$GITHUB_PATH"
+      - name: Validate XHTTP with pinned Xray
+        run: python -m unittest discover -s tests -p 'test_xhttp.py' -v
       - name: Refresh and assemble subscriptions
         run: python refresh.py
       - name: Report publication freshness and filtering
@@ -79,24 +99,8 @@ jobs:
               for name in ('status.json', 'protocol_status.json'):
                   summary.write(f'### {name}\n\n```json\n{Path("public", name).read_text()}\n```\n\n')
           PY
-      - name: Cache pinned Xray
-        uses: actions/cache@v4
-        with:
-          path: .tools/xray
-          key: xray-${{ runner.os }}-${{ runner.arch }}-${{ env.XRAY_VERSION }}
       - name: Validate exported profiles with pinned Xray
         run: |
-          set -euo pipefail
-          mkdir -p .tools
-          if [ ! -x .tools/xray ]; then
-            curl --fail --silent --show-error --location --max-time 45 \
-              "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" \
-              --output "${RUNNER_TEMP}/xray.zip"
-            echo "e4bd9119f50ae7c41658b1abd0679ae06f98bd864a2907ff33f2f2cf7081b214  ${RUNNER_TEMP}/xray.zip" | sha256sum --check
-            unzip -p "${RUNNER_TEMP}/xray.zip" xray > .tools/xray
-            chmod +x .tools/xray
-          fi
-          export PATH="${GITHUB_WORKSPACE}/.tools:$PATH"
           python -m unittest discover -s tests -p 'test_xray_auto.py' -v
           python - <<'PY'
           import json, subprocess, tempfile

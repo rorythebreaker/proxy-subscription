@@ -3,7 +3,7 @@ from collections import Counter
 from urllib.parse import unquote, urlsplit
 
 from subscription import canonical_socks
-from update_protocols import Unsupported, as_outbound, parse_reality
+from update_protocols import Unsupported, as_outbound, parse_reality, parse_vless
 
 DNS_SERVERS = ['8.8.8.8', '1.1.1.1']
 
@@ -14,6 +14,9 @@ def proxy_outbound(uri, tag):
         p = urlsplit(canonical_socks(uri))
         return {'tag': tag, 'protocol': 'socks',
                 'settings': {'servers': [{'address': p.hostname, 'port': p.port}]}}
+    if parse_vless(uri)[2]["security"] == "tls":
+        from xhttp import proxy_outbound as xhttp_outbound
+        return xhttp_outbound(uri, tag)
     # Share the existing allowlist and validation with the connectivity verifier.
     as_outbound(uri)
     _, p, q = parse_reality(uri)
@@ -46,6 +49,8 @@ def profile(uri):
     p = urlsplit(uri)
     protocol = 'SOCKS5' if p.scheme in ('socks', 'socks5') else 'VLESS'
     label = unquote(p.fragment) if p.fragment else f'ZZ {p.hostname}'
+    if protocol == 'VLESS' and parse_vless(uri)[2]['security'] == 'tls':
+        protocol = 'VLESS XHTTP TLS'
     name = f'{protocol} {label}'
     proxy = proxy_outbound(uri, name)
     sniffing = {'enabled': True, 'destOverride': ['http', 'tls', 'quic'], 'routeOnly': False}
@@ -81,7 +86,7 @@ def build_subscription(uris):
     profiles, skipped, seen = [], Counter(), set()
     for uri in uris:
         try:
-            core = parse_reality(uri)[0] if urlsplit(uri).scheme == 'vless' else canonical_socks(uri)
+            core = parse_vless(uri)[0] if urlsplit(uri).scheme == 'vless' else canonical_socks(uri)
             if core in seen:
                 continue
             seen.add(core)
