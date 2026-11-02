@@ -27,7 +27,7 @@ jobs:
       PROTOCOL_WORKERS: '24'
       STALE_TTL_SECONDS: '600'
       MAX_LATENCY_MS: '6000'
-      MIN_SPEED_MBPS: '0.10'
+      MIN_SPEED_MBPS: '10'
     steps:
       - uses: actions/checkout@v4
         with:

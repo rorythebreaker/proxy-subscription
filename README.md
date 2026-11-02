@@ -43,13 +43,18 @@ These omissions affect only `incy.json`, not the existing text subscriptions.
 The exporter runs after freshness checks on every refresh, including fallback;
 expired records cannot persist in the JSON file independently of `all.txt`.
 
-SOCKS5 and VLESS share a gentle quality policy: HTTPS reachability, up to
-6000 ms for the complete HTTPS check and at least 0.10 Mbps payload throughput.
+SOCKS5 and VLESS share a quality policy: HTTPS reachability, up to
+6000 ms for the complete HTTPS check and at least 10 Mbps payload throughput
+(approximately 1.25 MB/s, not 10 MB/s).
 Latency is not ICMP ping. A slow result is repeated: only two measured slow
-results reject a node. The payload test downloads 128 KiB with a 14-second total
+results reject a node. The payload test downloads 2 MiB with a 14-second total
 limit. It runs only if the direct speed-test baseline is at least four times the
 minimum. HTTP blocks, unavailable speed-test servers and ambiguous measurements
-are not treated as zero speed; a node with proven HTTPS connectivity may remain.
+are not treated as zero speed, but cannot qualify a new node for publication.
+Publication requires a measured result at or above the minimum. Unavailable or
+slow direct baselines make quality checks inconclusive. Only cache qualified
+under the same policy can survive, for at most 10 minutes from verification.
+Changing the threshold invalidates records qualified under the previous policy.
 
 The pinned sing-box 1.14.4 validates each VLESS configuration and opens a local
 SOCKS listener. HTTPS and payload tests run through that full VLESS/REALITY tunnel,
@@ -58,9 +63,9 @@ is tried. Both targets must be reachable directly from the runner before nodes
 can be marked unreachable. Previously published nodes are checked before rotating
 new candidates. These checks measure the GitHub runner's network, not the user's.
 
-- `passed`: HTTPS 204 through the tunnel; the node is published.
+- `passed`: HTTPS 204 and measured throughput at or above the minimum; published.
 - `latency_rejected`, `speed_rejected`: two slow measurements; removed from all outputs.
-- `quality_inconclusive`: insufficient time or ambiguous repeat of a slow result;
+- `quality_inconclusive`: insufficient time, unhealthy baseline or unknown throughput;
   new nodes are not published and only recent verified cache can survive.
 - `unreachable`: network attempts to both healthy targets failed; the node is removed.
 - `inconclusive`: HTTP rejection, unhealthy test targets or verifier failure;
