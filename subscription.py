@@ -220,9 +220,10 @@ def merge():
     from incy import build_subscription
     profiles, incy_status = build_subscription(combined.values())
     write_json(OUT / "incy.json", profiles)
-    from xray_auto import build_auto
+    from xray_auto import build_auto, build_choices
     auto, auto_status = build_auto(combined.values())
-    write_json(OUT / "xray-auto.json", auto)
+    write_json(OUT / "xray-auto-only.json", auto)
+    write_json(OUT / "xray-auto.json", build_choices(combined.values()))
     write_json(OUT / "combined_status.json", {"published_at": timestamp(), "counts": counts,
                                               "published": len(combined), "stale_ttl_seconds": TTL,
                                               "incy": incy_status, "xray_auto": auto_status})
