@@ -93,7 +93,36 @@ attempts. Publication is one Git commit. An engine installation failure cannot
 block the SOCKS update. Concurrent changes to collector code prevent old calculated
 results from being rebased and published over new settings.
 
-## Running
+## Automatic Xray profile (Happ / INCY)
+
+Import this URL as a separate subscription:
+
+https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/xray-auto.json
+
+One full configuration groups up to 24 distinct VLESS endpoints and 8 SOCKS5
+endpoints from the freshness-filtered publication. `leastLoad` and
+`burstObservatory` test HTTPS from the client (30s average interval, 5s timeout,
+two samples). VLESS is preferred, with a loopback fallback to the observed SOCKS
+pool. If all proxies fail, ordinary internet traffic is blocked rather than sent
+directly. Selection is not instant on startup and switching does not migrate
+existing connections. A blocked probe URL can mark otherwise usable nodes down.
+
+DNS uses Cloudflare DoH through the selected pool. Russian `.ru`, `.su`, `.рф`
+domains and a small explicit domain list use Google DNS directly; server hostname
+bootstrap also uses Google DNS directly. Private networks and these Russian
+domains bypass the proxy. This is domain-based splitting, not a full Russian IP
+or geosite database. No geodata download is required. DNS is IPv4 only; FakeDNS is
+not configured. SOCKS5 UDP support depends on each public server and is not
+verified by the HTTPS check.
+
+VLESS uses a freedom dialer with TLS ClientHello fragmentation (100–200 byte
+pieces, 0–1ms interval); original SNI, key, fingerprint, UUID, flow and transport
+remain unchanged. Fragmentation cannot repair an unreachable TCP port.
+The application owns TUN setup and protection of core sockets from routing loops;
+the subscription does not hardcode the user's physical interface or gateway.
+Existing `incy.json` independent profiles remain available.
+
+## Running locally
 
 Requires Python 3.12, curl, `pip install -r requirements.txt`, and the pinned
 sing-box binary on PATH. GeoIP is optional metadata; lookup failures use `ZZ`.
