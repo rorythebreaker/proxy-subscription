@@ -186,7 +186,7 @@ def main():
         lines.append(f"socks://{proxy}#{quote(label, safe='')}")
     (OUT / "proxies.txt").write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
     (OUT / "alive.txt").write_text(
-        "\n".join(proxy for proxy, _ in good) + ("\n" if good else ""),
+        "\n".join(proxy for proxy, _, _ in good) + ("\n" if good else ""),
         encoding="utf-8",
     )
     print(f"Published {len(good)} of {len(results)} live proxies")
