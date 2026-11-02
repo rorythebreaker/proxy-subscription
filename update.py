@@ -126,10 +126,11 @@ def main():
         return
 
     # Empty output deliberately removes previously working proxies that no longer pass.
-    lines = [
-        f"socks://{proxy}#{quote(f'{countries.get(proxy, 'ZZ')} {proxy.rsplit(':', 1)[0]}', safe='')}"
-        for proxy, _ in good
-    ]
+    lines = []
+    for proxy, _ in good:
+        ip = proxy.rsplit(':', 1)[0]
+        label = f"{countries.get(proxy, 'ZZ')} {ip}"
+        lines.append(f"socks://{proxy}#{quote(label, safe='')}")
     (OUT / "proxies.txt").write_text("\n".join(lines) + ("\n" if lines else ""), encoding="utf-8")
     (OUT / "alive.txt").write_text(
         "\n".join(proxy for proxy, _ in good) + ("\n" if good else ""),
