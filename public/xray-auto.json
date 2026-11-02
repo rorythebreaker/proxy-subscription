@@ -385,40 +385,6 @@
         "settings": {
           "vnext": [
             {
-              "address": "145.223.68.58",
-              "port": 443,
-              "users": [
-                {
-                  "id": "edb50d20-2d3e-4c1e-8a75-a17168a89aa5",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.cloudflare.com",
-            "fingerprint": "random",
-            "publicKey": "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg",
-            "shortId": "a44ff7d2e80213c2",
-            "spiderX": "/"
-          },
-          "sockopt": {
-            "domainStrategy": "UseIPv4",
-            "dialerProxy": "fragment"
-          }
-        }
-      },
-      {
-        "tag": "VLESS_011",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
               "address": "510.150333.xyz",
               "port": 21002,
               "users": [
@@ -447,7 +413,7 @@
         }
       },
       {
-        "tag": "VLESS_012",
+        "tag": "VLESS_011",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -480,7 +446,7 @@
         }
       },
       {
-        "tag": "VLESS_013",
+        "tag": "VLESS_012",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -514,7 +480,7 @@
         }
       },
       {
-        "tag": "VLESS_014",
+        "tag": "VLESS_013",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -547,7 +513,7 @@
         }
       },
       {
-        "tag": "VLESS_015",
+        "tag": "VLESS_014",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -580,7 +546,7 @@
         }
       },
       {
-        "tag": "VLESS_016",
+        "tag": "VLESS_015",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -614,7 +580,7 @@
         }
       },
       {
-        "tag": "VLESS_017",
+        "tag": "VLESS_016",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -648,7 +614,7 @@
         }
       },
       {
-        "tag": "VLESS_018",
+        "tag": "VLESS_017",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -682,7 +648,7 @@
         }
       },
       {
-        "tag": "VLESS_019",
+        "tag": "VLESS_018",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -716,7 +682,7 @@
         }
       },
       {
-        "tag": "VLESS_020",
+        "tag": "VLESS_019",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -750,7 +716,7 @@
         }
       },
       {
-        "tag": "VLESS_021",
+        "tag": "VLESS_020",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -783,7 +749,7 @@
         }
       },
       {
-        "tag": "VLESS_022",
+        "tag": "VLESS_021",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -816,7 +782,7 @@
         }
       },
       {
-        "tag": "VLESS_023",
+        "tag": "VLESS_022",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -850,7 +816,7 @@
         }
       },
       {
-        "tag": "VLESS_024",
+        "tag": "VLESS_023",
         "protocol": "vless",
         "settings": {
           "vnext": [
@@ -883,6 +849,88 @@
         }
       },
       {
+        "tag": "VLESS_024",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "159.89.87.21",
+              "port": 28190,
+              "users": [
+                {
+                  "id": "14c80e0e-f7ce-4991-94fc-99a1db4a9b1e",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "aws.amazon.com",
+            "fingerprint": "firefox",
+            "publicKey": "ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "SOCKS_001",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.174.30.92",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "SOCKS_002",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "109.95.175.64",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "SOCKS_003",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "103.248.47.230",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "SOCKS_004",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.173.130.60",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
         "tag": "direct",
         "protocol": "freedom",
         "settings": {},
@@ -912,11 +960,25 @@
             "domainStrategy": "UseIPv4"
           }
         }
+      },
+      {
+        "tag": "socks-fallback",
+        "protocol": "loopback",
+        "settings": {
+          "inboundTag": "socks-fallback-in"
+        }
       }
     ],
     "routing": {
       "domainStrategy": "AsIs",
       "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-fallback-in"
+          ],
+          "balancerTag": "SOCKS"
+        },
         {
           "type": "field",
           "inboundTag": [
@@ -986,11 +1048,24 @@
       ],
       "balancers": [
         {
+          "tag": "SOCKS",
+          "selector": [
+            "SOCKS_"
+          ],
+          "fallbackTag": "block",
+          "strategy": {
+            "type": "leastLoad",
+            "settings": {
+              "expected": 1
+            }
+          }
+        },
+        {
           "tag": "AUTO",
           "selector": [
             "VLESS_"
           ],
-          "fallbackTag": "block",
+          "fallbackTag": "socks-fallback",
           "strategy": {
             "type": "leastLoad",
             "settings": {
@@ -1002,7 +1077,8 @@
     },
     "burstObservatory": {
       "subjectSelector": [
-        "VLESS_"
+        "VLESS_",
+        "SOCKS_"
       ],
       "pingConfig": {
         "destination": "https://www.gstatic.com/generate_204",
@@ -1011,6 +1087,782 @@
         "sampling": 2,
         "timeout": "8s"
       }
+    }
+  },
+  {
+    "remarks": "SOCKS5 US 107.174.30.92",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.174.30.92",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "SOCKS5 PL 109.95.175.64",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "109.95.175.64",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "SOCKS5 AU 103.248.47.230",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "103.248.47.230",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "SOCKS5 US 107.173.130.60",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.173.130.60",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
     }
   },
   {
@@ -3486,222 +4338,6 @@
             "fingerprint": "chrome",
             "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
             "shortId": "01",
-            "spiderX": "/"
-          },
-          "sockopt": {
-            "domainStrategy": "UseIPv4",
-            "dialerProxy": "fragment"
-          }
-        }
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {},
-        "streamSettings": {
-          "sockopt": {
-            "domainStrategy": "UseIPv4"
-          }
-        }
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns",
-        "settings": {}
-      },
-      {
-        "tag": "fragment",
-        "protocol": "freedom",
-        "settings": {
-          "fragment": {
-            "packets": "tlshello",
-            "length": "100-200",
-            "interval": "0-1"
-          }
-        },
-        "streamSettings": {
-          "sockopt": {
-            "domainStrategy": "UseIPv4"
-          }
-        }
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-query"
-          ],
-          "ip": [
-            "8.8.8.8",
-            "1.1.1.1"
-          ],
-          "port": "53",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-query"
-          ],
-          "outboundTag": "selected-proxy"
-        },
-        {
-          "type": "field",
-          "port": "53",
-          "network": "tcp,udp",
-          "outboundTag": "dns-out"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "dotless:",
-            "domain:local",
-            "domain:localdomain"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "ip": [
-            "127.0.0.0/8",
-            "10.0.0.0/8",
-            "172.16.0.0/12",
-            "192.168.0.0/16",
-            "169.254.0.0/16",
-            "::1/128",
-            "fc00::/7",
-            "fe80::/10"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
-            "domain:yandex.com",
-            "domain:yandex.net",
-            "domain:vk.com",
-            "domain:ok.ru",
-            "domain:ozon.ru",
-            "domain:wildberries.ru"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "outboundTag": "selected-proxy"
-        }
-      ],
-      "balancers": []
-    }
-  },
-  {
-    "remarks": "VLESS FR 145.223.68.58",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "tag": "dns-query",
-      "queryStrategy": "UseIPv4",
-      "hosts": {
-        "cloudflare-dns.com": "1.1.1.1"
-      },
-      "servers": [
-        {
-          "address": "8.8.8.8",
-          "domains": [
-            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
-            "domain:yandex.com",
-            "domain:yandex.net",
-            "domain:vk.com",
-            "domain:ok.ru",
-            "domain:ozon.ru",
-            "domain:wildberries.ru",
-            "full:mci1.amir12.ir",
-            "full:ww13.levikogjgfdd.ir",
-            "full:510.150333.xyz",
-            "full:511.150333.xyz",
-            "full:510.150333.xyz",
-            "full:510.150333.xyz",
-            "full:511.150333.xyz"
-          ],
-          "skipFallback": true
-        },
-        "https://cloudflare-dns.com/dns-query"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ]
-        }
-      },
-      {
-        "tag": "http-in",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {},
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ]
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "selected-proxy",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "145.223.68.58",
-              "port": 443,
-              "users": [
-                {
-                  "id": "edb50d20-2d3e-4c1e-8a75-a17168a89aa5",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.cloudflare.com",
-            "fingerprint": "random",
-            "publicKey": "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg",
-            "shortId": "a44ff7d2e80213c2",
             "spiderX": "/"
           },
           "sockopt": {
@@ -9532,6 +10168,3895 @@
             "fingerprint": "edge",
             "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
             "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS TR 62.133.63.45",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "62.133.63.45",
+              "port": 8444,
+              "users": [
+                {
+                  "id": "a346c521-7a7f-452b-9356-a4893feb5982",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "github.com",
+            "fingerprint": "chrome",
+            "publicKey": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+            "shortId": "457fab2ac885dbe0",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          },
+          "grpcSettings": {
+            "serviceName": "GunService",
+            "multiMode": false
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.11",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.11",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS FI 95.216.27.15",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "95.216.27.15",
+              "port": 2053,
+              "users": [
+                {
+                  "id": "b79d736d-0f10-4169-b626-362059d18204",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "chrome",
+            "publicKey": "aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs",
+            "shortId": "10351b07c712d2a2",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS US 191.217.245.227",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "191.217.245.227",
+              "port": 443,
+              "users": [
+                {
+                  "id": "2614a96d-e39f-4cca-a9c7-467a178c2c0a",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "pl.lenvex.cc",
+            "fingerprint": "firefox",
+            "publicKey": "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS US 15.204.97.214",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "15.204.97.214",
+              "port": 23576,
+              "users": [
+                {
+                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "fuck.rkn",
+            "fingerprint": "chrome",
+            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.11",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.11",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.136",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.136",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.231",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.231",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "chrome",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.168",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.168",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "random",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS IL 185.95.231.156",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "185.95.231.156",
+              "port": 443,
+              "users": [
+                {
+                  "id": "1f8cf47a-b66a-4916-979f-26edfcf44eea",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.apple.com",
+            "fingerprint": "random",
+            "publicKey": "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To",
+            "shortId": "a3a578ab",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS FR 152.228.139.33",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "152.228.139.33",
+              "port": 35108,
+              "users": [
+                {
+                  "id": "81dc0b61-f9fe-4ad6-8b4e-b8c067b73712",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.nvidia.com",
+            "fingerprint": "random",
+            "publicKey": "X_lOw5Zz4SJBa1cRHV4dAq5msYE-ClY5-WNcBmBWRxg",
+            "shortId": "52add08b86a5ccea",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          },
+          "grpcSettings": {
+            "serviceName": "grpc-common3",
+            "multiMode": false
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.225",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.225",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.202",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.202",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.104",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.104",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS DE 144.31.140.125",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "144.31.140.125",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "twitch.tv",
+            "fingerprint": "firefox",
+            "publicKey": "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo",
+            "shortId": "168c15efac9df5fd",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS US 208.84.100.209",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "208.84.100.209",
+              "port": 2112,
+              "users": [
+                {
+                  "id": "36c3dcc2-17b6-4478-b8a7-3978e6d5afe9",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.google.com",
+            "fingerprint": "chrome",
+            "publicKey": "p8pUe3hwND5rhAti-yRQ5qMaIkNdhxOV1K1jpbtJlEQ",
+            "shortId": "125ba3",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS LV 195.123.213.28",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "195.123.213.28",
+              "port": 443,
+              "users": [
+                {
+                  "id": "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "chrome",
+            "publicKey": "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo",
+            "shortId": "5c256336e3b673fa",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4",
+            "dialerProxy": "fragment"
+          }
+        }
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      },
+      {
+        "tag": "fragment",
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "100-200",
+            "interval": "0-1"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "ip": [
+            "8.8.8.8",
+            "1.1.1.1"
+          ],
+          "port": "53",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "selected-proxy"
+        },
+        {
+          "type": "field",
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "dotless:",
+            "domain:local",
+            "domain:localdomain"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "127.0.0.0/8",
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "::1/128",
+            "fc00::/7",
+            "fe80::/10"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "domain": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "network": "tcp,udp",
+          "outboundTag": "selected-proxy"
+        }
+      ],
+      "balancers": []
+    }
+  },
+  {
+    "remarks": "VLESS US 15.204.97.219",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "tag": "dns-query",
+      "queryStrategy": "UseIPv4",
+      "hosts": {
+        "cloudflare-dns.com": "1.1.1.1"
+      },
+      "servers": [
+        {
+          "address": "8.8.8.8",
+          "domains": [
+            "regexp:(?i)(^|\\.)(ru|su|xn--p1ai)$",
+            "domain:yandex.com",
+            "domain:yandex.net",
+            "domain:vk.com",
+            "domain:ok.ru",
+            "domain:ozon.ru",
+            "domain:wildberries.ru",
+            "full:mci1.amir12.ir",
+            "full:ww13.levikogjgfdd.ir",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz",
+            "full:510.150333.xyz",
+            "full:510.150333.xyz",
+            "full:511.150333.xyz"
+          ],
+          "skipFallback": true
+        },
+        "https://cloudflare-dns.com/dns-query"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "routeOnly": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ]
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "selected-proxy",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "15.204.97.219",
+              "port": 23576,
+              "users": [
+                {
+                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "fuck.rkn",
+            "fingerprint": "chrome",
+            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+            "shortId": "01",
             "spiderX": "/"
           },
           "sockopt": {

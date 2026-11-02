@@ -1,5 +1,465 @@
 [
   {
+    "remarks": "SOCKS5 US 107.174.30.92",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "SOCKS5 US 107.174.30.92",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.174.30.92",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "SOCKS5 PL 109.95.175.64",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "SOCKS5 PL 109.95.175.64",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "109.95.175.64",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "SOCKS5 AU 103.248.47.230",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "SOCKS5 AU 103.248.47.230",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "103.248.47.230",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "SOCKS5 US 107.173.130.60",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "SOCKS5 US 107.173.130.60",
+        "protocol": "socks",
+        "settings": {
+          "servers": [
+            {
+              "address": "107.173.130.60",
+              "port": 1080
+            }
+          ]
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
     "remarks": "VLESS SG 206.206.76.75",
     "meta": {
       "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
@@ -1571,142 +2031,6 @@
             "fingerprint": "chrome",
             "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
             "shortId": "01",
-            "spiderX": "/"
-          },
-          "sockopt": {
-            "domainStrategy": "UseIPv4"
-          }
-        }
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {},
-        "streamSettings": {
-          "sockopt": {
-            "domainStrategy": "UseIPv4"
-          }
-        }
-      },
-      {
-        "tag": "dns-out",
-        "protocol": "dns",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": [
-        {
-          "type": "field",
-          "inboundTag": [
-            "dns-query"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "ip": [
-            "8.8.8.8/32",
-            "1.1.1.1/32"
-          ],
-          "port": "53",
-          "network": "tcp,udp",
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "inboundTag": [
-            "socks-in",
-            "http-in"
-          ],
-          "port": "53",
-          "network": "tcp,udp",
-          "outboundTag": "dns-out"
-        }
-      ]
-    }
-  },
-  {
-    "remarks": "VLESS FR 145.223.68.58",
-    "meta": {
-      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
-    },
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "8.8.8.8",
-        "1.1.1.1"
-      ],
-      "queryStrategy": "UseIPv4",
-      "tag": "dns-query"
-    },
-    "inbounds": [
-      {
-        "tag": "socks-in",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "routeOnly": false
-        }
-      },
-      {
-        "tag": "http-in",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {},
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls",
-            "quic"
-          ],
-          "routeOnly": false
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "VLESS FR 145.223.68.58",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "145.223.68.58",
-              "port": 443,
-              "users": [
-                {
-                  "id": "edb50d20-2d3e-4c1e-8a75-a17168a89aa5",
-                  "encryption": "none",
-                  "flow": "xtls-rprx-vision"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "www.cloudflare.com",
-            "fingerprint": "random",
-            "publicKey": "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg",
-            "shortId": "a44ff7d2e80213c2",
             "spiderX": "/"
           },
           "sockopt": {
@@ -5370,6 +5694,2455 @@
             "fingerprint": "edge",
             "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
             "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS TR 62.133.63.45",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS TR 62.133.63.45",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "62.133.63.45",
+              "port": 8444,
+              "users": [
+                {
+                  "id": "a346c521-7a7f-452b-9356-a4893feb5982",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "github.com",
+            "fingerprint": "chrome",
+            "publicKey": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+            "shortId": "457fab2ac885dbe0",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          },
+          "grpcSettings": {
+            "serviceName": "GunService",
+            "multiMode": false
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.11",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS SC 156.252.229.11",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.11",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS FI 95.216.27.15",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS FI 95.216.27.15",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "95.216.27.15",
+              "port": 2053,
+              "users": [
+                {
+                  "id": "b79d736d-0f10-4169-b626-362059d18204",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "chrome",
+            "publicKey": "aiHdxKOzcFZDILKj3MIPrMsyT0XxMy_O6xoxnz6MIWs",
+            "shortId": "10351b07c712d2a2",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS US 191.217.245.227",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS US 191.217.245.227",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "191.217.245.227",
+              "port": 443,
+              "users": [
+                {
+                  "id": "2614a96d-e39f-4cca-a9c7-467a178c2c0a",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "pl.lenvex.cc",
+            "fingerprint": "firefox",
+            "publicKey": "OFmJtVi6OB9E6KIc5QV5YmoouimRFc-Se9hICjtV8hQ",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS US 15.204.97.214",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS US 15.204.97.214",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "15.204.97.214",
+              "port": 23576,
+              "users": [
+                {
+                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "fuck.rkn",
+            "fingerprint": "chrome",
+            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+            "shortId": "",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.11",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS SC 156.252.229.11",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.11",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS SC 156.252.229.136",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS SC 156.252.229.136",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "156.252.229.136",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.googleapis.com",
+            "fingerprint": "chrome",
+            "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+            "shortId": "974f7f8f",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.231",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 169.40.42.231",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.231",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "chrome",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.168",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 169.40.42.168",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.168",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "random",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS IL 185.95.231.156",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS IL 185.95.231.156",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "185.95.231.156",
+              "port": 443,
+              "users": [
+                {
+                  "id": "1f8cf47a-b66a-4916-979f-26edfcf44eea",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.apple.com",
+            "fingerprint": "random",
+            "publicKey": "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To",
+            "shortId": "a3a578ab",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS FR 152.228.139.33",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS FR 152.228.139.33",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "152.228.139.33",
+              "port": 35108,
+              "users": [
+                {
+                  "id": "81dc0b61-f9fe-4ad6-8b4e-b8c067b73712",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "grpc",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.nvidia.com",
+            "fingerprint": "random",
+            "publicKey": "X_lOw5Zz4SJBa1cRHV4dAq5msYE-ClY5-WNcBmBWRxg",
+            "shortId": "52add08b86a5ccea",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          },
+          "grpcSettings": {
+            "serviceName": "grpc-common3",
+            "multiMode": false
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.225",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 169.40.42.225",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.225",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.202",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 169.40.42.202",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.202",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 169.40.42.104",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 169.40.42.104",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "169.40.42.104",
+              "port": 443,
+              "users": [
+                {
+                  "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "yahoo.com",
+            "fingerprint": "ios",
+            "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+            "shortId": "c39cc7310a",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS DE 144.31.140.125",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS DE 144.31.140.125",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "144.31.140.125",
+              "port": 8443,
+              "users": [
+                {
+                  "id": "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "twitch.tv",
+            "fingerprint": "firefox",
+            "publicKey": "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo",
+            "shortId": "168c15efac9df5fd",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS US 208.84.100.209",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS US 208.84.100.209",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "208.84.100.209",
+              "port": 2112,
+              "users": [
+                {
+                  "id": "36c3dcc2-17b6-4478-b8a7-3978e6d5afe9",
+                  "encryption": "none"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "play.google.com",
+            "fingerprint": "chrome",
+            "publicKey": "p8pUe3hwND5rhAti-yRQ5qMaIkNdhxOV1K1jpbtJlEQ",
+            "shortId": "125ba3",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS LV 195.123.213.28",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS LV 195.123.213.28",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "195.123.213.28",
+              "port": 443,
+              "users": [
+                {
+                  "id": "02fcc1a4-ee90-4970-8bbb-4ffaa8109d24",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "www.cloudflare.com",
+            "fingerprint": "chrome",
+            "publicKey": "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo",
+            "shortId": "5c256336e3b673fa",
+            "spiderX": "/"
+          },
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {},
+        "streamSettings": {
+          "sockopt": {
+            "domainStrategy": "UseIPv4"
+          }
+        }
+      },
+      {
+        "tag": "dns-out",
+        "protocol": "dns",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "dns-query"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "ip": [
+            "8.8.8.8/32",
+            "1.1.1.1/32"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "direct"
+        },
+        {
+          "type": "field",
+          "inboundTag": [
+            "socks-in",
+            "http-in"
+          ],
+          "port": "53",
+          "network": "tcp,udp",
+          "outboundTag": "dns-out"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "VLESS US 15.204.97.219",
+    "meta": {
+      "serverDescription": "DNS 8.8.8.8 / 1.1.1.1; IPv4"
+    },
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "8.8.8.8",
+        "1.1.1.1"
+      ],
+      "queryStrategy": "UseIPv4",
+      "tag": "dns-query"
+    },
+    "inbounds": [
+      {
+        "tag": "socks-in",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      },
+      {
+        "tag": "http-in",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {},
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls",
+            "quic"
+          ],
+          "routeOnly": false
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "tag": "VLESS US 15.204.97.219",
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "15.204.97.219",
+              "port": 23576,
+              "users": [
+                {
+                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                  "encryption": "none",
+                  "flow": "xtls-rprx-vision"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "reality",
+          "realitySettings": {
+            "serverName": "fuck.rkn",
+            "fingerprint": "chrome",
+            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+            "shortId": "01",
             "spiderX": "/"
           },
           "sockopt": {

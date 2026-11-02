@@ -384,40 +384,6 @@
       "settings": {
         "vnext": [
           {
-            "address": "145.223.68.58",
-            "port": 443,
-            "users": [
-              {
-                "id": "edb50d20-2d3e-4c1e-8a75-a17168a89aa5",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "www.cloudflare.com",
-          "fingerprint": "random",
-          "publicKey": "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg",
-          "shortId": "a44ff7d2e80213c2",
-          "spiderX": "/"
-        },
-        "sockopt": {
-          "domainStrategy": "UseIPv4",
-          "dialerProxy": "fragment"
-        }
-      }
-    },
-    {
-      "tag": "VLESS_011",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
             "address": "510.150333.xyz",
             "port": 21002,
             "users": [
@@ -446,7 +412,7 @@
       }
     },
     {
-      "tag": "VLESS_012",
+      "tag": "VLESS_011",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -479,7 +445,7 @@
       }
     },
     {
-      "tag": "VLESS_013",
+      "tag": "VLESS_012",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -513,7 +479,7 @@
       }
     },
     {
-      "tag": "VLESS_014",
+      "tag": "VLESS_013",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -546,7 +512,7 @@
       }
     },
     {
-      "tag": "VLESS_015",
+      "tag": "VLESS_014",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -579,7 +545,7 @@
       }
     },
     {
-      "tag": "VLESS_016",
+      "tag": "VLESS_015",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -613,7 +579,7 @@
       }
     },
     {
-      "tag": "VLESS_017",
+      "tag": "VLESS_016",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -647,7 +613,7 @@
       }
     },
     {
-      "tag": "VLESS_018",
+      "tag": "VLESS_017",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -681,7 +647,7 @@
       }
     },
     {
-      "tag": "VLESS_019",
+      "tag": "VLESS_018",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -715,7 +681,7 @@
       }
     },
     {
-      "tag": "VLESS_020",
+      "tag": "VLESS_019",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -749,7 +715,7 @@
       }
     },
     {
-      "tag": "VLESS_021",
+      "tag": "VLESS_020",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -782,7 +748,7 @@
       }
     },
     {
-      "tag": "VLESS_022",
+      "tag": "VLESS_021",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -815,7 +781,7 @@
       }
     },
     {
-      "tag": "VLESS_023",
+      "tag": "VLESS_022",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -849,7 +815,7 @@
       }
     },
     {
-      "tag": "VLESS_024",
+      "tag": "VLESS_023",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -882,6 +848,88 @@
       }
     },
     {
+      "tag": "VLESS_024",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.89.87.21",
+            "port": 28190,
+            "users": [
+              {
+                "id": "14c80e0e-f7ce-4991-94fc-99a1db4a9b1e",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "aws.amazon.com",
+          "fingerprint": "firefox",
+          "publicKey": "ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno",
+          "shortId": "",
+          "spiderX": "/"
+        },
+        "sockopt": {
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
+        }
+      }
+    },
+    {
+      "tag": "SOCKS_001",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "107.174.30.92",
+            "port": 1080
+          }
+        ]
+      }
+    },
+    {
+      "tag": "SOCKS_002",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "109.95.175.64",
+            "port": 1080
+          }
+        ]
+      }
+    },
+    {
+      "tag": "SOCKS_003",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "103.248.47.230",
+            "port": 1080
+          }
+        ]
+      }
+    },
+    {
+      "tag": "SOCKS_004",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "107.173.130.60",
+            "port": 1080
+          }
+        ]
+      }
+    },
+    {
       "tag": "direct",
       "protocol": "freedom",
       "settings": {},
@@ -911,11 +959,25 @@
           "domainStrategy": "UseIPv4"
         }
       }
+    },
+    {
+      "tag": "socks-fallback",
+      "protocol": "loopback",
+      "settings": {
+        "inboundTag": "socks-fallback-in"
+      }
     }
   ],
   "routing": {
     "domainStrategy": "AsIs",
     "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "socks-fallback-in"
+        ],
+        "balancerTag": "SOCKS"
+      },
       {
         "type": "field",
         "inboundTag": [
@@ -985,11 +1047,24 @@
     ],
     "balancers": [
       {
+        "tag": "SOCKS",
+        "selector": [
+          "SOCKS_"
+        ],
+        "fallbackTag": "block",
+        "strategy": {
+          "type": "leastLoad",
+          "settings": {
+            "expected": 1
+          }
+        }
+      },
+      {
         "tag": "AUTO",
         "selector": [
           "VLESS_"
         ],
-        "fallbackTag": "block",
+        "fallbackTag": "socks-fallback",
         "strategy": {
           "type": "leastLoad",
           "settings": {
@@ -1001,7 +1076,8 @@
   },
   "burstObservatory": {
     "subjectSelector": [
-      "VLESS_"
+      "VLESS_",
+      "SOCKS_"
     ],
     "pingConfig": {
       "destination": "https://www.gstatic.com/generate_204",
