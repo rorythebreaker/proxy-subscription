@@ -13,6 +13,11 @@ from pathlib import Path
 from urllib.parse import urlsplit, parse_qs, quote, unquote
 
 import requests
+import subprocess
+import socket
+import tempfile
+import time
+import uuid
 
 SOURCES = {
     "shadowsocks": [
@@ -25,6 +30,9 @@ SOURCES = {
 OUT = Path("public")
 MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "150"))
 MAX_SOURCE_BYTES = 8_000_000
+MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "24"))
+MAX_LATENCY_MS = 1500
+MIN_MBPS = 1.0
 
 
 def decode_lines(body):
@@ -95,6 +103,100 @@ def collect(kind):
         except (requests.RequestException, ValueError) as exc:
             print(f"{kind}: upstream unavailable ({type(exc).__name__})")
     return list(found.values()), succeeded
+
+
+def as_outbound(uri):
+    try:
+        p = urlsplit(uri)
+        if not p.hostname or not p.port:
+            return None
+        if p.scheme == "ss":
+            user = unquote(p.netloc.rsplit("@", 1)[0])
+            if ":" not in user:
+                user = base64.urlsafe_b64decode(user + "=" * (-len(user) % 4)).decode()
+            method, password = user.split(":", 1)
+            if not method or not password:
+                return None
+            return {"type": "shadowsocks", "tag": "remote", "server": p.hostname,
+                    "server_port": p.port, "method": method, "password": password}
+        if p.scheme == "vless":
+            q = parse_qs(p.query)
+            get = lambda key, default="": q.get(key, [default])[0]
+            if get("security").lower() != "reality" or not get("pbk") or not get("sni"):
+                return None
+            if get("type", "tcp") != "tcp":
+                return None
+            uuid.UUID(p.username)
+            outbound = {"type": "vless", "tag": "remote", "server": p.hostname,
+                        "server_port": p.port, "uuid": p.username,
+                        "tls": {"enabled": True, "server_name": get("sni"),
+                                "reality": {"enabled": True, "public_key": get("pbk"),
+                                            "short_id": get("sid")}}}
+            if get("fp"):
+                outbound["tls"]["utls"] = {"enabled": True, "fingerprint": get("fp")}
+            if get("flow"):
+                outbound["flow"] = get("flow")
+            return outbound
+    except (ValueError, UnicodeError, IndexError):
+        return None
+    return None
+
+
+def verify(uri):
+    remote = as_outbound(uri)
+    if remote is None:
+        return None
+    with socket.socket() as sock:
+        sock.bind(("127.0.0.1", 0))
+        port = sock.getsockname()[1]
+    config = {"log": {"level": "error"},
+              "inbounds": [{"type": "socks", "tag": "local", "listen": "127.0.0.1",
+                            "listen_port": port}],
+              "outbounds": [remote]}
+    with tempfile.TemporaryDirectory() as folder:
+        path = Path(folder) / "config.json"
+        path.write_text(json.dumps(config))
+        process = subprocess.Popen(["sing-box", "run", "-c", str(path)],
+                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        try:
+            for _ in range(20):
+                if process.poll() is not None:
+                    return None
+                with socket.socket() as sock:
+                    if sock.connect_ex(("127.0.0.1", port)) == 0:
+                        break
+                time.sleep(0.1)
+            else:
+                return None
+            session = requests.Session()
+            session.trust_env = False
+            proxy = f"socks5h://127.0.0.1:{port}"
+            session.proxies = {"http": proxy, "https": proxy}
+            start = time.monotonic()
+            response = session.get("https://www.gstatic.com/generate_204", timeout=(3, 5))
+            latency = (time.monotonic() - start) * 1000
+            if response.status_code != 204 or latency > MAX_LATENCY_MS:
+                return None
+            with session.get("https://speed.cloudflare.com/__down?bytes=262144",
+                             timeout=(3, 8), stream=True) as response:
+                if response.status_code != 200:
+                    return None
+                start = time.monotonic()
+                count = sum(len(chunk) for chunk in response.iter_content(32768))
+                seconds = time.monotonic() - start
+            if count != 262144 or seconds <= 0:
+                return None
+            mbps = count * 8 / seconds / 1_000_000
+            return round(mbps, 2) if mbps >= MIN_MBPS else None
+        except (requests.RequestException, OSError):
+            return None
+        finally:
+            process.terminate()
+            try:
+                process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait()
 
 
 def main():
