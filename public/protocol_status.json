@@ -1,29 +1,28 @@
 {
-  "checked_at": "2026-11-02T13:14:59.750297+00:00",
+  "checked_at": "2026-11-02T14:13:24.687688+00:00",
   "verification": "sing-box HTTPS connectivity; two targets on failure; no speed or latency threshold",
   "vless_reality": {
     "sources_reached": 5,
     "candidates": 1000,
-    "tested": 169,
-    "unexamined": 768,
+    "tested": 173,
+    "unexamined": 760,
     "max_checks": 240,
     "healthy_test_targets": 2,
     "min_mbps": null,
     "max_latency_ms": null,
-    "fallback_reason": "upstream/check incomplete; recent verified cache only",
-    "attempted_at": "2026-11-02T13:14:59.505464+00:00",
-    "checked_at": "2026-11-02T13:14:59.505464+00:00",
-    "last_success_at": "2026-11-02T13:14:59.505464+00:00",
-    "published": 118,
-    "published_count": 118,
-    "new_count": 67,
-    "stale": true,
+    "fallback_reason": null,
+    "attempted_at": "2026-11-02T14:13:24.520772+00:00",
+    "checked_at": "2026-11-02T14:13:24.520772+00:00",
+    "last_success_at": "2026-11-02T14:13:24.520772+00:00",
+    "published": 57,
+    "published_count": 57,
+    "new_count": 57,
+    "stale": false,
     "stale_ttl_seconds": 1800,
     "results": {
-      "unreachable": 102,
-      "unsupported": 71,
-      "passed": 67,
-      "inconclusive": 51
+      "unreachable": 116,
+      "unsupported": 67,
+      "passed": 57
     }
   }
 }
