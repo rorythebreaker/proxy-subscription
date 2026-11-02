@@ -80,6 +80,8 @@ class IncyExport(unittest.TestCase):
             common.merge()
             self.assertEqual(json.loads((out / 'incy.json').read_text()), [])
             self.assertEqual((out / 'all.txt').read_text(), '')
+            auto = json.loads((out / 'xray-auto.json').read_text())
+            self.assertFalse(any(o['protocol'] == 'vless' for o in auto['outbounds']))
 
 
 @unittest.skipUnless(shutil.which('xray'), 'xray is not installed')

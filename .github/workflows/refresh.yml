@@ -19,9 +19,10 @@ jobs:
   refresh:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     env:
       SING_BOX_VERSION: '1.14.4'
+      XRAY_VERSION: '26.10.31'
       MAX_PROTOCOL_CHECKS: '240'
       PROTOCOL_WORKERS: '24'
       STALE_TTL_SECONDS: '1800'
@@ -63,6 +64,26 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_singbox_config.py' -v
       - name: Refresh and assemble subscriptions
         run: python refresh.py
+      - name: Cache pinned Xray
+        uses: actions/cache@v4
+        with:
+          path: .tools/xray
+          key: xray-${{ runner.os }}-${{ runner.arch }}-${{ env.XRAY_VERSION }}
+      - name: Validate exported profiles with pinned Xray
+        run: |
+          set -euo pipefail
+          mkdir -p .tools
+          if [ ! -x .tools/xray ]; then
+            curl --fail --silent --show-error --location --max-time 45 \
+              "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" \
+              --output "${RUNNER_TEMP}/xray.zip"
+            echo "e4bd9119f50ae7c41658b1abd0679ae06f98bd864a2907ff33f2f2cf7081b214  ${RUNNER_TEMP}/xray.zip" | sha256sum --check
+            unzip -p "${RUNNER_TEMP}/xray.zip" xray > .tools/xray
+            chmod +x .tools/xray
+          fi
+          export PATH="${GITHUB_WORKSPACE}/.tools:$PATH"
+          python -m unittest discover -s tests -p 'test_xray_auto.py' -v
+          xray run -test -config public/xray-auto.json
       - name: Commit consistent subscription
         run: |
           set -euo pipefail
