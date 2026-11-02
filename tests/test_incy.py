@@ -69,7 +69,7 @@ class IncyExport(unittest.TestCase):
             out = Path(folder)
             core = canonical_reality(BASE)
             (out / 'vless.txt').write_text(core + '#DE%20server\n')
-            common.write_json(out / 'vless_state.json', {'nodes': {core: {'last_verified_at': common.timestamp()}}})
+            common.write_json(out / 'vless_state.json', {'nodes': {core: {'last_verified_at': common.timestamp(), 'quality_policy': common.QUALITY_POLICY}}})
             common.merge()
             profiles = json.loads((out / 'incy.json').read_text())
             self.assertEqual(len(profiles), 1)

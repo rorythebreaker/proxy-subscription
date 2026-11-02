@@ -43,16 +43,25 @@ These omissions affect only `incy.json`, not the existing text subscriptions.
 The exporter runs after freshness checks on every refresh, including fallback;
 expired records cannot persist in the JSON file independently of `all.txt`.
 
-SOCKS5 retains the existing policy: HTTPS reachability, latency <= 3500 ms and
-payload throughput >= 0.25 Mbps. Transfers have total time and size limits.
+SOCKS5 and VLESS share a gentle quality policy: HTTPS reachability, up to
+6000 ms for the complete HTTPS check and at least 0.10 Mbps payload throughput.
+Latency is not ICMP ping. A slow result is repeated: only two measured slow
+results reject a node. The payload test downloads 128 KiB with a 14-second total
+limit. It runs only if the direct speed-test baseline is at least four times the
+minimum. HTTP blocks, unavailable speed-test servers and ambiguous measurements
+are not treated as zero speed; a node with proven HTTPS connectivity may remain.
 
-VLESS uses **connectivity only**, with **no speed or latency cutoff**. The pinned
-sing-box 1.14.4 validates each generated configuration and opens a local SOCKS
-listener. HTTPS must succeed through the full VLESS/REALITY tunnel. If the first
-probe fails, a second independent target is tried. Both test targets must be
-reachable directly from the runner before nodes can be marked unreachable.
+The pinned sing-box 1.14.4 validates each VLESS configuration and opens a local
+SOCKS listener. HTTPS and payload tests run through that full VLESS/REALITY tunnel,
+not directly. If the first connectivity probe fails, a second independent target
+is tried. Both targets must be reachable directly from the runner before nodes
+can be marked unreachable. Previously published nodes are checked before rotating
+new candidates. These checks measure the GitHub runner's network, not the user's.
 
 - `passed`: HTTPS 204 through the tunnel; the node is published.
+- `latency_rejected`, `speed_rejected`: two slow measurements; removed from all outputs.
+- `quality_inconclusive`: insufficient time or ambiguous repeat of a slow result;
+  new nodes are not published and only recent verified cache can survive.
 - `unreachable`: network attempts to both healthy targets failed; the node is removed.
 - `inconclusive`: HTTP rejection, unhealthy test targets or verifier failure;
   a previously verified node can survive within its original cache TTL.
@@ -75,11 +84,12 @@ status files distinguish candidates, network tests, outcomes and published nodes
 
 ## Freshness and failures
 
-Only records verified within `STALE_TTL_SECONDS` (default **1800 seconds / 30
+Only records verified within `STALE_TTL_SECONDS` (default **600 seconds / 10
 minutes**) can enter any output. Keeping a cached node does **not** renew its
 verification time. Explicit network failures remove it immediately. Source
 outages trigger rechecks of recent cached nodes; legacy files without verification
-metadata are not treated as verified. A node can outlive an upstream outage only
+metadata are not treated as verified. Nodes verified under an older quality policy
+are rechecked before they can re-enter the publication. A node can outlive an upstream outage only
 by passing a new connectivity check.
 
 Empty HTTP bodies are valid empty sources. HTML, corrupt base64 and unrecognized
@@ -87,7 +97,7 @@ nonempty payloads are source failures, not successful empty updates. Recognition
 of a mixed protocol subscription does not require it to contain VLESS records.
 
 Each collector writes to a temporary staging directory. The wrapper kills an
-entire process group when a stage exceeds its deadline (120 s SOCKS, 145 s VLESS),
+entire process group when a stage exceeds its deadline (120 s SOCKS, 200 s VLESS),
 keeps only unexpired previous results and assembles the final output after both
 attempts. Publication is one Git commit. An engine installation failure cannot
 block the SOCKS update. Concurrent changes to collector code prevent old calculated
@@ -108,7 +118,7 @@ available separately at `public/xray-auto-only.json`.
 
 The AUTO configuration groups up to 24 distinct VLESS endpoints and 8 SOCKS5
 endpoints from the freshness-filtered publication. `leastLoad` and
-`burstObservatory` test HTTPS from the client (30s average interval, 5s timeout,
+`burstObservatory` test HTTPS from the client (30s average interval, 8s timeout,
 two samples). VLESS is preferred, with a loopback fallback to the observed SOCKS
 pool. If all proxies fail, ordinary internet traffic is blocked rather than sent
 directly. Selection is not instant on startup and switching does not migrate
@@ -141,8 +151,16 @@ python refresh.py
 
 `MAX_PROTOCOL_NODES`, `MAX_PROTOCOL_CHECKS`, `PROTOCOL_WORKERS`,
 `STALE_TTL_SECONDS`, `SOCKS_STAGE_SECONDS`, `VLESS_STAGE_SECONDS` and `OUTPUT_DIR`
-can be set in the environment. SOCKS thresholds retain their existing environment
-variables. Raising the batch size does not override stage deadlines.
+can be set in the environment. The shared quality thresholds use `MAX_LATENCY_MS` and `MIN_SPEED_MBPS`. Raising the batch size does not override stage deadlines.
 
 A successful probe establishes availability **from the GitHub runner at check
 time**. Availability from a different network can differ.
+
+## Workflow diagnostics
+
+`Refresh Proxy Subscription` commits all raw subscriptions together after engine
+validation. Its job summary lists publication time, protocol counts, quality
+thresholds, baseline status and rejection reasons. The separate managed GitHub
+Pages deployment does not generate or update the raw subscription URLs. A Pages
+OIDC/network failure does not mean that the subscription refresh failed. GitHub
+may delay or drop scheduled runs; the five-minute cron is not a delivery SLA.
