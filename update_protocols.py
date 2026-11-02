@@ -23,6 +23,8 @@ import uuid
 SOURCES = {
     "vless_reality": [
         "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
+        "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
+        "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/vless.txt",
     ],
 }
 OUT = Path("public")
