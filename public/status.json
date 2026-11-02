@@ -1,22 +1,25 @@
 {
-  "checked_at": "2026-11-02T12:38:37.214242+00:00",
   "candidates": 600,
-  "alive": 35,
-  "published": 7,
-  "latency_passed": 28,
+  "successful_sources": 2,
+  "alive": 40,
   "speed_tested": 28,
-  "speed_passed": 7,
   "min_speed_mbps": 0.25,
   "max_latency_ms": 3500,
-  "speed_test_bytes": 262144,
-  "fastest_speed_mbps": 25.36,
-  "successful_sources": 2,
-  "latency_metric": "HTTPS GET via SOCKS5 to generate_204, milliseconds",
-  "fastest_ms": 182,
-  "sources": [
-    "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt",
-    "https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt"
-  ],
-  "geoip_database": "https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb",
-  "country_unknown": 0
+  "healthy_test_targets": 2,
+  "fallback_reason": null,
+  "attempted_at": "2026-11-02T12:57:23.032800+00:00",
+  "checked_at": "2026-11-02T12:57:23.032800+00:00",
+  "last_success_at": "2026-11-02T12:57:23.032800+00:00",
+  "published": 9,
+  "published_count": 9,
+  "new_count": 9,
+  "stale": false,
+  "stale_ttl_seconds": 1800,
+  "results": {
+    "passed": 9,
+    "unreachable": 371,
+    "latency_rejected": 12,
+    "not_tested": 189,
+    "inconclusive": 19
+  }
 }
