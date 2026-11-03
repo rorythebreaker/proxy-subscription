@@ -75,11 +75,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "15.204.97.219",
-            "port": 23576,
+            "address": "47.253.226.114",
+            "port": 443,
             "users": [
               {
-                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "id": "055a1ce8-2a16-4a0d-a2c2-22826c9b2413",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -95,9 +95,9 @@
           "dialerProxy": "fragment"
         },
         "realitySettings": {
-          "serverName": "fuck.rkn",
-          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-          "shortId": "01",
+          "serverName": "www.cloudflare.com",
+          "publicKey": "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc",
+          "shortId": "",
           "fingerprint": "chrome",
           "spiderX": "/"
         }
@@ -109,11 +109,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "15.204.97.197",
-            "port": 23576,
+            "address": "169.40.42.168",
+            "port": 443,
             "users": [
               {
-                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -129,9 +129,9 @@
           "dialerProxy": "fragment"
         },
         "realitySettings": {
-          "serverName": "fuck.rkn",
-          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-          "shortId": "01",
+          "serverName": "yahoo.com",
+          "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+          "shortId": "c39cc7310a",
           "fingerprint": "chrome",
           "spiderX": "/"
         }
@@ -177,7 +177,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "169.40.42.168",
+            "address": "169.40.42.225",
             "port": 443,
             "users": [
               {
@@ -211,6 +211,74 @@
       "settings": {
         "vnext": [
           {
+            "address": "169.40.42.35",
+            "port": 443,
+            "users": [
+              {
+                "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "sockopt": {
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
+        },
+        "realitySettings": {
+          "serverName": "yahoo.com",
+          "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+          "shortId": "c39cc7310a",
+          "fingerprint": "chrome",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "VLESS_0006",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "15.204.97.219",
+            "port": 23576,
+            "users": [
+              {
+                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "sockopt": {
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
+        },
+        "realitySettings": {
+          "serverName": "fuck.rkn",
+          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+          "shortId": "",
+          "fingerprint": "chrome",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "VLESS_0007",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
             "address": "15.204.97.206",
             "port": 23576,
             "users": [
@@ -240,110 +308,36 @@
       }
     },
     {
-      "tag": "VLESS_0006",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.178.208.140",
-            "port": 443,
-            "users": [
-              {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "sockopt": {
-          "domainStrategy": "UseIPv4"
-        },
-        "tlsSettings": {
-          "serverName": "static.bakarova-top.ru",
-          "fingerprint": "edge",
-          "alpn": [
-            "h2"
-          ]
-        },
-        "xhttpSettings": {
-          "host": "static.bakarova-top.ru",
-          "path": "/api/v2/events",
-          "mode": "packet-up"
-        }
-      }
-    },
-    {
-      "tag": "VLESS_0007",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.178.208.140",
-            "port": 443,
-            "users": [
-              {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "sockopt": {
-          "domainStrategy": "UseIPv4"
-        },
-        "tlsSettings": {
-          "serverName": "static.bakarova-top.ru",
-          "fingerprint": "safari",
-          "alpn": [
-            "h2"
-          ]
-        },
-        "xhttpSettings": {
-          "host": "static.bakarova-top.ru",
-          "path": "/api/v2/events",
-          "mode": "packet-up"
-        }
-      }
-    },
-    {
       "tag": "VLESS_0008",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "185.178.208.140",
-            "port": 443,
+            "address": "15.204.97.219",
+            "port": 23576,
             "users": [
               {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
+                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
+        "network": "tcp",
+        "security": "reality",
         "sockopt": {
-          "domainStrategy": "UseIPv4"
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
         },
-        "tlsSettings": {
-          "serverName": "api.bakarova-top.ru",
-          "fingerprint": "chrome"
-        },
-        "xhttpSettings": {
-          "host": "",
-          "path": "/api/v2/events",
-          "mode": "auto"
+        "realitySettings": {
+          "serverName": "fuck.rkn",
+          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+          "shortId": "01",
+          "fingerprint": "chrome",
+          "spiderX": "/"
         }
       }
     },
@@ -372,12 +366,15 @@
         },
         "tlsSettings": {
           "serverName": "static.bakarova-top.ru",
-          "fingerprint": "edge"
+          "fingerprint": "firefox",
+          "alpn": [
+            "h2"
+          ]
         },
         "xhttpSettings": {
-          "host": "",
+          "host": "static.bakarova-top.ru",
           "path": "/api/v2/events",
-          "mode": "auto"
+          "mode": "packet-up"
         }
       }
     },
@@ -421,70 +418,36 @@
       "settings": {
         "vnext": [
           {
-            "address": "185.178.208.140",
-            "port": 443,
+            "address": "51.158.206.12",
+            "port": 23576,
             "users": [
               {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
+                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
+        "network": "tcp",
+        "security": "reality",
         "sockopt": {
-          "domainStrategy": "UseIPv4"
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
         },
-        "tlsSettings": {
-          "serverName": "api.bakarova-top.ru",
-          "fingerprint": "firefox"
-        },
-        "xhttpSettings": {
-          "host": "",
-          "path": "/api/v2/events",
-          "mode": "auto"
+        "realitySettings": {
+          "serverName": "fuck.rkn",
+          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+          "shortId": "01",
+          "fingerprint": "chrome",
+          "spiderX": "/"
         }
       }
     },
     {
       "tag": "VLESS_0012",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.178.208.140",
-            "port": 443,
-            "users": [
-              {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "sockopt": {
-          "domainStrategy": "UseIPv4"
-        },
-        "tlsSettings": {
-          "serverName": "static.bakarova-top.ru",
-          "fingerprint": "firefox"
-        },
-        "xhttpSettings": {
-          "host": "static.bakarova-top.ru",
-          "path": "/api/v2/events",
-          "mode": "packet-up"
-        }
-      }
-    },
-    {
-      "tag": "VLESS_0013",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -518,44 +481,7 @@
       }
     },
     {
-      "tag": "VLESS_0014",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.178.208.140",
-            "port": 443,
-            "users": [
-              {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "sockopt": {
-          "domainStrategy": "UseIPv4"
-        },
-        "tlsSettings": {
-          "serverName": "static.bakarova-top.ru",
-          "fingerprint": "qq",
-          "alpn": [
-            "h2"
-          ]
-        },
-        "xhttpSettings": {
-          "host": "static.bakarova-top.ru",
-          "path": "/api/v2/events",
-          "mode": "auto"
-        }
-      }
-    },
-    {
-      "tag": "VLESS_0015",
+      "tag": "VLESS_0013",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -589,7 +515,41 @@
       }
     },
     {
-      "tag": "VLESS_0016",
+      "tag": "VLESS_0014",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "185.178.208.140",
+            "port": 443,
+            "users": [
+              {
+                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "security": "tls",
+        "sockopt": {
+          "domainStrategy": "UseIPv4"
+        },
+        "tlsSettings": {
+          "serverName": "static.bakarova-top.ru",
+          "fingerprint": "firefox"
+        },
+        "xhttpSettings": {
+          "host": "",
+          "path": "/api/v2/events",
+          "mode": "auto"
+        }
+      }
+    },
+    {
+      "tag": "VLESS_0015",
       "protocol": "vless",
       "settings": {
         "vnext": [
@@ -623,12 +583,46 @@
       }
     },
     {
+      "tag": "VLESS_0016",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "51.158.206.25",
+            "port": 23576,
+            "users": [
+              {
+                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "sockopt": {
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
+        },
+        "realitySettings": {
+          "serverName": "fuck.rkn",
+          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+          "shortId": "01",
+          "fingerprint": "chrome",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
       "tag": "VLESS_0017",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "51.158.206.93",
+            "address": "51.158.206.29",
             "port": 23576,
             "users": [
               {
@@ -662,7 +656,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "51.158.206.87",
+            "address": "15.204.97.197",
             "port": 23576,
             "users": [
               {
@@ -696,11 +690,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "51.158.206.12",
-            "port": 23576,
+            "address": "82.39.171.12",
+            "port": 443,
             "users": [
               {
-                "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+                "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -716,9 +710,9 @@
           "dialerProxy": "fragment"
         },
         "realitySettings": {
-          "serverName": "fuck.rkn",
-          "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-          "shortId": "01",
+          "serverName": "yahoo.com",
+          "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
+          "shortId": "c39cc7310a",
           "fingerprint": "chrome",
           "spiderX": "/"
         }
@@ -764,7 +758,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "62.210.91.2",
+            "address": "51.158.206.93",
             "port": 23576,
             "users": [
               {
@@ -798,7 +792,41 @@
       "settings": {
         "vnext": [
           {
-            "address": "51.158.206.98",
+            "address": "157.90.165.181",
+            "port": 11762,
+            "users": [
+              {
+                "id": "7c9b4360-6be9-47f2-ace9-b87297ea3d8f",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "sockopt": {
+          "domainStrategy": "UseIPv4",
+          "dialerProxy": "fragment"
+        },
+        "realitySettings": {
+          "serverName": "swdist.apple.com",
+          "publicKey": "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU",
+          "shortId": "",
+          "fingerprint": "chrome",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "VLESS_0023",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "51.158.206.34",
             "port": 23576,
             "users": [
               {
@@ -827,52 +855,17 @@
       }
     },
     {
-      "tag": "VLESS_0023",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "185.178.208.140",
-            "port": 443,
-            "users": [
-              {
-                "id": "ea277838-a188-44f1-a2e8-94aa110c4f27",
-                "encryption": "none"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "xhttp",
-        "security": "tls",
-        "sockopt": {
-          "domainStrategy": "UseIPv4"
-        },
-        "tlsSettings": {
-          "serverName": "static.bakarova-top.ru",
-          "fingerprint": "qq"
-        },
-        "xhttpSettings": {
-          "host": "",
-          "path": "/api/v2/events",
-          "mode": "auto"
-        }
-      }
-    },
-    {
       "tag": "VLESS_0024",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "82.39.171.12",
-            "port": 443,
+            "address": "156.252.229.11",
+            "port": 8443,
             "users": [
               {
-                "id": "d65cc14c-f53f-4fe2-b262-97856601319c",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
+                "id": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
+                "encryption": "none"
               }
             ]
           }
@@ -886,9 +879,9 @@
           "dialerProxy": "fragment"
         },
         "realitySettings": {
-          "serverName": "yahoo.com",
-          "publicKey": "e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg",
-          "shortId": "c39cc7310a",
+          "serverName": "play.googleapis.com",
+          "publicKey": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
+          "shortId": "974f7f8f",
           "fingerprint": "chrome",
           "spiderX": "/"
         }
