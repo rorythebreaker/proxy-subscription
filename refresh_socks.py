@@ -100,6 +100,7 @@ def previous_endpoints():
 
 def main():
     deadline = time.monotonic() + int(os.getenv('SOCKS_STAGE_SECONDS', '300')) - 5
+    limit = 1800
     previous = previous_endpoints()
     endpoints = {}
     available_sources = 0
@@ -116,9 +117,9 @@ def main():
     # Rotate the batch so successive runs test different addresses.
     ordered = list(endpoints)
     if ordered:
-        offset = (int(time.time()) // 300 * 600) % len(ordered)
+        offset = (int(time.time()) // 300 * limit) % len(ordered)
         ordered = (ordered[offset:] + ordered[:offset])
-    ordered = list(dict.fromkeys(previous + ordered))[:600]
+    ordered = list(dict.fromkeys(previous + ordered))[:limit]
 
     def check_with_budget(endpoint):
         # Two HTTPS probes and two speed downloads may take around 46 seconds.
