@@ -12,7 +12,7 @@ def build_auto(uris):
     remotes = [outbound(u, f'VLESS_{i:04d}') for i, u in enumerate(uris[:AUTO_LIMIT], 1)]
     target = {'balancerTag': 'AUTO'} if remotes else {'outboundTag': 'block'}
     result = base_profile(remotes, target)
-    result['remarks'] = '0000 | AUTO VLESS | XHTTP + TCP REALITY'
+    result['remarks'] = 'AUTO VLESS | XHTTP + TCP REALITY'
     # Block by default if a client loses routing; a manual profile defaults to its sole proxy.
     block = next(o for o in result['outbounds'] if o['tag'] == 'block')
     result['outbounds'].remove(block)
