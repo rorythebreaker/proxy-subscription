@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-03T05:16:20.091132+00:00",
+  "started_at": "2026-11-03T09:40:06.600778+00:00",
   "error": null,
   "strict_current_run": true,
   "sources": [
@@ -7,38 +7,38 @@
       "id": "igareck-fixed",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
       "status": "ok",
-      "accepted": 11,
-      "bytes": 53132,
+      "accepted": 2,
+      "bytes": 40168,
       "rejected": {
-        "excluded_transport": 138,
-        "invalid": 17,
+        "invalid": 15,
+        "excluded_transport": 95,
         "unsupported_parameters": 4,
-        "insecure_tls": 3
+        "insecure_tls": 2
       }
     },
     {
       "id": "igareck-mobile",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
       "status": "ok",
-      "accepted": 21,
-      "bytes": 49304,
+      "accepted": 4,
+      "bytes": 51676,
       "rejected": {
-        "excluded_transport": 90,
-        "invalid": 12,
-        "unsupported_parameters": 9,
-        "insecure_tls": 3,
-        "other_protocol": 15
+        "invalid": 16,
+        "excluded_transport": 108,
+        "unsupported_parameters": 8,
+        "insecure_tls": 4,
+        "other_protocol": 10
       }
     },
     {
       "id": "zieng2",
       "url": "https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt",
       "status": "ok",
-      "accepted": 19,
-      "bytes": 21918,
+      "accepted": 23,
+      "bytes": 29054,
       "rejected": {
-        "excluded_transport": 26,
-        "invalid": 40
+        "excluded_transport": 27,
+        "invalid": 43
       }
     },
     {
@@ -61,13 +61,13 @@
       "id": "roosterkid",
       "url": "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
       "status": "ok",
-      "accepted": 7,
-      "bytes": 34603,
+      "accepted": 5,
+      "bytes": 34784,
       "rejected": {
-        "unsupported_parameters": 60,
-        "excluded_transport": 23,
-        "other_protocol": 58,
-        "invalid": 1
+        "excluded_transport": 24,
+        "unsupported_parameters": 55,
+        "invalid": 3,
+        "other_protocol": 63
       }
     },
     {
@@ -75,11 +75,11 @@
       "url": "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
       "status": "ok",
       "accepted": 1,
-      "bytes": 79329,
+      "bytes": 88454,
       "rejected": {
-        "other_protocol": 207,
-        "excluded_transport": 239,
-        "invalid": 2
+        "other_protocol": 274,
+        "excluded_transport": 224,
+        "invalid": 1
       }
     },
     {
@@ -87,23 +87,23 @@
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
       "status": "ok",
       "accepted": 0,
-      "bytes": 1215903,
+      "bytes": 1223983,
       "rejected": {
-        "other_protocol": 4736
+        "other_protocol": 4755
       }
     },
     {
       "id": "vestranet",
       "url": "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
       "status": "ok",
-      "accepted": 423,
-      "bytes": 475448,
+      "accepted": 498,
+      "bytes": 448737,
       "rejected": {
-        "excluded_transport": 1154,
-        "unsupported_parameters": 174,
-        "invalid": 90,
-        "insecure_tls": 21,
-        "unsupported_encryption": 18
+        "excluded_transport": 1078,
+        "invalid": 82,
+        "unsupported_parameters": 189,
+        "insecure_tls": 13,
+        "unsupported_encryption": 7
       }
     },
     {
@@ -119,43 +119,46 @@
       }
     }
   ],
-  "discovered_supported": 1570,
-  "candidates": 1570,
+  "discovered_supported": 1652,
+  "candidates": 1652,
   "selected": 600,
-  "unselected": 974,
+  "unselected": 1062,
   "results": {
     "passed": 119,
-    "https_failed": 174,
-    "speed_rejected": 17,
-    "speed_unconfirmed": 16,
-    "dns_failed": 7,
+    "speed_rejected": 13,
+    "speed_unconfirmed": 19,
+    "https_failed": 177,
+    "postcheck_failed": 2,
+    "dns_failed": 8,
     "config_error": 1,
-    "not_tested": 266
+    "not_tested": 261
   },
   "results_by_transport": {
     "tcp_reality": {
-      "passed": 111,
-      "speed_rejected": 16,
-      "speed_unconfirmed": 14,
-      "https_failed": 89,
-      "not_tested": 266
+      "passed": 115,
+      "speed_rejected": 11,
+      "speed_unconfirmed": 16,
+      "https_failed": 81,
+      "postcheck_failed": 1,
+      "not_tested": 261
     },
     "xhttp_tls": {
-      "https_failed": 85,
-      "passed": 8,
-      "dns_failed": 7,
-      "speed_rejected": 1,
-      "speed_unconfirmed": 2,
+      "https_failed": 96,
+      "speed_rejected": 2,
+      "passed": 4,
+      "postcheck_failed": 1,
+      "speed_unconfirmed": 3,
+      "dns_failed": 8,
       "config_error": 1
     }
   },
-  "baseline_mbps": 540.9562133230155,
-  "tested": 334,
-  "published_at": "2026-11-03T05:20:13.306755+00:00",
+  "baseline_mbps": 561.9378349410503,
+  "tested": 339,
+  "published_at": "2026-11-03T09:43:56.438560+00:00",
   "published": 119,
   "counts": {
-    "tcp_reality": 111,
-    "xhttp_tls": 8
+    "tcp_reality": 115,
+    "xhttp_tls": 4
   },
   "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
   "min_speed_mbps": 10.0,
