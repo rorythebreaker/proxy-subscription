@@ -224,7 +224,7 @@ def publish(records, details):
         data, p = nodes[uri], urlsplit(uri)
         kind = transport(uri)
         label = 'XHTTP TLS' if kind == 'xhttp_tls' else 'TCP REALITY'
-        names[uri] = f'{rank:04d} | {data["speed_mbps"]:.1f} Mbps | {label} | {p.netloc.split("@", 1)[1]}'
+        names[uri] = f'{label} | {p.netloc.split("@", 1)[1]}'
         summary.append({'rank': rank, 'id': node_id(uri), 'address': p.hostname, 'port': p.port,
             'transport': kind, 'speed_mbps': data['speed_mbps'], 'latency_ms': data['latency_ms'],
             'checked_at': data['checked_at'], 'sources': data.get('sources', [])})
