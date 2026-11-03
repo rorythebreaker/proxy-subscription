@@ -1,4 +1,5 @@
 """Build a separate SOCKS5 subscription from the current network."""
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import ipaddress
 import subprocess
@@ -34,22 +35,23 @@ def check(endpoint):
     address, port = endpoint
     host = f'[{address}]' if address.version == 6 else str(address)
     proxy = f'socks5h://{host}:{port}'
-    latencies = [common.probe(proxy, target) for target in common.TARGETS]
-    if any(value is None or value > common.MAX_LATENCY_MS for value in latencies):
-        return None
-    speeds = []
-    for _ in range(3):
+    for target in common.TARGETS:
+        latency = common.probe(proxy, target)
+        if latency is not None and latency <= common.MAX_LATENCY_MS:
+            break
+    else:
+        return 'https_failed', None
+
+    for _ in range(2):
         speed = common.measure_speed(proxy)
         if speed is not None and speed >= common.MIN_SPEED_MBPS:
-            speeds.append(speed)
-        if len(speeds) == 2:
             remote = {'tag': 'proxy', 'protocol': 'socks',
                       'settings': {'servers': [{'address': str(address), 'port': port}]}}
             profile = base_profile([], {'outboundTag': 'proxy'})
             profile['outbounds'].insert(0, remote)
             profile['remarks'] = f'SOCKS5 | {host}:{port}'
-            return min(speeds), max(latencies), profile
-    return None
+            return 'passed', (speed, latency, profile)
+    return 'speed_unconfirmed', None
 
 
 def main():
@@ -69,7 +71,9 @@ def main():
         offset = (int(time.time()) // 300 * 200) % len(ordered)
         ordered = (ordered[offset:] + ordered[:offset])[:200]
     with ThreadPoolExecutor(max_workers=8) as pool:
-        passed = [item for item in pool.map(check, ordered) if item is not None]
+        results = list(pool.map(check, ordered))
+    passed = [item for status, item in results if status == 'passed']
+    print(f'SOCKS5 outcomes: {dict(Counter(status for status, _ in results))}', flush=True)
     passed.sort(key=lambda item: (-item[0], item[1]))
     common.write_json(common.OUT / 'socks5.json', [item[2] for item in passed])
     print(f'SOCKS5: {len(passed)} passed out of {len(ordered)} tested.')
