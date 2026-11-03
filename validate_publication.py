@@ -31,10 +31,10 @@ def validate(root):
         assert [canonical(line) for line in (root / name).read_text().splitlines()] == ranked
     for name in ('alive.txt', 'proxies.txt'):
         assert not (root / name).read_text().strip(), 'legacy SOCKS nodes remain'
-    socks = read('happ-socks5.json')
+    socks = read('socks5.json')
     assert all(p['outbounds'][0]['protocol'] == 'socks' for p in socks)
     assert read('combined_status.json')['counts']['socks5'] == len(socks)
-    assert read('happ.json') == [automatic] + manual + socks
+    assert read('subscription.json') == [automatic] + manual + socks
     for config in [automatic] + manual + socks:
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'profile.json'

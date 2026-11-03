@@ -1,4 +1,4 @@
-"""Build a separate Happ SOCKS5 subscription from the current network."""
+"""Build a separate SOCKS5 subscription from the current network."""
 from concurrent.futures import ThreadPoolExecutor
 import ipaddress
 import subprocess
@@ -71,7 +71,7 @@ def main():
     with ThreadPoolExecutor(max_workers=8) as pool:
         passed = [item for item in pool.map(check, ordered) if item is not None]
     passed.sort(key=lambda item: (-item[0], item[1]))
-    common.write_json(common.OUT / 'happ-socks5.json', [item[2] for item in passed])
+    common.write_json(common.OUT / 'socks5.json', [item[2] for item in passed])
     print(f'SOCKS5: {len(passed)} passed out of {len(ordered)} tested.')
     if not available_sources:
         raise SystemExit('All SOCKS5 sources are unavailable')

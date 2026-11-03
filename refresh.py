@@ -44,18 +44,18 @@ def main():
                                 'strict_current_run': True})
         else:
             for path in staged.iterdir():
-                if path.is_file() and path.name != 'happ-socks5.json' and not path.name.endswith('.tmp'):
+                if path.is_file() and path.name != 'socks5.json' and not path.name.endswith('.tmp'):
                     common.atomic_write(common.OUT / path.name, path.read_text())
             for obsolete in ('socks_state.json', 'shadowsocks.txt'):
                 (common.OUT / obsolete).unlink(missing_ok=True)
 
         socks_profiles = []
-        socks_path = staged / 'happ-socks5.json'
+        socks_path = staged / 'socks5.json'
         if socks_code == 0 and socks_path.exists():
             socks_profiles = json.loads(socks_path.read_text())
         vless_profiles = json.loads((common.OUT / 'xray-auto.json').read_text())
-        common.write_json(common.OUT / 'happ-socks5.json', socks_profiles)
-        common.write_json(common.OUT / 'happ.json', vless_profiles + socks_profiles)
+        common.write_json(common.OUT / 'socks5.json', socks_profiles)
+        common.write_json(common.OUT / 'subscription.json', vless_profiles + socks_profiles)
         common.write_json(common.OUT / 'combined_status.json', {
             'published_at': common.timestamp(),
             'counts': dict(common.load_json(common.OUT / 'status.json').get('counts', {}),

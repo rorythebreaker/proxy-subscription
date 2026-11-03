@@ -1,4 +1,4 @@
-"""Recheck published VLESS candidates on the network where Happ will run."""
+"""Recheck published VLESS candidates on the network where the client will run."""
 import argparse
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
@@ -19,7 +19,7 @@ SOURCE = 'https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/ma
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=Path('happ-local.json'))
+    parser.add_argument('--output', type=Path, default=Path('local-subscription.json'))
     args = parser.parse_args()
     for command in ('curl', 'xray'):
         if not shutil.which(command):
@@ -58,7 +58,7 @@ def main():
         parser.exit(1, 'No candidates passed. No new JSON was written.\n')
     passed.sort(key=lambda record: (-record['speed_mbps'], record['latency_ms']))
     write_json(args.output, build_choices([record['uri'] for record in passed], names))
-    print(f'Import {args.output.resolve()} into Happ ({len(passed)} nodes + AUTO).')
+    print(f'Import {args.output.resolve()} into your client ({len(passed)} nodes + AUTO).')
 
 
 if __name__ == '__main__':
