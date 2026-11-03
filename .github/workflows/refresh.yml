@@ -68,7 +68,7 @@ jobs:
               summary.write('## Subscription refresh\n\n')
               summary.write(f"Published at: {combined['published_at']}\n\n")
               summary.write(f"Protocol counts: {combined['counts']}\n\n")
-              for name in ('status.json', 'protocol_status.json'):
+              for name in ('status.json', 'combined_status.json'):
                   summary.write(f'### {name}\n\n```json\n{Path("public", name).read_text()}\n```\n\n')
           PY
       - name: Validate exported profiles and measurements
@@ -108,6 +108,9 @@ jobs:
           import json
           from pathlib import Path
           status = json.loads(Path('public/status.json').read_text())
+          combined = json.loads(Path('public/combined_status.json').read_text())
           if status.get('error'):
               raise SystemExit(status['error'])
+          if combined['socks_exit_code'] != 0:
+              raise SystemExit(f"SOCKS5 collector exited with {combined['socks_exit_code']}")
           PYCODE

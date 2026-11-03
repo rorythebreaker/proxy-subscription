@@ -9,7 +9,8 @@ import subscription as common
 from incy import base_profile
 
 SOURCES = (
-    'https://cdn.jsdelivr.net/gh/proxifly/free-proxy-list@main/proxies/protocols/socks5/data.txt',
+    'https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt',
+    'https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt',
     'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt',
 )
 
@@ -53,9 +54,12 @@ def check(endpoint):
 
 def main():
     endpoints = {}
+    available_sources = 0
     for source in SOURCES:
         try:
-            for endpoint in candidates(common.fetch_bytes(source)):
+            data = common.fetch_bytes(source)
+            available_sources += 1
+            for endpoint in candidates(data):
                 endpoints.setdefault(endpoint, None)
         except (ValueError, OSError, subprocess.SubprocessError):
             print(f'Source unavailable: {source}', flush=True)
@@ -69,6 +73,8 @@ def main():
     passed.sort(key=lambda item: (-item[0], item[1]))
     common.write_json(common.OUT / 'happ-socks5.json', [item[2] for item in passed])
     print(f'SOCKS5: {len(passed)} passed out of {len(ordered)} tested.')
+    if not available_sources:
+        raise SystemExit('All SOCKS5 sources are unavailable')
 
 
 if __name__ == '__main__':
