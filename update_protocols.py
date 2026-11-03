@@ -210,14 +210,20 @@ def main():
         return
     candidates, reports, total = collect()
     history = common.load_json(common.OUT / 'vless_state.json').get('nodes', {})
+    current_uris = {node['uri'] for node in candidates}
+    history = {uri: data for uri, data in history.items() if uri in current_uris} if isinstance(history, dict) else {}
     chosen, available = candidates_with_history(candidates, history)
     details.update(sources=reports, discovered_supported=total, candidates=len(candidates),
                    selected=len(chosen), unselected=max(0, available - len(chosen)))
-    healthy = common.healthy_targets()
-    baseline = common.measure_speed() if len(healthy) == 2 else None
-    if len(healthy) != 2 or baseline is None or baseline < common.MIN_SPEED_MBPS * 4:
-        common.publish([], dict(details, error='test_infrastructure_unhealthy', healthy_targets=len(healthy), baseline_mbps=baseline))
-        return
+    skip_preflight = os.getenv('LOCAL_SKIP_PREFLIGHT') == '1'
+    details['preflight_skipped'] = skip_preflight
+    baseline = None
+    if not skip_preflight:
+        healthy = common.healthy_targets()
+        baseline = common.measure_speed() if len(healthy) == 2 else None
+        if len(healthy) != 2 or baseline is None or baseline < common.MIN_SPEED_MBPS * 4:
+            common.publish([], dict(details, error='test_infrastructure_unhealthy', healthy_targets=len(healthy), baseline_mbps=baseline))
+            return
     if not chosen and not any(s['status'] == 'ok' for s in reports):
         common.publish([], dict(details, error='all_sources_unavailable'))
         return
