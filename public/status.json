@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-03T04:32:41.028486+00:00",
+  "started_at": "2026-11-03T05:16:20.091132+00:00",
   "error": null,
   "strict_current_run": true,
   "sources": [
@@ -35,7 +35,7 @@
       "url": "https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt",
       "status": "ok",
       "accepted": 19,
-      "bytes": 23113,
+      "bytes": 21918,
       "rejected": {
         "excluded_transport": 26,
         "invalid": 40
@@ -61,13 +61,13 @@
       "id": "roosterkid",
       "url": "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
       "status": "ok",
-      "accepted": 6,
-      "bytes": 35719,
+      "accepted": 7,
+      "bytes": 34603,
       "rejected": {
-        "unsupported_parameters": 65,
-        "other_protocol": 55,
-        "invalid": 1,
-        "excluded_transport": 23
+        "unsupported_parameters": 60,
+        "excluded_transport": 23,
+        "other_protocol": 58,
+        "invalid": 1
       }
     },
     {
@@ -96,15 +96,14 @@
       "id": "vestranet",
       "url": "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
       "status": "ok",
-      "accepted": 523,
-      "bytes": 477867,
+      "accepted": 423,
+      "bytes": 475448,
       "rejected": {
-        "excluded_transport": 1134,
-        "unsupported_parameters": 156,
-        "invalid": 106,
-        "unsupported_encryption": 4,
-        "insecure_tls": 35,
-        "unsupported_header": 1
+        "excluded_transport": 1154,
+        "unsupported_parameters": 174,
+        "invalid": 90,
+        "insecure_tls": 21,
+        "unsupported_encryption": 18
       }
     },
     {
@@ -120,45 +119,42 @@
       }
     }
   ],
-  "discovered_supported": 1695,
-  "candidates": 1695,
+  "discovered_supported": 1570,
+  "candidates": 1570,
   "selected": 600,
-  "unselected": 1099,
+  "unselected": 974,
   "results": {
-    "passed": 111,
-    "speed_unconfirmed": 28,
-    "https_failed": 188,
-    "dns_failed": 9,
-    "speed_rejected": 12,
-    "config_error": 2,
-    "postcheck_failed": 1,
-    "not_tested": 249
+    "passed": 119,
+    "https_failed": 174,
+    "speed_rejected": 17,
+    "speed_unconfirmed": 16,
+    "dns_failed": 7,
+    "config_error": 1,
+    "not_tested": 266
   },
   "results_by_transport": {
     "tcp_reality": {
-      "passed": 103,
-      "speed_unconfirmed": 25,
-      "https_failed": 104,
-      "dns_failed": 2,
-      "speed_rejected": 10,
-      "postcheck_failed": 1,
-      "not_tested": 249
+      "passed": 111,
+      "speed_rejected": 16,
+      "speed_unconfirmed": 14,
+      "https_failed": 89,
+      "not_tested": 266
     },
     "xhttp_tls": {
-      "dns_failed": 7,
+      "https_failed": 85,
       "passed": 8,
-      "speed_unconfirmed": 3,
-      "https_failed": 84,
-      "speed_rejected": 2,
-      "config_error": 2
+      "dns_failed": 7,
+      "speed_rejected": 1,
+      "speed_unconfirmed": 2,
+      "config_error": 1
     }
   },
-  "baseline_mbps": 275.59655693540964,
-  "tested": 351,
-  "published_at": "2026-11-03T04:36:31.615842+00:00",
-  "published": 111,
+  "baseline_mbps": 540.9562133230155,
+  "tested": 334,
+  "published_at": "2026-11-03T05:20:13.306755+00:00",
+  "published": 119,
   "counts": {
-    "tcp_reality": 103,
+    "tcp_reality": 111,
     "xhttp_tls": 8
   },
   "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
@@ -167,5 +163,5 @@
   "sort": "speed_mbps descending, latency_ms ascending",
   "verification": "full Xray client profile: two HTTPS targets, DNS, two full speed samples",
   "auto_nodes": 24,
-  "individual_profiles": 111
+  "individual_profiles": 119
 }
