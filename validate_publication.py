@@ -7,7 +7,7 @@ import tempfile
 import subscription as c
 from incy import connection_digest, profile
 from vless import canonical, node_id
-from xray_auto import build_auto
+from xray_auto import build_auto, with_socks_fallback
 
 
 def validate(root):
@@ -34,8 +34,9 @@ def validate(root):
     socks = read('socks5.json')
     assert all(p['outbounds'][0]['protocol'] == 'socks' for p in socks)
     assert read('combined_status.json')['counts']['socks5'] == len(socks)
-    assert read('subscription.json') == [automatic] + manual + socks
-    for config in [automatic] + manual + socks:
+    combined_auto = with_socks_fallback(automatic, socks)
+    assert read('subscription.json') == [combined_auto] + manual + socks
+    for config in [automatic, combined_auto] + manual + socks:
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'profile.json'
             path.write_text(json.dumps(config))

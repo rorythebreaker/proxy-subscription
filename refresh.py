@@ -11,6 +11,7 @@ import sys
 import tempfile
 
 import subscription as common
+from xray_auto import with_socks_fallback
 
 
 def run_stage(script, staged, timeout):
@@ -55,8 +56,10 @@ def main():
         if socks_code == 0 and socks_path.exists():
             socks_profiles = json.loads(socks_path.read_text())
         vless_profiles = json.loads((common.OUT / 'xray-auto.json').read_text())
+        automatic, *manual = vless_profiles
         common.write_json(common.OUT / 'socks5.json', socks_profiles)
-        common.write_json(common.OUT / 'subscription.json', vless_profiles + socks_profiles)
+        common.write_json(common.OUT / 'subscription.json',
+                          [with_socks_fallback(automatic, socks_profiles)] + manual + socks_profiles)
         common.write_json(common.OUT / 'combined_status.json', {
             'published_at': common.timestamp(),
             'counts': dict(common.load_json(common.OUT / 'status.json').get('counts', {}),
