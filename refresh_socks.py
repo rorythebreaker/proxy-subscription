@@ -3,6 +3,8 @@ import base64
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import ipaddress
+import json
+import os
 import re
 import subprocess
 import time
@@ -78,7 +80,27 @@ def check(endpoint):
     return 'speed_unconfirmed', None
 
 
+def previous_endpoints():
+    try:
+        profiles = json.loads((common.OUT / 'socks5.json').read_text())
+    except (OSError, ValueError):
+        return []
+    endpoints = []
+    for profile in profiles if isinstance(profiles, list) else []:
+        try:
+            server = profile['outbounds'][0]['settings']['servers'][0]
+            address = ipaddress.ip_address(server['address'])
+            port = server['port']
+            if address.is_global and not address.is_multicast and type(port) is int and 0 < port <= 65535:
+                endpoints.append((address, port))
+        except (KeyError, IndexError, TypeError, ValueError):
+            continue
+    return endpoints
+
+
 def main():
+    deadline = time.monotonic() + int(os.getenv('SOCKS_STAGE_SECONDS', '300')) - 5
+    previous = previous_endpoints()
     endpoints = {}
     available_sources = 0
     for source in SOURCES:
@@ -94,16 +116,24 @@ def main():
     # Rotate the batch so successive runs test different addresses.
     ordered = list(endpoints)
     if ordered:
-        offset = (int(time.time()) // 300 * 200) % len(ordered)
-        ordered = (ordered[offset:] + ordered[:offset])[:200]
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        results = list(pool.map(check, ordered))
+        offset = (int(time.time()) // 300 * 600) % len(ordered)
+        ordered = (ordered[offset:] + ordered[:offset])
+    ordered = list(dict.fromkeys(previous + ordered))[:600]
+
+    def check_with_budget(endpoint):
+        # Two HTTPS probes and two speed downloads may take around 46 seconds.
+        if time.monotonic() + 50 >= deadline:
+            return 'not_tested', None
+        return check(endpoint)
+
+    with ThreadPoolExecutor(max_workers=24) as pool:
+        results = list(pool.map(check_with_budget, ordered))
     passed = [item for status, item in results if status == 'passed']
     print(f'SOCKS5 outcomes: {dict(Counter(status for status, _ in results))}', flush=True)
     passed.sort(key=lambda item: (-item[0], item[1]))
     common.write_json(common.OUT / 'socks5.json', [item[2] for item in passed])
-    print(f'SOCKS5: {len(passed)} passed out of {len(ordered)} tested.')
-    if not available_sources:
+    print(f'SOCKS5: {len(passed)} passed out of {len(ordered)} selected.')
+    if not available_sources and not previous:
         raise SystemExit('All SOCKS5 sources are unavailable')
 
 

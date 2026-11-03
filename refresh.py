@@ -29,9 +29,10 @@ def main():
     with tempfile.TemporaryDirectory(prefix='subscription-') as folder:
         staged = Path(folder) / 'public'
         staged.mkdir()
-        previous = common.OUT / 'vless_state.json'
-        if previous.exists():
-            shutil.copy2(previous, staged / previous.name)
+        for name in ('vless_state.json', 'socks5.json'):
+            previous = common.OUT / name
+            if previous.exists():
+                shutil.copy2(previous, staged / name)
         with ThreadPoolExecutor(max_workers=2) as pool:
             vless = pool.submit(run_stage, 'update_protocols.py', staged,
                                 int(os.getenv('VLESS_STAGE_SECONDS', '280')))
