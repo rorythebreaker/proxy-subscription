@@ -1,7 +1,9 @@
 """Build a separate SOCKS5 subscription from the current network."""
+import base64
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import ipaddress
+import re
 import subprocess
 import time
 from urllib.parse import urlsplit
@@ -9,11 +11,33 @@ from urllib.parse import urlsplit
 import subscription as common
 from incy import base_profile
 
+ADVANCED = 'https://advanced.name/ru/freeproxy?type=socks5'
 SOURCES = (
+    ADVANCED,
     'https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/protocols/socks5/data.txt',
     'https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt',
     'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/socks5.txt',
 )
+
+
+def advanced_rows(data):
+    endpoints = []
+    for row in re.findall(rb'<tr\b[^>]*>(.*?)</tr\s*>', data, re.I | re.S):
+        if not re.search(rb'>\s*SOCKS5\s*<', row, re.I):
+            continue
+        fields = [re.search(rb'data-' + field + rb'="([^"]+)"', row)
+                  for field in (b'ip', b'port')]
+        if all(fields):
+            try:
+                host, port = [base64.b64decode(field[1], validate=True).decode('ascii')
+                              for field in fields]
+                host = '[' + host + ']' if ':' in host else host
+                endpoints.append(f'{host}:{port}'.encode('ascii'))
+            except ValueError:
+                continue
+    if not endpoints:
+        raise ValueError('No SOCKS5 rows found in Advanced.name')
+    return b'\n'.join(endpoints)
 
 
 def candidates(data):
@@ -60,6 +84,8 @@ def main():
     for source in SOURCES:
         try:
             data = common.fetch_bytes(source)
+            if source == ADVANCED:
+                data = advanced_rows(data)
             available_sources += 1
             for endpoint in candidates(data):
                 endpoints.setdefault(endpoint, None)
