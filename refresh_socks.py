@@ -99,7 +99,7 @@ def previous_endpoints():
 
 
 def main():
-    deadline = time.monotonic() + int(os.getenv('SOCKS_STAGE_SECONDS', '300')) - 5
+    deadline = time.monotonic() + int(os.getenv('SOCKS_STAGE_SECONDS', '900')) - 5
     limit = 1800
     previous = previous_endpoints()
     endpoints = {}

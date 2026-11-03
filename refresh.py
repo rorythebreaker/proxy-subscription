@@ -37,7 +37,7 @@ def main():
             vless = pool.submit(run_stage, 'update_protocols.py', staged,
                                 int(os.getenv('VLESS_STAGE_SECONDS', '280')))
             socks = pool.submit(run_stage, 'refresh_socks.py', staged,
-                                int(os.getenv('SOCKS_STAGE_SECONDS', '300')))
+                                int(os.getenv('SOCKS_STAGE_SECONDS', '900')))
             code, socks_code = vless.result(), socks.result()
         status = common.load_json(staged / 'status.json')
         if code != 0 or not status.get('published_at'):
