@@ -31,6 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: refs/heads/main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
@@ -90,6 +91,10 @@ jobs:
               '*.py' tests/ sources.json requirements.txt .github/workflows/refresh.yml; then
               echo "Collector code changed during refresh; refusing stale results. New code triggers its own run."
               exit 1
+            fi
+            if ! git diff --quiet "$calculated_from" origin/main -- public/; then
+              echo 'Another publication updated public/ during this run. Keeping that snapshot.'
+              exit 0
             fi
             if ! git rebase origin/main; then
               git rebase --abort || true
