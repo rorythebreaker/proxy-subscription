@@ -1,1 +1,2 @@
-geoip2>=4.8,<6
+# Offline HTTP/2 DoH integration test only; production uses stdlib.
+h2==4.3.0

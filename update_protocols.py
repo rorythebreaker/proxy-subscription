@@ -1,334 +1,237 @@
 #!/usr/bin/env python3
-"""Collect VLESS REALITY and XHTTP/TLS; verify complete tunnels and throughput."""
-import base64
-import concurrent.futures
-import ipaddress
+"""Collect supported VLESS links and test the exact exported profile through Xray."""
+from collections import Counter
+from concurrent.futures import ThreadPoolExecutor
+from copy import deepcopy
+import hashlib
+from itertools import zip_longest
 import json
 import os
-import re
+from pathlib import Path
 import shutil
 import socket
 import subprocess
 import tempfile
+import threading
 import time
-import uuid
-from pathlib import Path
-from urllib.parse import parse_qsl, urlencode, urlsplit
 
-from subscription import (OUT, connectivity, decode_lines, fetch_bytes, healthy_targets,
-                          previous, publish, timestamp, write_json, filter_quality,
-                          speed_baseline, MIN_SPEED_MBPS, MAX_LATENCY_MS)
+import subscription as common
+from incy import profile, connection_digest
+from vless import Unsupported, canonical, transport
 
-SOURCES = {"vless_reality": [
-    "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
-    "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/vless.txt",
-    "https://raw.githubusercontent.com/morpheusadam/v2ray-config/main/subs/bundles/reality.txt",
-    "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
-    "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
-]}
-MAX_ITEMS = int(os.getenv("MAX_PROTOCOL_NODES", "1000"))
-MAX_CHECKS = int(os.getenv("MAX_PROTOCOL_CHECKS", "240"))
-WORKERS = int(os.getenv("PROTOCOL_WORKERS", "24"))
+MAX_ITEMS = int(os.getenv('MAX_PROTOCOL_NODES', '3000'))
+MAX_CHECKS = int(os.getenv('MAX_PROTOCOL_CHECKS', '600'))
+WORKERS = int(os.getenv('PROTOCOL_WORKERS', '24'))
+CHECK_SECONDS = int(os.getenv('CHECK_SECONDS', '240'))
+SPEED_WORKERS = int(os.getenv('SPEED_WORKERS', '4'))
 
 
-class Unsupported(ValueError):
-    """URI whose semantics this verifier cannot reproduce."""
+def source_list():
+    value = json.loads(Path(__file__).with_name('sources.json').read_text())
+    if not isinstance(value, list) or not value:
+        raise ValueError('empty source manifest')
+    return value
 
 
-def parse_vless(uri):
-    p = urlsplit(uri.strip())
-    if p.scheme != "vless" or not p.hostname or not p.port or p.password is not None or p.path not in ("", "/"):
-        raise ValueError("invalid VLESS authority")
-    user = str(uuid.UUID(p.username))
+def fetch_source(source):
+    report = {'id': source['id'], 'url': source['url'], 'status': 'error', 'accepted': 0}
     try:
-        address = ipaddress.ip_address(p.hostname)
-    except ValueError:
-        if not re.fullmatch(r"(?=.{1,253}$)[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?", p.hostname):
-            raise ValueError("invalid hostname")
-        if p.hostname.lower() == "localhost" or p.hostname.lower().endswith((".localhost", ".local")):
-            raise ValueError("local endpoint")
-    else:
-        if not address.is_global:
-            raise ValueError("non-public endpoint")
-    pairs = parse_qsl(p.query, keep_blank_values=True, strict_parsing=True)
-    q = dict(pairs)
-    if len(q) != len(pairs):
-        raise ValueError("duplicate query parameters")
-    security = q.get("security", "").lower()
-    if security == "tls" and q.get("type") == "xhttp":
-        q["sni"] = q.get("sni") or q.get("host") or p.hostname
-    elif security == "reality":
-        if not q.get("sni"):
-            raise ValueError("missing REALITY SNI")
-        key = q.get("pbk", "")
-        if not re.fullmatch(r"[A-Za-z0-9_-]{43}", key) or len(base64.b64decode(key + "=", altchars=b"-_", validate=True)) != 32:
-            raise ValueError("invalid REALITY public key")
-        if not re.fullmatch(r"(?:[0-9a-fA-F]{2}){0,8}", q.get("sid", "")):
-            raise ValueError("invalid short ID")
-    else:
-        raise ValueError("unsupported VLESS security/transport combination")
-    if any(c.isspace() for c in q["sni"]) or any(c in q["sni"] for c in "/?#@"):
-        raise ValueError("invalid SNI")
-    q["security"] = security
-    if not q.get("fp"):
-        q["fp"] = "chrome"
-    host = f"[{p.hostname}]" if ":" in p.hostname else p.hostname.lower()
-    core = f"vless://{user}@{host}:{p.port}?{urlencode(sorted(q.items()))}"
-    return core, p, q
+        body = common.fetch_bytes(source['url'])
+        lines = common.decode_lines(body)
+        if lines and not any('://' in line for line in lines):
+            raise ValueError('unrecognized source')
+        valid, rejected = {}, Counter()
+        for line in lines:
+            if not line.startswith('vless://'):
+                rejected['other_protocol'] += 1
+                continue
+            try:
+                uri = canonical(line)
+                valid[uri] = {'uri': uri, 'transport': transport(uri), 'sources': [source['id']]}
+            except Unsupported as exc:
+                rejected[str(exc)] += 1
+            except (ValueError, TypeError, AttributeError):
+                rejected['invalid'] += 1
+        report.update(status='ok', bytes=len(body), accepted=len(valid), rejected=dict(rejected))
+        return list(valid.values()), report
+    except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
+        return [], report
 
 
-def parse_reality(uri):
-    parsed = parse_vless(uri)
-    if parsed[2]["security"] != "reality":
-        raise ValueError("not REALITY")
-    return parsed
+def interleave(items):
+    xhttp = [n for n in items if n['transport'] == 'xhttp_tls']
+    reality = [n for n in items if n['transport'] == 'tcp_reality']
+    return [n for pair in zip_longest(xhttp, reality) for n in pair if n]
 
 
-def canonical_vless(uri):
-    try:
-        return parse_vless(uri)[0]
-    except (TypeError, AttributeError) as exc:
-        raise ValueError("invalid VLESS URI") from exc
-
-
-def canonical_reality(uri):
-    try:
-        return parse_reality(uri)[0]
-    except (TypeError, AttributeError) as exc:
-        raise ValueError("invalid VLESS URI") from exc
-
-
-def valid_reality(uri):
-    try:
-        canonical_reality(uri)
-        return True
-    except ValueError:
-        return False
-
-
-def as_outbound(uri):
-    _, p, q = parse_reality(uri)
-    known = {"security", "pbk", "sni", "sid", "fp", "flow", "type", "encryption", "alpn",
-             "headerType", "host", "path", "serviceName", "mode", "ed", "eh", "spx"}
-    if set(q) - known:
-        raise Unsupported("unknown connection parameters")
-    if q.get("encryption", "none") not in ("", "none"):
-        raise Unsupported("VLESS encryption unsupported by sing-box")
-    if q.get("headerType", "none") not in ("", "none"):
-        raise Unsupported("TCP header obfuscation unsupported")
-    flow = q.get("flow", "")
-    if flow not in ("", "xtls-rprx-vision"):
-        raise Unsupported("unsupported flow")
-    transport = q.get("type", "tcp") or "tcp"
-    if transport == "raw":
-        transport = "tcp"
-    if transport not in ("tcp", "ws", "grpc", "http", "h2", "httpupgrade"):
-        raise Unsupported("unsupported transport")
-    if flow and transport != "tcp":
-        raise Unsupported("Vision requires TCP")
-    if q["fp"] not in ("chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"):
-        raise Unsupported("unsupported TLS fingerprint")
-    outbound = {"type": "vless", "tag": "remote", "server": p.hostname,
-                "server_port": p.port, "uuid": str(uuid.UUID(p.username)),
-                "tls": {"enabled": True, "server_name": q["sni"],
-                        "utls": {"enabled": True, "fingerprint": q["fp"]},
-                        "reality": {"enabled": True, "public_key": q["pbk"], "short_id": q.get("sid", "")}}}
-    if flow:
-        outbound["flow"] = flow
-    if q.get("alpn"):
-        outbound["tls"]["alpn"] = q["alpn"].split(",")
-    host, path = q.get("host", ""), q.get("path", "/") or "/"
-    if transport == "ws":
-        options = {"type": "ws", "path": path}
-        if host:
-            options["headers"] = {"Host": host}
-        if q.get("ed"):
-            if not q["ed"].isdigit():
-                raise ValueError("invalid early data size")
-            options["max_early_data"] = int(q["ed"])
-            options["early_data_header_name"] = q.get("eh", "Sec-WebSocket-Protocol")
-        outbound["transport"] = options
-    elif transport == "grpc":
-        if q.get("mode", "gun") not in ("", "gun"):
-            raise Unsupported("unsupported gRPC mode")
-        outbound["transport"] = {"type": "grpc", "service_name": q.get("serviceName", "")}
-    elif transport in ("http", "h2"):
-        outbound["transport"] = {"type": "http", "host": host.split(",") if host else [], "path": path}
-    elif transport == "httpupgrade":
-        outbound["transport"] = {"type": "httpupgrade", "host": host, "path": path}
-    allowed = {"tcp": set(), "ws": {"host", "path", "ed", "eh"},
-               "grpc": {"serviceName", "mode"}, "http": {"host", "path"},
-               "h2": {"host", "path"}, "httpupgrade": {"host", "path"}}[transport]
-    if any(q.get(k) for k in {"host", "path", "serviceName", "mode", "ed", "eh"} - allowed):
-        raise Unsupported("transport parameters cannot be reproduced")
-    return outbound
-
-
-def collect(kind="vless_reality"):
-    def source(url):
-        try:
-            body = fetch_bytes(url)
-            decoded = decode_lines(body)
-            meaningful = [line.strip() for line in decoded if line.strip() and not line.lstrip().startswith("#")]
-            if meaningful and not any(re.match(r"^[a-zA-Z][\w+.-]*://", line) for line in meaningful):
-                raise ValueError("unrecognized subscription")
-            if body.strip() and not meaningful:
-                raise ValueError("no recognizable subscription records")
-            valid = []
-            for line in meaningful:
-                try:
-                    valid.append(canonical_vless(line))
-                except ValueError:
-                    continue
-            from itertools import zip_longest
-            xhttp = [u for u in valid if parse_vless(u)[2].get("type") == "xhttp"]
-            other = [u for u in valid if parse_vless(u)[2].get("type") != "xhttp"]
-            return [u for pair in zip_longest(xhttp, other) for u in pair if u], True
-        except (OSError, ValueError, UnicodeError, subprocess.TimeoutExpired):
-            return [], False
-    with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
-        fetched = list(pool.map(source, SOURCES[kind]))
-    found = {}
-    lists = [iter(items) for items, _ in fetched]
-    while lists and len(found) < MAX_ITEMS:
+def collect(sources=None, epoch=None):
+    sources = source_list() if sources is None else sources
+    epoch = int(time.time() // 300) if epoch is None else epoch
+    with ThreadPoolExecutor(max_workers=min(8, max(1, len(sources)))) as pool:
+        fetched = list(pool.map(fetch_source, sources))
+    all_nodes = {}
+    lists = []
+    for items, report in fetched:
+        # Rotate before the global cap, so tails of large sources are eventually checked.
+        items.sort(key=lambda n: hashlib.sha256(f'{epoch}:{n["uri"]}'.encode()).digest())
+        lists.append(iter(interleave(items)))
+        for node in items:
+            if node['uri'] in all_nodes:
+                all_nodes[node['uri']]['sources'] = sorted(set(all_nodes[node['uri']]['sources'] + node['sources']))
+            else:
+                all_nodes[node['uri']] = deepcopy(node)
+    selected = {}
+    while lists and len(selected) < MAX_ITEMS:
         remaining = []
         for iterator in lists:
             try:
-                uri = next(iterator)
+                node = next(iterator)
             except StopIteration:
                 continue
-            found.setdefault(uri, uri)
+            selected.setdefault(node['uri'], all_nodes[node['uri']])
             remaining.append(iterator)
-            if len(found) >= MAX_ITEMS:
+            if len(selected) >= MAX_ITEMS:
                 break
         lists = remaining
-    return list(found), sum(success for _, success in fetched)
+    return list(selected.values()), [report for _, report in fetched], len(all_nodes)
 
 
-def config_for(remote, port):
-    return {"log": {"level": "error"},
-            "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
-            "outbounds": [remote]}
-
-
-def diagnostic(stderr):
-    """Return a safe category rather than logging credentials/configuration text."""
-    text = stderr.decode("utf-8", errors="replace").lower()
-    for marker, category in (("public_key", "public_key"), ("short_id", "short_id"),
-                             ("utls", "utls"), ("fingerprint", "fingerprint"),
-                             ("address already in use", "port_busy"),
-                             ("transport", "transport"), ("flow", "flow")):
-        if marker in text:
-            return category
-    return "other"
-
-
-def verify(uri, targets, deadline=None, baseline_ok=False):
-    if deadline is not None and time.monotonic() + 35 > deadline:
-        return uri, "not_tested", None
-    try:
-        is_xhttp = parse_vless(uri)[2].get("security") == "tls"
-        if is_xhttp:
-            from xhttp import proxy_outbound
-            remote = proxy_outbound(uri, "remote")
-        else:
-            remote = as_outbound(uri)
-    except Unsupported:
-        return uri, "unsupported", None
-    except (ValueError, TypeError):
-        return uri, "invalid", None
-    if len(targets) != 2:
-        return uri, "inconclusive", None
-    engine = "xray" if is_xhttp else "sing-box"
-    process = None
-    with tempfile.TemporaryDirectory() as folder:
-        path = Path(folder) / "config.json"
-        with socket.socket() as sock:
-            sock.bind(("127.0.0.1", 0))
-            port = sock.getsockname()[1]
-        if is_xhttp:
-            config = {"log": {"loglevel": "error"},
-                      "inbounds": [{"listen": "127.0.0.1", "port": port,
-                                    "protocol": "socks", "settings": {"auth": "noauth"}}],
-                      "outbounds": [remote]}
-            check_cmd = [engine, "run", "-test", "-config", str(path)]
-            run_cmd = [engine, "run", "-config", str(path)]
-        else:
-            config = config_for(remote, port)
-            check_cmd = [engine, "check", "-c", str(path)]
-            run_cmd = [engine, "run", "-c", str(path)]
-        path.write_text(json.dumps(config), encoding="utf-8")
+def candidates_with_history(candidates, history):
+    chosen = {}
+    if not isinstance(history, dict):
+        history = {}
+    valid = []
+    for uri, data in history.items():
         try:
-            checked = subprocess.run(check_cmd, capture_output=True, timeout=3)
-            if checked.returncode:
-                return uri, "config_error:" + diagnostic(checked.stderr[:4096]), None
-            with (Path(folder) / "stderr.log").open("wb") as stderr:
-                process = subprocess.Popen(run_cmd,
-                                           stdout=subprocess.DEVNULL, stderr=stderr)
-                for _ in range(20):
-                    if process.poll() is not None:
-                        stderr.flush()
-                        return uri, "runtime_error:" + diagnostic((Path(folder) / "stderr.log").read_bytes()[:4096]), None
-                    with socket.socket() as sock:
-                        sock.settimeout(0.1)
-                        if sock.connect_ex(("127.0.0.1", port)) == 0:
-                            break
-                    time.sleep(0.05)
-                else:
-                    return uri, "runtime_error", None
-                proxy = f"socks5h://127.0.0.1:{port}"
-                outcome, latency = connectivity(proxy, targets)
-                if outcome == "passed":
-                    outcome, latency = filter_quality(proxy, targets, latency, baseline_ok, deadline)
-                return uri, outcome, latency
-        except (OSError, subprocess.TimeoutExpired):
-            return uri, "inconclusive", None
-        finally:
-            if process is not None:
-                process.terminate()
+            core = canonical(uri)
+            if not isinstance(data, dict):
+                continue
+            rate = data.get('speed_mbps', 0)
+            if not isinstance(rate, (int, float)) or not 0 <= rate < float('inf'):
+                rate = 0
+            valid.append((core, data, rate))
+        except (ValueError, TypeError):
+            continue
+    current = {n['uri']: n for n in candidates}
+    for uri, data, rate in sorted(valid, key=lambda item: (-item[2], item[0])):
+        chosen[uri] = current.get(uri, {'uri': uri, 'transport': transport(uri), 'sources': data.get('sources', [])})
+    for node in interleave(candidates):
+        chosen.setdefault(node['uri'], node)
+    return list(chosen.values())[:MAX_CHECKS], len(chosen)
+
+
+def verify(node, deadline, slots):
+    record = dict(node, status='not_tested')
+    if time.monotonic() + 35 >= deadline:
+        return record
+    process = None
+    try:
+        config = profile(node['uri'])
+        digest = connection_digest(config)
+        with tempfile.TemporaryDirectory(prefix='xray-check-') as folder:
+            path = Path(folder) / 'profile.json'
+            # Hold both allocations until the engine is ready to start.
+            with socket.socket() as first, socket.socket() as second:
+                first.bind(('127.0.0.1', 0))
+                second.bind(('127.0.0.1', 0))
+                port, http_port = first.getsockname()[1], second.getsockname()[1]
+                config['inbounds'][0]['port'], config['inbounds'][1]['port'] = port, http_port
+                path.write_text(json.dumps(config))
+                check = subprocess.run(['xray', 'run', '-test', '-config', str(path)], capture_output=True, timeout=5)
+                if check.returncode:
+                    return dict(record, status='config_error')
+            process = subprocess.Popen(['xray', 'run', '-config', str(path)],
+                                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            for _ in range(40):
+                if process.poll() is not None:
+                    return dict(record, status='startup_failed')
                 try:
-                    process.wait(timeout=1)
-                except subprocess.TimeoutExpired:
-                    process.kill()
-                    process.wait()
+                    with socket.create_connection(('127.0.0.1', port), timeout=0.1):
+                        break
+                except OSError:
+                    time.sleep(0.05)
+            else:
+                return dict(record, status='startup_failed')
+            proxy = f'socks5h://127.0.0.1:{port}'
+            latencies = []
+            for target in common.TARGETS:
+                passed = None
+                for _ in range(2):
+                    if time.monotonic() + 8 >= deadline:
+                        return record
+                    latency = common.probe(proxy, target)
+                    if latency is not None and latency <= common.MAX_LATENCY_MS:
+                        passed = latency
+                        break
+                if passed is None:
+                    return dict(record, status='https_failed')
+                latencies.append(passed)
+            dns_ok = False
+            for _ in range(2):
+                if time.monotonic() + 8 >= deadline:
+                    return record
+                if common.check_dns(port):
+                    dns_ok = True
+                    break
+            if not dns_ok:
+                return dict(record, status='dns_failed')
+            measured = common.quality(proxy, deadline, slots)
+            record.update(measured)
+            if measured['status'] != 'passed':
+                return record
+            if time.monotonic() + 8 >= deadline:
+                return dict(record, status='not_tested')
+            final = common.probe(proxy, common.TARGETS[0])
+            if final is None or final > common.MAX_LATENCY_MS:
+                return dict(record, status='postcheck_failed')
+            return dict(record, checked_at=common.timestamp(), quality_policy=common.QUALITY_POLICY,
+                        config_digest=digest, latency_ms=max([final, *latencies]),
+                        https_targets=list(common.TARGETS), dns_ok=True)
+    except (OSError, ValueError, TypeError, subprocess.TimeoutExpired):
+        return dict(record, status='verification_error')
+    finally:
+        if process is not None:
+            try:
+                process.terminate()
+                process.wait(timeout=2)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait()
+            except ProcessLookupError:
+                process.wait()
 
 
 def main():
-    deadline = time.monotonic() + 180
-    old_state, old_nodes = previous("vless", canonical_vless)
-    uris, success = collect()
-    targets = healthy_targets() if (shutil.which("sing-box") or shutil.which("xray")) else []
-    baseline_ok = speed_baseline() if len(targets) == 2 else False
-    candidates = [uri for uri in uris if uri not in old_nodes]
-    offset = (int(time.time() // 300) * MAX_CHECKS) % len(candidates) if candidates else 0
-    candidates = candidates[offset:] + candidates[:offset]
-    from itertools import zip_longest
-    xhttp = [u for u in candidates if parse_vless(u)[2].get("type") == "xhttp"]
-    other = [u for u in candidates if parse_vless(u)[2].get("type") != "xhttp"]
-    candidates = [u for pair in zip_longest(xhttp, other) for u in pair if u]
-    # Recheck published nodes before rotating new candidates, rather than carrying
-    # old nodes through several batches without attempting a connection.
-    chosen = list(old_nodes)[:MAX_CHECKS]
-    chosen += candidates[:max(0, MAX_CHECKS - len(chosen))]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        outcomes = list(pool.map(lambda uri: verify(uri, targets, deadline, baseline_ok), chosen))
-    chosen_set = set(chosen)
-    outcomes.extend((uri, "inconclusive", None) for uri in old_nodes if uri not in chosen_set)
-    tested = sum(item[1] in ("passed", "unreachable", "inconclusive", "latency_rejected", "speed_rejected", "quality_inconclusive") for item in outcomes[:len(chosen)]) if len(targets) == 2 else 0
-    details = {"sources_reached": success, "candidates": len(uris), "tested": tested,
-               "unexamined": max(0, len(candidates) + len(old_nodes) - len(chosen)), "max_checks": MAX_CHECKS,
-               "healthy_test_targets": len(targets), "min_mbps": MIN_SPEED_MBPS,
-               "xhttp_tls_candidates": sum(parse_vless(u)[2]["security"] == "tls" for u in uris),
-               "xhttp_tls_passed": sum(o == "passed" and parse_vless(u)[2]["security"] == "tls" for u, o, _ in outcomes),
-               "max_latency_ms": MAX_LATENCY_MS, "speed_baseline_ok": baseline_ok,
-               "fallback_reason": "upstream/check incomplete; recent verified cache only"}
-    status, _ = publish("vless", "vless.txt", outcomes, old_nodes, success, old_state, details)
-    write_json(OUT / "protocol_status.json", {"checked_at": timestamp(),
-               "verification": "sing-box REALITY / Xray XHTTP+TLS HTTPS; two targets on failure; two slow samples before quality rejection",
-               "vless_reality": status})
-    print("VLESS:", {k: status[k] for k in ("candidates", "tested", "published", "results")})
+    started = common.timestamp()
+    deadline = time.monotonic() + CHECK_SECONDS
+    details = {'started_at': started, 'error': None, 'strict_current_run': True}
+    if not shutil.which('xray'):
+        common.publish([], dict(details, error='xray_missing'))
+        return
+    candidates, reports, total = collect()
+    history = common.load_json(common.OUT / 'vless_state.json').get('nodes', {})
+    chosen, available = candidates_with_history(candidates, history)
+    details.update(sources=reports, discovered_supported=total, candidates=len(candidates),
+                   selected=len(chosen), unselected=max(0, available - len(chosen)))
+    healthy = common.healthy_targets()
+    baseline = common.measure_speed() if len(healthy) == 2 else None
+    if len(healthy) != 2 or baseline is None or baseline < common.MIN_SPEED_MBPS * 4:
+        common.publish([], dict(details, error='test_infrastructure_unhealthy', healthy_targets=len(healthy), baseline_mbps=baseline))
+        return
+    if not chosen and not any(s['status'] == 'ok' for s in reports):
+        common.publish([], dict(details, error='all_sources_unavailable'))
+        return
+    slots = threading.BoundedSemaphore(SPEED_WORKERS)
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+        results = list(pool.map(lambda node: verify(node, deadline, slots), chosen))
+    counts = dict(Counter(r['status'] for r in results))
+    by_transport = {kind: dict(Counter(r['status'] for r in results if r['transport'] == kind))
+                    for kind in ('tcp_reality', 'xhttp_tls')}
+    details.update(results=counts, results_by_transport=by_transport,
+                   baseline_mbps=baseline, tested=sum(r['status'] != 'not_tested' for r in results))
+    status = common.publish(results, details)
+    print(json.dumps({k: status[k] for k in ('published', 'counts', 'results', 'results_by_transport')}, sort_keys=True), flush=True)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

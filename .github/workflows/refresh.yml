@@ -8,6 +8,7 @@ on:
     paths:
       - '*.py'
       - 'tests/**'
+      - sources.json
       - requirements.txt
       - .github/workflows/refresh.yml
 permissions:
@@ -21,9 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     env:
-      SING_BOX_VERSION: '1.14.4'
       XRAY_VERSION: '26.10.31'
-      MAX_PROTOCOL_CHECKS: '240'
+      MAX_PROTOCOL_CHECKS: '600'
       PROTOCOL_WORKERS: '24'
       STALE_TTL_SECONDS: '600'
       MAX_LATENCY_MS: '6000'
@@ -35,35 +35,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: pip
-      - run: pip install -r requirements.txt
-      - run: python -m unittest discover -s tests -v
-      - name: Cache pinned sing-box
-        id: singbox-cache
-        uses: actions/cache@v4
-        with:
-          path: .tools/sing-box
-          key: sing-box-${{ runner.os }}-${{ runner.arch }}-${{ env.SING_BOX_VERSION }}
-      - name: Install pinned sing-box
-        id: singbox
-        continue-on-error: true
-        run: |
-          set -euo pipefail
-          mkdir -p .tools
-          if [ ! -x .tools/sing-box ]; then
-            archive="sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
-            curl --fail --silent --show-error --location --max-time 40 \
-              "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/${archive}" \
-              --output "${RUNNER_TEMP}/${archive}"
-            echo "699a1b510aa4396b2176d32d1181920399ebf1e267835da6f3b598d0f7c24968  ${RUNNER_TEMP}/${archive}" | sha256sum --check
-            tar --no-same-owner -xzf "${RUNNER_TEMP}/${archive}" -C "${RUNNER_TEMP}"
-            install -m 755 "${RUNNER_TEMP}/sing-box-${SING_BOX_VERSION}-linux-amd64/sing-box" .tools/sing-box
-          fi
-          .tools/sing-box version
-          echo "${GITHUB_WORKSPACE}/.tools" >> "$GITHUB_PATH"
-      - name: Validate real sing-box configurations
-        if: steps.singbox.outcome == 'success'
-        run: python -m unittest discover -s tests -p 'test_singbox_config.py' -v
       - name: Cache pinned Xray
         uses: actions/cache@v4
         with:
@@ -82,8 +53,9 @@ jobs:
             chmod +x .tools/xray
           fi
           echo "${GITHUB_WORKSPACE}/.tools" >> "$GITHUB_PATH"
-      - name: Validate XHTTP with pinned Xray
-        run: python -m unittest discover -s tests -p 'test_xhttp.py' -v
+      - run: pip install -r requirements.txt
+      - name: Test parser, profiles, publication and real Xray roundtrip
+        run: python -m unittest discover -s tests -v
       - name: Refresh and assemble subscriptions
         run: python refresh.py
       - name: Report publication freshness and filtering
@@ -99,18 +71,8 @@ jobs:
               for name in ('status.json', 'protocol_status.json'):
                   summary.write(f'### {name}\n\n```json\n{Path("public", name).read_text()}\n```\n\n')
           PY
-      - name: Validate exported profiles with pinned Xray
-        run: |
-          python -m unittest discover -s tests -p 'test_xray_auto.py' -v
-          python - <<'PY'
-          import json, subprocess, tempfile
-          from pathlib import Path
-          for config in json.loads(Path('public/xray-auto.json').read_text()):
-              with tempfile.TemporaryDirectory() as folder:
-                  path = Path(folder) / 'profile.json'
-                  path.write_text(json.dumps(config))
-                  subprocess.run(['xray', 'run', '-test', '-config', str(path)], check=True)
-          PY
+      - name: Validate exported profiles and measurements
+        run: python validate_publication.py
       - name: Commit consistent subscription
         run: |
           set -euo pipefail
@@ -125,7 +87,7 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch origin main
             if ! git diff --quiet "$calculated_from" origin/main -- \
-              '*.py' tests/ requirements.txt .github/workflows/refresh.yml; then
+              '*.py' tests/ sources.json requirements.txt .github/workflows/refresh.yml; then
               echo "Collector code changed during refresh; refusing stale results. New code triggers its own run."
               exit 1
             fi
@@ -140,3 +102,12 @@ jobs:
             sleep 2
           done
           exit 1
+      - name: Fail visibly when checking infrastructure failed
+        run: |
+          python - <<'PYCODE'
+          import json
+          from pathlib import Path
+          status = json.loads(Path('public/status.json').read_text())
+          if status.get('error'):
+              raise SystemExit(status['error'])
+          PYCODE
