@@ -14,6 +14,7 @@ import subprocess
 import tempfile
 import threading
 import time
+from urllib.parse import urlsplit
 
 import subscription as common
 from incy import profile, connection_digest
@@ -233,7 +234,21 @@ def main():
     counts = dict(Counter(r['status'] for r in results))
     by_transport = {kind: dict(Counter(r['status'] for r in results if r['transport'] == kind))
                     for kind in ('tcp_reality', 'xhttp_tls')}
+    speed_diagnostics = []
+    for record in results:
+        attempts = record.get('speed_attempts_mbps')
+        if attempts is None:
+            continue
+        endpoint = urlsplit(record['uri'])
+        speed_diagnostics.append({
+            'address': endpoint.hostname,
+            'port': endpoint.port,
+            'transport': record['transport'],
+            'status': record['status'],
+            'attempts_mbps': attempts,
+        })
     details.update(results=counts, results_by_transport=by_transport,
+                   speed_diagnostics=speed_diagnostics,
                    baseline_mbps=baseline, tested=sum(r['status'] != 'not_tested' for r in results))
     status = common.publish(results, details)
     print(json.dumps({k: status[k] for k in ('published', 'counts', 'results', 'results_by_transport')}, sort_keys=True), flush=True)

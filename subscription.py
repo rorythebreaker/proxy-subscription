@@ -123,25 +123,29 @@ def measure_speed(proxy=None):
 
 def quality(proxy, deadline, slots):
     samples = []
+    attempts = []
     # Two qualifying downloads are required, with one extra attempt for a transient failure.
     for _ in range(3):
         remaining = deadline - time.monotonic() - SPEED_TEST_SECONDS - 1
         if remaining <= 0 or not slots.acquire(timeout=max(0, remaining)):
-            return {'status': 'not_tested', 'speed_samples_mbps': samples}
+            return {'status': 'not_tested', 'speed_samples_mbps': samples, 'speed_attempts_mbps': attempts}
         try:
             if time.monotonic() + SPEED_TEST_SECONDS + 1 >= deadline:
-                return {'status': 'not_tested', 'speed_samples_mbps': samples}
+                return {'status': 'not_tested', 'speed_samples_mbps': samples, 'speed_attempts_mbps': attempts}
             speed = measure_speed(proxy)
         finally:
             slots.release()
         if speed is not None and math.isfinite(speed) and speed > 0:
             samples.append(speed)
+            attempts.append(speed)
+        else:
+            attempts.append(None)
         good = [v for v in samples if v >= MIN_SPEED_MBPS]
         if len(good) >= 2:
-            return {'status': 'passed', 'speed_mbps': min(good), 'speed_samples_mbps': samples}
+            return {'status': 'passed', 'speed_mbps': min(good), 'speed_samples_mbps': samples, 'speed_attempts_mbps': attempts}
         if len([v for v in samples if v < MIN_SPEED_MBPS]) >= 2:
-            return {'status': 'speed_rejected', 'speed_samples_mbps': samples}
-    return {'status': 'speed_unconfirmed', 'speed_samples_mbps': samples}
+            return {'status': 'speed_rejected', 'speed_samples_mbps': samples, 'speed_attempts_mbps': attempts}
+    return {'status': 'speed_unconfirmed', 'speed_samples_mbps': samples, 'speed_attempts_mbps': attempts}
 
 
 def read_exact(sock, size):
