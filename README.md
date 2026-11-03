@@ -1,195 +1,52 @@
-# Proxy subscription
+# Проверяемая подписка VLESS
 
-Public SOCKS5, VLESS + REALITY and VLESS + XHTTP + TLS subscriptions, refreshed on the five-minute
-schedule `2-59/5 * * * *`. GitHub Actions may delay scheduled runs.
+Подписка содержит только **VLESS XHTTP + TLS** и **VLESS TCP + REALITY**.
+Удалённые SOCKS5, Shadowsocks, WS, gRPC и TCP+TLS исключены.
 
-- `public/all.txt`: deduplicated union of the current protocol lists.
-- `public/proxies.txt`: SOCKS5 share URIs (`socks://host:port#CC%20host`).
-- `public/vless.txt`: VLESS + REALITY / XHTTP + TLS share URIs, with the same country/host labels.
-- `public/incy.json`: full Xray profiles for INCY, with DNS 8.8.8.8 / 1.1.1.1.
-- `public/status.json`, `public/protocol_status.json`, `public/combined_status.json`:
-  attempt time, source success time, actual publication counts and check outcomes.
-- `public/socks_state.json`, `public/vless_state.json`: per-node verification times.
+## Ссылки для клиента
 
-## Filtering
+- AUTO + все прошедшие проверку серверы: https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/xray-auto.json
+- Только отдельные JSON-профили: https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/incy.json
+- VLESS URI: https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/vless.txt
+- Результаты измерений: [servers.json](public/servers.json)
+- Состояние последнего обновления: [status.json](public/status.json)
 
-### INCY with bundled DNS
+AUTO расположен первым. Следом идут **все серверы, прошедшие текущую проверку**, от большей скорости к меньшей. При равной скорости выше меньшая задержка. Номер в названии сохраняет порядок при алфавитной сортировке клиента. AUTO использует первые 24 узла, чтобы не перегружать телефон фоновыми проверками; количество отдельных профилей не ограничено этим числом.
 
-Add this URL as a **new subscription** in INCY (rather than importing the GitHub
-HTML page or appending DNS parameters to a VLESS URI):
+## Что означает «проверен»
 
-```
-https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/incy.json
-```
+Для каждого узла запускается настоящий Xray с тем же JSON, который получает клиент: отличаются только локальные порты и название. Проверяются запуск конфигурации, HTTPS с корректным сертификатом на двух независимых сайтах, DNS через встроенный DoH, две полные загрузки по 2 МиБ и повторный HTTPS-запрос после измерения.
 
-The JSON array contains one independent full Xray configuration per compatible
-verified SOCKS5 or VLESS node. Each includes `dns.servers` with `8.8.8.8` and
-`1.1.1.1`, `queryStrategy: UseIPv4`, a local SOCKS inbound on 127.0.0.1:10808,
-and HTTP on 127.0.0.1:10809. Names include protocol and the original country/host
-label. INCY may patch inbound authentication according to its own settings.
+Минимум — **10 Мбит/с** (1,25 МБ/с), максимальное время HTTPS-запроса — 6 секунд. На скорость даётся три попытки, нужны две успешные загрузки не ниже порога. Публикуется меньшая из двух квалифицирующих скоростей. Таймаут с частично скачанным файлом успехом не считается.
 
-FakeDNS is not configured. DNS queries from the core use ordinary UDP directly
-to those two resolvers; port-53 traffic entering the local proxy is intercepted
-by Xray's DNS outbound. Other application traffic uses the selected proxy by
-default. This is not encrypted DNS, and the setting does not alter the OS-wide
-resolver outside INCY. Reconnect after selecting a profile from the new
-subscription. A DNS change does not guarantee that an unrelated TLS failure is fixed.
+Непроверенные, медленные и неработающие узлы исключаются, включая старые результаты из кэша. Предыдущие узлы используются только как кандидаты для повторной проверки. При сбое проверяющей инфраструктуры формируется пустой список с причиной в status.json, после его публикации workflow отмечается ошибкой. Если workflow вообще не запустился или остановился до публикации, на ссылке остаётся предыдущий снимок: проверяйте published_at.
 
-Xray REALITY supports TCP/raw and gRPC here. WebSocket/HTTP/H2/HTTPUpgrade with
-REALITY are not exported because they cannot be reproduced by Xray; neither are
-explicit ALPN overrides, which Xray REALITY derives from the TLS fingerprint.
-These omissions affect Xray JSON exports, not the existing text subscriptions.
-`combined_status.json.incy` reports exported count, skipped reasons and DNS settings.
-The exporter runs after freshness checks on every refresh, including fallback;
-expired records cannot persist in the JSON file independently of `all.txt`.
+Проверки выполняются из GitHub Actions. Успех там **не гарантирует доступность у вашего мобильного оператора** и не подтверждает надёжность владельца публичного сервера. Результат описывает момент проверки, а не постоянную доступность.
 
-SOCKS5 and VLESS share a quality policy: HTTPS reachability, up to
-6000 ms for the complete HTTPS check and at least 10 Mbps payload throughput
-(approximately 1.25 MB/s, not 10 MB/s).
-Latency is not ICMP ping. A slow result is repeated: only two measured slow
-results reject a node. The payload test downloads 2 MiB with a 14-second total
-limit. It runs only if the direct speed-test baseline is at least four times the
-minimum. HTTP blocks, unavailable speed-test servers and ambiguous measurements
-are not treated as zero speed, but cannot qualify a new node for publication.
-Publication requires a measured result at or above the minimum. Unavailable or
-slow direct baselines make quality checks inconclusive. Only cache qualified
-under the same policy can survive, for at most 10 minutes from verification.
-Changing the threshold invalidates records qualified under the previous policy.
+Локальные SOCKS/HTTP-входы на 127.0.0.1 нужны клиенту и тестам; это не SOCKS5-серверы подписки. Российские домены из небольшого явного списка и частные адреса маршрутизируются напрямую; остальные — через выбранный VLESS. Для REALITY сохранён fragment, идентичный при проверке и экспорте. Для XHTTP сохраняются TLS/SNI, host, path, mode и extra исходной ссылки.
 
-The pinned sing-box 1.14.4 validates each VLESS configuration and opens a local
-SOCKS listener. HTTPS and payload tests run through that full VLESS/REALITY tunnel,
-not directly. If the first connectivity probe fails, a second independent target
-is tried. Both targets must be reachable directly from the runner before nodes
-can be marked unreachable. Previously published nodes are checked before rotating
-new candidates. These checks measure the GitHub runner's network, not the user's.
+## Источники
 
-- `passed`: HTTPS 204 and measured throughput at or above the minimum; published.
-- `latency_rejected`, `speed_rejected`: two slow measurements; removed from all outputs.
-- `quality_inconclusive`: insufficient time, unhealthy baseline or unknown throughput;
-  new nodes are not published and only recent verified cache can survive.
-- `unreachable`: network attempts to both healthy targets failed; the node is removed.
-- `inconclusive`: HTTP rejection, unhealthy test targets or verifier failure;
-  a previously verified node can survive within its original cache TTL.
-- `unsupported`: transport or connection parameters cannot be faithfully mapped;
-  the node is not described as dead and a new unverified node is not published.
-- `invalid`, `config_error:*`, `runtime_error:*`: separate validation/engine outcomes.
-- `not_tested`: the bounded checking window ended. New untested nodes are not published.
+Полный список URL находится в [sources.json](sources.json). Добавлены:
 
-TCP/raw, WebSocket, gRPC (gun), HTTP/H2 and HTTPUpgrade are mapped explicitly.
-TCP header obfuscation and non-`none` VLESS encryption are unsupported by
-this verifier. Unknown connection parameters are not silently discarded.
-Missing TLS fingerprints default to `chrome` in both the checked and published URI.
-Shadowsocks collection/code and its obsolete published file are removed.
+- [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia)
+- [zieng2/wl](https://github.com/zieng2/wl)
+- [barry-far/V2ray-Config](https://github.com/barry-far/V2ray-Config)
+- [roosterkid/openproxylist](https://github.com/roosterkid/openproxylist)
 
-Up to 1000 unique VLESS candidates are collected, round-robin across the existing
-six sources. Up to 240 candidates are selected per run with a rotating starting
-point. Work stops scheduling checks near the stage deadline, so the actual count
-can be smaller. Recent cached nodes can accumulate across batches. Counts in the
-status files distinguish candidates, network tests, outcomes and published nodes.
+Также используются peasoft/NoMoreWalls, mahdibland/V2RayAggregator, MustafaBaqer/VestraNet-Nodes и Au1rxx/free-vpn-subscriptions. Ни один источник не получает исключения из проверки. Неизвестные параметры не отбрасываются молча: неподдерживаемый профиль исключается.
 
-### VLESS + XHTTP + TLS
+## Обновление и разработка
 
-Existing public URI sources are also searched for `security=tls&type=xhttp`.
-These nodes are checked by pinned Xray (REALITY continues to use sing-box),
-through a local SOCKS listener: HTTPS reachability and the same **10 Mbps**
-payload speed minimum. Xray is installed before collection in the workflow.
-Candidate selection interleaves XHTTP and other VLESS links so rare transports
-can enter the bounded checking batch. AUTO also reserves an opportunity for
-XHTTP before reaching its 24-VLESS cap.
+Workflow запрашивает запуск каждые 5 минут; GitHub может задерживать расписание. Один проход собирает до 3000 кандидатов и выбирает до 600 для проверки в пределах 240 секунд. Источники чередуются, порядок кандидатов меняется между проходами. Не успевшие пройти все проверки не публикуются. Это не обещание проверить весь интернет за один запуск.
 
-Verified XHTTP nodes enter `vless.txt`, `all.txt`, `incy.json`, the individual
-choices in `xray-auto.json`, and AUTO. Their labels include `VLESS XHTTP TLS`.
-`host`, `path`, `mode`, SNI, TLS fingerprint, ALPN and URL-encoded JSON `extra`
-are preserved. Modes: `auto`, `packet-up`, `stream-up`, `stream-one`.
-TLS certificate verification remains enabled; links requiring insecure TLS,
-Vision flow or unknown parameters are not silently converted to another mode.
-XHTTP does not receive the REALITY fragmentation dialer: verification and export
-use the same transport settings. Remote endpoints must already support XHTTP;
-changing a TCP/REALITY link into XHTTP/TLS cannot configure its server.
-
-`protocol_status.json.vless_reality` retains its legacy key for compatibility
-but now covers both groups, with `xhttp_tls_candidates` and `xhttp_tls_passed`
-counts. Availability depends on current sources and checks; an empty XHTTP set
-is valid, and never causes unverified nodes to be published.
-
-## Freshness and failures
-
-Only records verified within `STALE_TTL_SECONDS` (default **600 seconds / 10
-minutes**) can enter any output. Keeping a cached node does **not** renew its
-verification time. Explicit network failures remove it immediately. Source
-outages trigger rechecks of recent cached nodes; legacy files without verification
-metadata are not treated as verified. Nodes verified under an older quality policy
-are rechecked before they can re-enter the publication. A node can outlive an upstream outage only
-by passing a new connectivity check.
-
-Empty HTTP bodies are valid empty sources. HTML, corrupt base64 and unrecognized
-nonempty payloads are source failures, not successful empty updates. Recognition
-of a mixed protocol subscription does not require it to contain VLESS records.
-
-Each collector writes to a temporary staging directory. The wrapper kills an
-entire process group when a stage exceeds its deadline (120 s SOCKS, 200 s VLESS),
-keeps only unexpired previous results and assembles the final output after both
-attempts. Publication is one Git commit. Engine installation/validation failures are visible in the workflow logs. Concurrent changes to collector code prevent old calculated
-results from being rebased and published over new settings.
-
-## Automatic Xray profile (Happ / INCY)
-
-Import this URL as a separate subscription:
-
-https://raw.githubusercontent.com/rorythebreaker/proxy-subscription/main/public/xray-auto.json
-
-The subscription is a JSON array: AUTO followed by all compatible individual
-servers named with their protocol, country and address. Refresh the existing
-subscription in the client to see the manual choices. Individual choices retain
-the DNS, routing and fragmentation settings, but connect only to the selected
-server without balancing or a probe startup delay. The AUTO-only object remains
-available separately at `public/xray-auto-only.json`.
-
-The AUTO configuration groups up to 24 distinct VLESS endpoints and 8 SOCKS5
-endpoints from the freshness-filtered publication. `leastLoad` and
-`burstObservatory` test HTTPS from the client (30s average interval, 8s timeout,
-two samples). VLESS is preferred, with a loopback fallback to the observed SOCKS
-pool. If all proxies fail, ordinary internet traffic is blocked rather than sent
-directly. Selection is not instant on startup and switching does not migrate
-existing connections. A blocked probe URL can mark otherwise usable nodes down.
-
-DNS uses Cloudflare DoH through the selected pool. Russian `.ru`, `.su`, `.рф`
-domains and a small explicit domain list use Google DNS directly; server hostname
-bootstrap also uses Google DNS directly. Private networks and these Russian
-domains bypass the proxy. This is domain-based splitting, not a full Russian IP
-or geosite database. No geodata download is required. DNS is IPv4 only; FakeDNS is
-not configured. SOCKS5 UDP support depends on each public server and is not
-verified by the HTTPS check.
-
-VLESS REALITY uses a freedom dialer with TLS ClientHello fragmentation (100–200 byte
-pieces, 0–1ms interval); original SNI, key, fingerprint, UUID, flow and transport
-remain unchanged. Fragmentation cannot repair an unreachable TCP port.
-The application owns TUN setup and protection of core sockets from routing loops;
-the subscription does not hardcode the user's physical interface or gateway.
-Existing `incy.json` independent profiles remain available.
-
-## Running locally
-
-Requires Python 3.12, curl, `pip install -r requirements.txt`, and the pinned
-sing-box binary on PATH. GeoIP is optional metadata; lookup failures use `ZZ`.
+Нужны Python 3.12, curl, openssl и Xray 26.10.31. Сборщик использует стандартную библиотеку; для локального HTTP/2-теста нужен h2 из requirements.txt.
 
 ```sh
+pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python refresh.py
+python validate_publication.py
 ```
 
-`MAX_PROTOCOL_NODES`, `MAX_PROTOCOL_CHECKS`, `PROTOCOL_WORKERS`,
-`STALE_TTL_SECONDS`, `SOCKS_STAGE_SECONDS`, `VLESS_STAGE_SECONDS` and `OUTPUT_DIR`
-can be set in the environment. The shared quality thresholds use `MAX_LATENCY_MS` and `MIN_SPEED_MBPS`. Raising the batch size does not override stage deadlines.
-
-A successful probe establishes availability **from the GitHub runner at check
-time**. Availability from a different network can differ.
-
-## Workflow diagnostics
-
-`Refresh Proxy Subscription` commits all raw subscriptions together after engine
-validation. Its job summary lists publication time, protocol counts, quality
-thresholds, baseline status and rejection reasons. The separate managed GitHub
-Pages deployment does not generate or update the raw subscription URLs. A Pages
-OIDC/network failure does not mean that the subscription refresh failed. GitHub
-may delay or drop scheduled runs; the five-minute cron is not a delivery SLA.
+Тесты включают реальный локальный XHTTP/TLS-сервер, HTTPS, DoH, фильтрацию, сортировку, свежесть и обработку падения сборщика. Workflow устанавливает Xray до запуска тестов и проверяет SHA-256 архива. Публикация отвергается, если код изменился во время измерений.
