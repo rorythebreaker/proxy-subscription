@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-03T04:08:08.006840+00:00",
+  "started_at": "2026-11-03T04:32:41.028486+00:00",
   "error": null,
   "strict_current_run": true,
   "sources": [
@@ -96,14 +96,14 @@
       "id": "vestranet",
       "url": "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
       "status": "ok",
-      "accepted": 456,
-      "bytes": 417035,
+      "accepted": 523,
+      "bytes": 477867,
       "rejected": {
-        "excluded_transport": 989,
-        "unsupported_parameters": 177,
-        "insecure_tls": 14,
-        "invalid": 60,
-        "unsupported_encryption": 13,
+        "excluded_transport": 1134,
+        "unsupported_parameters": 156,
+        "invalid": 106,
+        "unsupported_encryption": 4,
+        "insecure_tls": 35,
         "unsupported_header": 1
       }
     },
@@ -120,43 +120,46 @@
       }
     }
   ],
-  "discovered_supported": 1634,
-  "candidates": 1634,
+  "discovered_supported": 1695,
+  "candidates": 1695,
   "selected": 600,
-  "unselected": 1034,
+  "unselected": 1099,
   "results": {
-    "passed": 93,
-    "speed_rejected": 22,
-    "https_failed": 241,
-    "speed_unconfirmed": 16,
+    "passed": 111,
+    "speed_unconfirmed": 28,
+    "https_failed": 188,
     "dns_failed": 9,
-    "config_error": 1,
-    "not_tested": 218
+    "speed_rejected": 12,
+    "config_error": 2,
+    "postcheck_failed": 1,
+    "not_tested": 249
   },
   "results_by_transport": {
     "tcp_reality": {
-      "passed": 86,
-      "speed_rejected": 22,
-      "https_failed": 155,
-      "speed_unconfirmed": 15,
-      "dns_failed": 1,
-      "not_tested": 218
+      "passed": 103,
+      "speed_unconfirmed": 25,
+      "https_failed": 104,
+      "dns_failed": 2,
+      "speed_rejected": 10,
+      "postcheck_failed": 1,
+      "not_tested": 249
     },
     "xhttp_tls": {
-      "https_failed": 86,
-      "dns_failed": 8,
-      "passed": 7,
-      "config_error": 1,
-      "speed_unconfirmed": 1
+      "dns_failed": 7,
+      "passed": 8,
+      "speed_unconfirmed": 3,
+      "https_failed": 84,
+      "speed_rejected": 2,
+      "config_error": 2
     }
   },
-  "baseline_mbps": 574.1689253935659,
-  "tested": 382,
-  "published_at": "2026-11-03T04:12:03.229286+00:00",
-  "published": 93,
+  "baseline_mbps": 275.59655693540964,
+  "tested": 351,
+  "published_at": "2026-11-03T04:36:31.615842+00:00",
+  "published": 111,
   "counts": {
-    "tcp_reality": 86,
-    "xhttp_tls": 7
+    "tcp_reality": 103,
+    "xhttp_tls": 8
   },
   "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
   "min_speed_mbps": 10.0,
@@ -164,5 +167,5 @@
   "sort": "speed_mbps descending, latency_ms ascending",
   "verification": "full Xray client profile: two HTTPS targets, DNS, two full speed samples",
   "auto_nodes": 24,
-  "individual_profiles": 93
+  "individual_profiles": 111
 }
