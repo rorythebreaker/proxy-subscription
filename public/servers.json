@@ -1,56 +1,53 @@
 [
   {
     "rank": 1,
-    "id": "70a7007ebdbde51c",
-    "address": "208.84.100.209",
-    "port": 2112,
+    "id": "1e07f3fb3e87641f",
+    "address": "148.135.86.162",
+    "port": 10000,
     "transport": "tcp_reality",
-    "speed_mbps": 88.16517685884402,
-    "latency_ms": 3361.395,
-    "checked_at": "2026-11-04T21:00:56.364435+00:00",
+    "speed_mbps": 120.94912517211796,
+    "latency_ms": 149.10999999999999,
+    "checked_at": "2026-11-05T01:26:56.353995+00:00",
     "sources": [
-      "barry-far",
-      "vestranet"
+      "igareck-fixed",
+      "igareck-mobile"
     ]
   },
   {
     "rank": 2,
-    "id": "5ad8f3169120cb91",
-    "address": "15.204.97.195",
-    "port": 23576,
+    "id": "15b3e71bfa564d00",
+    "address": "148.135.86.162",
+    "port": 10000,
     "transport": "tcp_reality",
-    "speed_mbps": 83.60766647065273,
-    "latency_ms": 353.419,
-    "checked_at": "2026-11-04T21:00:51.621132+00:00",
+    "speed_mbps": 119.6705731302828,
+    "latency_ms": 128.075,
+    "checked_at": "2026-11-05T01:27:51.173947+00:00",
     "sources": [
-      "barry-far",
-      "vestranet"
+      "igareck-mobile"
     ]
   },
   {
     "rank": 3,
-    "id": "d5610195ff69ddaa",
-    "address": "15.204.97.214",
-    "port": 23576,
+    "id": "707e47cd605bb98b",
+    "address": "148.135.86.162",
+    "port": 10000,
     "transport": "tcp_reality",
-    "speed_mbps": 83.40068799586406,
-    "latency_ms": 181.762,
-    "checked_at": "2026-11-04T21:00:50.947358+00:00",
+    "speed_mbps": 108.84189356636368,
+    "latency_ms": 127.214,
+    "checked_at": "2026-11-05T01:27:16.829725+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far",
-      "vestranet"
+      "igareck-mobile"
     ]
   },
   {
     "rank": 4,
-    "id": "ead492b73b2860e6",
-    "address": "15.204.97.198",
+    "id": "8a91a3df2d1186a5",
+    "address": "15.204.97.209",
     "port": 23576,
     "transport": "tcp_reality",
-    "speed_mbps": 83.12754118667162,
-    "latency_ms": 2755.7459999999996,
-    "checked_at": "2026-11-04T21:00:52.478525+00:00",
+    "speed_mbps": 84.28135957641338,
+    "latency_ms": 172.91400000000002,
+    "checked_at": "2026-11-05T01:28:50.804020+00:00",
     "sources": [
       "barry-far",
       "vestranet"
@@ -58,13 +55,97 @@
   },
   {
     "rank": 5,
-    "id": "80ae5f39a7a99996",
-    "address": "15.204.97.219",
+    "id": "b17c25fdf27571e1",
+    "address": "15.204.97.197",
     "port": 23576,
     "transport": "tcp_reality",
-    "speed_mbps": 82.95819261559458,
-    "latency_ms": 151.874,
-    "checked_at": "2026-11-04T21:00:51.923875+00:00",
+    "speed_mbps": 83.87853093221611,
+    "latency_ms": 369.043,
+    "checked_at": "2026-11-05T01:26:30.137050+00:00",
+    "sources": [
+      "barry-far",
+      "vestranet",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 6,
+    "id": "ead492b73b2860e6",
+    "address": "15.204.97.198",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 83.42183747445468,
+    "latency_ms": 341.589,
+    "checked_at": "2026-11-05T01:25:53.803162+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 7,
+    "id": "81cb98c3348bfe41",
+    "address": "182.16.62.14",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 83.1283649534493,
+    "latency_ms": 178.322,
+    "checked_at": "2026-11-05T01:25:53.416330+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 8,
+    "id": "5ad8f3169120cb91",
+    "address": "15.204.97.195",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 83.0066248101366,
+    "latency_ms": 232.213,
+    "checked_at": "2026-11-05T01:25:53.003807+00:00",
+    "sources": [
+      "barry-far",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 9,
+    "id": "c43b2a3e5c782598",
+    "address": "15.204.97.197",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 82.67774476032783,
+    "latency_ms": 356.686,
+    "checked_at": "2026-11-05T01:28:04.825318+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 10,
+    "id": "3097dc2fcee4cdea",
+    "address": "15.204.97.206",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 81.8093496589086,
+    "latency_ms": 357.748,
+    "checked_at": "2026-11-05T01:28:39.476285+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vestranet",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 11,
+    "id": "d5610195ff69ddaa",
+    "address": "15.204.97.214",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 81.55761022799086,
+    "latency_ms": 209.677,
+    "checked_at": "2026-11-05T01:25:52.785955+00:00",
     "sources": [
       "au1rxx",
       "barry-far",
@@ -72,93 +153,14 @@
     ]
   },
   {
-    "rank": 6,
-    "id": "81cb98c3348bfe41",
-    "address": "182.16.62.14",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 82.39352136055356,
-    "latency_ms": 271.01399999999995,
-    "checked_at": "2026-11-04T21:00:49.274673+00:00",
-    "sources": [
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 7,
-    "id": "86cea2d4d7bb2140",
+    "rank": 12,
+    "id": "fd857679de415081",
     "address": "195.123.240.65",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 71.79077091606189,
-    "latency_ms": 171.929,
-    "checked_at": "2026-11-04T21:00:57.418220+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 8,
-    "id": "2dadb5b970c7c14e",
-    "address": "185.95.231.156",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 56.99750636996772,
-    "latency_ms": 248.779,
-    "checked_at": "2026-11-04T21:00:36.081840+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 9,
-    "id": "47c5aad3c7ffc735",
-    "address": "66.70.179.198",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 53.3433042726238,
-    "latency_ms": 274.156,
-    "checked_at": "2026-11-04T21:00:35.864399+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 10,
-    "id": "a08853bac2162069",
-    "address": "2.24.124.64",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 53.142739490847354,
-    "latency_ms": 1466.288,
-    "checked_at": "2026-11-04T21:01:11.138154+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 11,
-    "id": "e6e8e35fe790acad",
-    "address": "185.95.231.156",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 53.139036433836004,
-    "latency_ms": 221.249,
-    "checked_at": "2026-11-04T21:02:21.613494+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 12,
-    "id": "78f678e1ef244a67",
-    "address": "2.24.124.64",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 53.00171541759203,
-    "latency_ms": 1253.042,
-    "checked_at": "2026-11-04T21:00:39.205616+00:00",
+    "speed_mbps": 71.83780288854729,
+    "latency_ms": 3057.938,
+    "checked_at": "2026-11-05T01:29:06.336049+00:00",
     "sources": [
       "au1rxx",
       "vestranet"
@@ -166,322 +168,322 @@
   },
   {
     "rank": 13,
-    "id": "fc612b57a5b6778a",
-    "address": "167.17.69.171",
+    "id": "86cea2d4d7bb2140",
+    "address": "195.123.240.65",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 51.149892835692576,
-    "latency_ms": 291.773,
-    "checked_at": "2026-11-04T21:00:37.470002+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 14,
-    "id": "383062aaa60122d1",
-    "address": "167.17.69.171",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 50.64911666324522,
-    "latency_ms": 272.331,
-    "checked_at": "2026-11-04T21:00:36.085976+00:00",
+    "speed_mbps": 70.4427798864667,
+    "latency_ms": 262.29,
+    "checked_at": "2026-11-05T01:25:55.192412+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
+    "rank": 14,
+    "id": "80ae5f39a7a99996",
+    "address": "15.204.97.219",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 61.3996764819979,
+    "latency_ms": 173.231,
+    "checked_at": "2026-11-05T01:25:53.361438+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vestranet",
+      "vpn-free-russia"
+    ]
+  },
+  {
     "rank": 15,
-    "id": "fb52ba3d81c21816",
-    "address": "167.17.69.171",
+    "id": "e6e8e35fe790acad",
+    "address": "185.95.231.156",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 50.310115270664156,
-    "latency_ms": 304.697,
-    "checked_at": "2026-11-04T21:00:38.872503+00:00",
+    "speed_mbps": 55.35975291858325,
+    "latency_ms": 318.99,
+    "checked_at": "2026-11-05T01:26:00.725560+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 16,
-    "id": "ea1f64a198b2c962",
-    "address": "159.89.87.21",
-    "port": 28190,
-    "transport": "tcp_reality",
-    "speed_mbps": 45.28789036244423,
-    "latency_ms": 310.20599999999996,
-    "checked_at": "2026-11-04T21:00:37.786240+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 17,
-    "id": "cee835a67e805164",
-    "address": "169.40.42.89",
+    "id": "2dadb5b970c7c14e",
+    "address": "185.95.231.156",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 44.67467287280785,
-    "latency_ms": 1210.4550000000002,
-    "checked_at": "2026-11-04T21:00:41.124259+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 18,
-    "id": "5ac33739d7baaa12",
-    "address": "169.40.42.35",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 44.62797026081637,
-    "latency_ms": 1151.627,
-    "checked_at": "2026-11-04T21:00:42.374750+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 19,
-    "id": "c3f7df7741850fa1",
-    "address": "169.40.42.168",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 44.60862860211965,
-    "latency_ms": 470.812,
-    "checked_at": "2026-11-04T21:00:40.915649+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 20,
-    "id": "02494389d4ef7b2a",
-    "address": "169.40.42.168",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 44.60518920471011,
-    "latency_ms": 699.976,
-    "checked_at": "2026-11-04T21:01:16.845134+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 21,
-    "id": "e91825f2b3f7b8f0",
-    "address": "169.40.42.163",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 44.497060001432196,
-    "latency_ms": 868.325,
-    "checked_at": "2026-11-04T21:01:04.755622+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 22,
-    "id": "35ad80eec1d19ec6",
-    "address": "169.40.42.90",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.989082185136155,
-    "latency_ms": 1812.614,
-    "checked_at": "2026-11-04T21:00:48.785987+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 23,
-    "id": "5f1864e2dfb9ed66",
-    "address": "169.40.42.163",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.760295678801434,
-    "latency_ms": 1049.523,
-    "checked_at": "2026-11-04T21:00:48.525633+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 24,
-    "id": "62b1b5d9a514663c",
-    "address": "169.40.42.35",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.66610448289504,
-    "latency_ms": 426.921,
-    "checked_at": "2026-11-04T21:02:15.387035+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 25,
-    "id": "861a252bffae3ab3",
-    "address": "169.40.42.163",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.46620447014506,
-    "latency_ms": 2271.263,
-    "checked_at": "2026-11-04T21:00:55.436244+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 26,
-    "id": "29aab2aa834ef573",
-    "address": "169.40.42.35",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.39088536750007,
-    "latency_ms": 1734.046,
-    "checked_at": "2026-11-04T21:01:49.497614+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 27,
-    "id": "880a7373fb64fc10",
-    "address": "169.40.42.163",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.300846287458995,
-    "latency_ms": 786.821,
-    "checked_at": "2026-11-04T21:00:46.106115+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 28,
-    "id": "d7bdbb6dd448a3fd",
-    "address": "169.40.42.89",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.174262017071854,
-    "latency_ms": 1668.347,
-    "checked_at": "2026-11-04T21:00:57.422650+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 29,
-    "id": "3b3fd4971f6006a0",
-    "address": "169.40.42.89",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 43.170818065791096,
-    "latency_ms": 1554.934,
-    "checked_at": "2026-11-04T21:00:44.867405+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 30,
-    "id": "c59841a445da8c7e",
-    "address": "169.40.42.229",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 42.85061604789442,
-    "latency_ms": 404.05,
-    "checked_at": "2026-11-04T21:00:38.550029+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 31,
-    "id": "05e1d869a2ea9853",
-    "address": "169.40.42.231",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 42.81157992778494,
-    "latency_ms": 1737.788,
-    "checked_at": "2026-11-04T21:01:20.919183+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 32,
-    "id": "df9488a66983f363",
-    "address": "169.40.42.229",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 42.648662114687504,
-    "latency_ms": 520.428,
-    "checked_at": "2026-11-04T21:00:41.895370+00:00",
+    "speed_mbps": 54.58987674566919,
+    "latency_ms": 234.769,
+    "checked_at": "2026-11-05T01:25:54.833217+00:00",
     "sources": [
       "au1rxx",
       "barry-far"
     ]
   },
   {
-    "rank": 33,
-    "id": "6ffe8fea34f8e7ae",
-    "address": "169.40.42.74",
+    "rank": 17,
+    "id": "a08853bac2162069",
+    "address": "2.24.124.64",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 42.60534001046264,
-    "latency_ms": 1804.049,
-    "checked_at": "2026-11-04T21:01:26.417547+00:00",
+    "speed_mbps": 54.49802176384604,
+    "latency_ms": 285.31,
+    "checked_at": "2026-11-05T01:26:16.982913+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
-    "rank": 34,
-    "id": "f2a963d3d7dccd8b",
+    "rank": 18,
+    "id": "47c5aad3c7ffc735",
+    "address": "66.70.179.198",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 53.90633906223391,
+    "latency_ms": 307.207,
+    "checked_at": "2026-11-05T01:26:03.043476+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 19,
+    "id": "1b1feed262a39d79",
+    "address": "66.70.179.198",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 53.179798466468654,
+    "latency_ms": 279.169,
+    "checked_at": "2026-11-05T01:26:09.808613+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 20,
+    "id": "78f678e1ef244a67",
+    "address": "2.24.124.64",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 52.987152115416194,
+    "latency_ms": 280.223,
+    "checked_at": "2026-11-05T01:26:01.971029+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 21,
+    "id": "fc612b57a5b6778a",
+    "address": "167.17.69.171",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 51.212503052503045,
+    "latency_ms": 287.584,
+    "checked_at": "2026-11-05T01:25:54.735702+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 22,
+    "id": "fb52ba3d81c21816",
+    "address": "167.17.69.171",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 50.814025544493894,
+    "latency_ms": 284.669,
+    "checked_at": "2026-11-05T01:25:56.083514+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 23,
+    "id": "383062aaa60122d1",
+    "address": "167.17.69.171",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 50.52769545837852,
+    "latency_ms": 257.272,
+    "checked_at": "2026-11-05T01:25:57.623228+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 24,
+    "id": "9a4e2d6243eac3e8",
+    "address": "167.17.69.171",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 50.082886303729374,
+    "latency_ms": 271.26800000000003,
+    "checked_at": "2026-11-05T01:27:45.350266+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 25,
+    "id": "880a7373fb64fc10",
+    "address": "169.40.42.163",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 49.17740512432692,
+    "latency_ms": 403.258,
+    "checked_at": "2026-11-05T01:26:07.407959+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 26,
+    "id": "02494389d4ef7b2a",
+    "address": "169.40.42.168",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.96155675726156,
+    "latency_ms": 406.885,
+    "checked_at": "2026-11-05T01:25:56.780219+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 27,
+    "id": "ea1f64a198b2c962",
+    "address": "159.89.87.21",
+    "port": 28190,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.813830746760225,
+    "latency_ms": 300.311,
+    "checked_at": "2026-11-05T01:26:00.793735+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 28,
+    "id": "29aab2aa834ef573",
+    "address": "169.40.42.35",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.73088708998121,
+    "latency_ms": 326.657,
+    "checked_at": "2026-11-05T01:25:58.053831+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 29,
+    "id": "e91825f2b3f7b8f0",
+    "address": "169.40.42.163",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.609745002766985,
+    "latency_ms": 438.714,
+    "checked_at": "2026-11-05T01:25:56.279539+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 30,
+    "id": "861a252bffae3ab3",
+    "address": "169.40.42.163",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.484859694246175,
+    "latency_ms": 1302.853,
+    "checked_at": "2026-11-05T01:25:57.613817+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 31,
+    "id": "df9488a66983f363",
     "address": "169.40.42.229",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 42.55217437619524,
-    "latency_ms": 431.559,
-    "checked_at": "2026-11-04T21:00:51.692863+00:00",
+    "speed_mbps": 48.38251019431195,
+    "latency_ms": 390.55899999999997,
+    "checked_at": "2026-11-05T01:26:00.815422+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 32,
+    "id": "69de4ee6649ff05f",
+    "address": "169.40.42.231",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.30672663299799,
+    "latency_ms": 391.19300000000004,
+    "checked_at": "2026-11-05T01:27:44.139324+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 33,
+    "id": "05e1d869a2ea9853",
+    "address": "169.40.42.231",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.27517386838084,
+    "latency_ms": 382.70799999999997,
+    "checked_at": "2026-11-05T01:26:08.734615+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 34,
+    "id": "5c724f4b3a4431e1",
+    "address": "169.40.42.229",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 48.237420393611366,
+    "latency_ms": 380.749,
+    "checked_at": "2026-11-05T01:26:13.417633+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 35,
-    "id": "df9995fb259c0ae6",
-    "address": "169.40.42.89",
+    "id": "e658cd04ecf94f46",
+    "address": "169.40.42.202",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 42.372592152950546,
-    "latency_ms": 4272.8,
-    "checked_at": "2026-11-04T21:00:54.184752+00:00",
+    "speed_mbps": 48.23561747810636,
+    "latency_ms": 377.756,
+    "checked_at": "2026-11-05T01:26:03.242054+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 36,
-    "id": "ba42c47430a515a2",
-    "address": "169.40.42.74",
+    "id": "cee835a67e805164",
+    "address": "169.40.42.89",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 42.369488905837244,
-    "latency_ms": 320.01,
-    "checked_at": "2026-11-04T21:00:48.477574+00:00",
+    "speed_mbps": 48.18436017323974,
+    "latency_ms": 414.30699999999996,
+    "checked_at": "2026-11-05T01:25:56.001703+00:00",
     "sources": [
       "au1rxx"
     ]
@@ -492,199 +494,192 @@
     "address": "169.40.42.163",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 42.21777215228097,
-    "latency_ms": 1818.124,
-    "checked_at": "2026-11-04T21:00:46.579512+00:00",
+    "speed_mbps": 48.13003577360786,
+    "latency_ms": 381.199,
+    "checked_at": "2026-11-05T01:26:01.911495+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 38,
-    "id": "65d1f0972d03c37c",
-    "address": "169.40.42.90",
+    "id": "62b1b5d9a514663c",
+    "address": "169.40.42.35",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 40.73672376743678,
-    "latency_ms": 1691.607,
-    "checked_at": "2026-11-04T21:00:45.755538+00:00",
+    "speed_mbps": 48.114438447463975,
+    "latency_ms": 394.826,
+    "checked_at": "2026-11-05T01:25:59.092368+00:00",
     "sources": [
-      "au1rxx"
+      "au1rxx",
+      "barry-far"
     ]
   },
   {
     "rank": 39,
-    "id": "8306a597689705d9",
-    "address": "169.40.42.90",
+    "id": "c59841a445da8c7e",
+    "address": "169.40.42.229",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 38.40533277173192,
-    "latency_ms": 395.76,
-    "checked_at": "2026-11-04T21:00:55.242293+00:00",
+    "speed_mbps": 48.09843754479516,
+    "latency_ms": 390.623,
+    "checked_at": "2026-11-05T01:26:02.692513+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 40,
-    "id": "5c724f4b3a4431e1",
-    "address": "169.40.42.229",
+    "id": "d7bdbb6dd448a3fd",
+    "address": "169.40.42.89",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 35.080944206188065,
-    "latency_ms": 1268.698,
-    "checked_at": "2026-11-04T21:00:53.445028+00:00",
+    "speed_mbps": 48.07335411699981,
+    "latency_ms": 374.975,
+    "checked_at": "2026-11-05T01:25:58.943630+00:00",
     "sources": [
-      "au1rxx",
-      "roosterkid"
+      "au1rxx"
     ]
   },
   {
     "rank": 41,
-    "id": "e658cd04ecf94f46",
-    "address": "169.40.42.202",
+    "id": "5ac33739d7baaa12",
+    "address": "169.40.42.35",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 33.04344811829864,
-    "latency_ms": 850.228,
-    "checked_at": "2026-11-04T21:00:43.665080+00:00",
+    "speed_mbps": 48.04389386207568,
+    "latency_ms": 504.101,
+    "checked_at": "2026-11-05T01:25:54.733489+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 42,
-    "id": "1b1feed262a39d79",
-    "address": "66.70.179.198",
-    "port": 2053,
+    "id": "5f1864e2dfb9ed66",
+    "address": "169.40.42.163",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 22.843673240418493,
-    "latency_ms": 333.117,
-    "checked_at": "2026-11-04T21:01:32.688216+00:00",
+    "speed_mbps": 47.98563052369649,
+    "latency_ms": 376.295,
+    "checked_at": "2026-11-05T01:25:57.528276+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 43,
-    "id": "5e8b4b0502b86b5d",
-    "address": "51.89.194.151",
-    "port": 2053,
+    "id": "ba42c47430a515a2",
+    "address": "169.40.42.74",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 21.041166260321667,
-    "latency_ms": 622.619,
-    "checked_at": "2026-11-04T21:00:56.381096+00:00",
+    "speed_mbps": 47.97698552730538,
+    "latency_ms": 380.327,
+    "checked_at": "2026-11-05T01:26:04.166320+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far",
-      "vestranet",
-      "vpn-free-russia"
+      "au1rxx"
     ]
   },
   {
     "rank": 44,
-    "id": "fcb2b511b215235d",
-    "address": "51.89.194.151",
-    "port": 2053,
+    "id": "df9995fb259c0ae6",
+    "address": "169.40.42.89",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 21.00912633614169,
-    "latency_ms": 621.001,
-    "checked_at": "2026-11-04T21:01:00.733297+00:00",
+    "speed_mbps": 47.844135696849406,
+    "latency_ms": 318.769,
+    "checked_at": "2026-11-05T01:26:04.331051+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 45,
-    "id": "efb0b584c7b0ecb7",
-    "address": "ga1data.xyy123.bid",
+    "id": "35ad80eec1d19ec6",
+    "address": "169.40.42.90",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 21.000737275734863,
-    "latency_ms": 556.917,
-    "checked_at": "2026-11-04T21:01:21.712815+00:00",
+    "speed_mbps": 47.82231546302419,
+    "latency_ms": 390.366,
+    "checked_at": "2026-11-05T01:25:59.678032+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 46,
-    "id": "a6ccf05e10bba898",
-    "address": "51.158.206.93",
-    "port": 23576,
+    "id": "65d1f0972d03c37c",
+    "address": "169.40.42.90",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 20.945155285784022,
-    "latency_ms": 623.711,
-    "checked_at": "2026-11-04T21:01:02.205511+00:00",
+    "speed_mbps": 47.71324077286662,
+    "latency_ms": 380.264,
+    "checked_at": "2026-11-05T01:26:02.618694+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
+      "au1rxx"
     ]
   },
   {
     "rank": 47,
-    "id": "c6c25b71cbc18018",
-    "address": "51.158.206.12",
-    "port": 23576,
+    "id": "c3f7df7741850fa1",
+    "address": "169.40.42.168",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 20.874687543159173,
-    "latency_ms": 657.4449999999999,
-    "checked_at": "2026-11-04T21:01:22.524645+00:00",
+    "speed_mbps": 47.58386985155227,
+    "latency_ms": 338.712,
+    "checked_at": "2026-11-05T01:25:59.588178+00:00",
     "sources": [
-      "barry-far",
-      "vpn-free-russia"
+      "au1rxx"
     ]
   },
   {
     "rank": 48,
-    "id": "884473a5626bf209",
-    "address": "86.54.28.75",
+    "id": "3b3fd4971f6006a0",
+    "address": "169.40.42.89",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 20.849705595060854,
-    "latency_ms": 943.294,
-    "checked_at": "2026-11-04T21:04:03.867109+00:00",
+    "speed_mbps": 47.54112649794985,
+    "latency_ms": 315.112,
+    "checked_at": "2026-11-05T01:26:11.683098+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 49,
-    "id": "40f4d3988d91ce6c",
-    "address": "free-amsterdam-node-1.cloudwidecdn.com",
+    "id": "f2a963d3d7dccd8b",
+    "address": "169.40.42.229",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 20.79437789332127,
-    "latency_ms": 583.665,
-    "checked_at": "2026-11-04T21:01:46.450837+00:00",
+    "speed_mbps": 47.34431632831591,
+    "latency_ms": 446.789,
+    "checked_at": "2026-11-05T01:26:00.399745+00:00",
     "sources": [
-      "au1rxx",
-      "vestranet"
+      "au1rxx"
     ]
   },
   {
     "rank": 50,
-    "id": "ccd39182a47e16c3",
-    "address": "free-amsterdam-node-1.cloudwidecdn.com",
+    "id": "6ffe8fea34f8e7ae",
+    "address": "169.40.42.74",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 20.641666174530993,
-    "latency_ms": 675.355,
-    "checked_at": "2026-11-04T21:01:07.897775+00:00",
+    "speed_mbps": 47.22464420825076,
+    "latency_ms": 375.769,
+    "checked_at": "2026-11-05T01:26:13.484101+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 51,
-    "id": "044f9135582706e0",
-    "address": "51.158.206.26",
-    "port": 23576,
+    "id": "ff5ca95e76b47978",
+    "address": "23.95.115.116",
+    "port": 2053,
     "transport": "tcp_reality",
-    "speed_mbps": 20.614831871542638,
-    "latency_ms": 517.539,
-    "checked_at": "2026-11-04T21:01:04.880553+00:00",
+    "speed_mbps": 47.154959821692074,
+    "latency_ms": 389.746,
+    "checked_at": "2026-11-05T01:29:20.855189+00:00",
     "sources": [
       "barry-far",
       "vpn-free-russia"
@@ -692,498 +687,1385 @@
   },
   {
     "rank": 52,
-    "id": "1c6d9dfcd8c8961f",
-    "address": "51.158.206.34",
-    "port": 23576,
+    "id": "9d117a29af68dc8e",
+    "address": "161.114.14.46",
+    "port": 21899,
     "transport": "tcp_reality",
-    "speed_mbps": 20.451315232906968,
-    "latency_ms": 497.355,
-    "checked_at": "2026-11-04T21:03:04.000442+00:00",
-    "sources": [
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 53,
-    "id": "3e9e1743d71a81ac",
-    "address": "51.158.206.20",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 20.29130473695541,
-    "latency_ms": 625.523,
-    "checked_at": "2026-11-04T21:01:17.209703+00:00",
-    "sources": [
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 54,
-    "id": "046f982779c26570",
-    "address": "51.158.206.86",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.991749353854292,
-    "latency_ms": 626.206,
-    "checked_at": "2026-11-04T21:01:07.794855+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vpn-free-russia"
-    ]
-  },
-  {
-    "rank": 55,
-    "id": "b71c7b8bbb3ab4dd",
-    "address": "51.77.217.70",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.979488449748846,
-    "latency_ms": 688.287,
-    "checked_at": "2026-11-04T21:00:59.391206+00:00",
+    "speed_mbps": 44.03908001322968,
+    "latency_ms": 612.225,
+    "checked_at": "2026-11-05T01:28:17.768033+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
-    "rank": 56,
-    "id": "bcbafb45c3341147",
-    "address": "51.158.206.25",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.957385457954064,
-    "latency_ms": 631.561,
-    "checked_at": "2026-11-04T21:01:11.222647+00:00",
+    "rank": 53,
+    "id": "a6e55a9a1f7d7850",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 24.09449827590912,
+    "latency_ms": 644.004,
+    "checked_at": "2026-11-05T01:27:52.042463+00:00",
     "sources": [
-      "barry-far"
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 54,
+    "id": "2445d3670b907299",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 23.90597891137076,
+    "latency_ms": 711.0600000000001,
+    "checked_at": "2026-11-05T01:27:47.020345+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 55,
+    "id": "2f5e48d021287ae6",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 23.681280074076273,
+    "latency_ms": 643.811,
+    "checked_at": "2026-11-05T01:26:49.552661+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 56,
+    "id": "b400bc118aff1f7c",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 23.626587278675224,
+    "latency_ms": 685.3209999999999,
+    "checked_at": "2026-11-05T01:27:12.991939+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
     ]
   },
   {
     "rank": 57,
-    "id": "39bd572981d8f34e",
-    "address": "51.158.206.26",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.73590436732284,
-    "latency_ms": 592.874,
-    "checked_at": "2026-11-04T21:01:13.695335+00:00",
+    "id": "f22e1b89fb1c47b9",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 23.134095221285794,
+    "latency_ms": 694.076,
+    "checked_at": "2026-11-05T01:27:44.214953+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far"
+      "igareck-cidr-mobile",
+      "vpn-free-russia"
     ]
   },
   {
     "rank": 58,
-    "id": "518908d8efb8bcbe",
-    "address": "51.158.206.87",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.481841025950683,
-    "latency_ms": 674.148,
-    "checked_at": "2026-11-04T21:01:10.978750+00:00",
+    "id": "c9e0efea8e1b57a9",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 23.062131003094247,
+    "latency_ms": 692.2139999999999,
+    "checked_at": "2026-11-05T01:28:12.130259+00:00",
     "sources": [
       "barry-far"
     ]
   },
   {
     "rank": 59,
-    "id": "2fa444fb14d4ef5c",
-    "address": "206.71.158.125",
+    "id": "f22db879bddc84b6",
+    "address": "185.178.208.140",
     "port": 443,
     "transport": "xhttp_tls",
-    "speed_mbps": 19.47105607967978,
-    "latency_ms": 2524.643,
-    "checked_at": "2026-11-04T21:03:43.787515+00:00",
+    "speed_mbps": 22.841278506983542,
+    "latency_ms": 824.318,
+    "checked_at": "2026-11-05T01:27:03.465533+00:00",
     "sources": [
-      "barry-far"
+      "barry-far",
+      "igareck-cidr-mobile"
     ]
   },
   {
     "rank": 60,
-    "id": "2a084e5900e7ede7",
-    "address": "51.158.206.80",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 19.330839187509145,
-    "latency_ms": 631.394,
-    "checked_at": "2026-11-04T21:01:19.768213+00:00",
+    "id": "0f5e364402faea03",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 22.77340905820807,
+    "latency_ms": 711.291,
+    "checked_at": "2026-11-05T01:27:41.940883+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far",
+      "igareck-cidr-mobile",
       "vpn-free-russia"
     ]
   },
   {
     "rank": 61,
-    "id": "570135869a709b6c",
-    "address": "212.227.235.66",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 18.92004334965148,
-    "latency_ms": 762.974,
-    "checked_at": "2026-11-04T21:01:17.016782+00:00",
+    "id": "8abb6b4aa0b7dba5",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 22.768989407541618,
+    "latency_ms": 741.51,
+    "checked_at": "2026-11-05T01:26:43.444204+00:00",
     "sources": [
-      "au1rxx",
-      "barry-far"
+      "igareck-cidr-mobile"
     ]
   },
   {
     "rank": 62,
-    "id": "500c928b852bfc07",
-    "address": "51.158.206.98",
-    "port": 23576,
-    "transport": "tcp_reality",
-    "speed_mbps": 18.86290642648261,
-    "latency_ms": 683.9,
-    "checked_at": "2026-11-04T21:01:24.654849+00:00",
-    "sources": [
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 63,
-    "id": "e0ac58c451aa20df",
-    "address": "212.227.235.66",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 18.77481921481823,
-    "latency_ms": 774.768,
-    "checked_at": "2026-11-04T21:01:15.638641+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 64,
-    "id": "fa33aa2b4844b670",
-    "address": "212.227.235.66",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 18.318757786491005,
-    "latency_ms": 750.522,
-    "checked_at": "2026-11-04T21:01:39.099523+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 65,
-    "id": "ce83ba91ed1bb62b",
-    "address": "5.252.179.15",
+    "id": "0c230d97f1b60527",
+    "address": "152.70.58.201",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 18.297500417160627,
-    "latency_ms": 733.2389999999999,
-    "checked_at": "2026-11-04T21:01:54.696677+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 66,
-    "id": "b5cee7cdd8a2561c",
-    "address": "5.252.179.15",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 17.945101126407742,
-    "latency_ms": 601.603,
-    "checked_at": "2026-11-04T21:03:13.736018+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 67,
-    "id": "400615c0986aa249",
-    "address": "46.250.250.149",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 17.73450695069137,
-    "latency_ms": 722.5939999999999,
-    "checked_at": "2026-11-04T21:02:06.649809+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 68,
-    "id": "1a85274fa4725f13",
-    "address": "156.252.229.136",
-    "port": 8443,
-    "transport": "tcp_reality",
-    "speed_mbps": 16.980558184256466,
-    "latency_ms": 3435.758,
-    "checked_at": "2026-11-04T21:01:40.661192+00:00",
+    "speed_mbps": 22.137093305254933,
+    "latency_ms": 756.9879999999999,
+    "checked_at": "2026-11-05T01:27:41.992737+00:00",
     "sources": [
       "barry-far",
       "vestranet"
     ]
   },
   {
-    "rank": 69,
-    "id": "46388b8c5e38d5f5",
-    "address": "185.178.208.140",
+    "rank": 63,
+    "id": "ff938a8f350c4f2a",
+    "address": "fr.golangwikito.cfd",
     "port": 443,
-    "transport": "xhttp_tls",
-    "speed_mbps": 16.865642563962858,
-    "latency_ms": 648.351,
-    "checked_at": "2026-11-04T21:03:31.836921+00:00",
-    "sources": [
-      "igareck-cidr-mobile"
-    ]
-  },
-  {
-    "rank": 70,
-    "id": "81f9fbe48c060474",
-    "address": "144.31.140.125",
-    "port": 8443,
     "transport": "tcp_reality",
-    "speed_mbps": 16.820259042890758,
-    "latency_ms": 2738.297,
-    "checked_at": "2026-11-04T21:01:36.194546+00:00",
+    "speed_mbps": 21.796206726765583,
+    "latency_ms": 717.5,
+    "checked_at": "2026-11-05T01:26:23.064164+00:00",
     "sources": [
       "barry-far"
     ]
   },
   {
-    "rank": 71,
-    "id": "8010838354f87912",
-    "address": "88.216.223.100",
+    "rank": 64,
+    "id": "2a084e5900e7ede7",
+    "address": "51.158.206.80",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 21.235073809822154,
+    "latency_ms": 498.454,
+    "checked_at": "2026-11-05T01:26:20.328427+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 65,
+    "id": "500c928b852bfc07",
+    "address": "51.158.206.98",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 21.16750463352566,
+    "latency_ms": 608.788,
+    "checked_at": "2026-11-05T01:26:16.451066+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 66,
+    "id": "044f9135582706e0",
+    "address": "51.158.206.26",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.984215450347456,
+    "latency_ms": 635.963,
+    "checked_at": "2026-11-05T01:26:36.528343+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 67,
+    "id": "1c6d9dfcd8c8961f",
+    "address": "51.158.206.34",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.974823534706715,
+    "latency_ms": 609.9480000000001,
+    "checked_at": "2026-11-05T01:26:10.382366+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 68,
+    "id": "fcb2b511b215235d",
+    "address": "51.89.194.151",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.966383236107152,
+    "latency_ms": 502.17699999999996,
+    "checked_at": "2026-11-05T01:26:06.008518+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 69,
+    "id": "5e8b4b0502b86b5d",
+    "address": "51.89.194.151",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.944919951661394,
+    "latency_ms": 621.2299999999999,
+    "checked_at": "2026-11-05T01:26:06.123384+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 70,
+    "id": "efb0b584c7b0ecb7",
+    "address": "ga1data.xyy123.bid",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 16.76048903194612,
-    "latency_ms": 3654.658,
-    "checked_at": "2026-11-04T21:01:50.879335+00:00",
+    "speed_mbps": 20.94458003393136,
+    "latency_ms": 938.977,
+    "checked_at": "2026-11-05T01:26:12.561145+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 71,
+    "id": "19905b38d95b7a29",
+    "address": "185.178.208.140",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 20.860230669378865,
+    "latency_ms": 620.6859999999999,
+    "checked_at": "2026-11-05T01:27:47.978463+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 72,
+    "id": "3e9e1743d71a81ac",
+    "address": "51.158.206.20",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.84929103132884,
+    "latency_ms": 615.561,
+    "checked_at": "2026-11-05T01:26:25.647394+00:00",
     "sources": [
       "barry-far",
       "vpn-free-russia"
     ]
   },
   {
-    "rank": 72,
-    "id": "ff938a8f350c4f2a",
-    "address": "fr.golangwikito.cfd",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 16.744146311035706,
-    "latency_ms": 649.6659999999999,
-    "checked_at": "2026-11-04T21:01:05.291537+00:00",
-    "sources": [
-      "barry-far"
-    ]
-  },
-  {
     "rank": 73,
-    "id": "61261cba0cc903a7",
-    "address": "206.71.158.124",
-    "port": 443,
-    "transport": "xhttp_tls",
-    "speed_mbps": 16.739084365814676,
-    "latency_ms": 584.428,
-    "checked_at": "2026-11-04T21:01:35.461077+00:00",
+    "id": "518908d8efb8bcbe",
+    "address": "51.158.206.87",
+    "port": 23576,
+    "transport": "tcp_reality",
+    "speed_mbps": 20.5996702032437,
+    "latency_ms": 605.706,
+    "checked_at": "2026-11-05T01:26:22.350104+00:00",
     "sources": [
       "barry-far"
     ]
   },
   {
     "rank": 74,
-    "id": "07c8195aa8feabea",
-    "address": "91.107.179.0",
-    "port": 10105,
+    "id": "c6c25b71cbc18018",
+    "address": "51.158.206.12",
+    "port": 23576,
     "transport": "tcp_reality",
-    "speed_mbps": 16.717217904939176,
-    "latency_ms": 2781.4139999999998,
-    "checked_at": "2026-11-04T21:01:30.744104+00:00",
+    "speed_mbps": 20.356795662967535,
+    "latency_ms": 620.827,
+    "checked_at": "2026-11-05T01:26:12.243244+00:00",
     "sources": [
-      "au1rxx"
+      "barry-far",
+      "vpn-free-russia"
     ]
   },
   {
     "rank": 75,
-    "id": "027899ed064c2821",
-    "address": "156.252.229.11",
-    "port": 8443,
-    "transport": "tcp_reality",
-    "speed_mbps": 16.561093726864424,
-    "latency_ms": 2119.097,
-    "checked_at": "2026-11-04T21:01:43.862116+00:00",
+    "id": "61261cba0cc903a7",
+    "address": "206.71.158.124",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 20.315211692266708,
+    "latency_ms": 543.366,
+    "checked_at": "2026-11-05T01:26:23.250236+00:00",
     "sources": [
-      "barry-far",
-      "vestranet"
+      "barry-far"
     ]
   },
   {
     "rank": 76,
-    "id": "e0b2e7effd67b2e1",
-    "address": "de-2.ffpn.pro",
+    "id": "40f4d3988d91ce6c",
+    "address": "free-amsterdam-node-1.cloudwidecdn.com",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 16.256992248062016,
-    "latency_ms": 831.9069999999999,
-    "checked_at": "2026-11-04T21:02:10.898870+00:00",
+    "speed_mbps": 20.194899881434583,
+    "latency_ms": 557.454,
+    "checked_at": "2026-11-05T01:26:08.819912+00:00",
     "sources": [
-      "barry-far",
-      "vestranet"
+      "au1rxx"
     ]
   },
   {
     "rank": 77,
-    "id": "910a6d5f435676ca",
-    "address": "46.250.250.149",
-    "port": 2053,
+    "id": "a6ccf05e10bba898",
+    "address": "51.158.206.93",
+    "port": 23576,
     "transport": "tcp_reality",
-    "speed_mbps": 16.25579511586356,
-    "latency_ms": 698.533,
-    "checked_at": "2026-11-04T21:02:05.884804+00:00",
+    "speed_mbps": 20.166934922594443,
+    "latency_ms": 605.2950000000001,
+    "checked_at": "2026-11-05T01:26:07.728060+00:00",
     "sources": [
-      "au1rxx"
+      "au1rxx",
+      "barry-far"
     ]
   },
   {
     "rank": 78,
-    "id": "ca675ddf3939d05c",
-    "address": "156.252.229.30",
-    "port": 8443,
+    "id": "bcbafb45c3341147",
+    "address": "51.158.206.25",
+    "port": 23576,
     "transport": "tcp_reality",
-    "speed_mbps": 16.248033787572556,
-    "latency_ms": 2561.1389999999997,
-    "checked_at": "2026-11-04T21:01:53.893572+00:00",
+    "speed_mbps": 20.10256164470555,
+    "latency_ms": 595.039,
+    "checked_at": "2026-11-05T01:26:13.609810+00:00",
     "sources": [
-      "au1rxx"
+      "barry-far"
     ]
   },
   {
     "rank": 79,
-    "id": "984f60887be910f2",
-    "address": "191.44.108.31",
+    "id": "ccd39182a47e16c3",
+    "address": "free-amsterdam-node-1.cloudwidecdn.com",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 15.963341021366642,
-    "latency_ms": 2071.256,
-    "checked_at": "2026-11-04T21:01:19.101767+00:00",
+    "speed_mbps": 19.696191594270957,
+    "latency_ms": 638.9129999999999,
+    "checked_at": "2026-11-05T01:26:33.257289+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 80,
-    "id": "c12842051494b390",
-    "address": "5.252.179.15",
+    "id": "884473a5626bf209",
+    "address": "86.54.28.75",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 15.762978663832993,
-    "latency_ms": 607.9010000000001,
-    "checked_at": "2026-11-04T21:01:47.285746+00:00",
+    "speed_mbps": 19.380569083902444,
+    "latency_ms": 648.3290000000001,
+    "checked_at": "2026-11-05T01:26:09.321622+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
     "rank": 81,
-    "id": "fb6df023c4f33112",
-    "address": "151.241.226.201",
-    "port": 2053,
-    "transport": "tcp_reality",
-    "speed_mbps": 15.547862092229504,
-    "latency_ms": 845.269,
-    "checked_at": "2026-11-04T21:01:46.267034+00:00",
+    "id": "2fa444fb14d4ef5c",
+    "address": "206.71.158.125",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 19.298108632563086,
+    "latency_ms": 583.612,
+    "checked_at": "2026-11-05T01:26:13.340282+00:00",
     "sources": [
-      "au1rxx",
       "barry-far"
     ]
   },
   {
     "rank": 82,
-    "id": "8b7bd5dbf45b0d5e",
-    "address": "185.86.147.184",
-    "port": 9449,
+    "id": "570135869a709b6c",
+    "address": "212.227.235.66",
+    "port": 2053,
     "transport": "tcp_reality",
-    "speed_mbps": 15.460235812326932,
-    "latency_ms": 1323.462,
-    "checked_at": "2026-11-04T21:03:02.020598+00:00",
+    "speed_mbps": 19.27310197943938,
+    "latency_ms": 737.0600000000001,
+    "checked_at": "2026-11-05T01:26:20.823184+00:00",
     "sources": [
-      "zieng2"
+      "au1rxx",
+      "barry-far"
     ]
   },
   {
     "rank": 83,
-    "id": "9b7a9d063d629bf2",
-    "address": "151.241.226.201",
+    "id": "30fe952839fb4c59",
+    "address": "no1.fox-lisa.ru",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 19.106270356451432,
+    "latency_ms": 824.525,
+    "checked_at": "2026-11-05T01:26:56.984130+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 84,
+    "id": "b71c7b8bbb3ab4dd",
+    "address": "51.77.217.70",
     "port": 2053,
     "transport": "tcp_reality",
-    "speed_mbps": 15.201049571980487,
-    "latency_ms": 801.894,
-    "checked_at": "2026-11-04T21:01:43.993195+00:00",
+    "speed_mbps": 18.99387747708583,
+    "latency_ms": 657.628,
+    "checked_at": "2026-11-05T01:26:18.641868+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
-    "rank": 84,
-    "id": "51d5ca84e8e9a13c",
-    "address": "71b840t.de7.h1clayd.click",
+    "rank": 85,
+    "id": "8010838354f87912",
+    "address": "88.216.223.100",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 15.113819277911606,
-    "latency_ms": 3328.83,
-    "checked_at": "2026-11-04T21:03:21.613516+00:00",
-    "sources": [
-      "igareck-fixed",
-      "igareck-mobile"
-    ]
-  },
-  {
-    "rank": 85,
-    "id": "bceae6c6346f0c37",
-    "address": "du-rov.secureservice.top",
-    "port": 8443,
-    "transport": "tcp_reality",
-    "speed_mbps": 15.054769690204346,
-    "latency_ms": 1168.945,
-    "checked_at": "2026-11-04T21:02:14.329239+00:00",
+    "speed_mbps": 18.6531647821398,
+    "latency_ms": 686.137,
+    "checked_at": "2026-11-05T01:26:33.689024+00:00",
     "sources": [
       "barry-far",
-      "vestranet",
       "vpn-free-russia"
     ]
   },
   {
     "rank": 86,
-    "id": "e132e7995d53b7a5",
-    "address": "78.159.250.214",
+    "id": "e0ac58c451aa20df",
+    "address": "212.227.235.66",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 18.650033737929103,
+    "latency_ms": 637.729,
+    "checked_at": "2026-11-05T01:26:16.944808+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 87,
+    "id": "73457c2efdbd87af",
+    "address": "13.143.188.142",
+    "port": 4443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 18.62471303413395,
+    "latency_ms": 631.148,
+    "checked_at": "2026-11-05T01:27:09.401333+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 88,
+    "id": "c2529744ce342983",
+    "address": "46.29.255.123",
+    "port": 59539,
+    "transport": "tcp_reality",
+    "speed_mbps": 18.52814415035246,
+    "latency_ms": 695.467,
+    "checked_at": "2026-11-05T01:26:41.130351+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 89,
+    "id": "3537a986b086c52b",
+    "address": "13.143.188.143",
+    "port": 4443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 18.382444591508925,
+    "latency_ms": 632.561,
+    "checked_at": "2026-11-05T01:27:28.907204+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 90,
+    "id": "ce83ba91ed1bb62b",
+    "address": "5.252.179.15",
     "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 14.34417190555215,
-    "latency_ms": 1070.1719999999998,
-    "checked_at": "2026-11-04T21:01:59.259086+00:00",
+    "speed_mbps": 18.2564642742885,
+    "latency_ms": 743.596,
+    "checked_at": "2026-11-05T01:26:30.625741+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 91,
+    "id": "fa33aa2b4844b670",
+    "address": "212.227.235.66",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 18.119744078245354,
+    "latency_ms": 785.091,
+    "checked_at": "2026-11-05T01:26:24.091248+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 92,
+    "id": "1a85274fa4725f13",
+    "address": "156.252.229.136",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 18.04428574501495,
+    "latency_ms": 769.109,
+    "checked_at": "2026-11-05T01:26:27.468967+00:00",
     "sources": [
       "barry-far",
       "vestranet"
     ]
   },
   {
-    "rank": 87,
-    "id": "1f88dec88e2f6deb",
-    "address": "151.245.106.49",
-    "port": 2053,
+    "rank": 93,
+    "id": "b5cee7cdd8a2561c",
+    "address": "5.252.179.15",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 14.22204137961435,
-    "latency_ms": 2877.544,
-    "checked_at": "2026-11-04T21:01:51.637931+00:00",
+    "speed_mbps": 18.042733314692533,
+    "latency_ms": 582.648,
+    "checked_at": "2026-11-05T01:26:19.528479+00:00",
+    "sources": [
+      "au1rxx",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 94,
+    "id": "d2f3a3a2bea85063",
+    "address": "82.39.171.12",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 18.012050107145463,
+    "latency_ms": 862.768,
+    "checked_at": "2026-11-05T01:26:46.227825+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 95,
+    "id": "027899ed064c2821",
+    "address": "156.252.229.11",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.994315512644228,
+    "latency_ms": 929.8929999999999,
+    "checked_at": "2026-11-05T01:26:26.484543+00:00",
+    "sources": [
+      "barry-far",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 96,
+    "id": "ca675ddf3939d05c",
+    "address": "156.252.229.30",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.922384692299147,
+    "latency_ms": 850.207,
+    "checked_at": "2026-11-05T01:26:29.620592+00:00",
     "sources": [
       "au1rxx"
     ]
   },
   {
-    "rank": 88,
-    "id": "b17c25fdf27571e1",
-    "address": "15.204.97.197",
-    "port": 23576,
+    "rank": 97,
+    "id": "c12842051494b390",
+    "address": "5.252.179.15",
+    "port": 443,
     "transport": "tcp_reality",
-    "speed_mbps": 14.208984651241968,
-    "latency_ms": 176.59900000000002,
-    "checked_at": "2026-11-04T21:00:54.189883+00:00",
+    "speed_mbps": 17.90171204191275,
+    "latency_ms": 725.3340000000001,
+    "checked_at": "2026-11-05T01:26:30.376119+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 98,
+    "id": "f2fd5ea1a2f014f9",
+    "address": "api.ferrin.uk",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 17.823244390005005,
+    "latency_ms": 936.703,
+    "checked_at": "2026-11-05T01:28:39.104141+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 99,
+    "id": "11424fe8071897b1",
+    "address": "api.ferrin.uk",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 17.737938209291656,
+    "latency_ms": 788.9620000000001,
+    "checked_at": "2026-11-05T01:27:33.494744+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 100,
+    "id": "81f9fbe48c060474",
+    "address": "144.31.140.125",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.703162195471965,
+    "latency_ms": 710.803,
+    "checked_at": "2026-11-05T01:26:52.970429+00:00",
+    "sources": [
+      "barry-far",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 101,
+    "id": "e5f81b8efba57fcd",
+    "address": "191.44.108.6",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.654968046360924,
+    "latency_ms": 759.696,
+    "checked_at": "2026-11-05T01:26:34.267436+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 102,
+    "id": "58ae60dfb35e0e48",
+    "address": "138.124.180.137",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.63501857344974,
+    "latency_ms": 691.895,
+    "checked_at": "2026-11-05T01:28:05.287206+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 103,
+    "id": "746a8f9c57f0678d",
+    "address": "91.107.179.0",
+    "port": 10105,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.598466015058733,
+    "latency_ms": 755.144,
+    "checked_at": "2026-11-05T01:27:03.269729+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 104,
+    "id": "984f60887be910f2",
+    "address": "191.44.108.31",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.427469751362853,
+    "latency_ms": 633.081,
+    "checked_at": "2026-11-05T01:26:41.580386+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 105,
+    "id": "5ddcd29bc6c4b40a",
+    "address": "78.17.39.129",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 17.408626897575047,
+    "latency_ms": 705.209,
+    "checked_at": "2026-11-05T01:28:00.787092+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 106,
+    "id": "c948b0ba0822d472",
+    "address": "84.32.215.96",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.109953261067986,
+    "latency_ms": 806.3209999999999,
+    "checked_at": "2026-11-05T01:28:01.438933+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 107,
+    "id": "218b9861b82dc45e",
+    "address": "api.mediaroshcha.cc",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 17.070382753407014,
+    "latency_ms": 741.721,
+    "checked_at": "2026-11-05T01:28:26.066833+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 108,
+    "id": "42b92a716443315b",
+    "address": "dey.lnmarketplace.net",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 16.932333103561728,
+    "latency_ms": 626.352,
+    "checked_at": "2026-11-05T01:28:01.591838+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 109,
+    "id": "e0b2e7effd67b2e1",
+    "address": "de-2.ffpn.pro",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 16.708843412755005,
+    "latency_ms": 837.5740000000001,
+    "checked_at": "2026-11-05T01:26:38.065408+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 110,
+    "id": "ad5ad4a7fc8f90e0",
+    "address": "201.34.142.108",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 16.588931626044396,
+    "latency_ms": 798.149,
+    "checked_at": "2026-11-05T01:28:29.611642+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 111,
+    "id": "cbc5bc1e0c9b3ba7",
+    "address": "151.245.106.49",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 16.58040657396701,
+    "latency_ms": 883.733,
+    "checked_at": "2026-11-05T01:26:52.188995+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 112,
+    "id": "6859870bc8e02344",
+    "address": "46.28.67.55",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 16.20889956350441,
+    "latency_ms": 4837.6359999999995,
+    "checked_at": "2026-11-05T01:27:28.391645+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 113,
+    "id": "910a6d5f435676ca",
+    "address": "46.250.250.149",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 16.153699358462696,
+    "latency_ms": 905.2289999999999,
+    "checked_at": "2026-11-05T01:26:27.995142+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 114,
+    "id": "ae90809e3319ffaf",
+    "address": "193.160.208.240",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 16.01567085103336,
+    "latency_ms": 888.451,
+    "checked_at": "2026-11-05T01:28:54.329567+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 115,
+    "id": "56b60e7e1222beeb",
+    "address": "201.34.142.108",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 15.95400528148087,
+    "latency_ms": 798.556,
+    "checked_at": "2026-11-05T01:28:45.878039+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 116,
+    "id": "19b8863de9d490fe",
+    "address": "5.42.99.64",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.914808445164956,
+    "latency_ms": 1009.427,
+    "checked_at": "2026-11-05T01:29:04.696667+00:00",
+    "sources": [
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 117,
+    "id": "bceae6c6346f0c37",
+    "address": "du-rov.secureservice.top",
+    "port": 8443,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.843405669820767,
+    "latency_ms": 1118.059,
+    "checked_at": "2026-11-05T01:27:00.183051+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 118,
+    "id": "265f54c7313fe2c2",
+    "address": "dey.lnmarketplace.net",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 15.829757522977244,
+    "latency_ms": 647.679,
+    "checked_at": "2026-11-05T01:26:51.522987+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 119,
+    "id": "d7e18b075713aacc",
+    "address": "dey.lnmarketplace.net",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 15.654360061508143,
+    "latency_ms": 2124.451,
+    "checked_at": "2026-11-05T01:28:15.673801+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 120,
+    "id": "7a28b44d80a84280",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 15.546565427337399,
+    "latency_ms": 1054.166,
+    "checked_at": "2026-11-05T01:27:07.026407+00:00",
+    "sources": [
+      "igareck-cidr-mobile",
+      "igareck-fixed",
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 121,
+    "id": "400615c0986aa249",
+    "address": "46.250.250.149",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.334892669929756,
+    "latency_ms": 3464.5229999999997,
+    "checked_at": "2026-11-05T01:26:50.172826+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 122,
+    "id": "9b7a9d063d629bf2",
+    "address": "151.241.226.201",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.321952293149002,
+    "latency_ms": 843.0490000000001,
+    "checked_at": "2026-11-05T01:26:38.525274+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 123,
+    "id": "fb6df023c4f33112",
+    "address": "151.241.226.201",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.27815407815918,
+    "latency_ms": 999.5079999999999,
+    "checked_at": "2026-11-05T01:26:51.106712+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 124,
+    "id": "aff36bd10c663679",
+    "address": "213.176.19.188",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.239878060744351,
+    "latency_ms": 1031.219,
+    "checked_at": "2026-11-05T01:27:38.223368+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 125,
+    "id": "9e47d0cfe6ea0644",
+    "address": "193.160.208.240",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 15.176985050269668,
+    "latency_ms": 866.084,
+    "checked_at": "2026-11-05T01:28:33.563817+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 126,
+    "id": "e132e7995d53b7a5",
+    "address": "78.159.250.214",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 15.089934926224238,
+    "latency_ms": 1034.04,
+    "checked_at": "2026-11-05T01:26:48.336195+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 127,
+    "id": "81f580c2f3591671",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 14.952622267774782,
+    "latency_ms": 1730.4440000000002,
+    "checked_at": "2026-11-05T01:27:12.057900+00:00",
+    "sources": [
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 128,
+    "id": "ad11779bb490f375",
+    "address": "193.163.203.170",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 14.48036885323722,
+    "latency_ms": 1185.935,
+    "checked_at": "2026-11-05T01:26:38.345211+00:00",
+    "sources": [
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 129,
+    "id": "a7974d7854816f58",
+    "address": "213.176.19.188",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 14.2469081287088,
+    "latency_ms": 905.314,
+    "checked_at": "2026-11-05T01:27:17.730425+00:00",
+    "sources": [
+      "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 130,
+    "id": "a1b77553b76ec77a",
+    "address": "89.125.237.245",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 14.203715760020655,
+    "latency_ms": 682.4200000000001,
+    "checked_at": "2026-11-05T01:29:22.749764+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 131,
+    "id": "7a2897e11fba1f28",
+    "address": "81.163.22.143",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 14.173142085250642,
+    "latency_ms": 2703.8790000000004,
+    "checked_at": "2026-11-05T01:29:05.187291+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 132,
+    "id": "651411a1b604c51f",
+    "address": "81.163.22.143",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 14.147446248913257,
+    "latency_ms": 1074.843,
+    "checked_at": "2026-11-05T01:28:50.915263+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 133,
+    "id": "c58dcd0692542edb",
+    "address": "81.163.22.143",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.907039472538987,
+    "latency_ms": 819.217,
+    "checked_at": "2026-11-05T01:26:56.240558+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 134,
+    "id": "e8e845d05f395dfb",
+    "address": "83.147.18.75",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.775641478294427,
+    "latency_ms": 622.2769999999999,
+    "checked_at": "2026-11-05T01:27:16.487077+00:00",
+    "sources": [
+      "roosterkid"
+    ]
+  },
+  {
+    "rank": 135,
+    "id": "8a378bd4ad529ae6",
+    "address": "31.76.230.158",
+    "port": 8444,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.53322158640839,
+    "latency_ms": 1082.403,
+    "checked_at": "2026-11-05T01:28:31.772118+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 136,
+    "id": "1f88dec88e2f6deb",
+    "address": "151.245.106.49",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.294570350882752,
+    "latency_ms": 1201.0400000000002,
+    "checked_at": "2026-11-05T01:26:34.715694+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 137,
+    "id": "1c43c1766226e26c",
+    "address": "103.106.229.177",
+    "port": 21004,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.222671107531237,
+    "latency_ms": 1222.4379999999999,
+    "checked_at": "2026-11-05T01:26:42.059428+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 138,
+    "id": "1c3a9abfbf552474",
+    "address": "511.150333.xyz",
+    "port": 21004,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.20427203110366,
+    "latency_ms": 1250.096,
+    "checked_at": "2026-11-05T01:29:32.573357+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 139,
+    "id": "b313675a75083795",
+    "address": "510.150333.xyz",
+    "port": 21002,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.183064416006486,
+    "latency_ms": 1255.128,
+    "checked_at": "2026-11-05T01:26:43.449189+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 140,
+    "id": "c5b52b80592c8e3b",
+    "address": "510.150333.xyz",
+    "port": 21003,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.161542776228414,
+    "latency_ms": 1255.045,
+    "checked_at": "2026-11-05T01:26:47.141241+00:00",
+    "sources": [
+      "au1rxx",
+      "barry-far",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 141,
+    "id": "af3982fbd617868e",
+    "address": "3.39.4.109",
+    "port": 18967,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.1411411035064,
+    "latency_ms": 1408.4540000000002,
+    "checked_at": "2026-11-05T01:28:05.182907+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 142,
+    "id": "3c9153d714c0ebfb",
+    "address": "510.150333.xyz",
+    "port": 21001,
+    "transport": "tcp_reality",
+    "speed_mbps": 13.113961886597775,
+    "latency_ms": 1242.4360000000001,
+    "checked_at": "2026-11-05T01:27:02.531057+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 143,
+    "id": "6c5c7a9040d053c0",
+    "address": "510.150333.xyz",
+    "port": 21004,
+    "transport": "tcp_reality",
+    "speed_mbps": 12.843634570880226,
+    "latency_ms": 1072.096,
+    "checked_at": "2026-11-05T01:26:47.994022+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 144,
+    "id": "21307a28c627ae64",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 12.399828531729023,
+    "latency_ms": 704.844,
+    "checked_at": "2026-11-05T01:27:50.350213+00:00",
+    "sources": [
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 145,
+    "id": "481fd106c4acfc25",
+    "address": "81.163.22.194",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 12.241282293746131,
+    "latency_ms": 3252.9370000000004,
+    "checked_at": "2026-11-05T01:28:39.072510+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 146,
+    "id": "3728f418265f1836",
+    "address": "bl1.nexfile.net",
+    "port": 4443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 12.065616779024493,
+    "latency_ms": 681.0730000000001,
+    "checked_at": "2026-11-05T01:27:57.649848+00:00",
+    "sources": [
+      "barry-far"
+    ]
+  },
+  {
+    "rank": 147,
+    "id": "bfad21ad727cb7e5",
+    "address": "217.19.122.170",
+    "port": 2083,
+    "transport": "tcp_reality",
+    "speed_mbps": 12.009804146145916,
+    "latency_ms": 888.9860000000001,
+    "checked_at": "2026-11-05T01:28:27.033303+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 148,
+    "id": "31a7bc3092224952",
+    "address": "bg1.fox-lisa.ru",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 11.979558539279552,
+    "latency_ms": 859.9480000000001,
+    "checked_at": "2026-11-05T01:27:51.060870+00:00",
+    "sources": [
+      "barry-far",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 149,
+    "id": "3b7c824f88cfc8ef",
+    "address": "217.19.122.170",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 11.791805654539756,
+    "latency_ms": 1092.388,
+    "checked_at": "2026-11-05T01:28:10.102638+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 150,
+    "id": "bd78acd0bc43d1b7",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 11.67030305391142,
+    "latency_ms": 1202.7259999999999,
+    "checked_at": "2026-11-05T01:27:13.310657+00:00",
+    "sources": [
+      "igareck-cidr-mobile",
+      "igareck-fixed",
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 151,
+    "id": "a9cf5ab97d033012",
+    "address": "217.19.122.170",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 11.55477133527965,
+    "latency_ms": 907.2710000000001,
+    "checked_at": "2026-11-05T01:27:01.817100+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 152,
+    "id": "ab137152ec0b9b78",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 11.468095563270577,
+    "latency_ms": 1069.703,
+    "checked_at": "2026-11-05T01:27:24.523394+00:00",
+    "sources": [
+      "igareck-cidr-mobile",
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 153,
+    "id": "1179c78710793263",
+    "address": "81.163.22.194",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 11.454018276218727,
+    "latency_ms": 1157.597,
+    "checked_at": "2026-11-05T01:27:40.312855+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 154,
+    "id": "65b65cc846a920e5",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 11.381482687506786,
+    "latency_ms": 1037.272,
+    "checked_at": "2026-11-05T01:27:54.738312+00:00",
+    "sources": [
+      "igareck-mobile"
+    ]
+  },
+  {
+    "rank": 155,
+    "id": "a627f1d0b3585be6",
+    "address": "54.37.136.194",
+    "port": 2053,
+    "transport": "tcp_reality",
+    "speed_mbps": 11.334294904057987,
+    "latency_ms": 832.308,
+    "checked_at": "2026-11-05T01:28:36.515526+00:00",
     "sources": [
       "barry-far",
       "vestranet",
@@ -1191,180 +2073,109 @@
     ]
   },
   {
-    "rank": 89,
-    "id": "e5f81b8efba57fcd",
-    "address": "191.44.108.6",
-    "port": 443,
+    "rank": 156,
+    "id": "01acd72c53f4d5b3",
+    "address": "217.19.122.170",
+    "port": 2096,
     "transport": "tcp_reality",
-    "speed_mbps": 14.173692876579706,
-    "latency_ms": 1074.4309999999998,
-    "checked_at": "2026-11-04T21:01:44.208075+00:00",
-    "sources": [
-      "barry-far",
-      "vestranet"
-    ]
-  },
-  {
-    "rank": 90,
-    "id": "c2529744ce342983",
-    "address": "46.29.255.123",
-    "port": 59539,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.802625895818137,
-    "latency_ms": 3819.369,
-    "checked_at": "2026-11-04T21:01:34.428250+00:00",
-    "sources": [
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 91,
-    "id": "ad11779bb490f375",
-    "address": "193.163.203.170",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.705252237275815,
-    "latency_ms": 1301.656,
-    "checked_at": "2026-11-04T21:02:35.019788+00:00",
-    "sources": [
-      "roosterkid",
-      "vestranet"
-    ]
-  },
-  {
-    "rank": 92,
-    "id": "6c5c7a9040d053c0",
-    "address": "510.150333.xyz",
-    "port": 21004,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.188100755572465,
-    "latency_ms": 1310.758,
-    "checked_at": "2026-11-04T21:02:02.995764+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 93,
-    "id": "1c43c1766226e26c",
-    "address": "103.106.229.177",
-    "port": 21004,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.173541129783267,
-    "latency_ms": 1226.846,
-    "checked_at": "2026-11-04T21:01:58.299569+00:00",
-    "sources": [
-      "barry-far",
-      "vestranet"
-    ]
-  },
-  {
-    "rank": 94,
-    "id": "b313675a75083795",
-    "address": "510.150333.xyz",
-    "port": 21002,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.161790582972657,
-    "latency_ms": 1294.127,
-    "checked_at": "2026-11-04T21:02:20.987370+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far",
-      "vestranet"
-    ]
-  },
-  {
-    "rank": 95,
-    "id": "3c9153d714c0ebfb",
-    "address": "510.150333.xyz",
-    "port": 21001,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.145815834012412,
-    "latency_ms": 1223.663,
-    "checked_at": "2026-11-04T21:01:54.995642+00:00",
-    "sources": [
-      "au1rxx",
-      "vestranet"
-    ]
-  },
-  {
-    "rank": 96,
-    "id": "c5b52b80592c8e3b",
-    "address": "510.150333.xyz",
-    "port": 21003,
-    "transport": "tcp_reality",
-    "speed_mbps": 13.14002954256024,
-    "latency_ms": 1259.264,
-    "checked_at": "2026-11-04T21:03:33.116380+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 97,
-    "id": "d2f3a3a2bea85063",
-    "address": "82.39.171.12",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 12.77537947954915,
-    "latency_ms": 4089.55,
-    "checked_at": "2026-11-04T21:01:33.304840+00:00",
-    "sources": [
-      "au1rxx",
-      "barry-far"
-    ]
-  },
-  {
-    "rank": 98,
-    "id": "d477a0a405c0d581",
-    "address": "130.12.242.106",
-    "port": 443,
-    "transport": "tcp_reality",
-    "speed_mbps": 12.057743031149787,
-    "latency_ms": 1427.571,
-    "checked_at": "2026-11-04T21:02:19.600587+00:00",
-    "sources": [
-      "au1rxx"
-    ]
-  },
-  {
-    "rank": 99,
-    "id": "8abb6b4aa0b7dba5",
-    "address": "185.178.208.140",
-    "port": 443,
-    "transport": "xhttp_tls",
-    "speed_mbps": 11.894103643333198,
-    "latency_ms": 715.591,
-    "checked_at": "2026-11-04T21:03:10.450346+00:00",
-    "sources": [
-      "igareck-cidr-mobile"
-    ]
-  },
-  {
-    "rank": 100,
-    "id": "5fe1679793b7cb40",
-    "address": "95.167.57.130",
-    "port": 9443,
-    "transport": "tcp_reality",
-    "speed_mbps": 11.157051921486008,
-    "latency_ms": 1664.01,
-    "checked_at": "2026-11-04T21:02:37.119214+00:00",
+    "speed_mbps": 11.11402175741974,
+    "latency_ms": 1034.4,
+    "checked_at": "2026-11-05T01:26:58.270062+00:00",
     "sources": [
       "zieng2"
     ]
   },
   {
-    "rank": 101,
-    "id": "f08e4a9cb81152be",
-    "address": "185.178.208.140",
+    "rank": 157,
+    "id": "ef70004fe5243c9b",
+    "address": "217.19.122.170",
+    "port": 2096,
+    "transport": "tcp_reality",
+    "speed_mbps": 10.794023827997831,
+    "latency_ms": 1163.248,
+    "checked_at": "2026-11-05T01:28:22.835788+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 158,
+    "id": "d477a0a405c0d581",
+    "address": "130.12.242.106",
+    "port": 443,
+    "transport": "tcp_reality",
+    "speed_mbps": 10.467592185313364,
+    "latency_ms": 675.586,
+    "checked_at": "2026-11-05T01:27:20.728122+00:00",
+    "sources": [
+      "au1rxx"
+    ]
+  },
+  {
+    "rank": 159,
+    "id": "f829155f55d0fcae",
+    "address": "217.19.122.170",
+    "port": 2096,
+    "transport": "tcp_reality",
+    "speed_mbps": 10.456964135013207,
+    "latency_ms": 1209.83,
+    "checked_at": "2026-11-05T01:27:59.721022+00:00",
+    "sources": [
+      "zieng2"
+    ]
+  },
+  {
+    "rank": 160,
+    "id": "f668883f8a66235c",
+    "address": "3.39.4.109",
+    "port": 13672,
+    "transport": "tcp_reality",
+    "speed_mbps": 10.351188085397283,
+    "latency_ms": 720.913,
+    "checked_at": "2026-11-05T01:28:22.939525+00:00",
+    "sources": [
+      "au1rxx",
+      "vestranet"
+    ]
+  },
+  {
+    "rank": 161,
+    "id": "8e0bdda21b8b5b94",
+    "address": "107.150.93.22",
     "port": 443,
     "transport": "xhttp_tls",
-    "speed_mbps": 10.742265150035696,
-    "latency_ms": 739.5690000000001,
-    "checked_at": "2026-11-04T21:02:09.717731+00:00",
+    "speed_mbps": 10.195766899948223,
+    "latency_ms": 1210.095,
+    "checked_at": "2026-11-05T01:27:53.688897+00:00",
+    "sources": [
+      "igareck-cidr-mobile",
+      "vpn-free-russia"
+    ]
+  },
+  {
+    "rank": 162,
+    "id": "891b5599a10b2d03",
+    "address": "107.150.93.22",
+    "port": 443,
+    "transport": "xhttp_tls",
+    "speed_mbps": 10.08319475154143,
+    "latency_ms": 960.062,
+    "checked_at": "2026-11-05T01:27:35.313805+00:00",
     "sources": [
       "igareck-cidr-mobile"
+    ]
+  },
+  {
+    "rank": 163,
+    "id": "f496f8a83eb605da",
+    "address": "217.19.122.170",
+    "port": 2087,
+    "transport": "tcp_reality",
+    "speed_mbps": 10.023704797718183,
+    "latency_ms": 967.1260000000001,
+    "checked_at": "2026-11-05T01:27:09.638252+00:00",
+    "sources": [
+      "zieng2"
     ]
   }
 ]
