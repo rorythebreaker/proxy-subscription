@@ -1,964 +1,52 @@
 {
   "nodes": {
-    "vless://39826f32-f5ca-42a5-ab33-188f7d199478@136.176.65.251:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O5NcKiTtNcJZiLMJhxT5d0Pn8KjVBvXGmztGd4_D-RI&security=reality&sid=cdac1a856b81390f&sni=www.apple.com&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp": {
-      "uri": "vless://39826f32-f5ca-42a5-ab33-188f7d199478@136.176.65.251:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O5NcKiTtNcJZiLMJhxT5d0Pn8KjVBvXGmztGd4_D-RI&security=reality&sid=cdac1a856b81390f&sni=www.apple.com&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp",
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "barry-far"
+        "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 28.472152736529488,
+      "speed_mbps": 441.8661539677105,
       "speed_samples_mbps": [
-        28.472152736529488,
-        28.919353671023103
+        441.8661539677105,
+        483.6605166051659
       ],
       "speed_attempts_mbps": [
-        28.472152736529488,
-        28.919353671023103
+        441.8661539677105,
+        483.6605166051659
       ],
-      "checked_at": "2026-11-15T16:33:45.861520+00:00",
+      "checked_at": "2026-11-15T21:15:00.030304+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "c93026abe9566e8744bcb648ae56b165038427258598ace14f931854b0ceb032",
-      "latency_ms": 487.815,
+      "config_digest": "a77f18b873d0132706ff12341b140ab4da4e870f5cb58357efbac21183f9f23d",
+      "latency_ms": 48.358,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "au1rxx",
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 21.005785687903394,
+      "speed_mbps": 436.5428809325561,
       "speed_samples_mbps": [
-        21.005785687903394,
-        21.08026783167666
+        475.43686238948084,
+        436.5428809325561
       ],
       "speed_attempts_mbps": [
-        21.005785687903394,
-        21.08026783167666
-      ],
-      "checked_at": "2026-11-15T16:34:15.508406+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "238a4dc1b97facf40f92a1d320213b14b67e0d395c15264f4e281508bf4c899c",
-      "latency_ms": 646.9350000000001,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.943900231569618,
-      "speed_samples_mbps": [
-        21.035072211920266,
-        20.943900231569618
-      ],
-      "speed_attempts_mbps": [
-        21.035072211920266,
-        20.943900231569618
-      ],
-      "checked_at": "2026-11-15T16:33:49.064530+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "062f4d3b26d3eefa5dd5995372eb4bd38fd4d563447e4ecb1c3f6a37dfb41367",
-      "latency_ms": 643.903,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.879675527274404,
-      "speed_samples_mbps": [
-        20.879675527274404,
-        21.189507053816136
-      ],
-      "speed_attempts_mbps": [
-        20.879675527274404,
+        475.43686238948084,
         null,
-        21.189507053816136
+        436.5428809325561
       ],
-      "checked_at": "2026-11-15T16:33:58.433071+00:00",
+      "checked_at": "2026-11-15T21:14:57.598052+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "f2d26a3f66827ac6ed3425b4c62d56e749b4beba6b6a06f67bb8cdb061e39b8b",
-      "latency_ms": 644.101,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.704330613433637,
-      "speed_samples_mbps": [
-        21.031670577852665,
-        20.704330613433637
-      ],
-      "speed_attempts_mbps": [
-        21.031670577852665,
-        null,
-        20.704330613433637
-      ],
-      "checked_at": "2026-11-15T16:33:55.009677+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "83c979119b42cd0486b1b7ca568dc0d03145afe45a56d849c63dc537769a5621",
-      "latency_ms": 530.0169999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.36910375640434,
-      "speed_samples_mbps": [
-        20.36910375640434,
-        20.451714120972824
-      ],
-      "speed_attempts_mbps": [
-        20.36910375640434,
-        20.451714120972824
-      ],
-      "checked_at": "2026-11-15T16:33:47.056432+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a20affd80fb4eb9a536d39a7bb661c4db74179638eb7090cf2c5548cc0ab3686",
-      "latency_ms": 647.422,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.14555235350624,
-      "speed_samples_mbps": [
-        20.224332052326783,
-        20.14555235350624
-      ],
-      "speed_attempts_mbps": [
-        20.224332052326783,
-        20.14555235350624
-      ],
-      "checked_at": "2026-11-15T16:34:23.029318+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "fe9e5ac8180c5d0037ccaa32881441c1c3638fb721e4c419561796d2b24b41c7",
-      "latency_ms": 669.599,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.073530608240365,
-      "speed_samples_mbps": [
-        20.073530608240365,
-        20.70417731047845
-      ],
-      "speed_attempts_mbps": [
-        20.073530608240365,
-        20.70417731047845
-      ],
-      "checked_at": "2026-11-15T16:34:09.527474+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "bfd21498deadd82c266e0d4f1d19664fe30b4e71b26f50e6b6009b970bdadb88",
-      "latency_ms": 789.873,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 20.011063970887303,
-      "speed_samples_mbps": [
-        20.011063970887303,
-        20.884093961653033
-      ],
-      "speed_attempts_mbps": [
-        20.011063970887303,
-        20.884093961653033
-      ],
-      "checked_at": "2026-11-15T16:33:46.430959+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "9867a3e46153afb9f35eed55bf3e7013d6ce32e820e9ae9cf1c246873c0614bc",
-      "latency_ms": 527.949,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 19.123170003328305,
-      "speed_samples_mbps": [
-        19.123170003328305,
-        19.13084568264437
-      ],
-      "speed_attempts_mbps": [
-        19.123170003328305,
-        19.13084568264437
-      ],
-      "checked_at": "2026-11-15T16:34:36.947849+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "9d8b3ab4c091eb8e5a60ab0e34cf2ad96d5d70626f006c7ce3586360460b012d",
-      "latency_ms": 762.6619999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://fa895069-bfe5-42c9-9f30-f918e1e442c1@143.246.60.254:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE&security=reality&sid=eb68848e2575a1f4&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://fa895069-bfe5-42c9-9f30-f918e1e442c1@143.246.60.254:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE&security=reality&sid=eb68848e2575a1f4&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far",
-        "vestranet"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.742770323863574,
-      "speed_samples_mbps": [
-        18.742770323863574,
-        19.527782239572783
-      ],
-      "speed_attempts_mbps": [
-        18.742770323863574,
-        19.527782239572783
-      ],
-      "checked_at": "2026-11-15T16:33:50.256253+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "45a195269a3958a3c9c797a3914a2561f859ebe8351e86b590e935f34485d250",
-      "latency_ms": 785.729,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.580283911322564,
-      "speed_samples_mbps": [
-        19.300794938165087,
-        18.580283911322564
-      ],
-      "speed_attempts_mbps": [
-        19.300794938165087,
-        null,
-        18.580283911322564
-      ],
-      "checked_at": "2026-11-15T16:34:56.829562+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "fa2260394676af247b6be05afa4b6e210e92011140c4e9e22a0a953e29402cc6",
-      "latency_ms": 690.5949999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.553982469217175,
-      "speed_samples_mbps": [
-        18.553982469217175,
-        18.58540902993102
-      ],
-      "speed_attempts_mbps": [
-        18.553982469217175,
-        18.58540902993102
-      ],
-      "checked_at": "2026-11-15T16:34:37.275665+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "1683430bd90ec5f8e3ebe77caa84faa4b7ccc91797260b7651340c48f5ee478b",
-      "latency_ms": 775.276,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.547931363477066,
-      "speed_samples_mbps": [
-        18.547931363477066,
-        19.187074137524846
-      ],
-      "speed_attempts_mbps": [
-        18.547931363477066,
-        19.187074137524846
-      ],
-      "checked_at": "2026-11-15T16:34:09.010190+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "6ffeeac675d416f998d0074cb8cd76051cbbc0bc8ad8f3c2488d99147b652203",
-      "latency_ms": 721.483,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.535984337919118,
-      "speed_samples_mbps": [
-        19.22550747489841,
-        18.535984337919118
-      ],
-      "speed_attempts_mbps": [
-        19.22550747489841,
-        18.535984337919118
-      ],
-      "checked_at": "2026-11-15T16:34:20.740662+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "ea496c9c02d6c01f20bafcecafdc6032c4b77ca46e0d5a667bf5f285a368453f",
-      "latency_ms": 906.982,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.522477963646644,
-      "speed_samples_mbps": [
-        19.214278188289942,
-        18.522477963646644
-      ],
-      "speed_attempts_mbps": [
-        19.214278188289942,
-        18.522477963646644
-      ],
-      "checked_at": "2026-11-15T16:34:31.974166+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "e3d096fcec90bb3d1c57366e72126bd4aad87cd0ec3d95a8bb598095cf1a6dc9",
-      "latency_ms": 705.518,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.52063771021321,
-      "speed_samples_mbps": [
-        19.27580347366716,
-        18.52063771021321
-      ],
-      "speed_attempts_mbps": [
-        19.27580347366716,
-        18.52063771021321
-      ],
-      "checked_at": "2026-11-15T16:34:48.213304+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "126c52f0866222e938b34afd513b0e489cab854f27e4782b587806a8a1dd1418",
-      "latency_ms": 4479.838,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.512340665936936,
-      "speed_samples_mbps": [
-        18.565192565608637,
-        18.512340665936936
-      ],
-      "speed_attempts_mbps": [
-        18.565192565608637,
-        18.512340665936936
-      ],
-      "checked_at": "2026-11-15T16:34:35.250850+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "557322d4a1ad7a05a33c72891c424dd4fb5cf065419b5d9c8f3ee787b9255d10",
-      "latency_ms": 769.44,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.74:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.74:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.504724561432532,
-      "speed_samples_mbps": [
-        19.27835065761805,
-        18.504724561432532
-      ],
-      "speed_attempts_mbps": [
-        19.27835065761805,
-        null,
-        18.504724561432532
-      ],
-      "checked_at": "2026-11-15T16:34:12.887956+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "f7d14e385a4f7532d5d1feab889dba2ee99504e341da850b60593fc0c2186af7",
-      "latency_ms": 3752.7200000000003,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.163:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.163:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.497706146381045,
-      "speed_samples_mbps": [
-        19.25982695422679,
-        18.497706146381045
-      ],
-      "speed_attempts_mbps": [
-        19.25982695422679,
-        18.497706146381045
-      ],
-      "checked_at": "2026-11-15T16:34:10.296518+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "c98f4e1adda5bd85336e46fe346b57f8d63f1463df48a64a2941bccc6ead5439",
-      "latency_ms": 719.932,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.495605737896486,
-      "speed_samples_mbps": [
-        18.495605737896486,
-        19.16338295546573
-      ],
-      "speed_attempts_mbps": [
-        18.495605737896486,
-        19.16338295546573
-      ],
-      "checked_at": "2026-11-15T16:34:33.984801+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "64d6beebd44ec61fc39dac47ad5fe80575574552663a0decdf1d62f69479d31b",
-      "latency_ms": 736.788,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.49379120594458,
-      "speed_samples_mbps": [
-        18.49379120594458,
-        19.134402133189784
-      ],
-      "speed_attempts_mbps": [
-        18.49379120594458,
-        19.134402133189784
-      ],
-      "checked_at": "2026-11-15T16:34:40.929889+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "32d88b132fa076d7345058ba8c1eed4a12f2145fe5b2bccc18fefa7cf4d45ce0",
-      "latency_ms": 773.7,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.462957908915634,
-      "speed_samples_mbps": [
-        18.462957908915634,
-        19.230179198158734
-      ],
-      "speed_attempts_mbps": [
-        null,
-        18.462957908915634,
-        19.230179198158734
-      ],
-      "checked_at": "2026-11-15T16:34:06.858490+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "f03f5b55be1bee9f6ccb4d4662a410a529c03a5f433c0776f928931146721558",
-      "latency_ms": 779.163,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.451952074154402,
-      "speed_samples_mbps": [
-        18.451952074154402,
-        18.59777033595718
-      ],
-      "speed_attempts_mbps": [
-        18.451952074154402,
-        18.59777033595718
-      ],
-      "checked_at": "2026-11-15T16:34:58.092787+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "ee27477e6e3a7c067c1092838b8fb95d141cdb109fa09dbd5c8f34d526c051bc",
-      "latency_ms": 597.438,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.4505316130508,
-      "speed_samples_mbps": [
-        18.492303147740323,
-        18.4505316130508
-      ],
-      "speed_attempts_mbps": [
-        18.492303147740323,
-        18.4505316130508
-      ],
-      "checked_at": "2026-11-15T16:35:20.589490+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a13ba4677c9e63d8035827fdc8503dcd7839381b2bdf05995bd8739e9280e2cb",
-      "latency_ms": 723.25,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.432065250230988,
-      "speed_samples_mbps": [
-        18.432065250230988,
-        18.559154677174202
-      ],
-      "speed_attempts_mbps": [
-        18.432065250230988,
-        null,
-        18.559154677174202
-      ],
-      "checked_at": "2026-11-15T16:34:39.666347+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "c19b078f93cd100349739d1c207ee7b8d01b3600d599890ae89f886435333d9a",
-      "latency_ms": 640.6460000000001,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?encryption=none&flow=&fp=random&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&security=reality&sid=83f8317a948bb769&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?encryption=none&flow=&fp=random&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&security=reality&sid=83f8317a948bb769&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.257080145340897,
-      "speed_samples_mbps": [
-        18.257080145340897,
-        18.324840395611357
-      ],
-      "speed_attempts_mbps": [
-        18.257080145340897,
-        18.324840395611357
-      ],
-      "checked_at": "2026-11-15T16:34:51.929718+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "d6ddf7b7d65b094619e192151a7171ddb6ac1ab23f155b579c1baf25e70ef56e",
-      "latency_ms": 570.0699999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
-      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 18.174232937434734,
-      "speed_samples_mbps": [
-        18.174232937434734,
-        18.469766975904957
-      ],
-      "speed_attempts_mbps": [
-        18.174232937434734,
-        18.469766975904957
-      ],
-      "checked_at": "2026-11-15T16:34:48.357834+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "902529aef2f36888149a4372fb0837d4d7dfe194e5f1fdc06e37cba0b591f28f",
-      "latency_ms": 771.521,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 17.643865005189927,
-      "speed_samples_mbps": [
-        17.643865005189927,
-        21.03887068477965
-      ],
-      "speed_attempts_mbps": [
-        17.643865005189927,
-        21.03887068477965
-      ],
-      "checked_at": "2026-11-15T16:33:46.842260+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "99efe472bafc79766f98b4ee7309adba98dad14ac557712d6db66651094e7bb4",
-      "latency_ms": 627.0329999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 16.53121498973771,
-      "speed_samples_mbps": [
-        19.10535653686989,
-        16.53121498973771
-      ],
-      "speed_attempts_mbps": [
-        null,
-        19.10535653686989,
-        16.53121498973771
-      ],
-      "checked_at": "2026-11-15T16:34:52.837663+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a27490debf3e50f3ee3326f6ca20ef4b19610977748ab2537d7a1f90e2fee0d6",
-      "latency_ms": 3951.513,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "vestranet",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 15.703445784170022,
-      "speed_samples_mbps": [
-        15.737251227155857,
-        15.703445784170022
-      ],
-      "speed_attempts_mbps": [
-        15.737251227155857,
-        15.703445784170022
-      ],
-      "checked_at": "2026-11-15T16:34:04.611530+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "3f814c9c3b8678a56037fb521fab0b3b148b26ad815ea1b759f9f6d1ce207efb",
-      "latency_ms": 817.149,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 15.425268355023931,
-      "speed_samples_mbps": [
-        3.643792536066067,
-        15.775740445066301,
-        15.425268355023931
-      ],
-      "speed_attempts_mbps": [
-        3.643792536066067,
-        15.775740445066301,
-        15.425268355023931
-      ],
-      "checked_at": "2026-11-15T16:37:13.326497+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "170d3d133294c8e4345d0f872cf43099276e371aff689409100bc32267d11af8",
-      "latency_ms": 780.069,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.501646616268397,
-      "speed_samples_mbps": [
-        14.64595174763579,
-        14.501646616268397
-      ],
-      "speed_attempts_mbps": [
-        14.64595174763579,
-        14.501646616268397
-      ],
-      "checked_at": "2026-11-15T16:33:58.580983+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "477d2bfd75af300a5aec787a3f31677c8858906d031ba00ba2545c042d27e105",
-      "latency_ms": 747.384,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far",
-        "vestranet",
-        "vpn-free-russia",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.41969655167672,
-      "speed_samples_mbps": [
-        14.443245327979781,
-        14.41969655167672
-      ],
-      "speed_attempts_mbps": [
-        14.443245327979781,
-        14.41969655167672
-      ],
-      "checked_at": "2026-11-15T16:33:59.847979+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "fa225441f8ef562c1e239567f8e966f9a606e1291030f7893ea776941fc3fb62",
-      "latency_ms": 906.609,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.368544964822055,
-      "speed_samples_mbps": [
-        14.368544964822055,
-        15.007622238939884
-      ],
-      "speed_attempts_mbps": [
-        14.368544964822055,
-        15.007622238939884
-      ],
-      "checked_at": "2026-11-15T16:34:06.256001+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "6c2bda638b9a027e76631fa01aeaa77ddfd0b4aedbfaa5f7dd4a1e802154086e",
-      "latency_ms": 908.986,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far",
-        "vestranet",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.359014387073032,
-      "speed_samples_mbps": [
-        14.359014387073032,
-        14.382032334939224
-      ],
-      "speed_attempts_mbps": [
-        14.359014387073032,
-        14.382032334939224
-      ],
-      "checked_at": "2026-11-15T16:33:54.800755+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "1a759e88367d4b2ebc7c7097022895f71ec6ddc92bdd827055a0ee91f886174c",
-      "latency_ms": 887.5260000000001,
+      "config_digest": "a4396fc839667306e107cebc6e708b12e32c21c3569ffa2e4f39d8933b187cc0",
+      "latency_ms": 59.893,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -975,46 +63,99 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 14.288806124595556,
+      "speed_mbps": 418.25927403270833,
       "speed_samples_mbps": [
-        14.848236988157494,
-        14.288806124595556
+        470.21345291479815,
+        418.25927403270833
       ],
       "speed_attempts_mbps": [
-        14.848236988157494,
-        14.288806124595556
+        470.21345291479815,
+        418.25927403270833
       ],
-      "checked_at": "2026-11-15T16:34:07.253053+00:00",
+      "checked_at": "2026-11-15T21:14:55.418374+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "590f9cdbff944beba9b035fe33c4d4dc178b0826552291a36d66dfa891cc1ed8",
-      "latency_ms": 860.0400000000001,
+      "latency_ms": 55.282,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@edge.bookmai.com:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp": {
-      "uri": "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@edge.bookmai.com:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp",
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "au1rxx"
+        "barry-far",
+        "vestranet",
+        "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 14.224911291519172,
+      "speed_mbps": 410.692908374336,
       "speed_samples_mbps": [
-        14.224911291519172,
-        14.297756294442893
+        410.96453066823443,
+        410.692908374336
       ],
       "speed_attempts_mbps": [
-        null,
-        14.224911291519172,
-        14.297756294442893
+        410.96453066823443,
+        410.692908374336
       ],
-      "checked_at": "2026-11-15T16:35:09.369271+00:00",
+      "checked_at": "2026-11-15T21:14:58.184754+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "e359561a25f83f5b3a68815ffc2cd355b513d4fc2b268d2922df5cde00f49910",
-      "latency_ms": 1062.989,
+      "config_digest": "1a759e88367d4b2ebc7c7097022895f71ec6ddc92bdd827055a0ee91f886174c",
+      "latency_ms": 53.576,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "vestranet"
+      ],
+      "status": "passed",
+      "speed_mbps": 410.49193804898346,
+      "speed_samples_mbps": [
+        410.49193804898346,
+        443.41938894174865
+      ],
+      "speed_attempts_mbps": [
+        410.49193804898346,
+        443.41938894174865
+      ],
+      "checked_at": "2026-11-15T21:15:00.378888+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "10c7b892bbf8cfb3bf5f6a34c78acdfc476f5bb3460bf28b6bbb46afe52ace9c",
+      "latency_ms": 52.376,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 406.83874096706927,
+      "speed_samples_mbps": [
+        406.83874096706927,
+        413.27263769829545
+      ],
+      "speed_attempts_mbps": [
+        406.83874096706927,
+        413.27263769829545
+      ],
+      "checked_at": "2026-11-15T21:14:56.248219+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "9ffb8d3a26e4c52d970f60650de209c5b18f602a0882c04c07c625a972cfa287",
+      "latency_ms": 56.141000000000005,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1032,19 +173,45 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 14.224645956961185,
+      "speed_mbps": 398.0831889903903,
       "speed_samples_mbps": [
-        14.224645956961185,
-        14.914181224036975
+        449.2252657509304,
+        398.0831889903903
       ],
       "speed_attempts_mbps": [
-        14.224645956961185,
-        14.914181224036975
+        449.2252657509304,
+        398.0831889903903
       ],
-      "checked_at": "2026-11-15T16:33:50.743420+00:00",
+      "checked_at": "2026-11-15T21:15:01.091861+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "9c37ed8b9073c61c2ebb4b0b898fe99c0e77f57d6baa861f35a5bfe75ef7aa30",
-      "latency_ms": 734.46,
+      "latency_ms": 51.788000000000004,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 397.30074831865113,
+      "speed_samples_mbps": [
+        411.3474231353897,
+        397.30074831865113
+      ],
+      "speed_attempts_mbps": [
+        411.3474231353897,
+        397.30074831865113
+      ],
+      "checked_at": "2026-11-15T21:15:00.836399+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "6c2bda638b9a027e76631fa01aeaa77ddfd0b4aedbfaa5f7dd4a1e802154086e",
+      "latency_ms": 54.351,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1060,101 +227,20 @@
         "vestranet"
       ],
       "status": "passed",
-      "speed_mbps": 14.204762009587686,
+      "speed_mbps": 396.10945579034365,
       "speed_samples_mbps": [
-        14.367622097952399,
-        14.204762009587686
+        396.10945579034365,
+        459.58679632927
       ],
       "speed_attempts_mbps": [
-        14.367622097952399,
-        14.204762009587686
+        null,
+        396.10945579034365,
+        459.58679632927
       ],
-      "checked_at": "2026-11-15T16:36:26.383488+00:00",
+      "checked_at": "2026-11-15T21:15:01.447547+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "697b4f5ee7699eeb87bf8c5e861b8cb482018bca288b0e8317828fc45f3c05e9",
-      "latency_ms": 1222.48,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far",
-        "vestranet",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.137694330753913,
-      "speed_samples_mbps": [
-        14.137694330753913,
-        14.419374329082721
-      ],
-      "speed_attempts_mbps": [
-        14.137694330753913,
-        14.419374329082721
-      ],
-      "checked_at": "2026-11-15T16:33:55.832841+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "2bf297d77fe2592f9fc137b6c3688aaa2a0a36f86caf656c8d1577b1b6270409",
-      "latency_ms": 912.798,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.110512562374526,
-      "speed_samples_mbps": [
-        14.432994586298769,
-        14.110512562374526
-      ],
-      "speed_attempts_mbps": [
-        14.432994586298769,
-        14.110512562374526
-      ],
-      "checked_at": "2026-11-15T16:34:44.967432+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "9ffb8d3a26e4c52d970f60650de209c5b18f602a0882c04c07c625a972cfa287",
-      "latency_ms": 872.871,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.195:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "vestranet",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 14.069262784146893,
-      "speed_samples_mbps": [
-        14.176567264947229,
-        14.069262784146893
-      ],
-      "speed_attempts_mbps": [
-        14.176567264947229,
-        14.069262784146893
-      ],
-      "checked_at": "2026-11-15T16:34:03.054860+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a4396fc839667306e107cebc6e708b12e32c21c3569ffa2e4f39d8933b187cc0",
-      "latency_ms": 917.5419999999999,
+      "latency_ms": 224.845,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1171,19 +257,530 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 14.065794912166416,
+      "speed_mbps": 383.07644533747373,
       "speed_samples_mbps": [
-        14.065794912166416,
-        14.542663101187095
+        383.07644533747373,
+        456.82121657681216
       ],
       "speed_attempts_mbps": [
-        14.065794912166416,
-        14.542663101187095
+        383.07644533747373,
+        456.82121657681216
       ],
-      "checked_at": "2026-11-15T16:36:57.969169+00:00",
+      "checked_at": "2026-11-15T21:15:00.291469+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "7a3431bbda6e1a145f8588d00b7401a43cf271442a58f1a6e0d67a7065d8e208",
-      "latency_ms": 738.0550000000001,
+      "latency_ms": 56.199,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 372.5455433672336,
+      "speed_samples_mbps": [
+        372.5455433672336,
+        427.0859150268565
+      ],
+      "speed_attempts_mbps": [
+        372.5455433672336,
+        427.0859150268565
+      ],
+      "checked_at": "2026-11-15T21:15:00.118214+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "477d2bfd75af300a5aec787a3f31677c8858906d031ba00ba2545c042d27e105",
+      "latency_ms": 87.023,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.216:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far",
+        "vestranet",
+        "vpn-free-russia",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 307.7202545808037,
+      "speed_samples_mbps": [
+        307.7202545808037,
+        428.6901062959936
+      ],
+      "speed_attempts_mbps": [
+        307.7202545808037,
+        428.6901062959936
+      ],
+      "checked_at": "2026-11-15T21:15:04.842323+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "fa225441f8ef562c1e239567f8e966f9a606e1291030f7893ea776941fc3fb62",
+      "latency_ms": 62.468,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://fa895069-bfe5-42c9-9f30-f918e1e442c1@143.246.60.254:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE&security=reality&sid=eb68848e2575a1f4&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://fa895069-bfe5-42c9-9f30-f918e1e442c1@143.246.60.254:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE&security=reality&sid=eb68848e2575a1f4&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 95.72157401966099,
+      "speed_samples_mbps": [
+        95.72157401966099,
+        96.1560760893861
+      ],
+      "speed_attempts_mbps": [
+        95.72157401966099,
+        96.1560760893861
+      ],
+      "checked_at": "2026-11-15T21:14:43.470898+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "45a195269a3958a3c9c797a3914a2561f859ebe8351e86b590e935f34485d250",
+      "latency_ms": 174.762,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&security=reality&sid=19296c9f1bf9c7b1&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 70.92220935246323,
+      "speed_samples_mbps": [
+        70.92220935246323,
+        72.95456759201282
+      ],
+      "speed_attempts_mbps": [
+        70.92220935246323,
+        null,
+        72.95456759201282
+      ],
+      "checked_at": "2026-11-15T21:15:04.276314+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "170d3d133294c8e4345d0f872cf43099276e371aff689409100bc32267d11af8",
+      "latency_ms": 149.241,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far",
+        "vestranet",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 48.63257183770606,
+      "speed_samples_mbps": [
+        369.0950610493894,
+        48.63257183770606
+      ],
+      "speed_attempts_mbps": [
+        369.0950610493894,
+        48.63257183770606
+      ],
+      "checked_at": "2026-11-15T21:15:01.105015+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "2bf297d77fe2592f9fc137b6c3688aaa2a0a36f86caf656c8d1577b1b6270409",
+      "latency_ms": 2038.706,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far",
+        "vestranet",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 39.95088892381401,
+      "speed_samples_mbps": [
+        40.58143151896009,
+        39.95088892381401
+      ],
+      "speed_attempts_mbps": [
+        40.58143151896009,
+        39.95088892381401
+      ],
+      "checked_at": "2026-11-15T21:14:52.177756+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "99efe472bafc79766f98b4ee7309adba98dad14ac557712d6db66651094e7bb4",
+      "latency_ms": 291.911,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.218273255852644,
+      "speed_samples_mbps": [
+        37.400055284581846,
+        37.218273255852644
+      ],
+      "speed_attempts_mbps": [
+        37.400055284581846,
+        37.218273255852644
+      ],
+      "checked_at": "2026-11-15T21:14:55.445892+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "fa2260394676af247b6be05afa4b6e210e92011140c4e9e22a0a953e29402cc6",
+      "latency_ms": 2328.6310000000003,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.74:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.74:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.13375460652272,
+      "speed_samples_mbps": [
+        37.29471940958753,
+        37.13375460652272
+      ],
+      "speed_attempts_mbps": [
+        37.29471940958753,
+        37.13375460652272
+      ],
+      "checked_at": "2026-11-15T21:14:54.046212+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "f7d14e385a4f7532d5d1feab889dba2ee99504e341da850b60593fc0c2186af7",
+      "latency_ms": 431.255,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.049700770708654,
+      "speed_samples_mbps": [
+        37.35608617818114,
+        37.049700770708654
+      ],
+      "speed_attempts_mbps": [
+        37.35608617818114,
+        37.049700770708654
+      ],
+      "checked_at": "2026-11-15T21:15:36.382336+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "33c8559cf9ff6e13ba42e674de205b5fc22b43f7c1cbb4da11a02d60eda9aacc",
+      "latency_ms": 1569.172,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.03228170394422,
+      "speed_samples_mbps": [
+        37.193108157239,
+        37.03228170394422
+      ],
+      "speed_attempts_mbps": [
+        37.193108157239,
+        37.03228170394422
+      ],
+      "checked_at": "2026-11-15T21:14:50.778398+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "32d88b132fa076d7345058ba8c1eed4a12f2145fe5b2bccc18fefa7cf4d45ce0",
+      "latency_ms": 410.198,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.03105562643194,
+      "speed_samples_mbps": [
+        37.06115885042745,
+        37.03105562643194
+      ],
+      "speed_attempts_mbps": [
+        37.06115885042745,
+        37.03105562643194
+      ],
+      "checked_at": "2026-11-15T21:14:51.394579+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "c19b078f93cd100349739d1c207ee7b8d01b3600d599890ae89f886435333d9a",
+      "latency_ms": 340.705,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.231:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 37.02925752626468,
+      "speed_samples_mbps": [
+        37.056984015143314,
+        37.02925752626468
+      ],
+      "speed_attempts_mbps": [
+        37.056984015143314,
+        37.02925752626468
+      ],
+      "checked_at": "2026-11-15T21:15:00.089484+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "902529aef2f36888149a4372fb0837d4d7dfe194e5f1fdc06e37cba0b591f28f",
+      "latency_ms": 333.459,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.163:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.163:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.89870965045977,
+      "speed_samples_mbps": [
+        36.89870965045977,
+        36.906501945722155
+      ],
+      "speed_attempts_mbps": [
+        36.89870965045977,
+        36.906501945722155
+      ],
+      "checked_at": "2026-11-15T21:14:49.180967+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "c98f4e1adda5bd85336e46fe346b57f8d63f1463df48a64a2941bccc6ead5439",
+      "latency_ms": 419.15599999999995,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.77617174998575,
+      "speed_samples_mbps": [
+        36.77617174998575,
+        40.49855769346821
+      ],
+      "speed_attempts_mbps": [
+        36.77617174998575,
+        40.49855769346821
+      ],
+      "checked_at": "2026-11-15T21:14:52.223462+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "fe9e5ac8180c5d0037ccaa32881441c1c3638fb721e4c419561796d2b24b41c7",
+      "latency_ms": 281.233,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.2958581673824,
+      "speed_samples_mbps": [
+        36.2958581673824,
+        36.94356033831648
+      ],
+      "speed_attempts_mbps": [
+        36.2958581673824,
+        36.94356033831648
+      ],
+      "checked_at": "2026-11-15T21:18:23.541802+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "13c6683631d58f2029522e00151c9393939490a854385d4e29ffb5c0c61dc6f8",
+      "latency_ms": 452.104,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.1672246426331,
+      "speed_samples_mbps": [
+        36.1672246426331,
+        36.69412840264382
+      ],
+      "speed_attempts_mbps": [
+        36.1672246426331,
+        36.69412840264382
+      ],
+      "checked_at": "2026-11-15T21:14:51.721063+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "9d8b3ab4c091eb8e5a60ab0e34cf2ad96d5d70626f006c7ce3586360460b012d",
+      "latency_ms": 459.14,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.15763725156357,
+      "speed_samples_mbps": [
+        36.2419932515629,
+        36.15763725156357
+      ],
+      "speed_attempts_mbps": [
+        36.2419932515629,
+        36.15763725156357
+      ],
+      "checked_at": "2026-11-15T21:14:49.933136+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "062f4d3b26d3eefa5dd5995372eb4bd38fd4d563447e4ecb1c3f6a37dfb41367",
+      "latency_ms": 306.555,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.097500941315694,
+      "speed_samples_mbps": [
+        36.57940224832771,
+        36.097500941315694
+      ],
+      "speed_attempts_mbps": [
+        36.57940224832771,
+        36.097500941315694
+      ],
+      "checked_at": "2026-11-15T21:14:53.846793+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "238a4dc1b97facf40f92a1d320213b14b67e0d395c15264f4e281508bf4c899c",
+      "latency_ms": 341.517,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 36.0516582646777,
+      "speed_samples_mbps": [
+        36.81741195162469,
+        36.0516582646777
+      ],
+      "speed_attempts_mbps": [
+        36.81741195162469,
+        36.0516582646777
+      ],
+      "checked_at": "2026-11-15T21:14:46.689474+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "6ffeeac675d416f998d0074cb8cd76051cbbc0bc8ad8f3c2488d99147b652203",
+      "latency_ms": 429.502,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1197,72 +794,468 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 13.959910601806937,
+      "speed_mbps": 36.00430921631494,
       "speed_samples_mbps": [
-        13.959910601806937,
-        14.185785141856027
+        468.2580032934215,
+        36.00430921631494
       ],
       "speed_attempts_mbps": [
-        13.959910601806937,
-        14.185785141856027
+        468.2580032934215,
+        36.00430921631494
       ],
-      "checked_at": "2026-11-15T16:34:03.277218+00:00",
+      "checked_at": "2026-11-15T21:14:58.293886+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "992f29b793f18a29aa4d9e1e8c12a17841d7071dc50150d4ee49db31e2949e6f",
-      "latency_ms": 917.783,
+      "latency_ms": 66.97200000000001,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
+    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "vestranet"
+        "au1rxx",
+        "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 13.916221724355024,
+      "speed_mbps": 35.93444195988726,
       "speed_samples_mbps": [
-        14.634198592336793,
-        13.916221724355024
+        35.93444195988726,
+        35.988399430267876
       ],
       "speed_attempts_mbps": [
-        14.634198592336793,
-        13.916221724355024
+        35.93444195988726,
+        35.988399430267876
       ],
-      "checked_at": "2026-11-15T16:33:51.337799+00:00",
+      "checked_at": "2026-11-15T21:14:45.294573+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "10c7b892bbf8cfb3bf5f6a34c78acdfc476f5bb3460bf28b6bbb46afe52ace9c",
-      "latency_ms": 889.498,
+      "config_digest": "f2d26a3f66827ac6ed3425b4c62d56e749b4beba6b6a06f67bb8cdb061e39b8b",
+      "latency_ms": 305.94,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.197:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+    "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://00144519-7e0d-476b-8d28-435576af9262@167.17.69.171:443?encryption=none&flow=xtls-rprx-vision&fp=qq&pbk=ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk&security=reality&sid=0990d22f&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 35.34404223450176,
+      "speed_samples_mbps": [
+        35.34404223450176,
+        35.48210373152636
+      ],
+      "speed_attempts_mbps": [
+        35.34404223450176,
+        35.48210373152636
+      ],
+      "checked_at": "2026-11-15T21:14:44.614193+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "83c979119b42cd0486b1b7ca568dc0d03145afe45a56d849c63dc537769a5621",
+      "latency_ms": 314.29400000000004,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 33.14057253024233,
+      "speed_samples_mbps": [
+        33.14057253024233,
+        36.95780207773442
+      ],
+      "speed_attempts_mbps": [
+        33.14057253024233,
+        36.95780207773442
+      ],
+      "checked_at": "2026-11-15T21:14:51.155934+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "a13ba4677c9e63d8035827fdc8503dcd7839381b2bdf05995bd8739e9280e2cb",
+      "latency_ms": 1767.118,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 31.92941628746572,
+      "speed_samples_mbps": [
+        31.92941628746572,
+        32.06360272757851
+      ],
+      "speed_attempts_mbps": [
+        31.92941628746572,
+        32.06360272757851
+      ],
+      "checked_at": "2026-11-15T21:14:53.179719+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "a20affd80fb4eb9a536d39a7bb661c4db74179638eb7090cf2c5548cc0ab3686",
+      "latency_ms": 337.43600000000004,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 31.879120461506893,
+      "speed_samples_mbps": [
+        31.884270160455042,
+        31.879120461506893
+      ],
+      "speed_attempts_mbps": [
+        31.884270160455042,
+        31.879120461506893
+      ],
+      "checked_at": "2026-11-15T21:14:47.219045+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "bfd21498deadd82c266e0d4f1d19664fe30b4e71b26f50e6b6009b970bdadb88",
+      "latency_ms": 352.92,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&security=reality&sid=a3a578ab&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 31.875001899898162,
+      "speed_samples_mbps": [
+        31.990542346832733,
+        31.875001899898162
+      ],
+      "speed_attempts_mbps": [
+        31.990542346832733,
+        31.875001899898162
+      ],
+      "checked_at": "2026-11-15T21:14:46.582744+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "9867a3e46153afb9f35eed55bf3e7013d6ce32e820e9ae9cf1c246873c0614bc",
+      "latency_ms": 368.76599999999996,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 31.612060551475164,
+      "speed_samples_mbps": [
+        36.135831240496074,
+        31.612060551475164
+      ],
+      "speed_attempts_mbps": [
+        36.135831240496074,
+        31.612060551475164
+      ],
+      "checked_at": "2026-11-15T21:14:44.843668+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "f03f5b55be1bee9f6ccb4d4662a410a529c03a5f433c0776f928931146721558",
+      "latency_ms": 391.288,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 29.906817140626362,
+      "speed_samples_mbps": [
+        29.906817140626362,
+        36.27592440036412
+      ],
+      "speed_attempts_mbps": [
+        29.906817140626362,
+        36.27592440036412
+      ],
+      "checked_at": "2026-11-15T21:14:56.278646+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "ea496c9c02d6c01f20bafcecafdc6032c4b77ca46e0d5a667bf5f285a368453f",
+      "latency_ms": 364.464,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 29.777036285026654,
+      "speed_samples_mbps": [
+        35.27582153948373,
+        29.777036285026654
+      ],
+      "speed_attempts_mbps": [
+        35.27582153948373,
+        29.777036285026654
+      ],
+      "checked_at": "2026-11-15T21:14:57.399452+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "557322d4a1ad7a05a33c72891c424dd4fb5cf065419b5d9c8f3ee787b9255d10",
+      "latency_ms": 442.269,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 29.494927190994634,
+      "speed_samples_mbps": [
+        29.494927190994634,
+        29.561500944433483
+      ],
+      "speed_attempts_mbps": [
+        29.494927190994634,
+        29.561500944433483
+      ],
+      "checked_at": "2026-11-15T21:18:10.200768+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "f0ac8f2d71457e7761ad136f0ca22969fa661e58c593465b378626447a7a53db",
+      "latency_ms": 1427.9660000000001,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 29.187462270075798,
+      "speed_samples_mbps": [
+        29.187462270075798,
+        32.47949077336472
+      ],
+      "speed_attempts_mbps": [
+        29.187462270075798,
+        32.47949077336472
+      ],
+      "checked_at": "2026-11-15T21:14:47.407889+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "1683430bd90ec5f8e3ebe77caa84faa4b7ccc91797260b7651340c48f5ee478b",
+      "latency_ms": 437.113,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?encryption=none&flow=&fp=random&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&security=reality&sid=83f8317a948bb769&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?encryption=none&flow=&fp=random&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&security=reality&sid=83f8317a948bb769&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 28.44627712424507,
+      "speed_samples_mbps": [
+        29.38689946541299,
+        28.44627712424507
+      ],
+      "speed_attempts_mbps": [
+        29.38689946541299,
+        28.44627712424507
+      ],
+      "checked_at": "2026-11-15T21:15:13.560885+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "d6ddf7b7d65b094619e192151a7171ddb6ac1ab23f155b579c1baf25e70ef56e",
+      "latency_ms": 359.363,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 28.110591140846036,
+      "speed_samples_mbps": [
+        28.110591140846036,
+        36.84668313841761
+      ],
+      "speed_attempts_mbps": [
+        28.110591140846036,
+        36.84668313841761
+      ],
+      "checked_at": "2026-11-15T21:15:21.388390+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "ee27477e6e3a7c067c1092838b8fb95d141cdb109fa09dbd5c8f34d526c051bc",
+      "latency_ms": 1325.749,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 27.370995634270646,
+      "speed_samples_mbps": [
+        37.10886779265131,
+        27.370995634270646
+      ],
+      "speed_attempts_mbps": [
+        37.10886779265131,
+        27.370995634270646
+      ],
+      "checked_at": "2026-11-15T21:14:44.725292+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "e3d096fcec90bb3d1c57366e72126bd4aad87cd0ec3d95a8bb598095cf1a6dc9",
+      "latency_ms": 358.949,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp": {
+      "uri": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.229:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 26.9348655682225,
+      "speed_samples_mbps": [
+        26.9348655682225,
+        37.52763257080099
+      ],
+      "speed_attempts_mbps": [
+        null,
+        26.9348655682225,
+        37.52763257080099
+      ],
+      "checked_at": "2026-11-15T21:14:55.489544+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "64d6beebd44ec61fc39dac47ad5fe80575574552663a0decdf1d62f69479d31b",
+      "latency_ms": 470.773,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 13.911663689839482,
+      "speed_mbps": 24.788151720388168,
       "speed_samples_mbps": [
-        13.911663689839482,
-        14.433590594413326
+        24.788151720388168,
+        26.13961619180127
       ],
       "speed_attempts_mbps": [
-        13.911663689839482,
-        null,
-        14.433590594413326
+        24.788151720388168,
+        26.13961619180127
       ],
-      "checked_at": "2026-11-15T16:33:54.646438+00:00",
+      "checked_at": "2026-11-15T21:15:00.853414+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a77f18b873d0132706ff12341b140ab4da4e870f5cb58357efbac21183f9f23d",
-      "latency_ms": 913.119,
+      "config_digest": "a27490debf3e50f3ee3326f6ca20ef4b19610977748ab2537d7a1f90e2fee0d6",
+      "latency_ms": 4533.471,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://ca52e2b6-fb9f-4dac-b6dc-49da9923f251@209.200.246.148:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk&security=reality&sid=f98843107912e782&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 23.292048568786807,
+      "speed_samples_mbps": [
+        23.292048568786807,
+        26.011913510764643
+      ],
+      "speed_attempts_mbps": [
+        23.292048568786807,
+        26.011913510764643
+      ],
+      "checked_at": "2026-11-15T21:17:02.520905+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "125513c6ba8debd3d4bf6a54a4142bea006787f4c7952f0f5b519bebd384d4f6",
+      "latency_ms": 407.494,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1278,151 +1271,74 @@
         "vpn-free-russia"
       ],
       "status": "passed",
-      "speed_mbps": 13.809601652817731,
+      "speed_mbps": 20.282375583607966,
       "speed_samples_mbps": [
-        14.108436024696385,
-        13.809601652817731
+        20.282375583607966,
+        52.63721045514583
       ],
       "speed_attempts_mbps": [
-        14.108436024696385,
-        13.809601652817731
+        20.282375583607966,
+        52.63721045514583
       ],
-      "checked_at": "2026-11-15T16:34:45.689176+00:00",
+      "checked_at": "2026-11-15T21:15:07.186288+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "375c1ce494e5f4ea73ded65b97ad9004c1d611e0ed29c70213ba8decebeae742",
-      "latency_ms": 2116.017,
+      "latency_ms": 1023.5609999999999,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?encryption=none&flow=&fp=chrome&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk&security=reality&sid=29e8dcd2b37aaa7f&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?encryption=none&flow=&fp=chrome&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk&security=reality&sid=29e8dcd2b37aaa7f&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 13.40523610074612,
-      "speed_samples_mbps": [
-        13.63707493913913,
-        13.40523610074612
-      ],
-      "speed_attempts_mbps": [
-        null,
-        13.63707493913913,
-        13.40523610074612
-      ],
-      "checked_at": "2026-11-15T16:35:16.959971+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "c67ef3fc8eed4e99517df9c84346b365cd52d0085f7281bf4f62a097332bc5a6",
-      "latency_ms": 1030.823,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://faf19d58-79f2-4857-f790-3ebd8cb2459d@host.taghvimtime.ir:8443?alpn=h2&encryption=none&extra=%7B%22scMaxBufferedPosts%22%3A30%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22scStreamUpServerSecs%22%3A%2220-80%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%7D&flow=&fp=chrome&host=host.taghvimtime.ir&mode=auto&path=%2FMeh%3Fdi%3D443&security=tls&sni=host.taghvimtime.ir&type=xhttp": {
-      "uri": "vless://faf19d58-79f2-4857-f790-3ebd8cb2459d@host.taghvimtime.ir:8443?alpn=h2&encryption=none&extra=%7B%22scMaxBufferedPosts%22%3A30%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22scStreamUpServerSecs%22%3A%2220-80%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%7D&flow=&fp=chrome&host=host.taghvimtime.ir&mode=auto&path=%2FMeh%3Fdi%3D443&security=tls&sni=host.taghvimtime.ir&type=xhttp",
+    "vless://2e69b088-6ef3-417f-8247-125cf257fafd@3.174.189.0:443?encryption=none&flow=&fp=firefox&host=&mode=auto&path=%2Fcf&security=tls&sni=d1b9pmaut2v26v.cloudfront.net&type=xhttp": {
+      "uri": "vless://2e69b088-6ef3-417f-8247-125cf257fafd@3.174.189.0:443?encryption=none&flow=&fp=firefox&host=&mode=auto&path=%2Fcf&security=tls&sni=d1b9pmaut2v26v.cloudfront.net&type=xhttp",
       "transport": "xhttp_tls",
       "sources": [
-        "barry-far"
+        "igareck-fixed",
+        "igareck-mobile"
       ],
       "status": "passed",
-      "speed_mbps": 13.080711559092839,
+      "speed_mbps": 19.82787306637294,
       "speed_samples_mbps": [
-        13.080711559092839,
-        81.07755354519446
+        19.82787306637294,
+        81.33382458453725
       ],
       "speed_attempts_mbps": [
-        13.080711559092839,
-        81.07755354519446
+        19.82787306637294,
+        81.33382458453725
       ],
-      "checked_at": "2026-11-15T16:35:07.441391+00:00",
+      "checked_at": "2026-11-15T21:15:16.317261+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "ee6306a2d11944d5f585e4e8b2ada815e0dc704a9e4c8798cd24a9b6c38b3f40",
-      "latency_ms": 1157.265,
+      "config_digest": "524fdaa0b7f32ee5d2cc84e3d0293ceb13ec8b6eb8f03e58963c4c9c74f09f77",
+      "latency_ms": 904.826,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://8e790f25-1d71-4601-9fb0-d503931dcfca@51.89.194.151:2053?encryption=none&flow=&fp=firefox&pbk=xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0&security=reality&sid=d051f678212f9d54&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://8e790f25-1d71-4601-9fb0-d503931dcfca@51.89.194.151:2053?encryption=none&flow=&fp=firefox&pbk=xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0&security=reality&sid=d051f678212f9d54&sni=www.apple.com&spx=%2F&type=tcp",
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.8:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.8:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 12.851751360841767,
-      "speed_samples_mbps": [
-        12.851751360841767,
-        13.36869373838113
-      ],
-      "speed_attempts_mbps": [
-        12.851751360841767,
-        13.36869373838113
-      ],
-      "checked_at": "2026-11-15T16:35:12.472143+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "5e55dc5ceefbbf89095cd6c91e8d9119716aa852b4c4bcd9bb477224d8efacb7",
-      "latency_ms": 1049.402,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.25:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.25:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
+        "au1rxx",
         "barry-far",
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 12.595186008765543,
+      "speed_mbps": 16.488907453181124,
       "speed_samples_mbps": [
-        12.595186008765543,
-        12.68829782969902
+        16.488907453181124,
+        17.164287855427748
       ],
       "speed_attempts_mbps": [
-        12.595186008765543,
-        12.68829782969902
+        16.488907453181124,
+        17.164287855427748
       ],
-      "checked_at": "2026-11-15T16:36:38.537763+00:00",
+      "checked_at": "2026-11-15T21:15:08.652628+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "1d8ffd7b238d3ba1a28b3456f68ad82f0417a7634fd975c8e2b2e263a0881fa3",
-      "latency_ms": 1024.207,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.20:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.20:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 12.593682747169517,
-      "speed_samples_mbps": [
-        12.725060469236723,
-        12.593682747169517
-      ],
-      "speed_attempts_mbps": [
-        12.725060469236723,
-        12.593682747169517
-      ],
-      "checked_at": "2026-11-15T16:35:27.567467+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "5fb40314b65d9d5b78c2543d2fb272fccbd69f3314830b6548c5807b10efc30f",
-      "latency_ms": 1020.7189999999999,
+      "config_digest": "d7f4d95470abc9bcec914f07d29eaf6a0f323f3ce8f7caaaed1de74cd4c605c3",
+      "latency_ms": 611.456,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1439,19 +1355,72 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 12.510526096008496,
+      "speed_mbps": 16.1070345081835,
       "speed_samples_mbps": [
-        12.698698735066333,
-        12.510526096008496
+        16.41961324317685,
+        16.1070345081835
       ],
       "speed_attempts_mbps": [
-        12.698698735066333,
-        12.510526096008496
+        16.41961324317685,
+        16.1070345081835
       ],
-      "checked_at": "2026-11-15T16:37:02.594267+00:00",
+      "checked_at": "2026-11-15T21:15:05.456796+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "bc9022f498dc255e8beb54ed0c4fc20e12b1a9dca5afbccac99980b9fdb0d43c",
-      "latency_ms": 1006.665,
+      "latency_ms": 675.1030000000001,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.96:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.96:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 16.09752999118231,
+      "speed_samples_mbps": [
+        16.09752999118231,
+        16.243031425509272
+      ],
+      "speed_attempts_mbps": [
+        16.09752999118231,
+        16.243031425509272
+      ],
+      "checked_at": "2026-11-15T21:15:17.249249+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "a6927d7ca7da16ad883d0de6f314abbffc21d67bc758c7752563996d8846a518",
+      "latency_ms": 765.996,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.25:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.25:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 16.01452428111204,
+      "speed_samples_mbps": [
+        16.22750912827953,
+        16.01452428111204
+      ],
+      "speed_attempts_mbps": [
+        16.22750912827953,
+        16.01452428111204
+      ],
+      "checked_at": "2026-11-15T21:15:08.344837+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "1d8ffd7b238d3ba1a28b3456f68ad82f0417a7634fd975c8e2b2e263a0881fa3",
+      "latency_ms": 643.2520000000001,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1465,233 +1434,45 @@
         "au1rxx"
       ],
       "status": "passed",
-      "speed_mbps": 12.373435916649088,
+      "speed_mbps": 15.716979965488106,
       "speed_samples_mbps": [
-        12.772529784041433,
-        12.373435916649088
+        15.716979965488106,
+        16.00989380949836
       ],
       "speed_attempts_mbps": [
-        12.772529784041433,
-        12.373435916649088
+        15.716979965488106,
+        16.00989380949836
       ],
-      "checked_at": "2026-11-15T16:35:34.078395+00:00",
+      "checked_at": "2026-11-15T21:15:11.858882+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "1413fe84ece12d32fb7eba419385fc8d58ba53a1d6dcabe1ade37992caa30332",
-      "latency_ms": 1034.979,
+      "latency_ms": 615.992,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.8:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.8:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "barry-far",
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 12.174535469479515,
-      "speed_samples_mbps": [
-        12.174535469479515,
-        12.60364499601845
-      ],
-      "speed_attempts_mbps": [
-        12.174535469479515,
-        null,
-        12.60364499601845
-      ],
-      "checked_at": "2026-11-15T16:34:53.593174+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "d7f4d95470abc9bcec914f07d29eaf6a0f323f3ce8f7caaaed1de74cd4c605c3",
-      "latency_ms": 810.1519999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@163.245.42.56:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F&type=tcp": {
-      "uri": "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@163.245.42.56:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far",
-        "vestranet"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.88374942802622,
-      "speed_samples_mbps": [
-        14.49670961676713,
-        11.88374942802622
-      ],
-      "speed_attempts_mbps": [
-        14.49670961676713,
-        11.88374942802622
-      ],
-      "checked_at": "2026-11-15T16:34:58.811246+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "8aab37f86c7be8405425b8ec187b769968f9f7f2b291ab8a912b63ee387c142a",
-      "latency_ms": 1016.488,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx",
-        "vestranet"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.791573599922408,
-      "speed_samples_mbps": [
-        11.791573599922408,
-        12.04308954352849
-      ],
-      "speed_attempts_mbps": [
-        null,
-        11.791573599922408,
-        12.04308954352849
-      ],
-      "checked_at": "2026-11-15T16:36:02.450065+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "f846fd3541283c36762823d06ce26bac99c7aa1983bd83de624b549ebe54401a",
-      "latency_ms": 1099.0,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://3950b45e-740d-4dca-ac95-505ec8534592@45.90.59.15:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY&security=reality&sid=19253fae84102271&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://3950b45e-740d-4dca-ac95-505ec8534592@45.90.59.15:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY&security=reality&sid=19253fae84102271&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.699527478228852,
-      "speed_samples_mbps": [
-        11.845237960755961,
-        11.699527478228852
-      ],
-      "speed_attempts_mbps": [
-        11.845237960755961,
-        11.699527478228852
-      ],
-      "checked_at": "2026-11-15T16:35:30.512617+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a40c140342d26385d0e59792ac793ce2d8dde731f2dba826465d553f94c09cce",
-      "latency_ms": 3163.239,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&security=reality&sid=&sni=cloudflare-dns.com&spx=%2F&type=tcp": {
-      "uri": "vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&security=reality&sid=&sni=cloudflare-dns.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.528292292765519,
-      "speed_samples_mbps": [
-        11.528292292765519,
-        11.602276027850083
-      ],
-      "speed_attempts_mbps": [
-        11.528292292765519,
-        11.602276027850083
-      ],
-      "checked_at": "2026-11-15T16:35:21.659393+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "79b85dda88c62aa3ee6791520f8865f2d2fdf2d243b1b3bcc4399d1beac88c05",
-      "latency_ms": 1286.943,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://71b566cb-78c4-48e4-af5b-720e4f7884f2@31.76.32.122:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI&security=reality&sid=cb33163cf9c03ab1&sni=p1.xvanta.online&spx=%2F&type=tcp": {
-      "uri": "vless://71b566cb-78c4-48e4-af5b-720e4f7884f2@31.76.32.122:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI&security=reality&sid=cb33163cf9c03ab1&sni=p1.xvanta.online&spx=%2F&type=tcp",
+    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.20:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp": {
+      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.20:23576?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=&sni=fuck.rkn&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
         "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 11.459557374574551,
+      "speed_mbps": 15.709489150882002,
       "speed_samples_mbps": [
-        11.459557374574551,
-        11.63015246485073
+        16.13749348333368,
+        15.709489150882002
       ],
       "speed_attempts_mbps": [
-        11.459557374574551,
-        11.63015246485073
+        16.13749348333368,
+        15.709489150882002
       ],
-      "checked_at": "2026-11-15T16:35:26.265286+00:00",
+      "checked_at": "2026-11-15T21:15:05.102729+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "124c8c3ff2ed5e1156716623a6cdead668d3401f2a9b941916a4d9163131741e",
-      "latency_ms": 1172.2269999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://dc2259c4-388e-4285-ba18-df619b6672b6@82.118.16.187:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU&security=reality&sid=cd6065902eea7a02&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://dc2259c4-388e-4285-ba18-df619b6672b6@82.118.16.187:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU&security=reality&sid=cd6065902eea7a02&sni=www.cloudflare.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "zieng2"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.441223745774467,
-      "speed_samples_mbps": [
-        11.761987054058734,
-        11.441223745774467
-      ],
-      "speed_attempts_mbps": [
-        11.761987054058734,
-        11.441223745774467
-      ],
-      "checked_at": "2026-11-15T16:35:47.664962+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "b0a899b0becefef2ce3815398a7651aab6306b635e593f8f6af93a1fb622f09a",
-      "latency_ms": 1137.786,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@88.218.42.115:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM&security=reality&sid=dd908a76dbe472d4&sni=edge-3b715ba41dc5.eu-cdn539.com&spx=%2F&type=tcp": {
-      "uri": "vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@88.218.42.115:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM&security=reality&sid=dd908a76dbe472d4&sni=edge-3b715ba41dc5.eu-cdn539.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 11.152127498344852,
-      "speed_samples_mbps": [
-        11.152127498344852,
-        11.74064406509231
-      ],
-      "speed_attempts_mbps": [
-        11.152127498344852,
-        11.74064406509231
-      ],
-      "checked_at": "2026-11-15T16:35:49.445630+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "169392bd6f795dbb3ae2535515fef15776fef4901cd0d1c18928b6b27e9c9dcd",
-      "latency_ms": 3012.698,
+      "config_digest": "5fb40314b65d9d5b78c2543d2fb272fccbd69f3314830b6548c5807b10efc30f",
+      "latency_ms": 657.83,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1706,45 +1487,45 @@
         "vpn-free-russia"
       ],
       "status": "passed",
-      "speed_mbps": 11.131232335027402,
+      "speed_mbps": 15.629305992103932,
       "speed_samples_mbps": [
-        12.152313016721981,
-        11.131232335027402
+        15.629305992103932,
+        16.618295242595064
       ],
       "speed_attempts_mbps": [
-        12.152313016721981,
-        11.131232335027402
+        15.629305992103932,
+        16.618295242595064
       ],
-      "checked_at": "2026-11-15T16:36:54.995514+00:00",
+      "checked_at": "2026-11-15T21:15:13.172782+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "c9548f4d3b21b65fd00fcc651723c3eb2e7f95eaede688a962e519565bb5e2bf",
-      "latency_ms": 1015.601,
+      "latency_ms": 633.407,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@86.54.28.75:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@86.54.28.75:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
+    "vless://3536e1fa-0850-44d1-b123-925ce12476cf@206.71.158.124:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir%2F%3F%40VPNine1%3Fed%3D2048&security=tls&sni=dey.lnmarketplace.net&type=xhttp": {
+      "uri": "vless://3536e1fa-0850-44d1-b123-925ce12476cf@206.71.158.124:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir%2F%3F%40VPNine1%3Fed%3D2048&security=tls&sni=dey.lnmarketplace.net&type=xhttp",
+      "transport": "xhttp_tls",
       "sources": [
-        "au1rxx"
+        "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 11.049018232588157,
+      "speed_mbps": 15.55344021685724,
       "speed_samples_mbps": [
-        11.049018232588157,
-        12.28142751730519
+        15.55344021685724,
+        17.27853542687536
       ],
       "speed_attempts_mbps": [
-        11.049018232588157,
-        12.28142751730519
+        15.55344021685724,
+        17.27853542687536
       ],
-      "checked_at": "2026-11-15T16:35:25.291715+00:00",
+      "checked_at": "2026-11-15T21:15:45.046110+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "8300532a4886799d122b24190503ece5b4dae799420cac60bc38b45549fb4adb",
-      "latency_ms": 1135.125,
+      "config_digest": "36d3e5efa5a4cb524ff5ad60e63a018d6a813dfe73e1d8f918d6a1dc1954dea3",
+      "latency_ms": 642.572,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1758,19 +1539,202 @@
         "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 11.02721703231879,
+      "speed_mbps": 15.455265334849024,
       "speed_samples_mbps": [
-        11.02721703231879,
-        25.04088251668301
+        17.315735370007225,
+        15.455265334849024
       ],
       "speed_attempts_mbps": [
-        11.02721703231879,
-        25.04088251668301
+        17.315735370007225,
+        15.455265334849024
       ],
-      "checked_at": "2026-11-15T16:33:59.614895+00:00",
+      "checked_at": "2026-11-15T21:15:30.924316+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "b1b3b2c4921c66abd7f36f44077c9c7a42953cb04bc73e5d8f5d115d2eb3f579",
-      "latency_ms": 1352.343,
+      "latency_ms": 597.037,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@edge.bookmai.com:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp": {
+      "uri": "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@edge.bookmai.com:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F%3FTELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 15.32914803122987,
+      "speed_samples_mbps": [
+        15.489153485314715,
+        15.32914803122987
+      ],
+      "speed_attempts_mbps": [
+        15.489153485314715,
+        15.32914803122987
+      ],
+      "checked_at": "2026-11-15T21:15:00.376217+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "e359561a25f83f5b3a68815ffc2cd355b513d4fc2b268d2922df5cde00f49910",
+      "latency_ms": 667.2869999999999,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 15.251321303577111,
+      "speed_samples_mbps": [
+        15.251321303577111,
+        16.08820638514346
+      ],
+      "speed_attempts_mbps": [
+        15.251321303577111,
+        16.08820638514346
+      ],
+      "checked_at": "2026-11-15T21:17:40.571721+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "920a2fa2cc0c1ef81a0323ee65a5788b16bd3c5e59af46fee0cf6f36d5f0a060",
+      "latency_ms": 623.259,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://71b566cb-78c4-48e4-af5b-720e4f7884f2@31.76.32.122:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI&security=reality&sid=cb33163cf9c03ab1&sni=p1.xvanta.online&spx=%2F&type=tcp": {
+      "uri": "vless://71b566cb-78c4-48e4-af5b-720e4f7884f2@31.76.32.122:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI&security=reality&sid=cb33163cf9c03ab1&sni=p1.xvanta.online&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 15.13746521775221,
+      "speed_samples_mbps": [
+        15.230290612753263,
+        15.13746521775221
+      ],
+      "speed_attempts_mbps": [
+        15.230290612753263,
+        15.13746521775221
+      ],
+      "checked_at": "2026-11-15T21:15:24.549002+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "124c8c3ff2ed5e1156716623a6cdead668d3401f2a9b941916a4d9163131741e",
+      "latency_ms": 691.721,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://8e790f25-1d71-4601-9fb0-d503931dcfca@51.89.194.151:2053?encryption=none&flow=&fp=firefox&pbk=xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0&security=reality&sid=d051f678212f9d54&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://8e790f25-1d71-4601-9fb0-d503931dcfca@51.89.194.151:2053?encryption=none&flow=&fp=firefox&pbk=xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0&security=reality&sid=d051f678212f9d54&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 15.123233339372813,
+      "speed_samples_mbps": [
+        15.123233339372813,
+        15.343517705589697
+      ],
+      "speed_attempts_mbps": [
+        15.123233339372813,
+        15.343517705589697
+      ],
+      "checked_at": "2026-11-15T21:15:04.720779+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "5e55dc5ceefbbf89095cd6c91e8d9119716aa852b4c4bcd9bb477224d8efacb7",
+      "latency_ms": 641.651,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://dc2259c4-388e-4285-ba18-df619b6672b6@82.118.16.187:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU&security=reality&sid=cd6065902eea7a02&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://dc2259c4-388e-4285-ba18-df619b6672b6@82.118.16.187:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU&security=reality&sid=cd6065902eea7a02&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 15.083884088356957,
+      "speed_samples_mbps": [
+        15.083884088356957,
+        15.33576174619033
+      ],
+      "speed_attempts_mbps": [
+        15.083884088356957,
+        15.33576174619033
+      ],
+      "checked_at": "2026-11-15T21:15:16.089753+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "b0a899b0becefef2ce3815398a7651aab6306b635e593f8f6af93a1fb622f09a",
+      "latency_ms": 3652.332,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@86.54.28.75:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@86.54.28.75:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 14.904720996489973,
+      "speed_samples_mbps": [
+        14.904720996489973,
+        15.558834767060988
+      ],
+      "speed_attempts_mbps": [
+        14.904720996489973,
+        15.558834767060988
+      ],
+      "checked_at": "2026-11-15T21:15:12.325172+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "8300532a4886799d122b24190503ece5b4dae799420cac60bc38b45549fb4adb",
+      "latency_ms": 637.6579999999999,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://bf16ee0c-8b3c-41e4-ab3a-8b48033c404e@51.77.217.70:2053?encryption=none&flow=&fp=chrome&pbk=g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w&security=reality&sid=bfe58beb41f1d09f&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://bf16ee0c-8b3c-41e4-ab3a-8b48033c404e@51.77.217.70:2053?encryption=none&flow=&fp=chrome&pbk=g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w&security=reality&sid=bfe58beb41f1d09f&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 14.841288628695679,
+      "speed_samples_mbps": [
+        14.841288628695679,
+        14.843179409323913
+      ],
+      "speed_attempts_mbps": [
+        14.841288628695679,
+        14.843179409323913
+      ],
+      "checked_at": "2026-11-15T21:16:05.293610+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "f5c87cef96d85bf58959ca1121a2665b0c120ace84d2c4e9bb51c146c4e15d40",
+      "latency_ms": 677.1740000000001,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1784,72 +1748,125 @@
         "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 11.02386952090776,
+      "speed_mbps": 14.229483836932573,
       "speed_samples_mbps": [
-        11.02386952090776,
-        24.540758607878036
+        14.229483836932573,
+        34.39257915398257
       ],
       "speed_attempts_mbps": [
-        11.02386952090776,
-        24.540758607878036
+        14.229483836932573,
+        34.39257915398257
       ],
-      "checked_at": "2026-11-15T16:34:50.034143+00:00",
+      "checked_at": "2026-11-15T21:15:21.421857+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "27bd4127ec0d1b48c6d105382534dd1e311491217d7ad5d298b291626b1a9bec",
-      "latency_ms": 1695.893,
+      "latency_ms": 1257.065,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://2e69b088-6ef3-417f-8247-125cf257fafd@3.174.189.0:443?encryption=none&flow=&fp=firefox&host=&mode=auto&path=%2Fcf&security=tls&sni=d1b9pmaut2v26v.cloudfront.net&type=xhttp": {
-      "uri": "vless://2e69b088-6ef3-417f-8247-125cf257fafd@3.174.189.0:443?encryption=none&flow=&fp=firefox&host=&mode=auto&path=%2Fcf&security=tls&sni=d1b9pmaut2v26v.cloudfront.net&type=xhttp",
-      "transport": "xhttp_tls",
-      "sources": [
-        "igareck-fixed",
-        "igareck-mobile"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.911641362373436,
-      "speed_samples_mbps": [
-        10.911641362373436,
-        13.86755363203391
-      ],
-      "speed_attempts_mbps": [
-        10.911641362373436,
-        13.86755363203391
-      ],
-      "checked_at": "2026-11-15T16:35:36.452620+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "524fdaa0b7f32ee5d2cc84e3d0293ceb13ec8b6eb8f03e58963c4c9c74f09f77",
-      "latency_ms": 2439.242,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.96:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp": {
-      "uri": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.96:23576?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&security=reality&sid=01&sni=fuck.rkn&spx=%2F&type=tcp",
+    "vless://bc058e69-0444-4c7b-98da-bd67f0b143da@130.12.242.106:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&security=reality&sid=15affa0af66dfc79&sni=deepl.com&spx=%2F&type=tcp": {
+      "uri": "vless://bc058e69-0444-4c7b-98da-bd67f0b143da@130.12.242.106:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&security=reality&sid=15affa0af66dfc79&sni=deepl.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "zieng2"
+        "au1rxx"
       ],
       "status": "passed",
-      "speed_mbps": 10.848086074901719,
+      "speed_mbps": 14.20263359505619,
       "speed_samples_mbps": [
-        12.535090629249416,
-        10.848086074901719
+        14.236704546997407,
+        14.20263359505619
       ],
       "speed_attempts_mbps": [
-        12.535090629249416,
-        10.848086074901719
+        14.236704546997407,
+        14.20263359505619
       ],
-      "checked_at": "2026-11-15T16:34:53.509241+00:00",
+      "checked_at": "2026-11-15T21:16:01.601772+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "a6927d7ca7da16ad883d0de6f314abbffc21d67bc758c7752563996d8846a518",
-      "latency_ms": 1072.779,
+      "config_digest": "8357a086f9ebade4e2dc40e9dec5e9eb64c021f6713067cf41dbd2777c9c1a48",
+      "latency_ms": 678.837,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@88.218.42.115:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM&security=reality&sid=dd908a76dbe472d4&sni=edge-3b715ba41dc5.eu-cdn539.com&spx=%2F&type=tcp": {
+      "uri": "vless://e75ad2eb-6c1f-45ce-8023-f5f10875df66@88.218.42.115:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM&security=reality&sid=dd908a76dbe472d4&sni=edge-3b715ba41dc5.eu-cdn539.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 14.164108036552502,
+      "speed_samples_mbps": [
+        14.164108036552502,
+        14.398646062372446
+      ],
+      "speed_attempts_mbps": [
+        14.164108036552502,
+        14.398646062372446
+      ],
+      "checked_at": "2026-11-15T21:15:22.440629+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "169392bd6f795dbb3ae2535515fef15776fef4901cd0d1c18928b6b27e9c9dcd",
+      "latency_ms": 2210.12,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@163.245.42.56:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F&type=tcp": {
+      "uri": "vless://b9bfa54d-bc44-4592-a6d6-89a9665d286f@163.245.42.56:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&security=reality&sid=&sni=mother-earth.fyi&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far",
+        "vestranet"
+      ],
+      "status": "passed",
+      "speed_mbps": 13.894117208624396,
+      "speed_samples_mbps": [
+        13.894117208624396,
+        15.801474923475395
+      ],
+      "speed_attempts_mbps": [
+        13.894117208624396,
+        15.801474923475395
+      ],
+      "checked_at": "2026-11-15T21:15:28.484515+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "8aab37f86c7be8405425b8ec187b769968f9f7f2b291ab8a912b63ee387c142a",
+      "latency_ms": 648.573,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp": {
+      "uri": "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp",
+      "transport": "xhttp_tls",
+      "sources": [
+        "barry-far",
+        "vpn-free-russia"
+      ],
+      "status": "passed",
+      "speed_mbps": 13.771932445588558,
+      "speed_samples_mbps": [
+        13.771932445588558,
+        24.784563066350323
+      ],
+      "speed_attempts_mbps": [
+        13.771932445588558,
+        24.784563066350323
+      ],
+      "checked_at": "2026-11-15T21:18:02.816623+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "7db99dfcd551068b3622d5f321b052a36f63111c85e3e6a100413e11e29e404c",
+      "latency_ms": 2759.9339999999997,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -1863,153 +1880,175 @@
         "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 10.783180332020239,
+      "speed_mbps": 13.655989405491466,
       "speed_samples_mbps": [
-        10.783180332020239,
-        25.494189156333576
+        13.655989405491466,
+        34.813280212483406
       ],
       "speed_attempts_mbps": [
-        10.783180332020239,
-        25.494189156333576
+        13.655989405491466,
+        34.813280212483406
       ],
-      "checked_at": "2026-11-15T16:35:09.563725+00:00",
+      "checked_at": "2026-11-15T21:15:24.650023+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "09a8c73815fab2137c32e406058d6920a6565e3acba285c8a8b92b4a35db3704",
-      "latency_ms": 2501.772,
+      "latency_ms": 1606.131,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp": {
-      "uri": "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp",
-      "transport": "xhttp_tls",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.749636707066722,
-      "speed_samples_mbps": [
-        10.749636707066722,
-        11.001640683710018
-      ],
-      "speed_attempts_mbps": [
-        10.749636707066722,
-        null,
-        11.001640683710018
-      ],
-      "checked_at": "2026-11-15T16:35:31.154790+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "90208f239f265835b0b4d5f7b592402280a43bf50117bd1a1eef5e0c79471b24",
-      "latency_ms": 3614.089,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp",
+    "vless://3950b45e-740d-4dca-ac95-505ec8534592@45.90.59.15:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY&security=reality&sid=19253fae84102271&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://3950b45e-740d-4dca-ac95-505ec8534592@45.90.59.15:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY&security=reality&sid=19253fae84102271&sni=www.cloudflare.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 10.674661478183301,
+      "speed_mbps": 13.483451500544088,
       "speed_samples_mbps": [
-        10.74285670377772,
-        10.674661478183301
+        13.483451500544088,
+        13.856924573775176
       ],
       "speed_attempts_mbps": [
-        10.74285670377772,
-        10.674661478183301
+        13.483451500544088,
+        13.856924573775176
       ],
-      "checked_at": "2026-11-15T16:35:41.346156+00:00",
+      "checked_at": "2026-11-15T21:15:13.942626+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "26bd7e192ee038e4fd79326b3011ae1ad3dc6593133c286e88eac877372379cf",
-      "latency_ms": 1063.393,
+      "config_digest": "a40c140342d26385d0e59792ac793ce2d8dde731f2dba826465d553f94c09cce",
+      "latency_ms": 1020.511,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@179.253.80.175:4443?encryption=none&flow=&fp=chrome&host=&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp": {
-      "uri": "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@179.253.80.175:4443?encryption=none&flow=&fp=chrome&host=&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp",
-      "transport": "xhttp_tls",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.627827483890911,
-      "speed_samples_mbps": [
-        10.627827483890911,
-        67.53596142002023
-      ],
-      "speed_attempts_mbps": [
-        10.627827483890911,
-        67.53596142002023
-      ],
-      "checked_at": "2026-11-15T16:35:43.185794+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "2db74ad7ad5a15a9c6b49152c17dbcaa16c797702584d60cc3d3d0f7e0bcb99b",
-      "latency_ms": 1013.1619999999999,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@swo2.nexfile.net:4443?encryption=none&flow=&fp=chrome&host=swo2.nexfile.net&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp": {
-      "uri": "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@swo2.nexfile.net:4443?encryption=none&flow=&fp=chrome&host=swo2.nexfile.net&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp",
-      "transport": "xhttp_tls",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.62341959909249,
-      "speed_samples_mbps": [
-        10.73752819228869,
-        10.62341959909249
-      ],
-      "speed_attempts_mbps": [
-        10.73752819228869,
-        10.62341959909249
-      ],
-      "checked_at": "2026-11-15T16:35:41.403371+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "27d880f01ff09fc0181ed36b948c572bec06b2096bbdbce6b8a85262b39c984c",
-      "latency_ms": 1209.256,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp": {
-      "uri": "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp",
+    "vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&security=reality&sid=&sni=cloudflare-dns.com&spx=%2F&type=tcp": {
+      "uri": "vless://30572b57-f5ab-4eb8-82d4-a24d399b99f6@46.29.255.123:59539?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ&security=reality&sid=&sni=cloudflare-dns.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "vestranet",
-        "zieng2"
+        "au1rxx"
       ],
       "status": "passed",
-      "speed_mbps": 10.613929836481665,
+      "speed_mbps": 13.328769974625054,
       "speed_samples_mbps": [
-        9.314677937927746,
-        10.613929836481665,
-        10.799895201746294
+        13.328769974625054,
+        14.18043755346016
       ],
       "speed_attempts_mbps": [
-        9.314677937927746,
-        10.613929836481665,
-        10.799895201746294
+        13.328769974625054,
+        14.18043755346016
       ],
-      "checked_at": "2026-11-15T16:35:40.931791+00:00",
+      "checked_at": "2026-11-15T21:15:18.613863+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "10703342b26927562f9604b7e4fbe29c83ccf13c1cb4006510091aea3ba2241e",
-      "latency_ms": 1275.262,
+      "config_digest": "79b85dda88c62aa3ee6791520f8865f2d2fdf2d243b1b3bcc4399d1beac88c05",
+      "latency_ms": 1577.5030000000002,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://faf19d58-79f2-4857-f790-3ebd8cb2459d@host.taghvimtime.ir:8443?alpn=h2&encryption=none&extra=%7B%22scMaxBufferedPosts%22%3A30%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22scStreamUpServerSecs%22%3A%2220-80%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%7D&flow=&fp=chrome&host=host.taghvimtime.ir&mode=auto&path=%2FMeh%3Fdi%3D443&security=tls&sni=host.taghvimtime.ir&type=xhttp": {
+      "uri": "vless://faf19d58-79f2-4857-f790-3ebd8cb2459d@host.taghvimtime.ir:8443?alpn=h2&encryption=none&extra=%7B%22scMaxBufferedPosts%22%3A30%2C%22scMaxEachPostBytes%22%3A%221000000%22%2C%22scMinPostsIntervalMs%22%3A%2230%22%2C%22scStreamUpServerSecs%22%3A%2220-80%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConcurrency%22%3A%2216-32%22%2C%22maxConnections%22%3A0%7D%7D&flow=&fp=chrome&host=host.taghvimtime.ir&mode=auto&path=%2FMeh%3Fdi%3D443&security=tls&sni=host.taghvimtime.ir&type=xhttp",
+      "transport": "xhttp_tls",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 13.082476164186588,
+      "speed_samples_mbps": [
+        13.082476164186588,
+        101.4078323047817
+      ],
+      "speed_attempts_mbps": [
+        13.082476164186588,
+        101.4078323047817
+      ],
+      "checked_at": "2026-11-15T21:15:09.383559+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "ee6306a2d11944d5f585e4e8b2ada815e0dc704a9e4c8798cd24a9b6c38b3f40",
+      "latency_ms": 764.206,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp": {
+      "uri": "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp",
+      "transport": "xhttp_tls",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 12.251463956974014,
+      "speed_samples_mbps": [
+        13.891241187161302,
+        12.251463956974014
+      ],
+      "speed_attempts_mbps": [
+        13.891241187161302,
+        12.251463956974014
+      ],
+      "checked_at": "2026-11-15T21:15:34.943747+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "80d684ca736d6abe46dc3cb793e4db9d16ead0d6afe04e1409871cb1ee030716",
+      "latency_ms": 2055.1949999999997,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&flow=&fp=random&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&flow=&fp=random&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.97261683623552,
+      "speed_samples_mbps": [
+        11.97261683623552,
+        12.37753466174139
+      ],
+      "speed_attempts_mbps": [
+        11.97261683623552,
+        12.37753466174139
+      ],
+      "checked_at": "2026-11-15T21:15:28.073177+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "0bd0d1ea93431d029b218a138e17d4783b8920d29cf7141de60fded23369b922",
+      "latency_ms": 985.108,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?encryption=none&flow=&fp=chrome&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk&security=reality&sid=29e8dcd2b37aaa7f&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://ead0dd61-d398-40ad-80d6-a0e1e516d7d3@212.227.235.66:2053?encryption=none&flow=&fp=chrome&pbk=7Y6Xb5Ql_03K25x8yKUSOKI2JTOMyv2nyCcFza90uxk&security=reality&sid=29e8dcd2b37aaa7f&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.772633978035271,
+      "speed_samples_mbps": [
+        11.772633978035271,
+        11.855123033210452
+      ],
+      "speed_attempts_mbps": [
+        11.772633978035271,
+        11.855123033210452
+      ],
+      "checked_at": "2026-11-15T21:15:27.251079+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "c67ef3fc8eed4e99517df9c84346b365cd52d0085f7281bf4f62a097332bc5a6",
+      "latency_ms": 882.231,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -2024,19 +2063,204 @@
         "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 10.593897205727464,
+      "speed_mbps": 11.406375712761827,
       "speed_samples_mbps": [
-        10.87111380666164,
-        10.593897205727464
+        11.406375712761827,
+        11.802589684316274
       ],
       "speed_attempts_mbps": [
-        10.87111380666164,
-        10.593897205727464
+        11.406375712761827,
+        11.802589684316274
       ],
-      "checked_at": "2026-11-15T16:35:47.214407+00:00",
+      "checked_at": "2026-11-15T21:17:15.039941+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "467e3c725c79c6661e8d9accbd5cfc4733c9db4bbbc5ab9617e2562d5bb5d962",
-      "latency_ms": 1264.1899999999998,
+      "latency_ms": 936.589,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@swo2.nexfile.net:4443?encryption=none&flow=&fp=chrome&host=swo2.nexfile.net&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp": {
+      "uri": "vless://a35c508f-4d5d-4531-842e-6e9d43c762c0@swo2.nexfile.net:4443?encryption=none&flow=&fp=chrome&host=swo2.nexfile.net&mode=auto&path=%2Fapi%2Fv1%2Fsync%2F&security=tls&sni=swo2.nexfile.net&type=xhttp",
+      "transport": "xhttp_tls",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.218323538517398,
+      "speed_samples_mbps": [
+        12.962065374262552,
+        11.218323538517398
+      ],
+      "speed_attempts_mbps": [
+        12.962065374262552,
+        11.218323538517398
+      ],
+      "checked_at": "2026-11-15T21:15:19.594446+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "27d880f01ff09fc0181ed36b948c572bec06b2096bbdbce6b8a85262b39c984c",
+      "latency_ms": 910.2529999999999,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://0809eed6-5204-49b8-8312-b82a10024022@5.83.158.96:43000?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=U_dxFnbfesmgSwL-SlpvGYFbpY5vlJ1kb52knlCXkkI&security=reality&sid=8cfe1563&sni=5.83.158.96&spx=%2F&type=tcp": {
+      "uri": "vless://0809eed6-5204-49b8-8312-b82a10024022@5.83.158.96:43000?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=U_dxFnbfesmgSwL-SlpvGYFbpY5vlJ1kb52knlCXkkI&security=reality&sid=8cfe1563&sni=5.83.158.96&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "igareck-fixed"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.13613831812425,
+      "speed_samples_mbps": [
+        11.13613831812425,
+        12.679399056973807
+      ],
+      "speed_attempts_mbps": [
+        11.13613831812425,
+        12.679399056973807
+      ],
+      "checked_at": "2026-11-15T21:17:01.670901+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "5c7b28da91933843dd8141375fe6d0991d0fd10ed8d5ee73691ab648cb63736a",
+      "latency_ms": 895.24,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp": {
+      "uri": "vless://44ae52b9-76fc-444d-8e43-186b4384b80a@free-amsterdam-node-1.cloudwidecdn.com:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU&security=reality&sid=1d86d17709852910&sni=www.apple.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "au1rxx"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.026477796494206,
+      "speed_samples_mbps": [
+        14.050869573228235,
+        11.026477796494206
+      ],
+      "speed_attempts_mbps": [
+        14.050869573228235,
+        11.026477796494206
+      ],
+      "checked_at": "2026-11-15T21:15:09.670953+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "f846fd3541283c36762823d06ce26bac99c7aa1983bd83de624b549ebe54401a",
+      "latency_ms": 657.86,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "vestranet",
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 11.024977887242683,
+      "speed_samples_mbps": [
+        11.024977887242683,
+        11.055687605888295
+      ],
+      "speed_attempts_mbps": [
+        11.024977887242683,
+        11.055687605888295
+      ],
+      "checked_at": "2026-11-15T21:15:29.567910+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "10703342b26927562f9604b7e4fbe29c83ccf13c1cb4006510091aea3ba2241e",
+      "latency_ms": 939.767,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://11aabba0-5fd1-4f15-8068-74c1a466cefc@193.163.203.170:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o&security=reality&sid=b28db60d77c50b4f&sni=yandex.ru&spx=%2F&type=tcp": {
+      "uri": "vless://11aabba0-5fd1-4f15-8068-74c1a466cefc@193.163.203.170:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o&security=reality&sid=b28db60d77c50b4f&sni=yandex.ru&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "zieng2"
+      ],
+      "status": "passed",
+      "speed_mbps": 10.969967509646084,
+      "speed_samples_mbps": [
+        12.265212337429725,
+        10.969967509646084
+      ],
+      "speed_attempts_mbps": [
+        12.265212337429725,
+        10.969967509646084
+      ],
+      "checked_at": "2026-11-15T21:17:37.520741+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "0c16bc6f2731e9124b7a3482368646bdba0adae7aa14777cc017530e32d000d4",
+      "latency_ms": 1119.222,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://cda0862a-0f87-4be9-8ed8-1d0c9e382839@196.245.153.104:443?encryption=none&flow=&fp=chrome&pbk=l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs&security=reality&sid=361d0dd59c70516f&sni=5d0319t.nl7.h1clayd.click&spx=%2F&type=tcp": {
+      "uri": "vless://cda0862a-0f87-4be9-8ed8-1d0c9e382839@196.245.153.104:443?encryption=none&flow=&fp=chrome&pbk=l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs&security=reality&sid=361d0dd59c70516f&sni=5d0319t.nl7.h1clayd.click&spx=%2F&type=tcp",
+      "transport": "tcp_reality",
+      "sources": [
+        "barry-far"
+      ],
+      "status": "passed",
+      "speed_mbps": 10.659740286145249,
+      "speed_samples_mbps": [
+        11.360020042454794,
+        10.659740286145249
+      ],
+      "speed_attempts_mbps": [
+        11.360020042454794,
+        10.659740286145249
+      ],
+      "checked_at": "2026-11-15T21:15:44.142751+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "852a55f7e21b9eacf16bd62c06be47f62d2989c3db09d5fcf279a3a1c1c02b4d",
+      "latency_ms": 2363.832,
+      "https_targets": [
+        "https://www.gstatic.com/generate_204",
+        "https://cp.cloudflare.com/generate_204"
+      ],
+      "dns_ok": true
+    },
+    "vless://ad9a885d-93bb-48e3-9937-57f1116b64e3@151.101.36.246:443?encryption=none&extra=%7B%22noGRPCHeader%22%3Atrue%2C%22scMaxConcurrentPosts%22%3A100%2C%22scMaxEachPostBytes%22%3A%22500000%22%2C%22scMinPostsIntervalMs%22%3A%2260%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConnections%22%3A16%7D%7D&flow=&fp=edge&host=ovd12.global.ssl.fastly.net&mode=auto&path=%2F&security=tls&sni=accounts.fastly.com&type=xhttp": {
+      "uri": "vless://ad9a885d-93bb-48e3-9937-57f1116b64e3@151.101.36.246:443?encryption=none&extra=%7B%22noGRPCHeader%22%3Atrue%2C%22scMaxConcurrentPosts%22%3A100%2C%22scMaxEachPostBytes%22%3A%22500000%22%2C%22scMinPostsIntervalMs%22%3A%2260%22%2C%22xPaddingBytes%22%3A%22100-1000%22%2C%22xmux%22%3A%7B%22cMaxReuseTimes%22%3A0%2C%22hKeepAlivePeriod%22%3A0%2C%22hMaxRequestTimes%22%3A%22600-900%22%2C%22hMaxReusableSecs%22%3A%221800-3000%22%2C%22maxConnections%22%3A16%7D%7D&flow=&fp=edge&host=ovd12.global.ssl.fastly.net&mode=auto&path=%2F&security=tls&sni=accounts.fastly.com&type=xhttp",
+      "transport": "xhttp_tls",
+      "sources": [
+        "igareck-fixed",
+        "igareck-mobile"
+      ],
+      "status": "passed",
+      "speed_mbps": 10.559019799244636,
+      "speed_samples_mbps": [
+        10.559019799244636,
+        10.898945848975828
+      ],
+      "speed_attempts_mbps": [
+        10.559019799244636,
+        null,
+        10.898945848975828
+      ],
+      "checked_at": "2026-11-15T21:16:17.564564+00:00",
+      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
+      "config_digest": "3f5f726be764f94710e75733adc8f4d1808ba50b2ea36ff72e5a64b80c9ba483",
+      "latency_ms": 4866.802,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
@@ -2050,98 +2274,45 @@
         "barry-far"
       ],
       "status": "passed",
-      "speed_mbps": 10.59257954434248,
+      "speed_mbps": 10.361794086003576,
       "speed_samples_mbps": [
-        10.59257954434248,
-        25.12838270976246
+        10.361794086003576,
+        35.34672293304287
       ],
       "speed_attempts_mbps": [
-        10.59257954434248,
-        25.12838270976246
+        10.361794086003576,
+        35.34672293304287
       ],
-      "checked_at": "2026-11-15T16:35:52.849426+00:00",
+      "checked_at": "2026-11-15T21:15:23.353297+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
       "config_digest": "bd3b9df234a5f0f06889d2fb70df98d31dd979f6cb647d971c7efff9f46f0378",
-      "latency_ms": 1868.476,
+      "latency_ms": 1112.306,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
       ],
       "dns_ok": true
     },
-    "vless://bc058e69-0444-4c7b-98da-bd67f0b143da@130.12.242.106:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&security=reality&sid=15affa0af66dfc79&sni=deepl.com&spx=%2F&type=tcp": {
-      "uri": "vless://bc058e69-0444-4c7b-98da-bd67f0b143da@130.12.242.106:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&security=reality&sid=15affa0af66dfc79&sni=deepl.com&spx=%2F&type=tcp",
+    "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp": {
+      "uri": "vless://d1a6a033-fdbd-46a6-a177-3370ba042b9f@46.28.67.55:443?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU&security=reality&sid=d06d78e974491b6e&sni=www.cloudflare.com&spx=%2F&type=tcp",
       "transport": "tcp_reality",
       "sources": [
-        "au1rxx",
-        "vestranet"
+        "zieng2"
       ],
       "status": "passed",
-      "speed_mbps": 10.590500045449494,
+      "speed_mbps": 10.074506069125702,
       "speed_samples_mbps": [
-        11.119885362662535,
-        10.590500045449494
+        10.074506069125702,
+        11.463010284258772
       ],
       "speed_attempts_mbps": [
-        11.119885362662535,
-        10.590500045449494
+        10.074506069125702,
+        11.463010284258772
       ],
-      "checked_at": "2026-11-15T16:35:03.505891+00:00",
+      "checked_at": "2026-11-15T21:15:32.175301+00:00",
       "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "8357a086f9ebade4e2dc40e9dec5e9eb64c021f6713067cf41dbd2777c9c1a48",
-      "latency_ms": 858.653,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp": {
-      "uri": "vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?alpn=h2&encryption=none&flow=&fp=chrome&host=dey.lnmarketplace.net&mode=stream-one&path=%2Fkavir&security=tls&sni=dey.lnmarketplace.net&type=xhttp",
-      "transport": "xhttp_tls",
-      "sources": [
-        "barry-far"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.51743720618538,
-      "speed_samples_mbps": [
-        10.51743720618538,
-        10.866494811974558
-      ],
-      "speed_attempts_mbps": [
-        10.51743720618538,
-        10.866494811974558
-      ],
-      "checked_at": "2026-11-15T16:35:03.762673+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "80d684ca736d6abe46dc3cb793e4db9d16ead0d6afe04e1409871cb1ee030716",
-      "latency_ms": 1247.444,
-      "https_targets": [
-        "https://www.gstatic.com/generate_204",
-        "https://cp.cloudflare.com/generate_204"
-      ],
-      "dns_ok": true
-    },
-    "vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&flow=&fp=random&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&spx=%2F&type=tcp": {
-      "uri": "vless://0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8@151.241.226.201:2053?encryption=none&flow=&fp=random&pbk=bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104&security=reality&sid=9e419c0759b54d6f&sni=www.apple.com&spx=%2F&type=tcp",
-      "transport": "tcp_reality",
-      "sources": [
-        "au1rxx"
-      ],
-      "status": "passed",
-      "speed_mbps": 10.23270520039425,
-      "speed_samples_mbps": [
-        10.434552433930486,
-        10.23270520039425
-      ],
-      "speed_attempts_mbps": [
-        10.434552433930486,
-        10.23270520039425
-      ],
-      "checked_at": "2026-11-15T16:37:01.009555+00:00",
-      "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
-      "config_digest": "0bd0d1ea93431d029b218a138e17d4783b8920d29cf7141de60fded23369b922",
-      "latency_ms": 1157.5089999999998,
+      "config_digest": "26bd7e192ee038e4fd79326b3011ae1ad3dc6593133c286e88eac877372379cf",
+      "latency_ms": 952.999,
       "https_targets": [
         "https://www.gstatic.com/generate_204",
         "https://cp.cloudflare.com/generate_204"
