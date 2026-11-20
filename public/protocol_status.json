@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-20T12:51:41.120738+00:00",
+  "started_at": "2026-11-20T20:53:07.403921+00:00",
   "error": null,
   "strict_current_run": true,
   "sources": [
@@ -7,78 +7,77 @@
       "id": "igareck-cidr-mobile",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
       "status": "ok",
-      "accepted": 16,
-      "bytes": 15698,
+      "accepted": 20,
+      "bytes": 13207,
       "rejected": {
-        "excluded_transport": 12,
-        "other_protocol": 31
+        "excluded_transport": 24,
+        "other_protocol": 5
       }
     },
     {
       "id": "vpn-free-russia",
       "url": "https://raw.githubusercontent.com/aviamastersgh/vpn-free-russia/main/verified_configs.txt",
       "status": "ok",
-      "accepted": 83,
-      "bytes": 126634,
+      "accepted": 89,
+      "bytes": 122845,
       "rejected": {
-        "other_protocol": 172,
-        "excluded_transport": 158,
-        "unsupported_parameters": 53,
-        "invalid": 23,
-        "unsupported_encryption": 1
+        "excluded_transport": 163,
+        "other_protocol": 183,
+        "unsupported_parameters": 39,
+        "unsupported_encryption": 1,
+        "invalid": 12
       }
     },
     {
       "id": "zieng2",
       "url": "https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt",
       "status": "ok",
-      "accepted": 74,
-      "bytes": 32548,
+      "accepted": 78,
+      "bytes": 33594,
       "rejected": {
-        "excluded_transport": 21,
-        "invalid": 5
+        "invalid": 9,
+        "excluded_transport": 18
       }
     },
     {
       "id": "barry-far",
       "url": "https://raw.githubusercontent.com/barry-far/V2ray-Config/main/Splitted-By-Protocol/vless.txt",
       "status": "ok",
-      "accepted": 1107,
-      "bytes": 1586910,
+      "accepted": 1062,
+      "bytes": 1552870,
       "rejected": {
-        "invalid": 236,
-        "excluded_transport": 2845,
-        "unsupported_parameters": 673,
+        "invalid": 240,
+        "unsupported_parameters": 716,
+        "excluded_transport": 2750,
         "unsupported_alpn": 6,
         "insecure_tls": 10,
-        "unsupported_encryption": 37,
-        "unsupported_flow": 1,
-        "unsupported_header": 10
+        "unsupported_encryption": 40,
+        "unsupported_header": 11
       }
     },
     {
       "id": "igareck-fixed",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS.txt",
       "status": "ok",
-      "accepted": 64,
-      "bytes": 70073,
+      "accepted": 52,
+      "bytes": 58795,
       "rejected": {
-        "excluded_transport": 163,
-        "invalid": 6,
-        "unsupported_parameters": 9
+        "excluded_transport": 105,
+        "invalid": 7,
+        "unsupported_parameters": 28
       }
     },
     {
       "id": "igareck-mobile",
       "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/BLACK_VLESS_RUS_mobile.txt",
       "status": "ok",
-      "accepted": 38,
-      "bytes": 47564,
+      "accepted": 39,
+      "bytes": 45779,
       "rejected": {
-        "excluded_transport": 60,
-        "invalid": 2,
-        "unsupported_parameters": 2,
-        "other_protocol": 43
+        "excluded_transport": 62,
+        "invalid": 6,
+        "unsupported_parameters": 21,
+        "other_protocol": 18
       }
     },
     {
@@ -86,12 +85,12 @@
       "url": "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt",
       "status": "ok",
       "accepted": 0,
-      "bytes": 22754,
+      "bytes": 15549,
       "rejected": {
-        "other_protocol": 103,
-        "invalid": 6,
-        "unsupported_parameters": 2,
-        "excluded_transport": 18
+        "other_protocol": 81,
+        "unsupported_parameters": 3,
+        "invalid": 3,
+        "excluded_transport": 13
       }
     },
     {
@@ -99,11 +98,10 @@
       "url": "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt",
       "status": "ok",
       "accepted": 0,
-      "bytes": 63633,
+      "bytes": 58676,
       "rejected": {
-        "other_protocol": 242,
-        "excluded_transport": 155,
-        "invalid": 1
+        "other_protocol": 203,
+        "excluded_transport": 146
       }
     },
     {
@@ -111,24 +109,23 @@
       "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
       "status": "ok",
       "accepted": 0,
-      "bytes": 1127858,
+      "bytes": 1136269,
       "rejected": {
-        "other_protocol": 4502
+        "other_protocol": 4520
       }
     },
     {
       "id": "vestranet",
       "url": "https://raw.githubusercontent.com/MustafaBaqer/VestraNet-Nodes/main/protocols/vless.txt",
       "status": "ok",
-      "accepted": 416,
-      "bytes": 397363,
+      "accepted": 467,
+      "bytes": 396308,
       "rejected": {
-        "unsupported_parameters": 204,
-        "excluded_transport": 855,
-        "insecure_tls": 18,
-        "invalid": 79,
-        "unsupported_encryption": 1,
-        "unsupported_header": 1
+        "unsupported_parameters": 210,
+        "excluded_transport": 833,
+        "invalid": 84,
+        "unsupported_encryption": 3,
+        "insecure_tls": 10
       }
     },
     {
@@ -144,184 +141,48 @@
       }
     }
   ],
-  "discovered_supported": 1805,
-  "candidates": 1805,
+  "discovered_supported": 1830,
+  "candidates": 1830,
   "selected": 600,
-  "unselected": 1205,
+  "unselected": 1230,
   "preflight_skipped": false,
   "results": {
-    "https_failed": 291,
-    "passed": 110,
-    "speed_unconfirmed": 21,
-    "speed_rejected": 8,
-    "postcheck_failed": 2,
-    "config_error": 1,
-    "dns_failed": 6,
-    "not_tested": 161
+    "passed": 93,
+    "speed_unconfirmed": 18,
+    "https_failed": 52,
+    "dns_failed": 7,
+    "postcheck_failed": 1,
+    "speed_rejected": 13,
+    "not_tested": 416
   },
   "results_by_transport": {
     "tcp_reality": {
-      "https_failed": 132,
-      "passed": 99,
-      "speed_unconfirmed": 13,
-      "speed_rejected": 4,
-      "postcheck_failed": 1,
+      "passed": 84,
+      "speed_unconfirmed": 16,
+      "https_failed": 27,
       "dns_failed": 2,
-      "not_tested": 146
+      "postcheck_failed": 1,
+      "speed_rejected": 7,
+      "not_tested": 290
     },
     "xhttp_tls": {
-      "passed": 11,
-      "https_failed": 159,
-      "speed_rejected": 4,
-      "speed_unconfirmed": 8,
-      "config_error": 1,
-      "dns_failed": 4,
-      "postcheck_failed": 1,
-      "not_tested": 15
+      "https_failed": 25,
+      "passed": 9,
+      "speed_rejected": 6,
+      "speed_unconfirmed": 2,
+      "dns_failed": 5,
+      "not_tested": 126
     }
   },
   "speed_diagnostics": [
     {
-      "address": "15.204.97.198",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        35.30172624207789,
-        37.07524562558838
-      ]
-    },
-    {
-      "address": "ww13.levikogjgfdd.ir",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        36.32422695367134,
-        37.47314909328074
-      ]
-    },
-    {
-      "address": "15.204.97.195",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        39.576186185194445,
-        35.612023493401765
-      ]
-    },
-    {
-      "address": "15.204.97.216",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        34.11951948165517,
-        36.82064405120631
-      ]
-    },
-    {
-      "address": "ww13.levikogjgfdd.ir",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        33.94088289261531,
-        37.96849766448202
-      ]
-    },
-    {
-      "address": "195.211.98.43",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "195.211.98.43",
+      "address": "169.40.42.163",
       "port": 443,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        null,
-        144.06484852648222,
-        141.99087654561322
-      ]
-    },
-    {
-      "address": "185.95.231.156",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        26.017439849886422,
-        345.81502628053175
-      ]
-    },
-    {
-      "address": "167.17.69.171",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        156.03954649875834,
-        153.3972991012243
-      ]
-    },
-    {
-      "address": "159.89.87.21",
-      "port": 28190,
-      "transport": "tcp_reality",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        6.465592177724613,
-        5.975298476152894
-      ]
-    },
-    {
-      "address": "167.17.69.171",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        140.47034394989782,
-        null,
-        134.65616848458583
-      ]
-    },
-    {
-      "address": "167.17.69.171",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        144.93603787276686,
-        152.92051917748287
-      ]
-    },
-    {
-      "address": "169.40.42.74",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        342.55994772950004,
-        358.11257444129006
-      ]
-    },
-    {
-      "address": "169.40.42.231",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        340.82714068054855,
-        377.96737857078494
+        40.35846573892545,
+        40.1579200585953
       ]
     },
     {
@@ -330,29 +191,8 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        326.74825692361634,
-        334.3340308084733
-      ]
-    },
-    {
-      "address": "169.40.42.163",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        342.3223015711079,
-        19.043637370770092
-      ]
-    },
-    {
-      "address": "169.40.42.168",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        287.06481418109644,
-        367.4057463209531
+        39.93766975731102,
+        40.40706638889223
       ]
     },
     {
@@ -361,8 +201,8 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        340.87561461254023,
-        357.4107070577959
+        40.653806171777504,
+        40.01234435405591
       ]
     },
     {
@@ -371,78 +211,8 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        340.44675324675336,
-        308.98974160635
-      ]
-    },
-    {
-      "address": "169.40.42.163",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        344.5084293311978,
-        354.0991135500213
-      ]
-    },
-    {
-      "address": "169.40.42.168",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        310.3099175082307,
-        347.6494747093807
-      ]
-    },
-    {
-      "address": "169.40.42.74",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        346.63669421487606,
-        293.7239097323131
-      ]
-    },
-    {
-      "address": "169.40.42.90",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        360.59096868484966,
-        330.77455097494123
-      ]
-    },
-    {
-      "address": "169.40.42.89",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        25.82464954691616,
-        102.35439531946828
-      ]
-    },
-    {
-      "address": "169.40.42.163",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        296.61638555920933,
-        304.47010144638216
-      ]
-    },
-    {
-      "address": "169.40.42.90",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        325.01387059279364,
-        338.2844238330477
+        40.27659584683712,
+        40.320929025311706
       ]
     },
     {
@@ -451,114 +221,29 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        344.6853761761926,
-        348.48713208566136
+        40.171766390429966,
+        40.75433785073859
       ]
     },
     {
-      "address": "169.40.42.229",
+      "address": "169.40.42.163",
       "port": 443,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        308.34802426024635,
-        6.093161669905029,
-        359.2243919150388
-      ]
-    },
-    {
-      "address": "169.40.42.90",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        342.6928937639155,
-        348.8276779773786
-      ]
-    },
-    {
-      "address": "169.40.42.168",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        353.7482025006853,
-        null,
-        339.13919547200334
-      ]
-    },
-    {
-      "address": "169.40.42.229",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        344.756205819497,
-        348.2411939307141
-      ]
-    },
-    {
-      "address": "169.40.42.202",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        348.3134926401892,
-        null,
-        350.72363910025905
-      ]
-    },
-    {
-      "address": "169.40.42.231",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        347.9811669051913,
-        373.29156283374857
-      ]
-    },
-    {
-      "address": "169.40.42.90",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        319.41391718229414,
-        null,
-        342.72089555287727
-      ]
-    },
-    {
-      "address": "169.40.42.229",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        378.53875138196344,
-        89.220103912403
-      ]
-    },
-    {
-      "address": "167.17.69.171",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        148.37902184487487,
-        null
+        40.205845912725906,
+        40.16945800541587
       ]
     },
     {
       "address": "169.40.42.35",
       "port": 443,
       "transport": "tcp_reality",
-      "status": "passed",
+      "status": "speed_unconfirmed",
       "attempts_mbps": [
-        358.57946482003933,
+        40.17041980026386,
         null,
-        344.126843476299
+        null
       ]
     },
     {
@@ -567,9 +252,196 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
+        40.21008582610926,
+        40.175806702666456
+      ]
+    },
+    {
+      "address": "169.40.42.90",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        36.84174744063278,
+        39.4440614846406
+      ]
+    },
+    {
+      "address": "169.40.42.74",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.76899487022471,
+        39.951650005477
+      ]
+    },
+    {
+      "address": "169.40.42.231",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        40.55984779071707,
         null,
-        343.05025968183855,
-        362.0226571434739
+        null
+      ]
+    },
+    {
+      "address": "169.40.42.231",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.28307517953919,
+        null,
+        40.37721172914381
+      ]
+    },
+    {
+      "address": "169.40.42.168",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        39.982021786430074,
+        null
+      ]
+    },
+    {
+      "address": "169.40.42.74",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.060018815573954,
+        40.21220611815913
+      ]
+    },
+    {
+      "address": "169.40.42.90",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        40.24606468265582,
+        40.228018980801
+      ]
+    },
+    {
+      "address": "169.40.42.202",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        38.167075775809764,
+        null,
+        40.46690835063954
+      ]
+    },
+    {
+      "address": "169.40.42.90",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        40.53574043156707,
+        39.11757738544902
+      ]
+    },
+    {
+      "address": "169.40.42.90",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.48858867338049,
+        39.868767689057556
+      ]
+    },
+    {
+      "address": "169.40.42.168",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        39.62451081116189,
+        39.952506257010114
+      ]
+    },
+    {
+      "address": "169.40.42.229",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.37235358382143,
+        39.94470621007544
+      ]
+    },
+    {
+      "address": "169.40.42.229",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.50383739766738,
+        40.08605356844192
+      ]
+    },
+    {
+      "address": "169.40.42.163",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.18523725918988,
+        null,
+        40.421085093516375
+      ]
+    },
+    {
+      "address": "169.40.42.74",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        39.330787426125326,
+        40.14811801389384
+      ]
+    },
+    {
+      "address": "169.40.42.168",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        40.66208273852947,
+        40.21924323495004
+      ]
+    },
+    {
+      "address": "167.17.69.171",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        34.496177649840654,
+        null
+      ]
+    },
+    {
+      "address": "167.17.69.171",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        39.80293565705907,
+        16.15707514190346
       ]
     },
     {
@@ -578,18 +450,62 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        137.89681502486346,
-        138.55734401453526
+        31.081005576242614,
+        29.405287169770975
       ]
     },
     {
-      "address": "169.40.42.74",
+      "address": "167.17.69.171",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        42.409866606672956,
+        null
+      ]
+    },
+    {
+      "address": "169.40.42.89",
       "port": 443,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        337.875662068271,
-        356.5826992561107
+        11.16225546911541,
+        null,
+        11.039603087390523
+      ]
+    },
+    {
+      "address": "209.200.246.148",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        27.519332340417158,
+        30.38613090300542
+      ]
+    },
+    {
+      "address": "169.40.42.229",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        40.00910012281351,
+        40.11547906260535
+      ]
+    },
+    {
+      "address": "15.204.97.195",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        84.0942131776146,
+        null,
+        79.88237534757933
       ]
     },
     {
@@ -598,400 +514,20 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        39.176768384379,
-        37.0437290104062
-      ]
-    },
-    {
-      "address": "78.17.215.141",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
+        82.71850825596704,
         null,
-        32.784071878987554,
-        28.328550901075076
+        83.3083366850889
       ]
     },
     {
-      "address": "edge.bookmai.com",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "9.247.23.209",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        21.318396966643494,
-        32.15960558650223
-      ]
-    },
-    {
-      "address": "51.158.206.29",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.077235575089954,
-        null,
-        28.688123061349422
-      ]
-    },
-    {
-      "address": "51.158.206.34",
+      "address": "ww13.levikogjgfdd.ir",
       "port": 23576,
       "transport": "tcp_reality",
       "status": "speed_unconfirmed",
       "attempts_mbps": [
         null,
         null,
-        30.18185154469292
-      ]
-    },
-    {
-      "address": "92.118.206.217",
-      "port": 8443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        22.595881426012472,
-        25.191506741122573
-      ]
-    },
-    {
-      "address": "51.158.206.96",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.596127520851265,
-        28.26412303503951
-      ]
-    },
-    {
-      "address": "51.158.206.19",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        28.932569717852015,
-        28.987007242771053
-      ]
-    },
-    {
-      "address": "user.betust.net",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        31.725639251014513,
-        31.991762375029314
-      ]
-    },
-    {
-      "address": "51.158.206.34",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        28.133641882147764,
-        28.48360902051398
-      ]
-    },
-    {
-      "address": "51.158.206.20",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        28.629279746628082,
-        29.67827165254739
-      ]
-    },
-    {
-      "address": "130.12.242.106",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        29.25112368757824,
-        29.487721370369588
-      ]
-    },
-    {
-      "address": "51.158.206.25",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        26.46557484627543,
-        29.78644651575677
-      ]
-    },
-    {
-      "address": "51.158.206.87",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        30.32993526250233,
-        29.018945008795342
-      ]
-    },
-    {
-      "address": "130.12.242.106",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.35799954503299,
-        28.764952370501952
-      ]
-    },
-    {
-      "address": "45.90.59.15",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        26.001633508307798,
-        24.53067574364553
-      ]
-    },
-    {
-      "address": "51.158.206.19",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.52882618398912,
-        27.677364967971084
-      ]
-    },
-    {
-      "address": "free-amsterdam-node-1.cloudwidecdn.com",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        20.587056715831842,
-        23.462275127539606
-      ]
-    },
-    {
-      "address": "51.158.206.26",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.932588760035674,
-        null,
-        29.761770533796213
-      ]
-    },
-    {
-      "address": "82.39.171.12",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        28.677138920890606,
-        28.537873388524783
-      ]
-    },
-    {
-      "address": "86.54.28.75",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        24.57130889561612,
-        null,
-        14.301376075231927
-      ]
-    },
-    {
-      "address": "bl1.nexfile.net",
-      "port": 4443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        24.69103999199395,
-        96.17371465258788
-      ]
-    },
-    {
-      "address": "51.158.206.93",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        26.21939807275762,
-        24.387331600644234
-      ]
-    },
-    {
-      "address": "edge.bookmai.com",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "82.118.16.187",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        24.627250655416685,
-        24.414871385912118
-      ]
-    },
-    {
-      "address": "82.118.16.187",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        24.400987254986088,
-        23.89117033471701
-      ]
-    },
-    {
-      "address": "179.254.191.251",
-      "port": 4443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        24.219297523822725,
-        123.37367542485681
-      ]
-    },
-    {
-      "address": "51.158.206.25",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        30.076990511088923,
-        29.347061220991357
-      ]
-    },
-    {
-      "address": "82.118.22.161",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "postcheck_failed",
-      "attempts_mbps": [
-        23.299973751932146,
-        22.81484543708967
-      ]
-    },
-    {
-      "address": "46.29.255.123",
-      "port": 59539,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        24.428984747551965,
-        22.978395628175804
-      ]
-    },
-    {
-      "address": "31.76.32.122",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        25.10630949334602,
-        23.461553306278617
-      ]
-    },
-    {
-      "address": "46.28.67.55",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        20.95459916117735,
-        21.79784921648545
-      ]
-    },
-    {
-      "address": "46.28.67.55",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        22.148870919832333,
-        21.99687692160444
-      ]
-    },
-    {
-      "address": "45.88.176.223",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        19.04612356151227,
-        54.105041827106014
-      ]
-    },
-    {
-      "address": "195.123.213.28",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        22.71018324121865,
-        22.735049360047153
-      ]
-    },
-    {
-      "address": "swo2.nexfile.net",
-      "port": 4443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        23.036101831522956,
-        127.26016050487735
-      ]
-    },
-    {
-      "address": "201.34.142.108",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        21.5373326503916,
-        21.135451848399143
-      ]
-    },
-    {
-      "address": "179.253.80.175",
-      "port": 4443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        19.322668398854727,
-        112.67287209036813
+        82.44858885334199
       ]
     },
     {
@@ -1000,129 +536,8 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        38.21071307373978,
-        37.776227649672045
-      ]
-    },
-    {
-      "address": "193.160.208.240",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        21.265866170127275,
-        53.92210530375589
-      ]
-    },
-    {
-      "address": "193.163.203.170",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        6.714262331100077,
-        null,
-        16.369692505085887
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21003,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.970469631015881,
-        10.803365439720995
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21001,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.908831768044172,
-        10.656618902948335
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21002,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.938148134142988,
-        10.95423139854816
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21004,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.815964640496459,
-        10.802593310166358
-      ]
-    },
-    {
-      "address": "511.150333.xyz",
-      "port": 21004,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.594245069511802,
-        10.806190565750926
-      ]
-    },
-    {
-      "address": "511.150333.xyz",
-      "port": 21002,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.907618981366202,
-        10.909675913251734
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21003,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.887078112498141,
-        10.48557650241121
-      ]
-    },
-    {
-      "address": "103.106.229.37",
-      "port": 21004,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.807561910614746,
-        10.48890011447177
-      ]
-    },
-    {
-      "address": "47.253.226.114",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.12905274622573,
-        10.122538029168366
-      ]
-    },
-    {
-      "address": "510.150333.xyz",
-      "port": 21004,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.824233790633098,
-        10.816341187764287
+        83.11271617598248,
+        82.6366143904169
       ]
     },
     {
@@ -1131,132 +546,59 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        39.051019149347226,
-        12.099238876300452
+        81.89680656845228,
+        81.7842254070391
       ]
     },
     {
-      "address": "103.106.229.37",
-      "port": 21004,
+      "address": "15.204.97.216",
+      "port": 23576,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        10.786362438199573,
-        10.620783346279167
+        83.51942970360119,
+        52.66447351899752
       ]
     },
     {
-      "address": "209.200.246.148",
-      "port": 443,
+      "address": "ww13.levikogjgfdd.ir",
+      "port": 23576,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        null,
-        97.03253269174047,
-        159.56417865023207
+        83.87475690781744,
+        84.04534593053837
       ]
     },
     {
-      "address": "orchard.elvano.website",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        1.726494197841936,
-        2.4171660522857246
-      ]
-    },
-    {
-      "address": "82.118.16.187",
+      "address": "user.betust.net",
       "port": 443,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        24.36293141379275,
-        25.215814351952744
+        18.448543334880128,
+        18.431964000070312
       ]
     },
     {
-      "address": "216.225.198.243",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        13.584009340353715,
-        11.036233533351664
-      ]
-    },
-    {
-      "address": "willowbank.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        1.4615158992362358,
-        null
-      ]
-    },
-    {
-      "address": "free.fugui.lol",
-      "port": 47396,
+      "address": "5.35.44.218",
+      "port": 8443,
       "transport": "tcp_reality",
       "status": "speed_unconfirmed",
       "attempts_mbps": [
-        null,
+        1.6906338157679275,
         null,
         null
       ]
     },
     {
-      "address": "orchard.elvano.website",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        2.1549155898435517,
-        2.406522845177098
-      ]
-    },
-    {
-      "address": "169.40.42.89",
-      "port": 443,
+      "address": "51.158.206.26",
+      "port": 23576,
       "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        121.37613311629589,
-        104.73715227488388
-      ]
-    },
-    {
-      "address": "free.fugui.lol",
-      "port": 62015,
-      "transport": "tcp_reality",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        4.966873920532224,
-        2.732351260835945
-      ]
-    },
-    {
-      "address": "sunfield.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
       "status": "speed_unconfirmed",
       "attempts_mbps": [
-        4.080639818184383,
+        18.9580131236532,
         null,
-        null
-      ]
-    },
-    {
-      "address": "marsh.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        3.6511903484636234,
         null
       ]
     },
@@ -1266,308 +608,19 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        30.039831763351415,
-        29.646281318859963
+        18.367652677710254,
+        18.72900284442301
       ]
     },
     {
-      "address": "marsh.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        2.7311729827518483,
-        null
-      ]
-    },
-    {
-      "address": "87.228.32.97",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        8.842446570216358,
-        19.55999724855462,
-        null
-      ]
-    },
-    {
-      "address": "178.212.35.198",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        12.949369443215929,
-        12.598032788854823
-      ]
-    },
-    {
-      "address": "free.fugui.lol",
-      "port": 47396,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "169.40.42.163",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        354.23368945568166,
-        353.9870450469459
-      ]
-    },
-    {
-      "address": "orchard.elvano.website",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        1.4591687619968707,
-        null
-      ]
-    },
-    {
-      "address": "47.251.108.158",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "78.17.215.137",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "145.223.68.58",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        16.894038274669338,
-        null,
-        13.875949270771473
-      ]
-    },
-    {
-      "address": "51.158.206.96",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.37254524350169,
-        27.296803563816457
-      ]
-    },
-    {
-      "address": "sunfield.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        2.5452016656087713,
-        null
-      ]
-    },
-    {
-      "address": "169.40.42.35",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        319.3835141823722
-      ]
-    },
-    {
-      "address": "willowbank.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        1.6669411581420637,
-        1.8544290295703403
-      ]
-    },
-    {
-      "address": "marsh.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        2.677800162099233,
-        null
-      ]
-    },
-    {
-      "address": "188.72.112.1",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        null
-      ]
-    },
-    {
-      "address": "marsh.moltex.click",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        1.387638309208847,
-        null,
-        4.486777988247399
-      ]
-    },
-    {
-      "address": "185.71.216.94",
-      "port": 2092,
-      "transport": "tcp_reality",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        5.102758258229031,
-        null,
-        4.066090016553042
-      ]
-    },
-    {
-      "address": "47.253.226.114",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        19.353919415271598,
-        25.31534910951535
-      ]
-    },
-    {
-      "address": "13.143.239.94",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        14.653422246677762,
-        14.380700948358033
-      ]
-    },
-    {
-      "address": "free-amsterdam-node-1.cloudwidecdn.com",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        18.813811045696664,
-        22.294503718803448
-      ]
-    },
-    {
-      "address": "212.102.38.25",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        24.29565096503626,
-        null,
-        24.287526329123086
-      ]
-    },
-    {
-      "address": "free-amsterdam-node-1.cloudwidecdn.com",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        12.144747719405432,
-        null,
-        15.532834064583986
-      ]
-    },
-    {
-      "address": "5.34.177.164",
-      "port": 443,
-      "transport": "tcp_reality",
-      "status": "speed_rejected",
-      "attempts_mbps": [
-        1.5460037786621421,
-        null,
-        2.40524424520072
-      ]
-    },
-    {
-      "address": "51.158.206.80",
+      "address": "51.158.206.25",
       "port": 23576,
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
         null,
-        12.691474876090076,
-        26.348282208974346
-      ]
-    },
-    {
-      "address": "511.150333.xyz",
-      "port": 21003,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        10.947612398042413,
-        10.805056162769953
-      ]
-    },
-    {
-      "address": "leviko-pl7089.shopingggg.ir",
-      "port": 4443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        25.393399647642166,
-        66.23299882355728
-      ]
-    },
-    {
-      "address": "51.158.206.26",
-      "port": 23576,
-      "transport": "tcp_reality",
-      "status": "speed_unconfirmed",
-      "attempts_mbps": [
-        null,
-        null,
-        29.65859729386682
-      ]
-    },
-    {
-      "address": "185.86.145.173",
-      "port": 443,
-      "transport": "xhttp_tls",
-      "status": "passed",
-      "attempts_mbps": [
-        18.414686777641432,
-        18.654429939212935
+        18.87381358172604,
+        18.820205800232657
       ]
     },
     {
@@ -1576,39 +629,380 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        29.244954059674484,
-        null,
-        29.267350498918425
+        17.2361279054835,
+        18.958998599875017
       ]
     },
     {
-      "address": "render.com",
+      "address": "51.158.206.87",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.768308289854033,
+        16.43284921191511
+      ]
+    },
+    {
+      "address": "51.158.206.19",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.58221784398694,
+        19.098310008583145
+      ]
+    },
+    {
+      "address": "130.12.242.106",
       "port": 443,
-      "transport": "xhttp_tls",
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.66970832364269,
+        18.79105316801631
+      ]
+    },
+    {
+      "address": "51.158.206.29",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        null,
+        18.43283478780594
+      ]
+    },
+    {
+      "address": "51.158.206.20",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.96763661112606,
+        17.878095485724455
+      ]
+    },
+    {
+      "address": "82.39.171.12",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.238306214628892,
+        17.371710682993402
+      ]
+    },
+    {
+      "address": "78.17.215.141",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        18.111372115517483,
+        20.97083844775045
+      ]
+    },
+    {
+      "address": "51.158.206.96",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.455504183978448,
+        18.149637109293447
+      ]
+    },
+    {
+      "address": "51.158.206.34",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        17.770460339770814,
+        null,
+        null
+      ]
+    },
+    {
+      "address": "51.158.206.19",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        19.129275156092515,
+        18.68351357340844
+      ]
+    },
+    {
+      "address": "51.158.206.96",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        18.706512128358224,
+        null
+      ]
+    },
+    {
+      "address": "51.158.206.25",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.832775814613424,
+        18.92785575437991
+      ]
+    },
+    {
+      "address": "185.95.231.156",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        45.280801047191076,
+        null,
+        44.75798134152165
+      ]
+    },
+    {
+      "address": "169.40.42.89",
+      "port": 443,
+      "transport": "tcp_reality",
       "status": "postcheck_failed",
       "attempts_mbps": [
-        20.731859701846652,
-        134.1211607642497
+        null,
+        11.301175099608974,
+        11.290406071181739
       ]
     },
     {
-      "address": "gain.novacelestia.live",
+      "address": "45.90.59.15",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        3.7797759694323547,
+        3.9614125558420468
+      ]
+    },
+    {
+      "address": "bl1.nexfile.net",
+      "port": 4443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        16.293494728500285,
+        18.25475594629295
+      ]
+    },
+    {
+      "address": "45.90.59.15",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        3.7584926794681235,
+        3.7563888798707663
+      ]
+    },
+    {
+      "address": "82.118.16.187",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        16.80095575047542,
+        17.064982805041414
+      ]
+    },
+    {
+      "address": "51.158.206.93",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        17.492994342506687,
+        18.30890213479247
+      ]
+    },
+    {
+      "address": "82.118.16.187",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.275528623134306,
+        16.782099590980977
+      ]
+    },
+    {
+      "address": "212.102.38.25",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        16.545333155821165,
+        17.443614400959873
+      ]
+    },
+    {
+      "address": "179.254.191.251",
+      "port": 4443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        16.22179786296978,
+        15.97541016387511
+      ]
+    },
+    {
+      "address": "82.118.16.187",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.139090762356393,
+        16.735210621340435
+      ]
+    },
+    {
+      "address": "31.76.32.122",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        16.61880554553991,
+        16.59922253673855
+      ]
+    },
+    {
+      "address": "swo2.nexfile.net",
+      "port": 4443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        17.627829273776825,
+        15.100066692527646
+      ]
+    },
+    {
+      "address": "46.29.255.123",
+      "port": 59539,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        11.72733271448223,
+        12.594505242075336
+      ]
+    },
+    {
+      "address": "195.123.213.28",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        15.780073176008049,
+        16.38817706466199
+      ]
+    },
+    {
+      "address": "92.118.206.217",
+      "port": 8443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.95797051963663,
+        18.250645351133024
+      ]
+    },
+    {
+      "address": "46.28.67.55",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        15.685240899087338,
+        15.834852271611835
+      ]
+    },
+    {
+      "address": "9.247.23.209",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "address": "193.160.208.240",
       "port": 443,
       "transport": "xhttp_tls",
       "status": "passed",
       "attempts_mbps": [
-        22.182959126602682,
-        50.84020254606832
+        13.64630362126281,
+        13.561664077290065
       ]
     },
     {
-      "address": "47.251.108.158",
+      "address": "46.28.67.55",
       "port": 443,
       "transport": "tcp_reality",
-      "status": "not_tested",
+      "status": "passed",
+      "attempts_mbps": [
+        15.636866254647336,
+        null,
+        15.117591668986947
+      ]
+    },
+    {
+      "address": "free-amsterdam-node-1.cloudwidecdn.com",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.363548298959255,
+        14.11557000440028
+      ]
+    },
+    {
+      "address": "179.253.80.175",
+      "port": 4443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        15.956812444955078,
+        73.93156449814703
+      ]
+    },
+    {
+      "address": "45.88.176.223",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        14.298414300105167,
+        98.98179329549609
+      ]
+    },
+    {
+      "address": "169.40.42.163",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
       "attempts_mbps": [
         null,
-        null
+        null,
+        40.13102394148223
       ]
     },
     {
@@ -1617,18 +1011,542 @@
       "transport": "tcp_reality",
       "status": "passed",
       "attempts_mbps": [
-        19.17400496915421,
-        18.90026372383462
+        12.7510182366778,
+        11.776956015106201
       ]
     },
     {
-      "address": "185.71.216.177",
-      "port": 2194,
+      "address": "free-amsterdam-node-1.cloudwidecdn.com",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        16.49080372097412,
+        17.633053904299057
+      ]
+    },
+    {
+      "address": "185.86.145.173",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        9.853330161890414,
+        19.461547206143358,
+        13.61361587490922
+      ]
+    },
+    {
+      "address": "86.54.28.75",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.123067721845842,
+        17.094611654590786
+      ]
+    },
+    {
+      "address": "145.223.68.58",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        9.728877641672023,
+        10.65946937784877,
+        10.65345875766916
+      ]
+    },
+    {
+      "address": "51.158.206.80",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        19.005130424242697,
+        18.77721469118779
+      ]
+    },
+    {
+      "address": "178.212.35.198",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        11.951601516780256,
+        10.3926226152004
+      ]
+    },
+    {
+      "address": "free-amsterdam-node-1.cloudwidecdn.com",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        17.410559938897265,
+        16.11877995751545
+      ]
+    },
+    {
+      "address": "15.204.97.198",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        82.59999803066258,
+        null,
+        84.76509402503966
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21002,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.414057034393817,
+        13.444994995355978
+      ]
+    },
+    {
+      "address": "511.150333.xyz",
+      "port": 21002,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.29677250107192,
+        13.416256035518195
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21004,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.141264621887046,
+        13.414057034393817
+      ]
+    },
+    {
+      "address": "511.150333.xyz",
+      "port": 21003,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.38127570719973,
+        13.647435881792617
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21003,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.369769743605273,
+        13.399882751537088
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21004,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.121315665368137,
+        13.39147592486758
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21001,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        11.771394973383671,
+        13.769762231104473
+      ]
+    },
+    {
+      "address": "103.106.229.37",
+      "port": 21004,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.635478934240565,
+        13.130722458278775
+      ]
+    },
+    {
+      "address": "511.150333.xyz",
+      "port": 21004,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.076816833388673,
+        13.379546949826349
+      ]
+    },
+    {
+      "address": "103.106.229.37",
+      "port": 21004,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.092133817879892,
+        13.377925311997398
+      ]
+    },
+    {
+      "address": "510.150333.xyz",
+      "port": 21003,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        13.38414728515198,
+        13.40602875982446
+      ]
+    },
+    {
+      "address": "47.253.226.114",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        22.489475243397145,
+        null,
+        2.798364403168114
+      ]
+    },
+    {
+      "address": "104.18.141.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        11.95667800055161,
+        11.956141188543572
+      ]
+    },
+    {
+      "address": "83.166.237.124",
+      "port": 8444,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        2.1119796813478224,
+        2.166812587008151
+      ]
+    },
+    {
+      "address": "88.216.214.159",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.744592159259387,
+        18.709870815787596
+      ]
+    },
+    {
+      "address": "sunfield.moltex.click",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        1.6589789534772994,
+        1.4992337715641098
+      ]
+    },
+    {
+      "address": "free.fugui.lol",
+      "port": 62015,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        3.9692579875645553,
+        null,
+        null
+      ]
+    },
+    {
+      "address": "104.18.138.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "address": "sunfield.moltex.click",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        null,
+        3.120116523516713,
+        2.4739055501357186
+      ]
+    },
+    {
+      "address": "150.251.113.34",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        null,
+        11.962159649317943
+      ]
+    },
+    {
+      "address": "83.166.237.124",
+      "port": 8444,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        3.022263982902461,
+        4.9185276913912075
+      ]
+    },
+    {
+      "address": "free.fugui.lol",
+      "port": 19482,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        null,
+        1.427593268878459,
+        5.816733476591564
+      ]
+    },
+    {
+      "address": "104.18.137.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "193.163.203.170",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        14.589213321344655,
+        14.60777196252894
+      ]
+    },
+    {
+      "address": "104.18.138.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        1.3859788691542754,
+        1.3164972631067162
+      ]
+    },
+    {
+      "address": "104.18.139.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        1.6202738195630986,
+        1.397438132486291
+      ]
+    },
+    {
+      "address": "willowbank.moltex.click",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "free.fugui.lol",
+      "port": 51283,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        1.951654225811525,
+        2.512195604036232
+      ]
+    },
+    {
+      "address": "153.56.229.218",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.478432927467274,
+        18.48657737718105
+      ]
+    },
+    {
+      "address": "orchard.elvano.website",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "15.204.97.197",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        80.83418533276159,
+        81.85804688834133
+      ]
+    },
+    {
+      "address": "edge.bookmai.com",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        null,
+        18.83983928455124,
+        18.948163993191983
+      ]
+    },
+    {
+      "address": "104.18.141.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        2.133642622959159,
+        1.3474623507305292
+      ]
+    },
+    {
+      "address": "83.166.237.124",
+      "port": 8444,
+      "transport": "tcp_reality",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        2.467251071807302,
+        2.131550969546542
+      ]
+    },
+    {
+      "address": "104.18.138.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "render.com",
+      "port": 2083,
+      "transport": "xhttp_tls",
+      "status": "speed_unconfirmed",
+      "attempts_mbps": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "address": "104.18.140.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "orchard.elvano.website",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "104.18.137.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "willowbank.moltex.click",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "speed_rejected",
+      "attempts_mbps": [
+        5.122241605976249,
+        8.606322130946554
+      ]
+    },
+    {
+      "address": "51.158.206.87",
+      "port": 23576,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        18.693401850040225,
+        18.270102625755754
+      ]
+    },
+    {
+      "address": "willowbank.moltex.click",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "linden.kryonix.space",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "passed",
+      "attempts_mbps": [
+        16.000808756698707,
+        43.81492305000379
+      ]
+    },
+    {
+      "address": "free.fugui.lol",
+      "port": 51283,
+      "transport": "tcp_reality",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "free.fugui.lol",
+      "port": 47396,
       "transport": "tcp_reality",
       "status": "not_tested",
       "attempts_mbps": [
-        3.7714296247524173
+        7.284212171602489,
+        null
       ]
+    },
+    {
+      "address": "67.159.52.81",
+      "port": 443,
+      "transport": "tcp_reality",
+      "status": "passed",
+      "attempts_mbps": [
+        14.256447906894534,
+        14.143200484893853
+      ]
+    },
+    {
+      "address": "render.com",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
     },
     {
       "address": "47.251.108.158",
@@ -1636,48 +1554,46 @@
       "transport": "tcp_reality",
       "status": "not_tested",
       "attempts_mbps": [
+        null,
         null
       ]
     },
     {
-      "address": "185.176.9.26",
+      "address": "136.148.208.221",
       "port": 443,
       "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        29.35347943690754,
-        28.88833100018768
-      ]
+      "status": "not_tested",
+      "attempts_mbps": []
     },
     {
-      "address": "5.35.44.218",
-      "port": 8443,
-      "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        null,
-        30.904893656998226,
-        29.98292583981313
-      ]
-    },
-    {
-      "address": "45.90.59.15",
+      "address": "104.18.141.67",
       "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "83.166.237.124",
+      "port": 8444,
       "transport": "tcp_reality",
-      "status": "passed",
-      "attempts_mbps": [
-        24.698273336601467,
-        25.35962223310539
-      ]
+      "status": "not_tested",
+      "attempts_mbps": []
+    },
+    {
+      "address": "104.18.138.67",
+      "port": 443,
+      "transport": "xhttp_tls",
+      "status": "not_tested",
+      "attempts_mbps": []
     }
   ],
-  "baseline_mbps": 581.1096255758374,
-  "tested": 439,
-  "published_at": "2026-11-20T12:55:38.720116+00:00",
-  "published": 110,
+  "baseline_mbps": 349.9992907061645,
+  "tested": 184,
+  "published_at": "2026-11-20T20:57:06.140097+00:00",
+  "published": 93,
   "counts": {
-    "tcp_reality": 99,
-    "xhttp_tls": 11
+    "tcp_reality": 84,
+    "xhttp_tls": 9
   },
   "quality_policy": "xray-full-profile-v3:10.0:6000.0:2097152:two-samples",
   "min_speed_mbps": 10.0,
@@ -1685,5 +1601,5 @@
   "sort": "speed_mbps descending, latency_ms ascending",
   "verification": "full Xray client profile: two HTTPS targets, DNS, two full speed samples",
   "auto_nodes": 24,
-  "individual_profiles": 110
+  "individual_profiles": 93
 }
